@@ -16,7 +16,8 @@ public class PlayerMovement : MonoBehaviour {
     private void Start() {
         Instance = this;
     }
-
+    
+    // This update only runs 50 x per minute, sort of like delta time.
     private void FixedUpdate() {
         playerRb2D.velocity = _moveInput * moveSpeed;
     }
