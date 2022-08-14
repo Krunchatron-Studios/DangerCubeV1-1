@@ -1,11 +1,10 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour {
 	// reference to the game manager
 	public static GameManager gm;
-	public Vector2 mousePosition;
+	public Vector2 mousePosition; // not in use yet
 	// global references, same as doing GameObject.Instance.value
 	// now we only need to access the ref as GameManager.gm.value for all refs
 	public static PlayerMovement playerMove;

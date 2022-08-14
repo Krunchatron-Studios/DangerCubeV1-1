@@ -6,6 +6,7 @@ public class MainCamera : MonoBehaviour, IDmgAndHpInterface {
 	public static MainCamera Instance;
 	
 	public Rigidbody2D playerRb2D;
+	
 
 	private void Start() {
 		Instance = this;

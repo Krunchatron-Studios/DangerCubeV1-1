@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour {
     // Public reference to the player movement class from anywhere
+    
     public static PlayerMovement Instance;
     
     // Reference to the player object
