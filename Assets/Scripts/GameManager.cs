@@ -5,8 +5,10 @@ public class GameManager : MonoBehaviour {
 	// reference to the game manager
 	public static GameManager gm;
 	public Vector2 mousePosition; // not in use yet
+	public Vector2 playerPosition;
 	// global references, same as doing GameObject.Instance.value
 	// now we only need to access the ref as GameManager.gm.value for all refs
+	public GameObject playerCube;
 	public static PlayerMovement playerMove;
 	public static MainCamera mainCam;
 	
@@ -15,5 +17,6 @@ public class GameManager : MonoBehaviour {
 
 	private void Update() {
 		mousePosition = Mouse.current.position.ReadValue();
+		playerPosition = playerCube.transform.position;
 	}
 }

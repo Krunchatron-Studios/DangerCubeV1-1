@@ -3,5 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public interface IDmgAndHpInterface {
-	public void FollowPlayer();
+	public void TakeDamage(int dmgAmount);
+	public void HealDamage(int healAmount);
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MainCamera : MonoBehaviour, IDmgAndHpInterface {
+public class MainCamera : MonoBehaviour {
 	
 	// reference to the main camera
 	public static MainCamera Instance;
@@ -11,7 +11,6 @@ public class MainCamera : MonoBehaviour, IDmgAndHpInterface {
 	private void Start() {
 		Instance = this;
 	}
-	
 	// Late update is used to prevent camera stutter
 	// by updating camera after player moves guaranteed
 	private void LateUpdate() {
@@ -20,6 +19,7 @@ public class MainCamera : MonoBehaviour, IDmgAndHpInterface {
 	
 	// Script to make the camera follow the player (IDmgAndHpInterface = true)
 	public void FollowPlayer() {
+
 		if (playerRb2D) {
 			transform.position = new Vector3(playerRb2D.position.x, playerRb2D.position.y, -10);
 		}
