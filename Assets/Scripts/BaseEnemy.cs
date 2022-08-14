@@ -24,8 +24,4 @@ public class BaseEnemy : MonoBehaviour
 		Vector3 temp = Vector3.MoveTowards(transform.position, _playerPosition.position, _speed * Time.deltaTime);
 		_enemyRB.MovePosition(temp);
 	}
-
-	private void DealDamage(int damageAmount)
-	{
-	}
 }
