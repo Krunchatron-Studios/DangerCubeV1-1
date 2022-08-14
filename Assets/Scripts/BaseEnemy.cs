@@ -5,7 +5,7 @@ public class BaseEnemy : MonoBehaviour
 	[Header("Enemy Stats")]
 	[SerializeField] private int _healthMax;
 	private int _currentHealth;
-	[SerializeField] private int _damage;
+	public int _damage;
 	[SerializeField] private int _speed;
 	[Header("Movement Dependencies")]
 	[SerializeField] private Rigidbody2D _enemyRB;
