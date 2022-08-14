@@ -1,7 +1,5 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
 
 public class PlayerMovement : MonoBehaviour {
     // Public reference to the player movement class from anywhere
@@ -21,7 +19,8 @@ public class PlayerMovement : MonoBehaviour {
     private void FixedUpdate() {
         playerRb2D.velocity = _moveInput * moveSpeed;
     }
-
+    
+    // returns xy values as either 0 or 1 as a vector3
     void OnMove(InputValue value) {
         _moveInput = value.Get<Vector2>();
     }
