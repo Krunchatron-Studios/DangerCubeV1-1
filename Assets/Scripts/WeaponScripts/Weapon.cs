@@ -20,12 +20,10 @@ public class Weapon : MonoBehaviour {
 		}
 	}
 
+	// ReSharper disable Unity.PerformanceAnalysis
 	public void FireWeapon() {
-		// create the bullet
-		Instantiate(projectile, firePoint1.transform.position, Quaternion.identity);
-		projectile.MoveProjectile();
-		
-		// bullet moves toward target point
-		// bullet destroys self after contact
+		Projectile bullet = Instantiate(projectile, firePoint1.transform.position, Quaternion.identity);
+		Rigidbody2D bulletRb2D = bullet.GetComponent<Rigidbody2D>();
+		bullet.MoveProjectile(bulletRb2D);
 	}
 }

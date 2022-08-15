@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour {
     public static PlayerMovement Instance;
     
     public Rigidbody2D playerRb2D;
-    private Vector2 _moveInput;
+    public Vector2 moveInput;
     private bool _isMoving;
     [SerializeField, Range(1f, 20f)] private float moveSpeed = 5f;
 
@@ -14,12 +14,10 @@ public class PlayerMovement : MonoBehaviour {
         Instance = this;
     }
     private void FixedUpdate() {
-        playerRb2D.velocity = _moveInput * moveSpeed;
+        playerRb2D.velocity = moveInput * moveSpeed;
     }
     
     void OnMove(InputValue value) {
-        _moveInput = value.Get<Vector2>();
+        moveInput = value.Get<Vector2>();
     }
-    
-    
 }
