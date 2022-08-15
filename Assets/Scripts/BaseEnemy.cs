@@ -12,6 +12,9 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 	[Header("Spawn Mechanics")] 
 	public float spawnDistance;
 
+	[Header("Enemy Drop")] 
+	public GameObject drop;
+
 	void Start() {
 		playerPosition = GameObject.FindWithTag("Player").transform;
 	}
@@ -32,12 +35,13 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 		}
 	}
 
-	public void TakeDamage(int dmgAmount) {
+	public virtual void TakeDamage(int dmgAmount) {
 		currentHealth -= dmgAmount;
 		Debug.Log("Current health is: " + currentHealth);
 		if (currentHealth <= 0) {
 			// isDead == true;
 			// play death animation
+			Instantiate(drop, transform.position, Quaternion.identity);
 			Destroy(gameObject);
 		}
 	}

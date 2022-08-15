@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 4773665382273124543}
   - component: {fileID: 6973780780784977513}
   - component: {fileID: 6709959086897223377}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Soldier
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,4 +174,5 @@ MonoBehaviour:
   enemyRb2D: {fileID: 6973780780784977513}
   playerPosition: {fileID: 0}
   spawnDistance: 5
+  drop: {fileID: 1527084982249308848, guid: aa8fef295bf4542edb7f38a866479ce6, type: 3}
   enemySprite: {fileID: 0}

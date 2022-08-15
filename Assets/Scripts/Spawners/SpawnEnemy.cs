@@ -27,7 +27,7 @@ public class SpawnEnemy : MonoBehaviour {
         float tempY = _playerPosition.position.y;
 
         int randomizer = Random.Range(1, 9);
-        // swap out static proximity modifiers for declared proximity modifiers
+        
         switch (randomizer) {
             case 1:
                 tempX = _playerPosition.position.x + Random.Range(distance, distance + 10);
