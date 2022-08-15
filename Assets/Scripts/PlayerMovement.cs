@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour {
     public Rigidbody2D playerRb2D;
     private Vector2 _moveInput;
     private bool _isMoving;
-    [SerializeField, Range(1f, 20f)] private float moveSpeed = 5;
+    [SerializeField, Range(1f, 20f)] private float moveSpeed = 5f;
 
     private void Start() {
         Instance = this;
