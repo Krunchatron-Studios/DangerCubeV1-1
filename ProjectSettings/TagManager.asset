@@ -13,6 +13,7 @@ TagManager:
   - Foreground
   - Midground
   - Projectile
+  - Weapon
   layers:
   - Default
   - TransparentFX
@@ -30,7 +31,7 @@ TagManager:
   - Wall
   - System
   - Projectile
-  - 
+  - Weapon
   - 
   - 
   - 
@@ -67,4 +68,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 1906808429
+    locked: 0
+  - name: Weapon
+    uniqueID: 1601880589
     locked: 0
