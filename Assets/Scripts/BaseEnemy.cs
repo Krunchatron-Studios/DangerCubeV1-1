@@ -25,6 +25,7 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 	void OnTriggerEnter2D(Collider2D other) {
 		IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
 		if (other.CompareTag("Enemy")) {
+			Debug.Log(other);
 			hit.TakeDamage(damage);
 		}
 	}
