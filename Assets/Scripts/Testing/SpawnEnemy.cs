@@ -28,6 +28,7 @@ public class SpawnEnemy : MonoBehaviour
         float tempX = _playerPosition.position.x;
         float tempY = _playerPosition.position.y;
         int randomizer = Random.Range(1, 9);
+        // swap out static proximity modifiers for declared proximity modifiers
         switch (randomizer)
         {
             case 1:
