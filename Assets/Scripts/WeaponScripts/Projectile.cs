@@ -30,4 +30,12 @@ public class Projectile : MonoBehaviour {
 			Destroy(gameObject);
 		}
 	}
+<<<<<<< HEAD
+=======
+	public void MoveProjectile() {
+		Vector3 temp = Vector3.MoveTowards(weapon.firePoint1.transform.position, GameManager.gm.mousePosition, projectileVelocity * Time.deltaTime);
+		Debug.Log("Mouse Position: " + GameManager.gm.mousePosition);
+		projectileRb2D.MovePosition(temp);
+	}
+>>>>>>> 9bf25595fba0aa9f967d2f1fa87791bd13d91755
 }

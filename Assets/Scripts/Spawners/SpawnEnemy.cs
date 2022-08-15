@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnEnemy : MonoBehaviour
-{
+public class SpawnEnemy : MonoBehaviour {
     [Header("Spawn Parameters")]
     [SerializeField] private float _waitTime;
     private float _nextSpawn;
@@ -11,19 +10,15 @@ public class SpawnEnemy : MonoBehaviour
     [Header("Game Objects")]
     [SerializeField] private GameObject _enemy;
     [SerializeField] private Transform _playerPosition;
-    void Update()
-    {
-        if (Time.time > _nextSpawn)
-        {
+    void Update() {
+        if (Time.time > _nextSpawn) {
             _nextSpawn += _waitTime;
-            for (int x = 0; x < _spawnQuantity; x++)
-            {
+            for (int x = 0; x < _spawnQuantity; x++) {
                 Spawn();
             }
         }
     }
-    public void Spawn()
-    {
+    public void Spawn() {
         _playerPosition = GameObject.FindWithTag("Player").transform;
 
 		float distance = _enemy.GetComponent<BaseEnemy>().spawnDistance;
@@ -33,8 +28,7 @@ public class SpawnEnemy : MonoBehaviour
 
         int randomizer = Random.Range(1, 9);
         // swap out static proximity modifiers for declared proximity modifiers
-        switch (randomizer)
-        {
+        switch (randomizer) {
             case 1:
                 tempX = _playerPosition.position.x + Random.Range(distance, distance + 10);
                 tempY = _playerPosition.position.y + Random.Range(distance, distance + 10);
