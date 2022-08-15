@@ -1,7 +1,9 @@
 using UnityEngine;
-public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface
+
+public class BaseEnemy : MonoBehaviour
 {
 	[Header("Enemy Stats")]
+<<<<<<< HEAD
 <<<<<<< HEAD
 	public int maxHealth = 100;
 	public int currentHealth = 100;
@@ -11,16 +13,56 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface
 
 	private void FixedUpdate() {
 		ChasePlayer();
+=======
+	public int maxHealth;
+	public int currentHealth;
+	public int damage;
+	public int moveSpeed;
+=======
+	[SerializeField] private int _healthMax;
+	private int _currentHealth;
+	public int _damage;
+	public int _speed;
+	[Header("Movement Dependencies")]
+	public Rigidbody2D _enemyRB;
+	public Transform _playerPosition;
+	void Start()
+	{
+		_playerPosition = GameObject.FindWithTag("Player").transform;
+	}
+	void FixedUpdate()
+	{
+		MoveTowardsPlayer();
 	}
 
-	void OnTriggerEnter2D(Collider2D other) {
-
-		IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
-		if (other.CompareTag("Enemy")) {
-			hit.TakeDamage(damage);
-			Debug.Log("hit the player");
-		}
+	public virtual void MoveTowardsPlayer()
+	{
+		Vector3 temp = Vector3.MoveTowards(transform.position, _playerPosition.position, _speed * Time.deltaTime);
+		_enemyRB.MovePosition(temp);
 	}
+	
+>>>>>>> b64ef155209b6c4e2462349b5158b11d9941ff7f
+	
+	[Header("Movement Dependencies")]
+	public Rigidbody2D enemyRb2D;
+	public Transform playerPosition;
+	
+	void Start()
+	{
+		playerPosition = GameObject.FindWithTag("Player").transform;
+	}
+	void FixedUpdate()
+	{
+		MoveTowardsPlayer();
+>>>>>>> Tdev
+	}
+
+	public void MoveTowardsPlayer()
+	{
+		Vector3 temp = Vector3.MoveTowards(transform.position, playerPosition.position, moveSpeed * Time.deltaTime);
+		enemyRb2D.MovePosition(temp);
+	}
+<<<<<<< HEAD
 	private void ChasePlayer() {
 		
 	}
@@ -63,3 +105,6 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface
 >>>>>>> 019f8cba37445c27b698586d09f447d62d480454
 	}
 }
+=======
+}
+>>>>>>> Tdev
