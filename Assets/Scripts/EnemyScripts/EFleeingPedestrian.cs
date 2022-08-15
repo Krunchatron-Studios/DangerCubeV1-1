@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FleeingPedestrian : BaseEnemy {
+public class EFleeingPedestrian : BaseEnemy {
     [SerializeField] private float _safetyTime;
 
     void Start() {
