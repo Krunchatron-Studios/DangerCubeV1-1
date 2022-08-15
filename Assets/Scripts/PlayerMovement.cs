@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour {
     
@@ -21,6 +20,4 @@ public class PlayerMovement : MonoBehaviour {
     void OnMove(InputValue value) {
         moveInput = value.Get<Vector2>();
     }
-    
-    
 }
