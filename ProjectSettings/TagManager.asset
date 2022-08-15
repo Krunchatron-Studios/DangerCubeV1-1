@@ -12,6 +12,7 @@ TagManager:
   - Background
   - Foreground
   - Midground
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - NPC
   - Wall
   - System
-  - 
+  - Projectile
   - 
   - 
   - 
@@ -61,9 +62,9 @@ TagManager:
   - name: Player
     uniqueID: 2055319811
     locked: 0
+  - name: Projectile
+    uniqueID: 3696644381
+    locked: 0
   - name: UI
     uniqueID: 1906808429
-    locked: 0
-  - name: 
-    uniqueID: 3696644381
     locked: 0
