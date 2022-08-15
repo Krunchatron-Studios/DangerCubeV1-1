@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class TestEnemy : BaseEnemy
 {
-    void Start()
+    public override void MoveTowardsPlayer()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        Vector3 temp = Vector3.MoveTowards(transform.position, _playerPosition.position, _speed * Time.deltaTime);
+        _enemyRB.MovePosition(temp);
     }
 }

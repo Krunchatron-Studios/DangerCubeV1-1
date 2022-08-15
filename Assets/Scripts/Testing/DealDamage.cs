@@ -8,17 +8,20 @@ public class DealDamage : MonoBehaviour
     [SerializeField] private int _healthMax;
     private int _currentHealth;
     [SerializeField] private Rigidbody2D _testBody;
+
+    private bool _canDamage = true;
     // end of future deletions
     void Start()
     {
         _currentHealth = _healthMax;
     }
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         int damage = collision.gameObject.GetComponent<BaseEnemy>()._damage;
-        Debug.Log("this is how much damage is being passed: " + damage);
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") && _canDamage)
         {
+            Debug.Log("This is the current health of the test object in if block: " + _currentHealth);
+            _canDamage = false;
             StartCoroutine(DamageCo(damage));
         }
     }
@@ -26,7 +29,8 @@ public class DealDamage : MonoBehaviour
     {
         _currentHealth = _currentHealth - damage;
         yield return null;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(5f);
+        _canDamage = true;
         Debug.Log("This is the current health of the test object: " + _currentHealth);
     }
 }
