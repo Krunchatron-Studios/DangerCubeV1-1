@@ -26,18 +26,14 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 		Vector3 temp = Vector3.MoveTowards(transform.position, playerPosition.position, moveSpeed * Time.deltaTime);
 		enemyRb2D.MovePosition(temp);
 	}
-
 	void OnTriggerEnter2D(Collider2D other) {
 		IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
-		Debug.Log(other.gameObject.name);
 		if (other.CompareTag("Enemy")) {
 			hit.TakeDamage(damage);
 		}
 	}
-
 	public virtual void TakeDamage(int dmgAmount) {
 		currentHealth -= dmgAmount;
-		Debug.Log("Current health is: " + currentHealth);
 		if (currentHealth <= 0) {
 			// isDead == true;
 			// play death animation
@@ -45,7 +41,6 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 			Destroy(gameObject);
 		}
 	}
-
 	public void HealDamage(int healAmount) {
 		currentHealth += healAmount;
 		// play some animation of healing
