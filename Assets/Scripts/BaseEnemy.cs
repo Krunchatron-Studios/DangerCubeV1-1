@@ -10,6 +10,7 @@ public class BaseEnemy : MonoBehaviour
 	[Header("Movement Dependencies")]
 	public Rigidbody2D _enemyRB;
 	public Transform _playerPosition;
+	[Header("Spawn Mechanics")] public float _spawnDistance;
 	void Start()
 	{
 		_playerPosition = GameObject.FindWithTag("Player").transform;
