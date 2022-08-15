@@ -305,71 +305,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &86459576
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1655789376720695904, guid: 47ede0959822f854994d4baea34e962b, type: 3}
-      propertyPath: m_Name
-      value: GenericProjectile
-      objectReference: {fileID: 0}
-    - target: {fileID: 1655789376720695905, guid: 47ede0959822f854994d4baea34e962b, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1655789376720695905, guid: 47ede0959822f854994d4baea34e962b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1655789376720695905, guid: 47ede0959822f854994d4baea34e962b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1655789376720695905, guid: 47ede0959822f854994d4baea34e962b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1655789376720695905, guid: 47ede0959822f854994d4baea34e962b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1655789376720695905, guid: 47ede0959822f854994d4baea34e962b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1655789376720695905, guid: 47ede0959822f854994d4baea34e962b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1655789376720695905, guid: 47ede0959822f854994d4baea34e962b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1655789376720695905, guid: 47ede0959822f854994d4baea34e962b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1655789376720695905, guid: 47ede0959822f854994d4baea34e962b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1655789376720695905, guid: 47ede0959822f854994d4baea34e962b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1655789376720695906, guid: 47ede0959822f854994d4baea34e962b, type: 3}
-      propertyPath: projectileVelocity
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2576749402811358335, guid: 47ede0959822f854994d4baea34e962b, type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 47ede0959822f854994d4baea34e962b, type: 3}
 --- !u!1 &341786060
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mousePosition: {x: 0, y: 0}
   playerPosition: {x: 0, y: 0}
-  playerCube: {fileID: 0}
+  playerCube: {fileID: 1101465728}
 --- !u!1 &397811732
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,6 +704,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4487512288842452653, guid: 167ca0a2b08a4496ebeff860075a0878, type: 3}
+      propertyPath: playerPosition
+      value: 
+      objectReference: {fileID: 2023402973}
     - target: {fileID: 4487512288842452655, guid: 167ca0a2b08a4496ebeff860075a0878, type: 3}
       propertyPath: m_Name
       value: Test Enemy
@@ -807,6 +746,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1101465728 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3796742106572517123, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+  m_PrefabInstance: {fileID: 3796742104837735127}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1178866795
 GameObject:
   m_ObjectHideFlags: 0
