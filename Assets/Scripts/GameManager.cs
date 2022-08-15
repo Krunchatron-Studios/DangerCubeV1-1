@@ -6,8 +6,7 @@ public class GameManager : MonoBehaviour {
 	public static GameManager gm;
 	public Vector2 mousePosition; // not in use yet
 	public Vector2 playerPosition;
-	// global references, same as doing GameObject.Instance.value
-	// now we only need to access the ref as GameManager.gm.value for all refs
+
 	public GameObject playerCube;
 	public static PlayerMovement playerMove;
 	public static MainCamera mainCam;

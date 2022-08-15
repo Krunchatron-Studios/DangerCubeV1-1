@@ -7,7 +7,6 @@ public class MainCamera : MonoBehaviour {
 	
 	public Rigidbody2D playerRb2D;
 	
-
 	private void Start() {
 		Instance = this;
 	}

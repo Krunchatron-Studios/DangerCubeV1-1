@@ -1,42 +1,29 @@
 using UnityEngine;
-public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface
+
+public class BaseEnemy : MonoBehaviour
 {
 	[Header("Enemy Stats")]
-	public int maxHealth = 100;
-	public int currentHealth = 100;
-	public int damage = 5;
-	public int moveSpeed = 5;
-
-
-	private void FixedUpdate() {
-		ChasePlayer();
+	public int maxHealth;
+	public int currentHealth;
+	public int damage;
+	public int moveSpeed;
+	
+	[Header("Movement Dependencies")]
+	public Rigidbody2D enemyRb2D;
+	public Transform playerPosition;
+	
+	void Start()
+	{
+		playerPosition = GameObject.FindWithTag("Player").transform;
+	}
+	void FixedUpdate()
+	{
+		MoveTowardsPlayer();
 	}
 
-	void OnTriggerEnter2D(Collider2D other) {
-
-		IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
-		if (other.CompareTag("Enemy")) {
-			hit.TakeDamage(damage);
-			Debug.Log("hit the player");
-		}
-	}
-	private void ChasePlayer() {
-		
-	}
-
-	public void TakeDamage(int dmgAmount) {
-		currentHealth -= dmgAmount;
-		if (currentHealth <= 0) {
-			// isDead == true;
-			// play death animation
-		}
-	}
-
-	public void HealDamage(int healAmount) {
-		currentHealth += healAmount;
-		// play some animation of healing
-		if (currentHealth > maxHealth) {
-			currentHealth = maxHealth;
-		}
+	public void MoveTowardsPlayer()
+	{
+		Vector3 temp = Vector3.MoveTowards(transform.position, playerPosition.position, moveSpeed * Time.deltaTime);
+		enemyRb2D.MovePosition(temp);
 	}
 }
