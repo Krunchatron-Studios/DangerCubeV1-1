@@ -1,8 +1,10 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
 
 public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
-	[Header("Enemy Stats")] 
-	public int maxHealth = 10;
+	[Header("Enemy Stats")] public int maxHealth = 10;
 	public int currentHealth = 10;
 	public int damage = 1;
 	public int moveSpeed = 5;
@@ -12,7 +14,6 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 
 	void Start() {
 		playerPosition = GameObject.FindWithTag("Player").transform;
-		
 	}
 
 	void FixedUpdate() {
@@ -26,28 +27,26 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
+		Debug.Log(other.gameObject.name);
 		if (other.CompareTag("Enemy")) {
 			hit.TakeDamage(damage);
 		}
 	}
-	//
-	public void TakeDamage(int dmgAmount)
-	{
+	public void TakeDamage(int dmgAmount) {
 		currentHealth -= dmgAmount;
-		Debug.Log("Current health is: " + currentHealth);
-		// if (currentHealth <= 0)
-		// {
-		// 	// isDead == true;
-		// 	// play death animation
-		// 
-	}
-	public void HealDamage(int healAmount) {
-		currentHealth += healAmount;
-		// play some animation of healing
-		if (currentHealth > maxHealth)
-		{
-			currentHealth = maxHealth;
+		Debug.Log(currentHealth + " is current health");
+		if (currentHealth <= 0) {
+			Debug.Log("You have ceased to be!");
+			// isDead == true;
+			// play death animation
 		}
 	}
+	// public void HealDamage(int healAmount) {
+	// 	currentHealth += healAmount;
+	// 	// play some animation of healing
+	// 	if (currentHealth > maxHealth) {
+	// 		currentHealth = maxHealth;
+	// 	}
+	// }
 }
 
