@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MainCamera : MonoBehaviour, IDmgAndHpInterface {
+public class MainCamera : MonoBehaviour {
 	
 	// reference to the main camera
 	public static MainCamera Instance;

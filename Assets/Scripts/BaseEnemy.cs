@@ -1,19 +1,20 @@
 using UnityEngine;
 
-public class BaseEnemy : MonoBehaviour
+public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface
 {
-	[Header("Enemy Stats")]
-	[SerializeField] private int _healthMax;
-	private int _currentHealth;
-	public int _damage;
-	public int _speed;
-	[Header("Movement Dependencies")]
-	public Rigidbody2D _enemyRB;
-	public Transform _playerPosition;
+	[Header("Enemy Stats")] public int maxHealth = 10;
+	public int currentHealth = 10;
+	public int damage = 1;
+	public int moveSpeed = 5;
+	public Rigidbody2D enemyRb2D;
+	public Transform playerPosition;
+	[Header("Spawn Mechanics")] public float spawnDistance;
+
 	void Start()
 	{
-		_playerPosition = GameObject.FindWithTag("Player").transform;
+		playerPosition = GameObject.FindWithTag("Player").transform;
 	}
+
 	void FixedUpdate()
 	{
 		MoveTowardsPlayer();
@@ -21,9 +22,36 @@ public class BaseEnemy : MonoBehaviour
 
 	public virtual void MoveTowardsPlayer()
 	{
-		Vector3 temp = Vector3.MoveTowards(transform.position, _playerPosition.position, _speed * Time.deltaTime);
-		_enemyRB.MovePosition(temp);
+		Vector3 temp = Vector3.MoveTowards(transform.position, playerPosition.position, moveSpeed * Time.deltaTime);
+		enemyRb2D.MovePosition(temp);
 	}
-	
-	
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
+		if (other.CompareTag("Enemy"))
+		{
+			hit.TakeDamage(damage);
+		}
+	}
+	//
+	public void TakeDamage(int dmgAmount)
+	{
+		currentHealth -= dmgAmount;
+		Debug.Log("Current health is: " + currentHealth);
+		// if (currentHealth <= 0)
+		// {
+		// 	// isDead == true;
+		// 	// play death animation
+		// }
+	}
+	public void HealDamage(int healAmount) {
+		currentHealth += healAmount;
+		// play some animation of healing
+		if (currentHealth > maxHealth)
+		{
+			currentHealth = maxHealth;
+		}
+	}
 }
+
