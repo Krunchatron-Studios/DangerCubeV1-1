@@ -16,7 +16,6 @@ public class FleeingPedestrian : BaseEnemy
         Vector3 temp = Vector3.MoveTowards(transform.position, playerPosition.position, -1 * moveSpeed * Time.deltaTime);
         enemyRb2D.MovePosition(temp);
     }
-    // comment for testing
     private IEnumerator SuccessfullyFled()
     {
         yield return null;

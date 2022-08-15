@@ -120,12 +120,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc841c1201c4041dd9804e972c909557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthMax: 1
-  _damage: 0
-  _speed: 1
-  _enemyRB: {fileID: 5618412201206696347}
-  _playerPosition: {fileID: 0}
-  _spawnDistance: 1
+  maxHealth: 1
+  currentHealth: 1
+  damage: 0
+  moveSpeed: 1
+  enemyRb2D: {fileID: 5618412201206696347}
+  playerPosition: {fileID: 0}
+  spawnDistance: 2
   _safetyTime: 3
 --- !u!61 &4869488763049248322
 BoxCollider2D:
