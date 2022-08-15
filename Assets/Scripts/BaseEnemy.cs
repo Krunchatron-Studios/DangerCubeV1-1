@@ -10,7 +10,6 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 	public int moveSpeed = 5;
 	public Rigidbody2D enemyRb2D;
 	public Transform playerPosition;
-	public bool canBeDamaged = true;
 	[Header("Spawn Mechanics")] public float spawnDistance;
 
 	void Start() {
@@ -28,20 +27,17 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 
 	void OnTriggerStay2D(Collider2D other) {
 		IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
-		if (other.CompareTag("Enemy") && canBeDamaged) {
+		if (other.CompareTag("Enemy")) {
 			hit.TakeDamage(damage);
-			StartCoroutine(DamageCo());
-			canBeDamaged = false;
 		}
 	}
-	//
 	public void TakeDamage(int dmgAmount) {
 		currentHealth -= dmgAmount;
-		// if (currentHealth <= 0)
-		// {
-		// 	// isDead == true;
-		// 	// play death animation
-		// }
+		if (currentHealth <= 0) {
+			Debug.Log("You have ceased to be!");
+			// isDead == true;
+			// play death animation
+		}
 	}
 	// public void HealDamage(int healAmount) {
 	// 	currentHealth += healAmount;
@@ -50,12 +46,5 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 	// 		currentHealth = maxHealth;
 	// 	}
 	// }
-	IEnumerator DamageCo() {
-		yield return null;
-		yield return new WaitForSeconds(5f);
-		canBeDamaged = true;
-		Debug.Log("Current health is: " + currentHealth);
-
-	}
 }
 
