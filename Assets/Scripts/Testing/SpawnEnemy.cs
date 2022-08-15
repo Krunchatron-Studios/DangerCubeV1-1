@@ -26,7 +26,7 @@ public class SpawnEnemy : MonoBehaviour
     {
         _playerPosition = GameObject.FindWithTag("Player").transform;
 
-		float distance = _enemy.GetComponent<BaseEnemy>()._spawnDistance;
+		float distance = _enemy.GetComponent<BaseEnemy>().spawnDistance;
 
         float tempX = _playerPosition.position.x;
         float tempY = _playerPosition.position.y;

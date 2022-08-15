@@ -8,13 +8,13 @@ public class FleeingPedestrian : BaseEnemy
 
     void Start()
     {
-        _playerPosition = GameObject.FindWithTag("Player").transform;
+        playerPosition = GameObject.FindWithTag("Player").transform;
         StartCoroutine(SuccessfullyFled());
     }
     public override void MoveTowardsPlayer()
     {
-        Vector3 temp = Vector3.MoveTowards(transform.position, _playerPosition.position, -1 * _speed * Time.deltaTime);
-        _enemyRB.MovePosition(temp);
+        Vector3 temp = Vector3.MoveTowards(transform.position, playerPosition.position, -1 * moveSpeed * Time.deltaTime);
+        enemyRb2D.MovePosition(temp);
     }
     // comment for testing
     private IEnumerator SuccessfullyFled()

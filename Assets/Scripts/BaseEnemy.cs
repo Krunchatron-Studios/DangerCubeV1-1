@@ -3,17 +3,17 @@ using UnityEngine;
 public class BaseEnemy : MonoBehaviour
 {
 	[Header("Enemy Stats")]
-	[SerializeField] private int _healthMax;
-	private int _currentHealth;
-	public int _damage;
-	public int _speed;
-	[Header("Movement Dependencies")]
-	public Rigidbody2D _enemyRB;
-	public Transform _playerPosition;
-	[Header("Spawn Mechanics")] public float _spawnDistance;
+	public int maxHealth = 10;
+	public int currentHealth = 10;
+	public int damage = 1;
+	public int moveSpeed = 5;
+	public Rigidbody2D enemyRb2D;
+	public Transform playerPosition;
+	[Header("Spawn Mechanics")] 
+	public float spawnDistance;
 	void Start()
 	{
-		_playerPosition = GameObject.FindWithTag("Player").transform;
+		playerPosition = GameObject.FindWithTag("Player").transform;
 	}
 	void FixedUpdate()
 	{
@@ -22,8 +22,8 @@ public class BaseEnemy : MonoBehaviour
 
 	public virtual void MoveTowardsPlayer()
 	{
-		Vector3 temp = Vector3.MoveTowards(transform.position, _playerPosition.position, _speed * Time.deltaTime);
-		_enemyRB.MovePosition(temp);
+		Vector3 temp = Vector3.MoveTowards(transform.position, playerPosition.position, moveSpeed * Time.deltaTime);
+		enemyRb2D.MovePosition(temp);
 	}
 	
 	

@@ -17,7 +17,7 @@ public class DealDamage : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D collision)
     {
-        int damage = collision.gameObject.GetComponent<BaseEnemy>()._damage;
+        int damage = collision.gameObject.GetComponent<BaseEnemy>().damage;
         if (collision.CompareTag("Enemy") && _canDamage)
         {
             Debug.Log("This is the current health of the test object in if block: " + _currentHealth);
