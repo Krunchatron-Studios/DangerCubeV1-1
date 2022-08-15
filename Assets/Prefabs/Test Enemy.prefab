@@ -99,12 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebcffe6ad2e94c7f98ad649d7225b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
-  currentHealth: 5
-  damage: 10
-  moveSpeed: 3
+  maxHealth: 2
+  currentHealth: 2
+  damage: 1
+  moveSpeed: 2
   enemyRb2D: {fileID: 4487512288842452643}
-  playerPosition: {fileID: 0}
+  playerPosition: {fileID: 3796742106572517121, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
   spawnDistance: 5
 --- !u!50 &4487512288842452643
 Rigidbody2D:
