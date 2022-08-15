@@ -25,7 +25,7 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 		enemyRb2D.MovePosition(temp);
 	}
 
-	void OnTriggerStay2D(Collider2D other) {
+	void OnTriggerEnter2D(Collider2D other) {
 		IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
 		if (other.CompareTag("Enemy")) {
 			hit.TakeDamage(damage);
@@ -33,6 +33,7 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 	}
 	public void TakeDamage(int dmgAmount) {
 		currentHealth -= dmgAmount;
+		Debug.Log(currentHealth + " is current health");
 		if (currentHealth <= 0) {
 			Debug.Log("You have ceased to be!");
 			// isDead == true;
