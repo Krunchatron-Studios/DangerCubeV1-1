@@ -2,10 +2,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour {
-	// reference to the game manager
 	public static GameManager gm;
 	public static Projectile projectile;
-	public Vector2 mousePosition; // not in use yet
+	public Vector2 mousePosition; 
 	public Vector2 playerPosition;
 
 	public GameObject playerCube;
