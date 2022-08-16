@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc841c1201c4041dd9804e972c909557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 1
   currentHealth: 1
   damage: 1
   moveSpeed: 1
@@ -156,4 +156,5 @@ MonoBehaviour:
   spawnDistance: 2
   drop: {fileID: 5031775301736978691, guid: 96612a408f71d4dcea7c4d6b13ec8e4c, type: 3}
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
+  healthAndShields: {fileID: 11400000, guid: 404bd16f0a52744368f7ba2cc7b117ee, type: 2}
   _safetyTime: 3

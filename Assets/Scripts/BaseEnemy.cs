@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 	[Header("Enemy Stats")] 
-	public int maxHealth = 1;
-	public int currentHealth = 1;
+	public int maxHealth = 10;
+	public int currentHealth = 10;
 	public int damage = 1;
 	public int moveSpeed = 5;
 	public int experienceValue;
@@ -16,8 +16,10 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 	[Header("Enemy Drop")] 
 	public GameObject drop;
 
-	[Header("Player Resource Manager")] 
+	[Header("Player Manager")] 
 	public PlayerResources playerResources;
+
+	public PlayerHealthAndShields healthAndShields;
 
 	void Start() {
 		playerPosition = GameObject.FindWithTag("Player").transform;
