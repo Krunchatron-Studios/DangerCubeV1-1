@@ -8,4 +8,5 @@ public class PlayerResources : ScriptableObject {
     public int metal;
     public int silicate;
     public int experience;
+    public int collectionRange;
 }

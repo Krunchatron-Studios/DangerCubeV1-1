@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3136071779676470157}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.9008274, y: -6.9900017, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -103,13 +103,14 @@ MonoBehaviour:
   maxHealth: 3
   currentHealth: 3
   damage: 1
-  moveSpeed: 5
+  moveSpeed: 3
   experienceValue: 20
   enemyRb2D: {fileID: 2008833507525818049}
   playerPosition: {fileID: 0}
   spawnDistance: 6
   drop: {fileID: 7611086095773957346, guid: 1c96af257f4a44dbeb63708b4fb57c11, type: 3}
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
+  healthAndShields: {fileID: 11400000, guid: 404bd16f0a52744368f7ba2cc7b117ee, type: 2}
   kiteDistance: 4
   enemyPosition: {fileID: 843820093244178089}
 --- !u!50 &2008833507525818049

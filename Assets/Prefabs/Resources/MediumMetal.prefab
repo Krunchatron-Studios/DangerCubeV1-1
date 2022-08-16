@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3012611300165690601}
   - component: {fileID: 8664196045892680059}
   - component: {fileID: -5907045334603635400}
+  - component: {fileID: 3356573455310882395}
   m_Layer: 11
   m_Name: MediumMetal
-  m_TagString: Metal
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,4 +116,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 5
+  type: Metal
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
+  resourcePosition: {fileID: 0}
+  playerPosition: {fileID: 0}
+  resourceRb2D: {fileID: 3356573455310882395}
+  moveSpeed: 3
+--- !u!50 &3356573455310882395
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7975302156767590476}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
