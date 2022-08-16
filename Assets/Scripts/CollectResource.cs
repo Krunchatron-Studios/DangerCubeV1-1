@@ -6,7 +6,7 @@ public class CollectResource : MonoBehaviour {
 
     public int value = 2;
     public PlayerResources playerResources;
-    // void Start() {
+    // void Awake() {
     //     playerResources.bioGoo = 0;
     //     playerResources.metal = 0;
     //     playerResources.silicate = 0;
