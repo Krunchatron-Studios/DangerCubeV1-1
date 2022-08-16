@@ -16,6 +16,6 @@ public class EFleeingPedestrian : BaseEnemy {
     private IEnumerator SuccessfullyFled() {
         yield return null;
         yield return new WaitForSeconds(_safetyTime);
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }
