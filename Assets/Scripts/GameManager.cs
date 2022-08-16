@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour {
 	public GameObject playerCube;
 	public static PlayerMovement playerMove;
 	public static MainCamera mainCam;
+	
+	[Header("Player Scriptables")]
+	public PlayerResources resources;
+	public PlayerHealthAndShields healthAndShields;
 
 	private void Update() {
 		mousePosition = Mouse.current.position.ReadValue();

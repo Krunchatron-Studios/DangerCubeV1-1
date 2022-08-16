@@ -6,11 +6,18 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 	public int currentHealth = 10;
 	public int damage = 1;
 	public int moveSpeed = 5;
+	public int experienceValue;
 	public Rigidbody2D enemyRb2D;
 	public Transform playerPosition;
 	
 	[Header("Spawn Mechanics")] 
 	public float spawnDistance;
+
+	[Header("Enemy Drop")] 
+	public GameObject drop;
+
+	[Header("Player Resource Manager")] 
+	public PlayerResources playerResources;
 
 	void Start() {
 		playerPosition = GameObject.FindWithTag("Player").transform;
@@ -18,30 +25,27 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 	void FixedUpdate() {
 		MoveTowardsPlayer();
 	}
-
+// testing
 	public virtual void MoveTowardsPlayer() {
 		Vector3 temp = Vector3.MoveTowards(transform.position, playerPosition.position, moveSpeed * Time.deltaTime);
 		enemyRb2D.MovePosition(temp);
 	}
-
 	void OnTriggerEnter2D(Collider2D other) {
 		IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
-		Debug.Log(other.gameObject.name);
-		if (other.CompareTag("Enemy")) {
+		if (other.CompareTag("Projectile")) {
 			hit.TakeDamage(damage);
 		}
 	}
-
 	public void TakeDamage(int dmgAmount) {
 		currentHealth -= dmgAmount;
-		Debug.Log("Current health is: " + currentHealth);
 		if (currentHealth <= 0) {
+			playerResources.experience += experienceValue;
 			// isDead == true;
 			// play death animation
+			Instantiate(drop, transform.position, Quaternion.identity);
 			Destroy(gameObject);
 		}
 	}
-
 	public void HealDamage(int healAmount) {
 		currentHealth += healAmount;
 		// play some animation of healing
