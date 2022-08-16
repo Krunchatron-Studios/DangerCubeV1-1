@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
 	[Header("Player Scriptables")]
 	public PlayerResources resources;
 	public PlayerHealthAndShields healthAndShields;
-
+	
 	private void Update() {
 		mousePosition = Mouse.current.position.ReadValue();
 		playerPosition = playerCube.transform.position;

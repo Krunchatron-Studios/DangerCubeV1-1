@@ -20,15 +20,12 @@ public class CollectResource : MonoBehaviour {
         // playerResources.silicate = 0;
         // playerResources.experience = 0;
     }
-
     private void FixedUpdate() {
         AbsorbResources();
     }
-
     void AbsorbResources() {
         float distance = Vector3.Distance(_resourcePosition.position, _playerPosition.position);
         if (distance <= playerResources.collectionRange) {
-            Debug.Log("Absorbing resources!");
             Vector3 temp = Vector3.MoveTowards(_resourcePosition.position, _playerPosition.position, moveSpeed * Time.deltaTime);
             resourceRb2D.MovePosition(temp);
         }
@@ -44,6 +41,5 @@ public class CollectResource : MonoBehaviour {
             playerResources.silicate += value;
             Destroy(this.gameObject);
         }
-       
     }
 }

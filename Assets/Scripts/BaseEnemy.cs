@@ -16,8 +16,10 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 	[Header("Enemy Drop")] 
 	public GameObject drop;
 
-	[Header("Player Resource Manager")] 
+	[Header("Player Manager")] 
 	public PlayerResources playerResources;
+
+	public PlayerHealthAndShields healthAndShields;
 
 	void Start() {
 		playerPosition = GameObject.FindWithTag("Player").transform;
@@ -34,6 +36,8 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 		IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
 		if (other.CompareTag("Projectile")) {
 			hit.TakeDamage(damage);
+		} else if (other.CompareTag("Player")) {
+			DealDamage(damage);
 		}
 	}
 	public void TakeDamage(int dmgAmount) {
@@ -44,6 +48,17 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 			// play death animation
 			Instantiate(drop, transform.position, Quaternion.identity);
 			Destroy(gameObject);
+		}
+	}
+	public void DealDamage(int damageAmount) {
+		Debug.Log("In the damage dealer");
+		if (healthAndShields.playerShieldsCurrent > 0) {
+			healthAndShields.playerShieldsCurrent -= damageAmount;
+		} else if (healthAndShields.playerHealthCurrent > 0) {
+			healthAndShields.playerHealthCurrent -= damageAmount;
+		} else if (healthAndShields.playerHealthCurrent <= 0) {
+			//change reference to player object
+			// Destroy(this.gameObject);
 		}
 	}
 	public void HealDamage(int healAmount) {
