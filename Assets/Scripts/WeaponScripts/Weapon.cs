@@ -15,7 +15,7 @@ public class Weapon : MonoBehaviour {
 	
 	[Header("Projectile Vars")]
 	public GameObject firePoint1, firePoint2, firePoint3, firePoint4;
-	public Projectile projectile;
+	public Transform projectile;
 	public Vector2 enemyTarget;
 	
 	[Header("Upgrade Related")]
@@ -25,23 +25,23 @@ public class Weapon : MonoBehaviour {
 	private void FixedUpdate() {
 		CanFireTimer();
 	}
-	public void FireWeapon() {
-		Projectile bullet = Instantiate(projectile, firePoint1.transform.position, Quaternion.identity);
-		Rigidbody2D bulletRb2D = bullet.GetComponent<Rigidbody2D>();
-		bullet.MoveProjectile(bulletRb2D);
+	public void FireWeapon(Vector3 firePoint, Vector3 targetPosition) {
+		Transform bulletTransform = Instantiate(projectile, firePoint, Quaternion.identity);
+		Projectile bullet = bulletTransform.GetComponent<Projectile>();
+		bullet.Setup(targetPosition);
 		_nextFire = Time.time + rateOfFire;
+		bullet.MoveProjectile();
 	}
 
 	public void CanFireTimer() {
 		_canFire = false;
 		if (Time.time > _nextFire) {
 			_canFire = true;
-			FireWeapon();
+			FireWeapon(firePoint1.transform.position, enemyTarget);
 		}
 	}
 
 	public void AquireTarget(BaseEnemy enemy) {
 		enemyTarget = enemy.transform.position;
-		Debug.Log("target enemy" + enemyTarget);
 	}
 }

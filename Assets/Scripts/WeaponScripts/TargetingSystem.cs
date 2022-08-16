@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class TargetingSystem : MonoBehaviour {
@@ -10,7 +9,6 @@ public class TargetingSystem : MonoBehaviour {
 
 	private void Start() {
 		_sensorRange = weapon.weaponRange;
-		Debug.Log(_sensorRange + "sensor range");
 	}
 
 	private void Update() {
