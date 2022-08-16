@@ -14,21 +14,13 @@ public class TargetingSystem : MonoBehaviour {
 	}
 
 	private void Update() {
-		Collider2D[] colliderArray = Physics2D.OverlapCircleAll(transform.position, _sensorRange);
-		foreach (Collider2D collider2D in colliderArray) {
-			if (collider2D.TryGetComponent<BaseEnemy>(out BaseEnemy enemy)) {
-				weapon.AquireTarget(enemy);
-				Debug.Log(enemy);
-			}
-		}
+		ScanForTargets();
 	}
-
 	private void ScanForTargets() {
 		Collider2D[] colliderArray = Physics2D.OverlapCircleAll(transform.position, _sensorRange);
 	    foreach (Collider2D col in colliderArray) {
 	        if (col.TryGetComponent<BaseEnemy>(out BaseEnemy enemy)) {
         		weapon.AquireTarget(enemy);
-        		Debug.Log(enemy);
 	        }
 	    }
 	}

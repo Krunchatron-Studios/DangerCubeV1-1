@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1655789376720695906}
   - component: {fileID: 2576749402811358335}
   - component: {fileID: 924206450}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: GenericProjectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileVelocity: 1
-  maxVelocity: 50
   weapon: {fileID: 348814070462023696, guid: ba63be8833f2b5d44a70bd02c1a85a99, type: 3}
   projectileRb2D: {fileID: 2576749402811358335}
 --- !u!50 &2576749402811358335

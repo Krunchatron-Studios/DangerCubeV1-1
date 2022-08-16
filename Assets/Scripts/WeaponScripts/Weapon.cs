@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Weapon : MonoBehaviour {
 	
@@ -10,9 +9,9 @@ public class Weapon : MonoBehaviour {
 	
 	[Header("Firing Vars")]
 	public int weaponLevel = 1;
-	public int rateOfFire = 50;
+	public float rateOfFire = 1.0f;
 	private bool _canFire = true;
-	private int _canFireTimer = 0;
+	private float _nextFire;
 	
 	[Header("Projectile Vars")]
 	public GameObject firePoint1, firePoint2, firePoint3, firePoint4;
@@ -24,30 +23,25 @@ public class Weapon : MonoBehaviour {
 	public TargetingSystem targetingSys;
 
 	private void FixedUpdate() {
-		if (_canFire) {
-			FireWeapon();
-		} 
-		CanFireTimer();	
-		
+		CanFireTimer();
 	}
 	public void FireWeapon() {
-		_canFire = false;
 		Projectile bullet = Instantiate(projectile, firePoint1.transform.position, Quaternion.identity);
 		Rigidbody2D bulletRb2D = bullet.GetComponent<Rigidbody2D>();
 		bullet.MoveProjectile(bulletRb2D);
+		_nextFire = Time.time + rateOfFire;
 	}
 
 	public void CanFireTimer() {
-		_canFireTimer++;
-		if (_canFireTimer < rateOfFire) {
-			_canFire = false;
-		}
-		if (_canFireTimer >= rateOfFire) {
+		_canFire = false;
+		if (Time.time > _nextFire) {
 			_canFire = true;
+			FireWeapon();
 		}
 	}
 
 	public void AquireTarget(BaseEnemy enemy) {
 		enemyTarget = enemy.transform.position;
+		Debug.Log("target enemy" + enemyTarget);
 	}
 }

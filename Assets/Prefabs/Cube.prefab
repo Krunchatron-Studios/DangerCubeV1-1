@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 153135986}
   m_Layer: 0
-  m_Name: FiringPoint
+  m_Name: EyeFiringPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,7 +107,7 @@ Transform:
   m_GameObject: {fileID: 3796742106572517123}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9628, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 153135986}
@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRb2D: {fileID: 3796742106572517135}
+  moveInput: {x: 0, y: 0}
   moveSpeed: 5
 --- !u!212 &3796742106572517122
 SpriteRenderer:
@@ -273,6 +274,10 @@ PrefabInstance:
       propertyPath: projectile
       value: 
       objectReference: {fileID: 1655789376720695906, guid: 47ede0959822f854994d4baea34e962b, type: 3}
+    - target: {fileID: 348814070462023696, guid: ba63be8833f2b5d44a70bd02c1a85a99, type: 3}
+      propertyPath: targetingSys
+      value: 
+      objectReference: {fileID: 6972906952839251205}
     - target: {fileID: 348814070462023697, guid: ba63be8833f2b5d44a70bd02c1a85a99, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -324,3 +329,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 348814070462023697, guid: ba63be8833f2b5d44a70bd02c1a85a99, type: 3}
   m_PrefabInstance: {fileID: 4755751193599034149}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6972906952839251205 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2394630147283715616, guid: ba63be8833f2b5d44a70bd02c1a85a99, type: 3}
+  m_PrefabInstance: {fileID: 4755751193599034149}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c69085917c9b360458cf947f8c03be4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
