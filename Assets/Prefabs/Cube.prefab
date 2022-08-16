@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 3796742106572517135}
   - component: {fileID: 3796742106572517120}
   - component: {fileID: 3796742106572517133}
+  - component: {fileID: 4566177178619488312}
   m_Layer: 9
   m_Name: Cube
   m_TagString: Player
@@ -308,6 +309,19 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &4566177178619488312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3796742106572517123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5aef7cb0301437fba6ba22b2d44a02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthAndShields: {fileID: 11400000, guid: 404bd16f0a52744368f7ba2cc7b117ee, type: 2}
 --- !u!1001 &4755751193599034149
 PrefabInstance:
   m_ObjectHideFlags: 0

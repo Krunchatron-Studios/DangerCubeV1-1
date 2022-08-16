@@ -15,13 +15,12 @@ public class CollectResource : MonoBehaviour {
     void Awake() {
         _resourcePosition = GameObject.FindWithTag("Item").transform;
         _playerPosition = GameObject.FindWithTag("Player").transform;
-        // playerResources.bioGoo = 0;
-        // playerResources.metal = 0;
-        // playerResources.silicate = 0;
-        // playerResources.experience = 0;
     }
     private void FixedUpdate() {
         AbsorbResources();
+        _playerPosition = GameObject.FindWithTag("Player").transform;
+        _resourcePosition = GameObject.FindWithTag("Item").transform;
+
     }
     void AbsorbResources() {
         float distance = Vector3.Distance(_resourcePosition.position, _playerPosition.position);

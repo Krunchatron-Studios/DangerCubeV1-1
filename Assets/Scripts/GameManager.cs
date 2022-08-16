@@ -14,7 +14,14 @@ public class GameManager : MonoBehaviour {
 	[Header("Player Scriptables")]
 	public PlayerResources resources;
 	public PlayerHealthAndShields healthAndShields;
-	
+	private void Start() {
+		resources.experience = 0;
+		resources.metal = 0;
+		resources.bioGoo = 0;
+		resources.silicate = 0;
+		healthAndShields.playerHealthCurrent = healthAndShields.playerHealthMax;
+		healthAndShields.playerShieldsCurrent = healthAndShields.playerShieldsMax;
+	}
 	private void Update() {
 		mousePosition = Mouse.current.position.ReadValue();
 		playerPosition = playerCube.transform.position;
