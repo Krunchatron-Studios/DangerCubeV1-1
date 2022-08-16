@@ -25,7 +25,7 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 	void FixedUpdate() {
 		MoveTowardsPlayer();
 	}
-
+// testing
 	public virtual void MoveTowardsPlayer() {
 		Vector3 temp = Vector3.MoveTowards(transform.position, playerPosition.position, moveSpeed * Time.deltaTime);
 		enemyRb2D.MovePosition(temp);
