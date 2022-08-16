@@ -6,6 +6,7 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 	public int currentHealth = 10;
 	public int damage = 1;
 	public int moveSpeed = 5;
+	public int experienceValue;
 	public Rigidbody2D enemyRb2D;
 	public Transform playerPosition;
 	
@@ -14,6 +15,9 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 
 	[Header("Enemy Drop")] 
 	public GameObject drop;
+
+	[Header("Player Resource Manager")] 
+	public PlayerResources playerResources;
 
 	void Start() {
 		playerPosition = GameObject.FindWithTag("Player").transform;
@@ -32,9 +36,10 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 			hit.TakeDamage(damage);
 		}
 	}
-	public virtual void TakeDamage(int dmgAmount) {
+	public void TakeDamage(int dmgAmount) {
 		currentHealth -= dmgAmount;
 		if (currentHealth <= 0) {
+			playerResources.experience += experienceValue;
 			// isDead == true;
 			// play death animation
 			Instantiate(drop, transform.position, Quaternion.identity);
