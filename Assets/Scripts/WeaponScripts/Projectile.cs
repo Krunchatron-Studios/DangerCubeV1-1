@@ -5,7 +5,7 @@ public class Projectile : MonoBehaviour {
 	public int projectileVelocity = 5;
 	public Weapon weapon;
 	public Rigidbody2D projectileRb2D;
-	private void Update() {
+	private void FixedUpdate() {
 		MoveProjectile(projectileRb2D);
 	}
 
@@ -25,15 +25,14 @@ public class Projectile : MonoBehaviour {
 			hit.TakeDamage(weapon.weaponDamage);
 			Destroy(gameObject);
 		}
-
 		if (other.CompareTag("Wall")) {
 			Destroy(gameObject);
 		}
 	}
 
 	public void MoveProjectile() {
-		Vector3 temp = Vector3.MoveTowards(weapon.firePoint1.transform.position, GameManager.gm.mousePosition, projectileVelocity * Time.deltaTime);
-		Debug.Log("Mouse Position: " + GameManager.gm.mousePosition);
+		Vector3 temp = Vector3.MoveTowards(weapon.firePoint1.transform.position, weapon.enemyTarget, projectileVelocity * Time.deltaTime);
+		
 		projectileRb2D.MovePosition(temp);
 	}
 }
