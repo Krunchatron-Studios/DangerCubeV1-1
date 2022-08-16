@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1790448598496682871}
   - component: {fileID: -1426795155585584361}
   - component: {fileID: 5528286130113218048}
+  - component: {fileID: -1567092818674838217}
   m_Layer: 11
   m_Name: MediumBioGoo
-  m_TagString: BioGoo
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,5 +115,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b476ac8ab7b944a99993d67f0be57e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 2
+  value: 5
+  type: BioGoo
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
+  resourcePosition: {fileID: 0}
+  playerPosition: {fileID: 0}
+  resourceRb2D: {fileID: -1567092818674838217}
+  moveSpeed: 3
+--- !u!50 &-1567092818674838217
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2158497245072982924}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
