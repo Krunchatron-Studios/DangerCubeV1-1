@@ -8,9 +8,4 @@ public class PlayerHealthAndShields : ScriptableObject {
     public int playerShieldsCurrent;
     public int playerHealthMax;
     public int playerHealthCurrent;
-
-    void Start() {
-        playerShieldsCurrent = playerShieldsMax;
-        playerHealthCurrent = playerHealthMax;
-    }
 }
