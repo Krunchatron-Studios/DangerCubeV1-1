@@ -12,18 +12,18 @@ public class CollectResource : MonoBehaviour {
     private Transform _resourcePosition;
     private Transform _playerPosition;
     private readonly int moveSpeed = 3;
+    private float distance;
     void Awake() {
         _resourcePosition = GameObject.FindWithTag("Item").transform;
         _playerPosition = GameObject.FindWithTag("Player").transform;
     }
     private void FixedUpdate() {
-        AbsorbResources();
         _playerPosition = GameObject.FindWithTag("Player").transform;
         _resourcePosition = GameObject.FindWithTag("Item").transform;
-
+        AbsorbResources();
     }
     void AbsorbResources() {
-        float distance = Vector3.Distance(_resourcePosition.position, _playerPosition.position);
+        distance = Vector3.Distance(_resourcePosition.position, _playerPosition.position);
         if (distance <= playerResources.collectionRange) {
             Vector3 temp = Vector3.MoveTowards(_resourcePosition.position, _playerPosition.position, moveSpeed * Time.deltaTime);
             resourceRb2D.MovePosition(temp);
@@ -41,4 +41,5 @@ public class CollectResource : MonoBehaviour {
             Destroy(this.gameObject);
         }
     }
+
 }

@@ -5,21 +5,22 @@ public class Laser : MonoBehaviour {
 
 	private LineRenderer _lineRenderer;
 	public Transform playerCube;
-	private float _laserRange = 4.5f;
+	private float _laserRange = 3.5f;
 	public GameObject laserHit;
 	private LayerMask _hitMask;
-	private Vector2 _fireLeft;
-	private Vector2 _fireRight;
+	private Vector2 direction;
+
 	void Start() {
-		_fireLeft = new Vector2(-1f, -.15f);
-		_fireRight = new Vector2(1f, -.15f);
+		direction = new Vector2(1f, -.15f);
 		_lineRenderer = GetComponent<LineRenderer>();
 		_hitMask = LayerMask.GetMask("Enemy");
 	}
 	private void Update() {
-		FireLaserLogic();
+		direction.x = playerCube.transform.localScale.x;
+		FireLaser(direction);
 	}
 
+	// ReSharper disable Unity.PerformanceAnalysis
 	public void FireLaser(Vector2 dir) {
 		
 		if (Keyboard.current.spaceKey.isPressed) {
@@ -33,9 +34,9 @@ public class Laser : MonoBehaviour {
 			} else {
 				_lineRenderer.SetPosition(1, laserHit.transform.position);
 			}
-
-			IDmgAndHpInterface enemyHit = hit.collider.GetComponent<IDmgAndHpInterface>();
+			
 			if (hit.collider.CompareTag("Enemy")) {
+				IDmgAndHpInterface enemyHit = hit.collider.GetComponent<IDmgAndHpInterface>();
 				enemyHit.TakeDamage(0.05f);
 			}
 		} else {
@@ -43,14 +44,5 @@ public class Laser : MonoBehaviour {
 		}
 
 	}
-
-	public void FireLaserLogic() {
-		if (playerCube.transform.localScale.x < 0) {
-			FireLaser(_fireLeft);
-		}
-
-		if (playerCube.transform.localScale.x > 0) {
-			FireLaser(_fireRight);
-		}
-	}
+	
 }

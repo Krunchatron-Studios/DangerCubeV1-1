@@ -102,16 +102,13 @@ MonoBehaviour:
   weaponRange: 3
   weaponLevel: 1
   rateOfFire: 2
-  _canFire: 1
-  _nextFire: 3
+  canFire: 1
+  nextFire: 0
   firePoint1: {fileID: 0}
   firePoint2: {fileID: 0}
   firePoint3: {fileID: 0}
   firePoint4: {fileID: 0}
-  projectile: {fileID: 0}
+  projectile: {fileID: 6588101289259591081, guid: b872d41b887444baf9dc0a13b49ba79f, type: 3}
   enemyTarget: {x: 0, y: 0}
   weaponUpgrades: []
   targetingSys: {fileID: 0}
-  _beamMask:
-    serializedVersion: 2
-    m_Bits: 1024
