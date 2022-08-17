@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class OrbitalLaser : Weapon {
     private Transform _playerPosition;
-
     private void FixedUpdate() {
         CanFireTimer();
         _playerPosition = GameObject.FindWithTag("Player").transform;
@@ -19,6 +18,14 @@ public class OrbitalLaser : Weapon {
         Projectile bullet = bulletTransform.GetComponent<Projectile>();
         bullet.Setup(targetPosition);
         _nextFire = Time.time + rateOfFire;
-        bullet.MoveProjectile();
+        // bullet.MoveProjectile();
+        BeamGrow(targetPosition);
+    }
+
+    public void BeamGrow(Vector3 targetPosition) {
+        float distance = Vector3.Distance(projectile.position, targetPosition);
+        Debug.Log("This is the distance: " + distance);
+        float scaleY = this.transform.localScale.y;
+        scaleY = distance;
     }
 }
