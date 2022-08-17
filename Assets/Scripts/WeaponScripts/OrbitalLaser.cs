@@ -34,7 +34,7 @@ public class OrbitalLaser : Weapon {
 
         Projectile bullet = bulletTransform.GetComponent<Projectile>();
         bullet.Setup(_enemyPosition);
-        _nextFire = Time.time + rateOfFire;
+        nextFire = Time.time + rateOfFire;
     }
 
     public async void GrowBeam(Transform bulletTransform, float difference) {
