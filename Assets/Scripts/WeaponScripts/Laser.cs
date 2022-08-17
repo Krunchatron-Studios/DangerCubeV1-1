@@ -17,7 +17,7 @@ public class Laser : MonoBehaviour {
 		_hitMask = LayerMask.GetMask("Enemy");
 	}
 	private void Update() {
-		FireDirection();
+		FireLaserLogic();
 	}
 
 	public void FireLaser(Vector2 dir) {
@@ -44,7 +44,7 @@ public class Laser : MonoBehaviour {
 
 	}
 
-	public void FireDirection() {
+	public void FireLaserLogic() {
 		if (playerCube.transform.localScale.x < 0) {
 			FireLaser(_fireLeft);
 		}
