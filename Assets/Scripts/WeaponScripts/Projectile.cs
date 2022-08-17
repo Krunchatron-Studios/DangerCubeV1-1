@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour {
 	public int projectileVelocity = 10;
 	public Weapon weapon;
 	public Rigidbody2D projectileRb2D;
-	private Vector3 targetPosition;
+	public Vector3 targetPosition;
 
 	void OnTriggerEnter2D(Collider2D other) {
 		ResolveProjectile(other);
