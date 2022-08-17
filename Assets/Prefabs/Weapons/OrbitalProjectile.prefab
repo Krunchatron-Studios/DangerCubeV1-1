@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5545845934729481508}
   - component: {fileID: 7999553908637812204}
   - component: {fileID: -1059615664649732427}
+  - component: {fileID: 2385321311771655144}
   m_Layer: 0
   m_Name: OrbitalProjectile
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2094991513058003541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.1853, y: -1.6529, z: 0}
-  m_LocalScale: {x: 0.1323, y: 0, z: 1}
+  m_LocalScale: {x: 0.1323, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -150,3 +151,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.04093063}
   m_EdgeRadius: 0
+--- !u!58 &2385321311771655144
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094991513058003541}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.92202246}
+  serializedVersion: 2
+  m_Radius: 0.5
