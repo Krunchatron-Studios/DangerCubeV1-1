@@ -26,4 +26,11 @@ public class GameManager : MonoBehaviour {
 		mousePosition = Mouse.current.position.ReadValue();
 		playerPosition = playerCube.transform.position;
 	}
+	
+	private void LookAtMouse() {
+		Vector3 mousePosition = Mouse.current.position.ReadValue();
+		Vector2 fireDirection = mousePosition - transform.position;
+		float angle = Vector2.SignedAngle(Vector2.right, fireDirection);
+		transform.eulerAngles = new Vector3(0, 0, angle);
+	}
 }
