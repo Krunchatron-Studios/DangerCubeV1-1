@@ -10,8 +10,8 @@ public class Weapon : MonoBehaviour {
 	[Header("Firing Vars")]
 	public int weaponLevel = 1;
 	public float rateOfFire = 1.0f;
-	private bool _canFire = true;
-	private float _nextFire;
+	public bool _canFire = true;
+	public float _nextFire;
 	
 	[Header("Projectile Vars")]
 	public GameObject firePoint1, firePoint2, firePoint3, firePoint4;
@@ -25,7 +25,7 @@ public class Weapon : MonoBehaviour {
 	private void FixedUpdate() {
 		CanFireTimer();
 	}
-	public void FireWeapon(Vector3 firePoint, Vector3 targetPosition) {
+	public virtual void FireWeapon(Vector3 firePoint, Vector3 targetPosition) {
 		Transform bulletTransform = Instantiate(projectile, firePoint, Quaternion.identity);
 		Projectile bullet = bulletTransform.GetComponent<Projectile>();
 		bullet.Setup(targetPosition);
