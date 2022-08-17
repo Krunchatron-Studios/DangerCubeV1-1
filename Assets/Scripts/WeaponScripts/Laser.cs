@@ -8,22 +8,16 @@ public class Laser : MonoBehaviour {
 	private float _laserRange = 4.5f;
 	public GameObject laserHit;
 	private LayerMask _hitMask;
-	private Vector2 fireLeft;
-	private Vector2 fireRight;
+	private Vector2 _fireLeft;
+	private Vector2 _fireRight;
 	void Start() {
-		fireLeft = new Vector2(-1f, -.15f);
-		fireRight = new Vector2(1f, -.15f);
+		_fireLeft = new Vector2(-1f, -.15f);
+		_fireRight = new Vector2(1f, -.15f);
 		_lineRenderer = GetComponent<LineRenderer>();
 		_hitMask = LayerMask.GetMask("Enemy");
 	}
 	private void Update() {
-		if (playerCube.transform.localScale.x < 0) {
-			FireLaser(fireLeft);
-		}
-
-		if (playerCube.transform.localScale.x > 0) {
-			FireLaser(fireRight);
-		}
+		FireDirection();
 	}
 
 	public void FireLaser(Vector2 dir) {
@@ -42,7 +36,7 @@ public class Laser : MonoBehaviour {
 
 			IDmgAndHpInterface enemyHit = hit.collider.GetComponent<IDmgAndHpInterface>();
 			if (hit.collider.CompareTag("Enemy")) {
-				enemyHit.TakeDamage(3);
+				enemyHit.TakeDamage(0.05f);
 			}
 		} else {
 			_lineRenderer.enabled = false;
@@ -50,5 +44,13 @@ public class Laser : MonoBehaviour {
 
 	}
 
+	public void FireDirection() {
+		if (playerCube.transform.localScale.x < 0) {
+			FireLaser(_fireLeft);
+		}
 
+		if (playerCube.transform.localScale.x > 0) {
+			FireLaser(_fireRight);
+		}
+	}
 }
