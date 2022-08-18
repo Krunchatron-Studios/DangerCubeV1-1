@@ -5,25 +5,19 @@ public class Laser : MonoBehaviour {
 
 	private LineRenderer _lineRenderer;
 	public Transform playerCube;
-	private float _laserRange = 4.5f;
+	private readonly float _laserRange = 3.5f;
 	public GameObject laserHit;
 	private LayerMask _hitMask;
-	private Vector2 fireLeft;
-	private Vector2 fireRight;
+	private Vector2 _direction;
+
 	void Start() {
-		fireLeft = new Vector2(-1f, -.15f);
-		fireRight = new Vector2(1f, -.15f);
+		_direction = new Vector2(1f, -.15f);
 		_lineRenderer = GetComponent<LineRenderer>();
 		_hitMask = LayerMask.GetMask("Enemy");
 	}
 	private void Update() {
-		if (playerCube.transform.localScale.x < 0) {
-			FireLaser(fireLeft);
-		}
-
-		if (playerCube.transform.localScale.x > 0) {
-			FireLaser(fireRight);
-		}
+		_direction.x = playerCube.transform.localScale.x;
+		FireLaser(_direction);
 	}
 
 	public void FireLaser(Vector2 dir) {
@@ -31,24 +25,27 @@ public class Laser : MonoBehaviour {
 		if (Keyboard.current.spaceKey.isPressed) {
 			_lineRenderer.enabled = true;
 
-			RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, _laserRange, _hitMask);
-
-			_lineRenderer.SetPosition(0, transform.position);
+			var position = transform.position;
+			RaycastHit2D hit = Physics2D.Raycast(position, dir, _laserRange, _hitMask);
+			_lineRenderer.SetPosition(0, position);
+			
 			if (hit && hit.distance < _laserRange) {
 				_lineRenderer.SetPosition(1, hit.point);
 			} else {
 				_lineRenderer.SetPosition(1, laserHit.transform.position);
 			}
-
-			IDmgAndHpInterface enemyHit = hit.collider.GetComponent<IDmgAndHpInterface>();
-			if (hit.collider.CompareTag("Enemy")) {
-				enemyHit.TakeDamage(3);
+			
+			if (hit) {
+				if (hit.transform.CompareTag("Enemy")) {
+					IDmgAndHpInterface enemyHit = hit.collider.GetComponent<IDmgAndHpInterface>();
+					enemyHit.TakeDamage(0.05f);
+					Debug.Log(enemyHit.ToString());
+				}
 			}
 		} else {
 			_lineRenderer.enabled = false;
 		}
 
 	}
-
-
+	
 }

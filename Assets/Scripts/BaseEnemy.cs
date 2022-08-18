@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 	[Header("Enemy Stats")] 
-	public int maxHealth = 10;
-	public int currentHealth = 10;
-	public int damage = 1;
-	public int moveSpeed = 5;
+	public float maxHealth = 10f;
+	public float currentHealth = 10f;
+	public float damage = 1f;
+	public float moveSpeed = 5f;
 	public int experienceValue;
 	public Rigidbody2D enemyRb2D;
 	public Transform playerPosition;
@@ -37,7 +37,7 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 			hit.TakeDamage(damage);
 		}
 	}
-	public void TakeDamage(int dmgAmount) {
+	public void TakeDamage(float dmgAmount) {
 		currentHealth -= dmgAmount;
 		if (currentHealth <= 0) {
 			playerResources.experience += experienceValue;
