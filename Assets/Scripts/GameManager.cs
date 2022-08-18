@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour {
 	[Header("Player Scriptables")]
 	public PlayerResources resources;
 	public PlayerHealthAndShields healthAndShields;
+	public int bioGoo;
+	
 	private void Start() {
 		resources.experience = 0;
 		resources.metal = 0;
@@ -24,7 +26,10 @@ public class GameManager : MonoBehaviour {
 	}
 	private void Update() {
 		mousePosition = Mouse.current.position.ReadValue();
-		playerPosition = playerCube.transform.position;
+		playerPosition = playerCube.transform.position;		
+		bioGoo = resources.bioGoo;
+
+		
 	}
 	
 	private void LookAtMouse() {
