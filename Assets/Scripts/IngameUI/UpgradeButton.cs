@@ -14,11 +14,10 @@ public class UpgradeButton : MonoBehaviour {
 	}
 	
 	public void GenerateUpgrade() {
-		var randomUpgradeIndex= Random.Range(0, lvlPanel.referenceWeaponsArray.Length - 1);
+		var randomUpgradeIndex= Random.Range(0, lvlPanel.referenceWeaponsArray.Length);
 		upgradeName = lvlPanel.referenceWeaponsArray[randomUpgradeIndex].weaponName;
 		UpdateLevelUpPanel();
 	}
-	
 	public void UpdateLevelUpPanel() {
 		
 			for (int j = 0; j < lvlPanel.referenceWeaponsArray.Length; j++) {
@@ -30,5 +29,9 @@ public class UpgradeButton : MonoBehaviour {
 				}
 			}
 		
+	}
+
+	public void SelectUpgrade() {
+		lvlPanel.gameObject.SetActive(false);
 	}
 }
