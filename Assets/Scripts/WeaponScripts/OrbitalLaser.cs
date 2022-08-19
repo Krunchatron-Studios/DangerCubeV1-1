@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 
 public class OrbitalLaser : Weapon {
@@ -30,20 +29,20 @@ public class OrbitalLaser : Weapon {
         Transform bulletTransform = Instantiate(projectile, new Vector3(startX, 50, 0), Quaternion.identity);
         float difference = bulletTransform.position.y + _enemyPosition.y;
 
-        GrowBeam(bulletTransform, difference);
-
+        StartCoroutine(BeamCo(bulletTransform));
+        
         Projectile bullet = bulletTransform.GetComponent<Projectile>();
         bullet.Setup(_enemyPosition);
         nextFire = Time.time + rateOfFire;
     }
-
-    public async void GrowBeam(Transform bulletTransform, float difference) {
-        float currentValue = 0;
-        while (bulletTransform.localScale.y < difference) {
-            // Debug.Log(currentValue);
-            currentValue += 1;
-            bulletTransform.localScale = new Vector3((float)2, (float)currentValue, 1);
-            await Task.Delay(5);
+    IEnumerator BeamCo(Transform bulletTransform) {
+        int lerpMax = 2;
+        float time = 0;
+        while (time < lerpMax) {
+            bulletTransform.localScale = new Vector3(2, Mathf.Lerp(50, _enemyPosition.y, time / lerpMax), 0);
+            time += Time.deltaTime;
+            yield return null;
         }
+        Destroy(bulletTransform.gameObject);
     }
 }
