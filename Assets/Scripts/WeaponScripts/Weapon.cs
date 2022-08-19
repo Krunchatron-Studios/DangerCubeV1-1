@@ -23,7 +23,7 @@ public class Weapon : MonoBehaviour {
 	public float nextFire;
 	
 	[Header("Projectile Vars")]
-	public GameObject firePoint1, firePoint2, firePoint3, firePoint4;
+	public GameObject[] firePointArray;
 	public Transform projectile;
 	public Vector2 enemyTarget;
 	
@@ -52,7 +52,12 @@ public class Weapon : MonoBehaviour {
 		canFire = false;
 		if (Time.time > nextFire) {
 			canFire = true;
-			FireWeapon(firePoint1.transform.position, enemyTarget);
+			for (int i = 0; i < firePointArray.Length; i++) {
+				if (firePointArray[i].activeInHierarchy) {
+					FireWeapon(firePointArray[i].transform.position, enemyTarget);
+
+				}
+			}
 		}
 	}
 
