@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2445299022908186757}
   - component: {fileID: 5288982390479983874}
   - component: {fileID: 5466376783807910908}
+  - component: {fileID: -3573368616166881090}
+  - component: {fileID: -2828927916077245579}
   m_Layer: 15
   m_Name: Explosion
   m_TagString: Projectile
@@ -130,3 +132,40 @@ PolygonCollider2D:
       - {x: 0.40234375, y: 0.29296875}
       - {x: 0.29296875, y: 0.40234375}
       - {x: 0.15234375, y: 0.47265625}
+--- !u!50 &-3573368616166881090
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7541819283699558946}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &-2828927916077245579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7541819283699558946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f0860e1ba8e4f71be1d7eca4d336b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileVelocity: 10
+  weapon: {fileID: 7039479160622258171, guid: b087e024be6b5492db295b614dddaf62, type: 3}
+  projectileRb2D: {fileID: -3573368616166881090}
+  targetPosition: {x: 0, y: 0, z: 0}

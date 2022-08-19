@@ -1,30 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class OrbitalLaser : Weapon {
     private Transform _playerPosition;
-    private GameObject[] _allEnemies;
     private Vector3 _enemyPosition;
     public GameObject explosion;
-    private int _random;
-
     private void FixedUpdate() {
         CanFireTimer();
-        _allEnemies = (GameObject[]) GameObject.FindGameObjectsWithTag("Enemy");
-        _random = Random.Range(0, _allEnemies.Length - 1);
         _playerPosition = GameObject.FindWithTag("Player").transform;
+        if (GameObject.FindWithTag("Enemy") != null) {
+            _enemyPosition = GameObject.FindWithTag("Enemy").transform.position;
+        }
     }
     public override void FireWeapon(Vector3 firePoint, Vector3 targetPosition) {
         
-        if (_allEnemies.Length > 0 && _random >= 0 && _random <= _allEnemies.Length - 1) {
-            _enemyPosition = _allEnemies[_random].transform.position;
-        }
-        
-        Vector3 origin = new Vector3(_enemyPosition.x, 50, 1);
-        Vector3 direction = (_enemyPosition - origin).normalized;
-        float distance = Vector3.Distance(origin, _enemyPosition);
-
         float startX = _enemyPosition.x;
         
         Transform bulletTransform = Instantiate(projectile, new Vector3(startX, 50, 0), Quaternion.identity);
