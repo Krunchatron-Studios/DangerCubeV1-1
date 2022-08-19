@@ -10,6 +10,9 @@ public class EKiteEnemy : BaseEnemy {
         if (enemyPosition && distance > kiteDistance) {
             Vector3 temp = Vector3.MoveTowards(transform.position, playerPosition.position, moveSpeed * Time.deltaTime);
             enemyRb2D.MovePosition(temp);
+        } else if (enemyPosition && distance < kiteDistance) {
+            Vector3 temp = Vector3.MoveTowards(transform.position, playerPosition.position, moveSpeed * -1 * Time.deltaTime);
+            enemyRb2D.MovePosition(temp);
         }
     }
 }
