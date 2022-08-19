@@ -6,6 +6,7 @@ public class OrbitalLaser : Weapon {
     private Transform _playerPosition;
     private GameObject[] _allEnemies;
     private Vector3 _enemyPosition;
+    public GameObject explosion;
     private int _random;
 
     private void FixedUpdate() {
@@ -43,6 +44,22 @@ public class OrbitalLaser : Weapon {
             time += Time.deltaTime;
             yield return null;
         }
+
+        GameObject explosionTransform = Instantiate(explosion, _enemyPosition, Quaternion.identity);
+        StartCoroutine(ExplodeCo(explosionTransform));
         Destroy(bulletTransform.gameObject);
+    }
+
+    IEnumerator ExplodeCo(GameObject explosion) {
+        float currentY = explosion.transform.localScale.y;
+        float currentX = explosion.transform.localScale.x;
+        int lerpMax = 2;
+        float time = 0;
+        while (currentX > 0 || currentY > 0) {
+            explosion.transform.localScale = new Vector3(Mathf.Lerp(currentX, 0, time / lerpMax), Mathf.Lerp(currentY, 0, time / lerpMax), 0);
+            time += Time.deltaTime;
+            yield return null;
+        } 
+        Destroy(explosion.gameObject);
     }
 }
