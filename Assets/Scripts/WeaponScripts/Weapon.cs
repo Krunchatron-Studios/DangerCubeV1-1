@@ -1,8 +1,15 @@
+using System;
 using UnityEngine;
+using MoreMountains.Feedbacks;
+
 
 public class Weapon : MonoBehaviour {
 
 	public Sprite weaponSprite;
+	private AudioClip weaponSound;
+	private AudioSource audioSource;
+	public float volume = 2.5f;
+	
 	[Header("Main Weapon Vars")]
 	public string weaponName;
 	public string weaponDescription;
@@ -24,15 +31,21 @@ public class Weapon : MonoBehaviour {
 	public string[] weaponUpgrades;
 	public TargetingSystem targetingSys;
 
+	private void Start() {
+		audioSource = GetComponent<AudioSource>();
+	}
+
 	private void FixedUpdate() {
 		CanFireTimer();
 	}
 	public virtual void FireWeapon(Vector3 firePoint, Vector3 targetPosition) {
+		audioSource.Play();
 		Transform bulletTransform = Instantiate(projectile, firePoint, Quaternion.identity);
 		Projectile bullet = bulletTransform.GetComponent<Projectile>();
 		bullet.Setup(targetPosition);
 		nextFire = Time.time + rateOfFire;
 		bullet.MoveProjectile();
+		MMCameraShakeEvent.Trigger(.1f, .2f, 40, 0, 0, 0, false);
 	}
 
 	public void CanFireTimer() {

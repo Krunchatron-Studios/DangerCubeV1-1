@@ -102,11 +102,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33052def576bcde42b47b58361e5dfbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSprite: {fileID: 0}
   weaponName: Gun Attack Weapon
+  weaponDescription: 
   weaponDamage: 1
   weaponRange: 10
   weaponLevel: 1
   rateOfFire: 1
+  canFire: 1
+  nextFire: 0
   firePoint1: {fileID: 4461223464272061032}
   firePoint2: {fileID: 4461223463812604629}
   firePoint3: {fileID: 4461223465032822461}
