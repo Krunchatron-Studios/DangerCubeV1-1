@@ -3364,28 +3364,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d8d99a5099729543beef8fd32731691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bioLvl: {fileID: 521875947}
-  metLvl: {fileID: 552662129}
-  silLvl: {fileID: 1189496726}
   resRef: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
+  lvlPanel: {fileID: 243156599}
+  bioGooBaseExp: 20
+  metalBaseExp: 20
+  silicateBaseExp: 20
   bioGooCurExp: 0
   metalCurExp: 0
   silicateCurExp: 0
   bioGooSlider: {fileID: 544756468}
   metalSlider: {fileID: 475479209}
   silicateSlider: {fileID: 144615596}
-  lvlPanel: {fileID: 243156599}
+  expToNextModifier: 1.1
   bioGooCurrentLvl: 0
   metalCurrentLvl: 0
   silicateCurrentLvl: 0
-  maxResourceLvl: 20
   bioGooResToLvlArray: 
   metalResToLvlArray: 
   silicateResToLvlArray: 
-  bioGooBaseExp: 20
-  metalBaseExp: 20
-  silicateBaseExp: 20
-  expToNextModifier: 1.1
+  bioLvl: {fileID: 521875947}
+  metLvl: {fileID: 552662129}
+  silLvl: {fileID: 1189496726}
+  maxResourceLvl: 20
 --- !u!1 &1967810728
 GameObject:
   m_ObjectHideFlags: 0

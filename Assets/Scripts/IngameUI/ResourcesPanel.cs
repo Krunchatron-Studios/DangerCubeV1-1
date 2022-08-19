@@ -1,42 +1,34 @@
-using System;
-using Newtonsoft.Json;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class ResourcesPanel : MonoBehaviour {
-
-	public TextMeshProUGUI bioLvl;
-	public TextMeshProUGUI metLvl;
-	public TextMeshProUGUI silLvl;
-
-	public PlayerResources resRef;
-	public int bioGooCurExp;
-	public int metalCurExp;
-	public int silicateCurExp;
-	public Slider bioGooSlider, metalSlider, silicateSlider;
-	public GameObject lvlPanel;
 	
-	public int bioGooCurrentLvl = 0;
-	public int metalCurrentLvl = 0;
-	public int silicateCurrentLvl = 0;
-
+	[Header("References")]
+	public PlayerResources resRef;
+	public GameObject lvlPanel;
+	public LevelUpPanel levelUpPanel;
+	
+	[Header("Exp related stats")]
+	public int bioGooBaseExp = 5, metalBaseExp = 5, silicateBaseExp = 5;
+	public int bioGooCurExp, metalCurExp, silicateCurExp;
+	public Slider bioGooSlider, metalSlider, silicateSlider;
+	[SerializeField, Range(1, 2)] private float  expToNextModifier = 1.1f;
+	
+	[Header("Level related stats")]
+	public int bioGooCurrentLvl = 0, metalCurrentLvl = 0, silicateCurrentLvl = 0;
+	public int[] bioGooResToLvlArray, metalResToLvlArray, silicateResToLvlArray;
+	public TextMeshProUGUI bioLvl, metLvl, silLvl;
 	public int maxResourceLvl = 20;
 	
-	public int[] bioGooResToLvlArray, metalResToLvlArray, silicateResToLvlArray;
-
-	public int bioGooBaseExp = 5, metalBaseExp = 5, silicateBaseExp = 5;
-
-	[SerializeField, Range(1, 2)] private float  expToNextModifier = 1.1f;
-
 	private void Start() {
 		PopulateResExpTiers(expToNextModifier);
 	}
 
 	private void Update() {
 		UpdateResources();
+		LevelUpCheck();
 	}
 
 	public void PopulateResExpTiers(float multiplier) {
@@ -77,16 +69,20 @@ public class ResourcesPanel : MonoBehaviour {
 	}
 
 	private void LevelUpCheck() {
-		if (bioGooCurExp > bioGooResToLvlArray[bioGooCurrentLvl]) {
+		
+		if (bioGooCurExp >= bioGooResToLvlArray[bioGooCurrentLvl + 1]) {
+			lvlPanel.SetActive(true);
 			resRef.bioGoo = 0;
 			bioGooCurrentLvl++;
-			Debug.Log("testing");
+			levelUpPanel.UpdateLevelUpPanel();
 		}
-		if (metalCurExp >= metalResToLvlArray[metalCurrentLvl]) {
+		if (metalCurExp >= metalResToLvlArray[metalCurrentLvl + 1]) {
+			lvlPanel.SetActive(true);
 			resRef.metal = 0;
 			metalCurrentLvl++;
 		}
-		if (silicateCurExp >= silicateResToLvlArray[silicateCurrentLvl]) {
+		if (silicateCurExp >= silicateResToLvlArray[silicateCurrentLvl + 1]) {
+			lvlPanel.SetActive(true);
 			resRef.silicate = 0;
 			silicateCurrentLvl++;
 		}
