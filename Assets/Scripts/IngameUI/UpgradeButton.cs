@@ -32,6 +32,7 @@ public class UpgradeButton : MonoBehaviour {
 	}
 
 	public void SelectUpgrade() {
+		WeaponSystem.Instance.ActivateWeaponSystem(upgradeName);
 		lvlPanel.gameObject.SetActive(false);
 	}
 }

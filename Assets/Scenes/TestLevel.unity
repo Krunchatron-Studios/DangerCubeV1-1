@@ -973,6 +973,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4983494740106300203, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
   m_PrefabInstance: {fileID: 3796742104837735127}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &367246608 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4983494740106300213, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+  m_PrefabInstance: {fileID: 3796742104837735127}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367246606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33052def576bcde42b47b58361e5dfbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &367246610
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3036,6 +3047,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1533345168 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 439751057566335770, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+  m_PrefabInstance: {fileID: 3796742104837735127}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff53ab4556e44cc3a0c78ffde82a237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1617772518
 GameObject:
   m_ObjectHideFlags: 0
@@ -4165,8 +4187,20 @@ PrefabInstance:
       objectReference: {fileID: 185992534}
     - target: {fileID: 5758044301797083659, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: cubeWeapons.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5758044301797083659, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: cubeWeapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 367246608}
+    - target: {fileID: 5758044301797083659, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: cubeWeapons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1533345168}
+    - target: {fileID: 5758044301797083659, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: cubeWeapons.Array.data[2]
+      value: 
+      objectReference: {fileID: 1533345168}
     - target: {fileID: 6557873537448450980, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3
