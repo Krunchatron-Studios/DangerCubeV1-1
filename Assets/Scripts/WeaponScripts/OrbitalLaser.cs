@@ -28,7 +28,6 @@ public class OrbitalLaser : Weapon {
         float startX = _enemyPosition.x;
         
         Transform bulletTransform = Instantiate(projectile, new Vector3(startX, 50, 0), Quaternion.identity);
-        float difference = bulletTransform.position.y + _enemyPosition.y;
 
         StartCoroutine(BeamCo(bulletTransform));
         
@@ -44,7 +43,6 @@ public class OrbitalLaser : Weapon {
             time += Time.deltaTime;
             yield return null;
         }
-
         GameObject explosionTransform = Instantiate(explosion, _enemyPosition, Quaternion.identity);
         StartCoroutine(ExplodeCo(explosionTransform));
         Destroy(bulletTransform.gameObject);
@@ -55,11 +53,11 @@ public class OrbitalLaser : Weapon {
         float currentX = explosion.transform.localScale.x;
         int lerpMax = 2;
         float time = 0;
-        while (currentX > 0 || currentY > 0) {
+        while (explosion.transform.localScale.x > 0.1f) {
             explosion.transform.localScale = new Vector3(Mathf.Lerp(currentX, 0, time / lerpMax), Mathf.Lerp(currentY, 0, time / lerpMax), 0);
             time += Time.deltaTime;
             yield return null;
         } 
-        Destroy(explosion.gameObject);
+        Destroy(explosion);
     }
 }
