@@ -1,9 +1,11 @@
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-	
+
+	public Sprite weaponSprite;
 	[Header("Main Weapon Vars")]
 	public string weaponName;
+	public string weaponDescription;
 	public int weaponDamage = 1;
 	public float weaponRange = 3;
 	
