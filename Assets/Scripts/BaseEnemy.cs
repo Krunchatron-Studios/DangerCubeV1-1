@@ -18,9 +18,7 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 
 	[Header("Player Manager")] 
 	public PlayerResources playerResources;
-
-	public PlayerHealthAndShields healthAndShields;
-
+	
 	void Start() {
 		playerPosition = GameObject.FindWithTag("Player").transform;
 	}

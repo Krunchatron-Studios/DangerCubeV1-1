@@ -11,8 +11,8 @@ public class PlayerLogic : MonoBehaviour, IDmgAndHpInterface {
         } else if (healthAndShields.playerHealthCurrent > 0) {
             healthAndShields.playerHealthCurrent -= damageAmount;
         } else if (healthAndShields.playerHealthCurrent <= 0) {
-            //change reference to player object
-            // Destroy(gameObject);
+            Destroy(gameObject);
+            // add logic to go to game over screen
         }
     }
 }
