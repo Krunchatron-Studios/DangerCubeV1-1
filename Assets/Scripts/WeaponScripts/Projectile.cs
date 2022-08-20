@@ -18,7 +18,7 @@ public class Projectile : MonoBehaviour {
 		Vector3 moveDirection = (targetPosition - transform.position).normalized;
 		projectileRb2D.AddForce(moveDirection * projectileVelocity * Time.deltaTime, ForceMode2D.Impulse);
 	}
-	public void ResolveProjectile(Collider2D other) {
+	public virtual void ResolveProjectile(Collider2D other) {
 		if (other.CompareTag("Enemy")) {
 				
 			IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
