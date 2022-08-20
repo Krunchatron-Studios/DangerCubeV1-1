@@ -1,3 +1,4 @@
+using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -39,6 +40,7 @@ public class Laser : MonoBehaviour {
 				if (hit.transform.CompareTag("Enemy")) {
 					IDmgAndHpInterface enemyHit = hit.collider.GetComponent<IDmgAndHpInterface>();
 					enemyHit.TakeDamage(0.05f);
+					MMFloatingTextSpawnEvent.Trigger(0, hit.point, 0.05f.ToString(), Vector3.up, .5f);
 					Debug.Log(enemyHit.ToString());
 				}
 			}

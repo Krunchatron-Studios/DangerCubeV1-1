@@ -102,6 +102,7 @@ MonoBehaviour:
   projectileVelocity: 250
   weapon: {fileID: 348814070462023696, guid: ba63be8833f2b5d44a70bd02c1a85a99, type: 3}
   projectileRb2D: {fileID: 2576749402811358335}
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!50 &2576749402811358335
 Rigidbody2D:
   serializedVersion: 4
