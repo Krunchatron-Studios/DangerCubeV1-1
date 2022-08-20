@@ -69,22 +69,28 @@ public class ResourcesPanel : MonoBehaviour {
 	}
 
 	private void LevelUpCheck() {
-		
+		bool lvlUp = false;
 		if (bioGooCurExp >= bioGooResToLvlArray[bioGooCurrentLvl + 1]) {
 			lvlPanel.SetActive(true);
 			resRef.bioGoo = 0;
 			bioGooCurrentLvl++;
-			levelUpPanel.UpdateLevelUpPanel();
+			levelUpPanel.RefreshChoices();
+
 		}
 		if (metalCurExp >= metalResToLvlArray[metalCurrentLvl + 1]) {
 			lvlPanel.SetActive(true);
 			resRef.metal = 0;
 			metalCurrentLvl++;
+			levelUpPanel.RefreshChoices();
+
 		}
 		if (silicateCurExp >= silicateResToLvlArray[silicateCurrentLvl + 1]) {
 			lvlPanel.SetActive(true);
 			resRef.silicate = 0;
 			silicateCurrentLvl++;
+			levelUpPanel.RefreshChoices();
+
 		}
+
 	}
 }

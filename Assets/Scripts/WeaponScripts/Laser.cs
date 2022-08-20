@@ -22,7 +22,7 @@ public class Laser : MonoBehaviour {
 
 	public void FireLaser(Vector2 dir) {
 		
-		if (Keyboard.current.spaceKey.isPressed) {
+		if (Keyboard.current.spaceKey.isPressed || Gamepad.current.bButton.isPressed) {
 			_lineRenderer.enabled = true;
 
 			var position = transform.position;

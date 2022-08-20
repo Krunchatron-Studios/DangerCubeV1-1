@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using MoreMountains.Feedbacks;
+using MoreMountains.Tools;
 
 public class Projectile : MonoBehaviour {
 
@@ -20,7 +22,9 @@ public class Projectile : MonoBehaviour {
 	}
 	public virtual void ResolveProjectile(Collider2D other) {
 		if (other.CompareTag("Enemy")) {
-				
+			MMFloatingTextSpawnEvent.Trigger(0, other.transform.position,
+										weapon.weaponDamage.ToString(),
+									Vector3.up, .5f);
 			IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
 			hit.TakeDamage(weapon.weaponDamage);
 			Destroy(gameObject);
