@@ -26,25 +26,25 @@ namespace EpicToonFX
 		
         void FixedUpdate()
         {	
-			if (GetComponent<Rigidbody>().velocity.magnitude != 0)
+			if (GetComponent<Rigidbody2D>().velocity.magnitude != 0)
 			{
-			    transform.rotation = Quaternion.LookRotation(GetComponent<Rigidbody>().velocity); // Sets rotation to look at direction of movement
+			    transform.rotation = Quaternion.LookRotation(GetComponent<Rigidbody2D>().velocity); // Sets rotation to look at direction of movement
 			}
 			
             RaycastHit hit;
 			
             float radius; // Sets the radius of the collision detection
-            if (transform.GetComponent<SphereCollider>())
-                radius = transform.GetComponent<SphereCollider>().radius;
+            if (transform.GetComponent<CircleCollider2D>())
+                radius = transform.GetComponent<CircleCollider2D>().radius;
             else
                 radius = colliderRadius;
 
-            Vector3 direction = transform.GetComponent<Rigidbody>().velocity; // Gets the direction of the projectile, used for collision detection
-            if (transform.GetComponent<Rigidbody>().useGravity)
+            Vector3 direction = transform.GetComponent<Rigidbody2D>().velocity; // Gets the direction of the projectile, used for collision detection
+            if (transform.GetComponent<Rigidbody2D>())
                 direction += Physics.gravity * Time.deltaTime; // Accounts for gravity if enabled
             direction = direction.normalized;
 
-            float detectionDistance = transform.GetComponent<Rigidbody>().velocity.magnitude * Time.deltaTime; // Distance of collision detection for this frame
+            float detectionDistance = transform.GetComponent<Rigidbody2D>().velocity.magnitude * Time.deltaTime; // Distance of collision detection for this frame
 
             if (Physics.SphereCast(transform.position, radius, direction, out hit, detectionDistance)) // Checks if collision will happen
             {
