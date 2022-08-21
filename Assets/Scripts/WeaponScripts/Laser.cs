@@ -7,6 +7,7 @@ public class Laser : MonoBehaviour {
 	private LineRenderer _lineRenderer;
 	public Transform playerCube;
 	private readonly float _laserRange = 3.5f;
+	public float laserDamage = .05f;
 	public GameObject laserHit;
 	private LayerMask _hitMask;
 	private Vector2 _direction;
@@ -40,8 +41,7 @@ public class Laser : MonoBehaviour {
 				if (hit.transform.CompareTag("Enemy")) {
 					IDmgAndHpInterface enemyHit = hit.collider.GetComponent<IDmgAndHpInterface>();
 					enemyHit.TakeDamage(0.05f);
-					MMFloatingTextSpawnEvent.Trigger(0, hit.point, 0.05f.ToString(), Vector3.up, .5f);
-					Debug.Log(enemyHit.ToString());
+					MMFloatingTextSpawnEvent.Trigger(0, hit.point, laserDamage.ToString(), Vector3.up, .5f);
 				}
 			}
 		} else {

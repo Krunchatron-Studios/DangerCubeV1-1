@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour {
 	public static PlayerMovement playerMove;
 	public static MainCamera mainCam;
 	public LevelUpPanel lvlPanel;
-	public static MMFloatingTextSpawner spawner;
 	
 	[Header("Player Scriptables")]
 	public PlayerResources resources;
