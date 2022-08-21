@@ -42,6 +42,7 @@ public class Laser : MonoBehaviour {
 					IDmgAndHpInterface enemyHit = hit.collider.GetComponent<IDmgAndHpInterface>();
 					enemyHit.TakeDamage(0.05f);
 					MMFloatingTextSpawnEvent.Trigger(0, hit.point, laserDamage.ToString(), Vector3.up, .5f);
+					
 				}
 			}
 		} else {
