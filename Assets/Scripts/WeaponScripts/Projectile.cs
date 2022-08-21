@@ -7,15 +7,6 @@ public class Projectile : MonoBehaviour {
 	public Weapon weapon;
 	public Rigidbody2D projectileRb2D;
 	public Vector3 targetPosition;
-	public GameObject wpnVFX;
-	private GameObject _spawnedVFX;
-
-	private void Start() {
-		if (wpnVFX) {
-			_spawnedVFX = Instantiate(wpnVFX, projectileRb2D.transform.position, Quaternion.identity);
-			SpawnEffect();
-		}
-	}
 
 	void OnTriggerEnter2D(Collider2D other) {
 		ResolveProjectile(other);
@@ -42,8 +33,5 @@ public class Projectile : MonoBehaviour {
 		}
 	}
 
-	private void SpawnEffect() {
-		Destroy(_spawnedVFX, 5f);
-	}
 	
 }
