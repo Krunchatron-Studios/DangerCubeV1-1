@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2008833507525818049}
   - component: {fileID: 5133577340917086549}
   - component: {fileID: 4811333372491251381}
+  - component: {fileID: 9094206048140135736}
   m_Layer: 10
   m_Name: KiteEnemy
   m_TagString: Enemy
@@ -179,3 +180,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9094206048140135736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3136071779676470157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e60c37f60c764a069284120c7fb7738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPosition: {fileID: 0}
+  enemyDamage: 1
+  fireRange: 5
+  fireTimer: 5
+  bulletVelocity: 10
+  canFire: 1
+  enemyProjectile: {fileID: 1655789376720695904, guid: 6ad63786457454a868737c9a7e271388, type: 3}
+  projectileBody: {fileID: 0}
