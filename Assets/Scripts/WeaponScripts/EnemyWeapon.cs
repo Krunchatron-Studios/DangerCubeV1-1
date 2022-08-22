@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyWeapon : MonoBehaviour {
     [Header("Player Position")]
     public Transform playerPosition;
     [Header("Weapon Paramters")]
-    public int enemyDamage;
     public int fireRange;
     public int fireTimer;
     public int bulletVelocity;

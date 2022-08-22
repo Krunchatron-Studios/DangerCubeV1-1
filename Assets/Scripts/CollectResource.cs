@@ -33,10 +33,10 @@ public class CollectResource : MonoBehaviour {
         if (other.CompareTag("Collector") && this.type == "BioGoo") {
             playerResources.bioGoo += value;
             Destroy(this.gameObject);
-        } else if (other.CompareTag("Player") && this.type == "Metal") {
+        } else if (other.CompareTag("Collector") && this.type == "Metal") {
             playerResources.metal += value;
             Destroy(this.gameObject);
-        } else if (other.CompareTag("Player") && this.type == "Silicate") {
+        } else if (other.CompareTag("Collector") && this.type == "Silicate") {
             playerResources.silicate += value;
             Destroy(this.gameObject);
         }
