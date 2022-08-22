@@ -1,41 +1,37 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyWeapon : MonoBehaviour {
-
-    [Header("Main Weapon Vars")]
-    public int weaponDamage = 1;
-    public float weaponRange = 3;
-	
-    [Header("Firing Vars")]
-    public float rateOfFire = 1.0f;
+    [Header("Player Position")]
+    public Transform playerPosition;
+    [Header("Weapon Paramters")]
+    public int enemyDamage;
+    public int fireRange;
+    public int fireTimer;
+    public int bulletVelocity;
     public bool canFire = true;
-    public float nextFire;
-	
-    [Header("Projectile Vars")]
-    public Transform projectile;
-    public Vector2 player;
-    public TargetingSystem targetingSys;
-
-    private void FixedUpdate() {
-        CanFireTimer();
-    }
-    public void FireWeapon(Vector3 firePoint, Vector3 targetPosition) {
-        Transform bulletTransform = Instantiate(projectile, firePoint, Quaternion.identity);
-        Projectile bullet = bulletTransform.GetComponent<Projectile>();
-        bullet.Setup(targetPosition);
-        nextFire = Time.time + rateOfFire;
-        bullet.MoveProjectile();
+    [Header("Projectile Parameters")]
+    public GameObject enemyProjectile;
+    private Rigidbody2D _projectileBody;
+    void FixedUpdate() {
+        playerPosition = GameObject.FindWithTag("Player").transform;
+        ShootPlayer();
     }
 
-    public void CanFireTimer() {
-        canFire = false;
-        if (Time.time > nextFire) {
-            canFire = true;
-            FireWeapon(transform.position, player);
+    public void ShootPlayer() {
+        float distance = Vector3.Distance(playerPosition.position, transform.position);
+        if (distance <= fireRange && canFire == true) {
+            GameObject bullet = Instantiate(enemyProjectile, transform.position, Quaternion.identity);
+            _projectileBody = bullet.GetComponent<Rigidbody2D>();
+            Vector3 moveDirection = (playerPosition.position - transform.position).normalized;
+            _projectileBody.AddForce(moveDirection * bulletVelocity * Time.deltaTime, ForceMode2D.Impulse);
+            StartCoroutine(ToggleCo());
         }
     }
-    //
-    // public void AquireTarget(BaseEnemy enemy) {
-    //     enemyTarget = enemy.transform.position;
-    // }
+    IEnumerator ToggleCo() {
+        canFire = false;
+        yield return new WaitForSeconds(fireTimer);
+        canFire = true;
+    }
 }
