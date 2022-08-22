@@ -16,7 +16,7 @@ public class OrbitalLaser : Weapon {
         }
     }
     public override void FireWeapon(Vector3 firePoint, Vector3 targetPosition) {
-        
+        audioSource.Play();
         float startX = _enemyPosition.x;
         
         Transform bulletTransform = Instantiate(projectile, new Vector3(startX, 50, 0), Quaternion.identity);

@@ -7,7 +7,7 @@ public class Weapon : MonoBehaviour {
 
 	public Sprite weaponSprite;
 	private AudioClip weaponSound;
-	private AudioSource audioSource;
+	public AudioSource audioSource;
 	public float volume = 2.5f;
 	
 	[Header("Main Weapon Vars")]
