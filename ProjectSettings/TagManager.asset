@@ -18,6 +18,7 @@ TagManager:
   - BioGoo
   - Metal
   - Silicate
+  - Missile
   layers:
   - Default
   - TransparentFX
@@ -39,7 +40,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Background
   - PostProcessing
   - 
   - 
@@ -52,11 +53,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 141617731
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Wall
     uniqueID: 877834347

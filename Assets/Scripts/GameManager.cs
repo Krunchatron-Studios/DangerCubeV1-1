@@ -1,5 +1,7 @@
+using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using MoreMountains.Feedbacks;
 
 public class GameManager : MonoBehaviour {
 	public static GameManager gm;
@@ -11,7 +13,6 @@ public class GameManager : MonoBehaviour {
 	[Header("Player Scriptables")]
 	public PlayerResources resources;
 	public PlayerHealthAndShields healthAndShields;
-	public int bioGoo;
 	
 	private void Start() {
 		resources.experience = 0;
