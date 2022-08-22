@@ -13,7 +13,7 @@ public class OrbitalLaser : Weapon {
         }
     }
     public override void FireWeapon(Vector3 firePoint, Vector3 targetPosition) {
-        
+        audioSource.Play();
         float startX = _enemyPosition.x;
         
         Transform bulletTransform = Instantiate(projectile, new Vector3(startX, 50, 0), Quaternion.identity);
@@ -23,6 +23,18 @@ public class OrbitalLaser : Weapon {
         Projectile bullet = bulletTransform.GetComponent<Projectile>();
         bullet.Setup(_enemyPosition);
         nextFire = Time.time + rateOfFire;
+    }
+
+    public override void CanFireTimer() {
+        canFire = false;
+        if (Time.time > nextFire) {
+            canFire = true;
+            for (int i = 0; i < firePointArray.Length; i++) {
+                if (firePointArray[i].activeInHierarchy) {
+                    FireWeapon(firePointArray[0].transform.position, enemyTarget);
+                }
+            }
+        }
     }
     IEnumerator BeamCo(Transform bulletTransform) {
         int lerpMax = 2;
