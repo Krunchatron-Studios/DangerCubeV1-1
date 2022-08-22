@@ -7,7 +7,7 @@ public class Weapon : MonoBehaviour {
 
 	public Sprite weaponSprite;
 	private AudioClip weaponSound;
-	private AudioSource audioSource;
+	public AudioSource audioSource;
 	public float volume = 2.5f;
 	
 	[Header("Main Weapon Vars")]
@@ -48,7 +48,7 @@ public class Weapon : MonoBehaviour {
 		MMCameraShakeEvent.Trigger(.1f, .2f, 40, 0, 0, 0, false);
 	}
 
-	public void CanFireTimer() {
+	public virtual void CanFireTimer() {
 		canFire = false;
 		if (Time.time > nextFire) {
 			canFire = true;

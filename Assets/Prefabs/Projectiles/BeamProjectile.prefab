@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3647740370951862877}
   - component: {fileID: 4945904521364323003}
   - component: {fileID: 7041822344327210852}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: BeamProjectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2055319811
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: df7cc956112534eea87bd8267c5efa07, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -123,6 +123,7 @@ MonoBehaviour:
   weapon: {fileID: 7039479160622258171, guid: b087e024be6b5492db295b614dddaf62, type: 3}
   projectileRb2D: {fileID: 7041822344327210852}
   targetPosition: {x: 0, y: 0, z: 0}
+  bloodSplash: {fileID: 0}
 --- !u!50 &7041822344327210852
 Rigidbody2D:
   serializedVersion: 4
