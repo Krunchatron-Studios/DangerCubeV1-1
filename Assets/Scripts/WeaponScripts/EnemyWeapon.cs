@@ -11,6 +11,7 @@ public class EnemyWeapon : MonoBehaviour {
     public int fireTimer;
     public int bulletVelocity;
     public bool canFire = true;
+    private int bulletDecay = 3;
     [Header("Projectile Parameters")]
     public GameObject enemyProjectile;
     private Rigidbody2D _projectileBody;
@@ -27,11 +28,17 @@ public class EnemyWeapon : MonoBehaviour {
             Vector3 moveDirection = (playerPosition.position - transform.position).normalized;
             _projectileBody.AddForce(moveDirection * bulletVelocity * Time.deltaTime, ForceMode2D.Impulse);
             StartCoroutine(ToggleCo());
+            StartCoroutine(BulletCo(bullet));
         }
     }
     IEnumerator ToggleCo() {
         canFire = false;
         yield return new WaitForSeconds(fireTimer);
         canFire = true;
+    }
+
+    IEnumerator BulletCo(GameObject bullet) {
+        yield return new WaitForSeconds(bulletDecay);
+        Destroy(bullet);
     }
 }
