@@ -48,7 +48,7 @@ public class Weapon : MonoBehaviour {
 		MMCameraShakeEvent.Trigger(.1f, .2f, 40, 0, 0, 0, false);
 	}
 
-	public void CanFireTimer() {
+	public virtual void CanFireTimer() {
 		canFire = false;
 		if (Time.time > nextFire) {
 			canFire = true;

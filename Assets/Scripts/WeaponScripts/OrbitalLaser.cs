@@ -27,6 +27,18 @@ public class OrbitalLaser : Weapon {
         bullet.Setup(_enemyPosition);
         nextFire = Time.time + rateOfFire;
     }
+
+    public override void CanFireTimer() {
+        canFire = false;
+        if (Time.time > nextFire) {
+            canFire = true;
+            for (int i = 0; i < firePointArray.Length; i++) {
+                if (firePointArray[i].activeInHierarchy) {
+                    FireWeapon(firePointArray[0].transform.position, enemyTarget);
+                }
+            }
+        }
+    }
     IEnumerator BeamCo(Transform bulletTransform) {
         int lerpMax = 2;
         float time = 0;
