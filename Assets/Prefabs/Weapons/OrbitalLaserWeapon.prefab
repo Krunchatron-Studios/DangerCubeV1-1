@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponSprite: {fileID: 0}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1605000266149368324}
   volume: 2.5
   weaponName: OrbitalLaser
   weaponDescription: 
@@ -111,7 +111,7 @@ MonoBehaviour:
   nextFire: 0
   firePointArray: []
   projectile: {fileID: 6588101289259591081, guid: b872d41b887444baf9dc0a13b49ba79f, type: 3}
-  enemyTarget: {x: 3.6544752, y: 0}
+  enemyTarget: {x: 1.9403443, y: -1.07886}
   weaponUpgrades: []
   targetingSys: {fileID: 0}
   explosion: {fileID: 7541819283699558946, guid: d00b829bdd86a4de488d62e5753024df, type: 3}
@@ -125,10 +125,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4e9bff56ee93c6f42b214141e44e763d, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 38fa730ebc563864098b9c9eafe0d34b, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 3
   Loop: 0
   Mute: 0
   Spatialize: 0
