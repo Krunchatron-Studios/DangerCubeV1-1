@@ -20,18 +20,18 @@ public class UpgradeButton : MonoBehaviour {
 	}
 	public void UpdateLevelUpPanel() {
 		
-			for (int j = 0; j < lvlPanel.referenceWeaponsArray.Length; j++) {
-				if (upgradeName == lvlPanel.referenceWeaponsArray[j].weaponName) {
-					upgradeSprite.sprite = lvlPanel.referenceWeaponsArray[j].weaponSprite; 
-					upgradeName = lvlPanel.referenceWeaponsArray[j].weaponName;
-					upgradeNameText.text = upgradeName;
-					upgradeDescription = lvlPanel.referenceWeaponsArray[j].weaponDescription;
-				}
+		for (int j = 0; j < lvlPanel.referenceWeaponsArray.Length; j++) {
+			if (upgradeName == lvlPanel.referenceWeaponsArray[j].weaponName) {
+				upgradeSprite.sprite = lvlPanel.referenceWeaponsArray[j].weaponSprite; 
+				upgradeName = lvlPanel.referenceWeaponsArray[j].weaponName;
+				upgradeNameText.text = upgradeName;
+				upgradeDescription = lvlPanel.referenceWeaponsArray[j].weaponDescription;
 			}
-		
+		}
 	}
 
 	public void SelectUpgrade() {
+		Debug.Log(upgradeName);
 		WeaponSystem.Instance.ActivateWeaponSystem(upgradeName);
 		lvlPanel.gameObject.SetActive(false);
 	}

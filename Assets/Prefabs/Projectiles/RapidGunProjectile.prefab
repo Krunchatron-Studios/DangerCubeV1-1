@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2576749402811358335}
   - component: {fileID: 924206450}
   m_Layer: 15
-  m_Name: GenericProjectile
+  m_Name: RapidGunProjectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1655789376720695904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4388, y: 0.4388, z: 0.4388}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0.47346824, b: 0, a: 1}
+  m_Color: {r: 0.7237897, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileVelocity: 250
-  weapon: {fileID: 348814070462023696, guid: ba63be8833f2b5d44a70bd02c1a85a99, type: 3}
+  weapon: {fileID: 4509634286547317598, guid: c65ad5cd03f055e4dbd5e7b644466cc8, type: 3}
   projectileRb2D: {fileID: 2576749402811358335}
   targetPosition: {x: 0, y: 0, z: 0}
   bloodSplash: {fileID: 2512025392852149761, guid: 8df12292ad0e89947a87dee41a86f181, type: 3}

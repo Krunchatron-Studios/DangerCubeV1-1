@@ -9,6 +9,8 @@ public class Laser : MonoBehaviour {
 	private readonly float _laserRange = 3.5f;
 	public float laserDamage = .05f;
 	public GameObject laserHitMarker;
+	public GameObject laserBurnVFX;
+	public ParticleSystem burnVFX;
 	private LayerMask _whatGetsHitMask;
 	private Vector2 _direction;
 
@@ -33,8 +35,11 @@ public class Laser : MonoBehaviour {
 			
 			if (hit && hit.distance < _laserRange) {
 				_lineRenderer.SetPosition(1, hit.point);
+				laserBurnVFX = Instantiate(laserBurnVFX, hit.point, Quaternion.identity);
+
 			} else {
 				_lineRenderer.SetPosition(1, laserHitMarker.transform.position);
+				laserBurnVFX = Instantiate(laserBurnVFX, laserHitMarker.transform.position, Quaternion.identity);
 			}
 			
 			if (hit) {

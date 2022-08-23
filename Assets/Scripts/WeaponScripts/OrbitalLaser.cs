@@ -15,11 +15,8 @@ public class OrbitalLaser : Weapon {
     public override void FireWeapon(Vector3 firePoint, Vector3 targetPosition) {
         audioSource.Play();
         float startX = _enemyPosition.x;
-        
         Transform bulletTransform = Instantiate(projectile, new Vector3(startX, 50, 0), Quaternion.identity);
-
         StartCoroutine(BeamCo(bulletTransform));
-        
         Projectile bullet = bulletTransform.GetComponent<Projectile>();
         bullet.Setup(_enemyPosition);
         nextFire = Time.time + rateOfFire;
@@ -30,7 +27,7 @@ public class OrbitalLaser : Weapon {
         if (Time.time > nextFire) {
             canFire = true;
             for (int i = 0; i < firePointArray.Length; i++) {
-                if (firePointArray[i].activeInHierarchy) {
+                if (firePointArray[0].activeInHierarchy) {
                     FireWeapon(firePointArray[0].transform.position, enemyTarget);
                 }
             }
@@ -50,15 +47,23 @@ public class OrbitalLaser : Weapon {
     }
 
     IEnumerator ExplodeCo(GameObject explosion) {
-        float currentY = explosion.transform.localScale.y;
-        float currentX = explosion.transform.localScale.x;
+        Vector3 currentScale = explosion.transform.localScale;
+        float currentY = currentScale.y;
+        float currentX = currentScale.x;
         int lerpMax = 2;
         float time = 0;
         while (explosion.transform.localScale.x > 0.1f) {
-            explosion.transform.localScale = new Vector3(Mathf.Lerp(currentX, 0, time / lerpMax), Mathf.Lerp(currentY, 0, time / lerpMax), 0);
+            currentScale = new Vector3(Mathf.Lerp(currentX, 0, time / lerpMax), Mathf.Lerp(currentY, 0, time / lerpMax), 0);
             time += Time.deltaTime;
             yield return null;
         } 
         Destroy(explosion);
+    }
+
+    private void FindPlayerAndEnemyPos() {
+        _playerPosition = GameObject.FindWithTag("Player").transform;
+        if (GameObject.FindWithTag("Enemy") != null) {
+            _enemyPosition = GameObject.FindWithTag("Enemy").transform.position;
+        }
     }
 }
