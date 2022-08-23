@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MechanicalMeatSeparator : MonoBehaviour {
+public class MechanicalMeatSeparator : Weapon {
     private GameObject _enemyPosition;
     public Rigidbody2D thisRigidBody;
     public float sawVelocity;
