@@ -4274,6 +4274,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1194832656}
     - target: {fileID: 439751057566335770, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: weaponSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8171799896c777540bf3edd243559a83, type: 3}
+    - target: {fileID: 439751057566335770, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: firePointArray.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -4519,7 +4523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8649432337890070779, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8670534410664316200, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_RootOrder
