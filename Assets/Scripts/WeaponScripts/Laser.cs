@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,6 +10,9 @@ public class Laser : MonoBehaviour {
 	private readonly float _laserRange = 3.5f;
 	public float laserDamage = .05f;
 	public GameObject laserHitMarker;
+	public Transform laserStartMarker;
+	public Transform laserEndMarker;
+	public MMF_Player laserFeedbackPlayer;
 	private LayerMask _whatGetsHitMask;
 	private Vector2 _direction;
 
@@ -19,7 +23,20 @@ public class Laser : MonoBehaviour {
 	}
 	private void Update() {
 		_direction.x = playerCube.transform.localScale.x;
-		FireLaser(_direction);
+		//FireLaser(_direction);
+		//_lineRenderer.SetPosition(1, laserHitMarker.transform.position);
+		if (Keyboard.current.eKey.wasPressedThisFrame) {
+			FireLaser2();
+		}
+
+		if (laserFeedbackPlayer.IsPlaying) {
+			_lineRenderer.SetPosition(0, transform.position);
+			_lineRenderer.SetPosition(1, laserHitMarker.transform.position);
+		}
+
+		if (laserFeedbackPlayer.IsPlaying == false) {
+			_lineRenderer.enabled = false;
+		}
 	}
 
 	public void FireLaser(Vector2 dir) {
@@ -50,5 +67,14 @@ public class Laser : MonoBehaviour {
 		}
 
 	}
+
+	public void FireLaser2() {
+		_lineRenderer.enabled = true;
+		Vector3 position = transform.position;
+		_lineRenderer.SetPosition(0, position);
+		laserFeedbackPlayer?.PlayFeedbacks();
+	}
 	
 }
+
+
