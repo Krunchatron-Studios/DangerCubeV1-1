@@ -1,8 +1,5 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Random = System.Random;
 
 public class OrbitalLaser : Weapon {
     private Transform _playerPosition;
@@ -18,11 +15,8 @@ public class OrbitalLaser : Weapon {
     public override void FireWeapon(Vector3 firePoint, Vector3 targetPosition) {
         audioSource.Play();
         float startX = _enemyPosition.x;
-        
         Transform bulletTransform = Instantiate(projectile, new Vector3(startX, 50, 0), Quaternion.identity);
-
         StartCoroutine(BeamCo(bulletTransform));
-        
         Projectile bullet = bulletTransform.GetComponent<Projectile>();
         bullet.Setup(_enemyPosition);
         nextFire = Time.time + rateOfFire;

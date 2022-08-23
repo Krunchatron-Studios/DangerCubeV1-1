@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class OrbitalProjectile : Projectile {
-    private AudioSource audio;
+    public AudioSource audio;
 
     private void Awake() {
         Sound();
