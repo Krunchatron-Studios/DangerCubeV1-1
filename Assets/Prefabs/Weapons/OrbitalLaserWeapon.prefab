@@ -98,9 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff53ab4556e44cc3a0c78ffde82a237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSprite: {fileID: 21300000, guid: 51f99b11d709349479098afa464d3d4c, type: 3}
+  weaponSprite: {fileID: 21300000, guid: 8171799896c777540bf3edd243559a83, type: 3}
   audioSource: {fileID: 1605000266149368324}
-  volume: 2.5
   weaponName: OrbitalLaser
   weaponDescription: 
   weaponDamage: 1
@@ -113,7 +112,7 @@ MonoBehaviour:
   projectile: {fileID: 6588101289259591081, guid: b872d41b887444baf9dc0a13b49ba79f, type: 3}
   enemyTarget: {x: -12.213808, y: 6.7464404}
   weaponUpgrades: []
-  targetingSys: {fileID: 0}
+  targetingSys: {fileID: 2608481302110575300, guid: 12602ce919ca01443b18db03fe04235a, type: 3}
   explosion: {fileID: 7541819283699558946, guid: d00b829bdd86a4de488d62e5753024df, type: 3}
 --- !u!82 &1605000266149368324
 AudioSource:

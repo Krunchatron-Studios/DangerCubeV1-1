@@ -4,7 +4,6 @@ using UnityEngine;
 public class LevelUpPanel : MonoBehaviour {
 
 	public UpgradeButton[] upgradeButtons;
-	public TextMeshProUGUI upgradeDescription;
 	public Weapon[] referenceWeaponsArray;
 
 	public void RefreshChoices() {

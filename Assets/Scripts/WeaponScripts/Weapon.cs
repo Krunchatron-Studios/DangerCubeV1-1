@@ -1,14 +1,11 @@
-using System;
 using UnityEngine;
 using MoreMountains.Feedbacks;
-
 
 public class Weapon : MonoBehaviour {
 
 	public Sprite weaponSprite;
 	private AudioClip weaponSound;
 	public AudioSource audioSource;
-	public float volume = 2.5f;
 	
 	[Header("Main Weapon Vars")]
 	public string weaponName;

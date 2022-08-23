@@ -33,6 +33,7 @@ public class Laser : MonoBehaviour {
 			
 			if (hit && hit.distance < _laserRange) {
 				_lineRenderer.SetPosition(1, hit.point);
+
 			} else {
 				_lineRenderer.SetPosition(1, laserHitMarker.transform.position);
 			}
@@ -42,7 +43,6 @@ public class Laser : MonoBehaviour {
 					IDmgAndHpInterface enemyHit = hit.collider.GetComponent<IDmgAndHpInterface>();
 					enemyHit.TakeDamage(0.05f);
 					MMFloatingTextSpawnEvent.Trigger(0, hit.point, laserDamage.ToString(), Vector3.up, .5f);
-					
 				}
 			}
 		} else {
