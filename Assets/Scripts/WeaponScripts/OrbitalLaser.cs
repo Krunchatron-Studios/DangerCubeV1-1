@@ -34,7 +34,7 @@ public class OrbitalLaser : Weapon {
             canFire = true;
             for (int i = 0; i < firePointArray.Length; i++) {
                 if (firePointArray[i].activeInHierarchy) {
-                    FireWeapon(firePointArray[0].transform.position, enemyTarget);
+                    FireWeapon(firePointArray[i].transform.position, enemyTarget);
                 }
             }
         }
