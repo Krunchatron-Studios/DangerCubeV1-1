@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2655124810910713274}
   - component: {fileID: 1327207215730875267}
   - component: {fileID: 3417617060092069337}
+  - component: {fileID: 6454908755577207748}
+  - component: {fileID: 8140440389059871526}
   m_Layer: 16
   m_Name: MechanicalMeatSeparator
   m_TagString: Weapon
@@ -113,3 +115,43 @@ MonoBehaviour:
   enemyTarget: {x: 0, y: 0}
   weaponUpgrades: []
   targetingSys: {fileID: 0}
+--- !u!50 &6454908755577207748
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8659254231319738890}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!232 &8140440389059871526
+DistanceJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8659254231319738890}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 1
+  m_Distance: 0.70771754
+  m_MaxDistanceOnly: 0
