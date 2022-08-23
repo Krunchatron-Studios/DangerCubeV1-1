@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9064938748470987602}
   - component: {fileID: 7616063206340158589}
   - component: {fileID: 195090090692200908}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: NearArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 819172974853099832}
   - component: {fileID: 3017821998183561071}
   - component: {fileID: 4995127885880137408}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: FarArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,9 +282,11 @@ GameObject:
   - component: {fileID: 4328212514868770317}
   - component: {fileID: 5518606059659793082}
   - component: {fileID: 1895361414640443856}
-  m_Layer: 0
+  - component: {fileID: 956776819469333026}
+  - component: {fileID: 4847733748128582374}
+  m_Layer: 15
   m_Name: MeatSaw
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -405,7 +407,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -431,6 +433,117 @@ PolygonCollider2D:
       - {x: 0.1875, y: -0.375}
       - {x: 0.34375, y: -0.1875}
       - {x: 0.34375, y: 0.0625}
+--- !u!114 &956776819469333026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2422541588661956526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9c7e942f78e4e57bb3b95eb496b515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  bloodSplash: {fileID: 1142193931700624, guid: 9d1846a1c8bff7142ab3959923c7d9c2, type: 3}
+  audio: {fileID: 4847733748128582374}
+--- !u!82 &4847733748128582374
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2422541588661956526}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8c5a32474dfb31747953c71d2cfc1075, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3207406309025278217
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,9 +554,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7639714529673016510}
   - component: {fileID: 3997921572081723246}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: MeatSawProjectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -480,4 +593,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisRigidBody: {fileID: 4328212514868770317}
   sawVelocity: 10
-  damage: 0

@@ -4273,7 +4273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1543983828490129111, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.20112562
+      value: -0.20112558
       objectReference: {fileID: 0}
     - target: {fileID: 1676881127900002126, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_RootOrder
@@ -4281,11 +4281,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1676881127900002126, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.89
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 1676881127900002126, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.07
+      value: 0.58
       objectReference: {fileID: 0}
     - target: {fileID: 2100004654278539786, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_RootOrder
@@ -4294,6 +4294,10 @@ PrefabInstance:
     - target: {fileID: 2153027199771789655, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351780635376296053, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: sawVelocity
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3108608910316471107, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_Distance
@@ -4355,6 +4359,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 53275898}
+    - target: {fileID: 3796742106572517135, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_Mass
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4081812560268438586, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.20800003
+      objectReference: {fileID: 0}
     - target: {fileID: 4856349438358712786, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_Distance
       value: 0.005
@@ -4419,6 +4431,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7006385155355571016, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_Radius
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7418663094450685491, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4445,11 +4461,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9109090282277806950, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.9161525
+      value: -0.0038475133
       objectReference: {fileID: 0}
     - target: {fileID: 9109090282277806950, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.035150826
+      value: 0.6148492
       objectReference: {fileID: 0}
     - target: {fileID: 9109090282277806950, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_ConnectedRigidBody

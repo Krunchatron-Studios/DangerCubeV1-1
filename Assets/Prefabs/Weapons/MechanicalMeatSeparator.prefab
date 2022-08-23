@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1327207215730875267}
   - component: {fileID: 3417617060092069337}
   - component: {fileID: 6454908755577207748}
-  - component: {fileID: 8140440389059871526}
   m_Layer: 16
   m_Name: MechanicalMeatSeparator
   m_TagString: Weapon
@@ -99,22 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1648f054589da4b7faaa2c916c76e85c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSprite: {fileID: 21300000, guid: 323158a20ae4145f7a364b2e1997d9d0, type: 3}
-  audioSource: {fileID: 0}
-  volume: 2.5
-  weaponName: Mechanical Meat Separator
-  weaponDescription: 
-  weaponDamage: 1
-  weaponRange: 3
-  weaponLevel: 1
-  rateOfFire: 5
-  canFire: 1
-  nextFire: 0
-  firePointArray: []
-  projectile: {fileID: 7521420758818873096, guid: 875b8e3f08a3c43649f92380c70d8e22, type: 3}
-  enemyTarget: {x: 0, y: 0}
-  weaponUpgrades: []
-  targetingSys: {fileID: 0}
+  thisRigidBody: {fileID: 0}
+  sawVelocity: 0
+  damage: 0
 --- !u!50 &6454908755577207748
 Rigidbody2D:
   serializedVersion: 4
@@ -136,22 +122,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!232 &8140440389059871526
-DistanceJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8659254231319738890}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
-  m_Distance: 0.70771754
-  m_MaxDistanceOnly: 0

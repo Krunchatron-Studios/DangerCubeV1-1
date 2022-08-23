@@ -1,17 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MechanicalMeatSeparator : MonoBehaviour {
-    // public Joint2D sawHardPoint;
-
     private GameObject _enemyPosition;
-
     public Rigidbody2D thisRigidBody;
-
     public float sawVelocity;
-
-    public float damage;
     void Start() {
         _enemyPosition = GameObject.FindWithTag("Enemy");
     }
