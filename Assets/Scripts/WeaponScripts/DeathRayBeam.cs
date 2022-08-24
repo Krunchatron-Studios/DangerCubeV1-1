@@ -3,9 +3,7 @@ using UnityEngine;
 
 public class DeathRayBeam : MonoBehaviour {
 
-	public Laser laser;
-	public CircleCollider2D beamHitPoint;
-	public float beamDamage = .05f;
+	public float beamDamage = .10f;
 	private void OnTriggerStay2D(Collider2D other) {
 		if (other.CompareTag("Enemy")) {
 			MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position,

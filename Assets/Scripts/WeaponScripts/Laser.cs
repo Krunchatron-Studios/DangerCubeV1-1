@@ -13,6 +13,7 @@ public class Laser : MonoBehaviour {
 	public Transform laserEndMarker;
 	private LayerMask _whatGetsHitMask;
 	public ParticleSystem burnVFX;
+	public CircleCollider2D beamHitBox;
 
 	[Header("Laser Stats")]
 	private readonly float _laserRange = 3.5f;
@@ -36,14 +37,20 @@ public class Laser : MonoBehaviour {
 			burnVFX.transform.position = laserHitMarker.transform.position;
 		}
 
-		if (laserFeedbackPlayer.IsPlaying == false) {
+		if (!laserFeedbackPlayer.IsPlaying) {
 			_lineRenderer.enabled = false;
 			burnVFX.transform.position = laserStartMarker.position;
 			burnVFX.gameObject.SetActive(false);
-
+			beamHitBox.gameObject.SetActive(false);
 		}
 	}
-
+	public void FireLaser() {
+		_lineRenderer.enabled = true;
+		beamHitBox.gameObject.SetActive(true);
+		Vector3 position = transform.position;
+		_lineRenderer.SetPosition(0, position);
+		laserFeedbackPlayer?.PlayFeedbacks();
+	}
 	public void FireLaserV1(Vector2 dir) {
 		
 		if (Keyboard.current.spaceKey.isPressed || Gamepad.current.bButton.isPressed) {
@@ -72,14 +79,6 @@ public class Laser : MonoBehaviour {
 		}
 
 	}
-
-	public void FireLaser() {
-		_lineRenderer.enabled = true;
-		Vector3 position = transform.position;
-		_lineRenderer.SetPosition(0, position);
-		laserFeedbackPlayer?.PlayFeedbacks();
-	}
-	
 }
 
 
