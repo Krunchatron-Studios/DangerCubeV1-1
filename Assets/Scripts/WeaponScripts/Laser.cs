@@ -1,28 +1,57 @@
+using MoreMountains.Feedbacks;
 using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Laser : MonoBehaviour {
-
-	private LineRenderer _lineRenderer;
+	
 	public Transform playerCube;
+	[Header("Important Laser Components")]
+	private LineRenderer _lineRenderer;
+	public GameObject laserHitMarker;
+	public Transform laserStartMarker;
+	public Transform laserEndMarker;
+	private LayerMask _whatGetsHitMask;
+	public ParticleSystem burnVFX;
+	public CircleCollider2D beamHitBox;
+
+	[Header("Laser Stats")]
 	private readonly float _laserRange = 3.5f;
 	public float laserDamage = .05f;
-	public GameObject laserHitMarker;
-	private LayerMask _whatGetsHitMask;
-	private Vector2 _direction;
+	
+	[Header("Laser Feedbacks")]
+	public MMF_Player laserFeedbackPlayer;
 
 	void Start() {
-		_direction = new Vector2(1f, -.15f);
 		_lineRenderer = GetComponent<LineRenderer>();
-		_whatGetsHitMask = LayerMask.GetMask("Enemy");
 	}
 	private void Update() {
-		_direction.x = playerCube.transform.localScale.x;
-		FireLaser(_direction);
-	}
+		if (Keyboard.current.eKey.wasPressedThisFrame) {
+			FireLaser();
+		}
 
-	public void FireLaser(Vector2 dir) {
+		if (laserFeedbackPlayer.IsPlaying) {
+			burnVFX.gameObject.SetActive(true);
+			_lineRenderer.SetPosition(0, transform.position);
+			_lineRenderer.SetPosition(1, laserHitMarker.transform.position);
+			burnVFX.transform.position = laserHitMarker.transform.position;
+		}
+
+		if (!laserFeedbackPlayer.IsPlaying) {
+			_lineRenderer.enabled = false;
+			burnVFX.transform.position = laserStartMarker.position;
+			burnVFX.gameObject.SetActive(false);
+			beamHitBox.gameObject.SetActive(false);
+		}
+	}
+	public void FireLaser() {
+		_lineRenderer.enabled = true;
+		beamHitBox.gameObject.SetActive(true);
+		Vector3 position = transform.position;
+		_lineRenderer.SetPosition(0, position);
+		laserFeedbackPlayer?.PlayFeedbacks();
+	}
+	public void FireLaserV1(Vector2 dir) {
 		
 		if (Keyboard.current.spaceKey.isPressed || Gamepad.current.bButton.isPressed) {
 			_lineRenderer.enabled = true;
@@ -50,5 +79,6 @@ public class Laser : MonoBehaviour {
 		}
 
 	}
-	
 }
+
+

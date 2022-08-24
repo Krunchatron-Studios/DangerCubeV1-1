@@ -15,8 +15,8 @@ public class Weapon : MonoBehaviour {
 	
 	[Header("Firing Vars")]
 	public int weaponLevel = 1;
-	public float rateOfFire = 1.0f;
-	public bool canFire = true;
+	public float rateOfFire = 2.0f;
+	[SerializeField] private bool canFire = true;
 	public float nextFire;
 	
 	[Header("Projectile Vars")]
