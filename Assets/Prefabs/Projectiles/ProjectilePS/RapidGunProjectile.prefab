@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.7237897, g: 0, b: 1, a: 1}
+  m_Color: {r: 0.7237897, g: 0, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,6 +102,8 @@ MonoBehaviour:
   projectileVelocity: 250
   weapon: {fileID: 4509634286547317598, guid: c65ad5cd03f055e4dbd5e7b644466cc8, type: 3}
   projectileRb2D: {fileID: 2576749402811358335}
+  projectileParticle: {fileID: 6609792059005856855, guid: 2f0cce7ba504b4c4bba12b7011703695, type: 3}
+  muzzleFlashParticle: {fileID: 5235355868479108926, guid: 935f378eab76c184a837132a598d5d19, type: 3}
   targetPosition: {x: 0, y: 0, z: 0}
   bloodSplash: {fileID: 2512025392852149761, guid: 8df12292ad0e89947a87dee41a86f181, type: 3}
 --- !u!50 &2576749402811358335
