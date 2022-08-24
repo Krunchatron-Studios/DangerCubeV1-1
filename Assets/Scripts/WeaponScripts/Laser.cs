@@ -29,7 +29,6 @@ public class Laser : MonoBehaviour {
 	}
 	private void Update() {
 		if (Keyboard.current.eKey.wasPressedThisFrame) {
-			
 			FireLaser();
 		}
 
@@ -41,6 +40,7 @@ public class Laser : MonoBehaviour {
 		}
 
 		if (!laserFeedbackPlayer.IsPlaying) {
+			audioSource.Stop();
 			_lineRenderer.enabled = false;
 			burnVFX.transform.position = laserStartMarker.position;
 			burnVFX.gameObject.SetActive(false);
@@ -51,6 +51,7 @@ public class Laser : MonoBehaviour {
 		if (!laserFeedbackPlayer.IsPlaying) {
 			audioSource.Play();
 		}
+		
 		_lineRenderer.enabled = true;
 		beamHitBox.gameObject.SetActive(true);
 		Vector3 position = transform.position;
