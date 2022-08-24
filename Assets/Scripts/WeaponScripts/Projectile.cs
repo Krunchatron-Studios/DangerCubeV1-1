@@ -44,11 +44,14 @@ public class Projectile : MonoBehaviour {
 			IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
 			hit.TakeDamage(weapon.weaponDamage);
 			Destroy(gameObject);
-			Destroy(this.bullet);
+			Destroy(bullet);
+			Destroy(flash);
 		}
 		if (other.CompareTag("Wall")) {
 			Destroy(gameObject);
-			Destroy(this.bullet);
+			Destroy(bullet);
+			Destroy(flash);
+
 		}
 	}
 
