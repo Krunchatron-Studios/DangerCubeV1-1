@@ -13,6 +13,7 @@ public class Laser : MonoBehaviour {
 	public Transform laserEndMarker;
 	private LayerMask _whatGetsHitMask;
 	public ParticleSystem burnVFX;
+	public AudioSource audioSource;
 	public CircleCollider2D beamHitBox;
 
 	[Header("Laser Stats")]
@@ -24,9 +25,11 @@ public class Laser : MonoBehaviour {
 
 	void Start() {
 		_lineRenderer = GetComponent<LineRenderer>();
+		audioSource = GetComponent<AudioSource>();
 	}
 	private void Update() {
 		if (Keyboard.current.eKey.wasPressedThisFrame) {
+			
 			FireLaser();
 		}
 
@@ -45,6 +48,9 @@ public class Laser : MonoBehaviour {
 		}
 	}
 	public void FireLaser() {
+		if (!laserFeedbackPlayer.IsPlaying) {
+			audioSource.Play();
+		}
 		_lineRenderer.enabled = true;
 		beamHitBox.gameObject.SetActive(true);
 		Vector3 position = transform.position;

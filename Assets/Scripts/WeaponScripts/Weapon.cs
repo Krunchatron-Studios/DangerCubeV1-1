@@ -4,7 +4,7 @@ using MoreMountains.Feedbacks;
 public class Weapon : MonoBehaviour {
 
 	public Sprite weaponSprite;
-	private AudioClip weaponSound;
+	private AudioClip _weaponSound;
 	public AudioSource audioSource;
 	
 	[Header("Main Weapon Vars")]
