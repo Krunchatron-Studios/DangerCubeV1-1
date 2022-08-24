@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c69085917c9b360458cf947f8c03be4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 8492263470177819836}
+  weapon: {fileID: 0}
   circleCol2D: {fileID: 1230682316949238728}
   firePoint1: {fileID: 5540794475001378500}
   firePoint2: {fileID: 5540794474269357689}
@@ -200,8 +200,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8492263470177819837}
+  - component: {fileID: 7485021606706960250}
   - component: {fileID: 935498610684718217}
-  - component: {fileID: 8492263470177819836}
   - component: {fileID: 3527016346985065115}
   m_Layer: 16
   m_Name: ClusterGun
@@ -230,6 +230,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7485021606706960250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8492263470177819810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d20a0e7fa96d3b41940dbda4c77bb23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSprite: {fileID: 21300000, guid: 37141a44ee7f96f44a2cce91de093d60, type: 3}
+  audioSource: {fileID: 3527016346985065115}
+  weaponName: ClusterGun
+  weaponDescription: Ball O' Bullets for all!
+  weaponDamage: 1
+  weaponRange: 3
+  weaponLevel: 1
+  rateOfFire: 2
+  canFire: 1
+  nextFire: 0
+  firePointArray:
+  - {fileID: 5540794475001378500}
+  - {fileID: 5540794474269357689}
+  - {fileID: 5540794473067231761}
+  - {fileID: 5540794473035678637}
+  projectile: {fileID: 1655789376720695905, guid: 47ede0959822f854994d4baea34e962b, type: 3}
+  enemyTarget: {x: 0, y: 0}
+  weaponUpgrades: []
+  targetingSys: {fileID: 5780026266065048204}
 --- !u!212 &935498610684718217
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -282,38 +313,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8492263470177819836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8492263470177819810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33052def576bcde42b47b58361e5dfbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponSprite: {fileID: 21300000, guid: 37141a44ee7f96f44a2cce91de093d60, type: 3}
-  audioSource: {fileID: 3527016346985065115}
-  volume: 2.5
-  weaponName: ClusterGun
-  weaponDescription: It shoots clusters of bullets
-  weaponDamage: 1
-  weaponRange: 10
-  weaponLevel: 1
-  rateOfFire: 1
-  canFire: 1
-  nextFire: 0
-  firePointArray:
-  - {fileID: 5540794475001378500}
-  - {fileID: 5540794474269357689}
-  - {fileID: 5540794473067231761}
-  - {fileID: 5540794473035678637}
-  projectile: {fileID: 1655789376720695905, guid: 47ede0959822f854994d4baea34e962b, type: 3}
-  enemyTarget: {x: 0, y: 0}
-  weaponUpgrades: []
-  targetingSys: {fileID: 2608481302110575300, guid: 12602ce919ca01443b18db03fe04235a, type: 3}
 --- !u!82 &3527016346985065115
 AudioSource:
   m_ObjectHideFlags: 0
@@ -324,7 +323,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cd6cde2e439ce0b4984c66ae86955c23, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f481c438b1278c144b843d39d2bd9c76, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1

@@ -10,12 +10,12 @@ public class Projectile : MonoBehaviour {
 	[SerializeField] private GameObject muzzleFlashParticle;
 	public Vector3 targetPosition;
 	public GameObject bloodSplash;
-	private GameObject bullet;
-	private GameObject flash;
+	private GameObject _bullet;
+	private GameObject _flash;
 
 	private void Start() {
-		bullet = Instantiate(projectileParticle, projectileRb2D.transform.position, Quaternion.identity);
-		flash = Instantiate(muzzleFlashParticle, projectileRb2D.transform.position, Quaternion.identity);
+		_bullet = Instantiate(projectileParticle, projectileRb2D.transform.position, Quaternion.identity);
+		_flash = Instantiate(muzzleFlashParticle, projectileRb2D.transform.position, Quaternion.identity);
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
@@ -28,7 +28,7 @@ public class Projectile : MonoBehaviour {
 	}
 
 	private void Update() {
-		bullet.transform.position = projectileRb2D.transform.position;
+		_bullet.transform.position = projectileRb2D.transform.position;
 	}
 
 	public void Setup(Vector3 targetPos) {
@@ -43,13 +43,13 @@ public class Projectile : MonoBehaviour {
 			IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
 			hit.TakeDamage(weapon.weaponDamage);
 			Destroy(gameObject);
-			Destroy(bullet);
-			Destroy(flash);
+			Destroy(_bullet);
+			Destroy(_flash);
 		}
 		if (other.CompareTag("Wall")) {
 			Destroy(gameObject);
-			Destroy(bullet);
-			Destroy(flash);
+			Destroy(_bullet);
+			Destroy(_flash);
 
 		}
 	}

@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class OrbitalLaser : Weapon {
+public class OrbitalLaser : ProjectileWeapon {
     private Transform _playerPosition;
     private Vector3 _enemyPosition;
     public GameObject explosion;

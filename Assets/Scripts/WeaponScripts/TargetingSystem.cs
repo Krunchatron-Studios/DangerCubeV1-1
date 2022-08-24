@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TargetingSystem : MonoBehaviour {
 
-	public Weapon weapon;
+	public ProjectileWeapon weapon;
 	public CircleCollider2D circleCol2D;
 	public GameObject firePoint1, firePoint2, firePoint3, firePoint4;
 	private float _sensorRange = 0f;

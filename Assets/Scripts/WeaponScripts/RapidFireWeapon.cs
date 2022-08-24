@@ -1,7 +1,7 @@
 using UnityEngine;
 
-public class RapidFireWeapon : Weapon
-{
+public class RapidFireWeapon : ProjectileWeapon {
+	
 	[Header("Rapid fire weapon exclusive stats")]
 	public bool isRapidFiring;
 	public float weaponCoolDown;

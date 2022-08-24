@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509634286547317596}
+  - component: {fileID: 2117454392042047476}
   - component: {fileID: 4509634286547317597}
-  - component: {fileID: 4509634286547317598}
   - component: {fileID: 4509634286547317595}
   m_Layer: 0
   m_Name: RapidGun
@@ -37,6 +37,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2117454392042047476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509634286547317599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2507a8314cd8da04d91e0fd5d7a75916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSprite: {fileID: 21300000, guid: 1076b120f868f7b43a90b668e62af0fa, type: 3}
+  audioSource: {fileID: 4509634286547317595}
+  weaponName: RapidGun
+  weaponDescription: Ratta tat tat, GI Joe dead like that
+  weaponDamage: 1
+  firePointArray:
+  - {fileID: 251079421563809740}
+  - {fileID: 251079421114752198}
+  projectile: {fileID: 1655789376720695905, guid: fda5d909c1a0f4f45b1a96e4ae70d7dc, type: 3}
+  enemyTarget: {x: 0, y: 0}
+  targetingSys: {fileID: 1920327367836471557}
+  weaponRange: 3
+  rateOfFire: 2
+  canFire: 1
+  nextFire: 0
+  isRapidFiring: 0
+  weaponCoolDown: 0
 --- !u!212 &4509634286547317597
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -89,36 +118,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4509634286547317598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4509634286547317599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33052def576bcde42b47b58361e5dfbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponSprite: {fileID: 21300000, guid: 1076b120f868f7b43a90b668e62af0fa, type: 3}
-  audioSource: {fileID: 4509634286547317595}
-  volume: 2.5
-  weaponName: RapidGun
-  weaponDescription: it shoots bullets, and a lot of them
-  weaponDamage: 1
-  weaponRange: 4
-  weaponLevel: 1
-  rateOfFire: 0.25
-  canFire: 1
-  nextFire: 0
-  firePointArray:
-  - {fileID: 251079421563809740}
-  - {fileID: 251079421114752198}
-  projectile: {fileID: 1655789376720695905, guid: c2094a1ac03b5124994e1521878082c0, type: 3}
-  enemyTarget: {x: 0, y: 0}
-  weaponUpgrades: []
-  targetingSys: {fileID: 2608481302110575300, guid: 12602ce919ca01443b18db03fe04235a, type: 3}
 --- !u!82 &4509634286547317595
 AudioSource:
   m_ObjectHideFlags: 0
@@ -225,7 +224,7 @@ PrefabInstance:
     - target: {fileID: 2608481302110575300, guid: 12602ce919ca01443b18db03fe04235a, type: 3}
       propertyPath: weapon
       value: 
-      objectReference: {fileID: 4509634286547317598}
+      objectReference: {fileID: 0}
     - target: {fileID: 2608481302110575300, guid: 12602ce919ca01443b18db03fe04235a, type: 3}
       propertyPath: firePoint1
       value: 
@@ -284,6 +283,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12602ce919ca01443b18db03fe04235a, type: 3}
+--- !u!114 &1920327367836471557 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2608481302110575300, guid: 12602ce919ca01443b18db03fe04235a, type: 3}
+  m_PrefabInstance: {fileID: 4509634286534921153}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c69085917c9b360458cf947f8c03be4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1920327367836471562 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2608481302110575307, guid: 12602ce919ca01443b18db03fe04235a, type: 3}
