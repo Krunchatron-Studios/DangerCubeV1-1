@@ -4672,6 +4672,22 @@ PrefabInstance:
       propertyPath: weapon
       value: 
       objectReference: {fileID: 1681303303}
+    - target: {fileID: 1543983828490129111, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.20112562
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676881127900002126, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676881127900002126, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676881127900002126, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.17
+      objectReference: {fileID: 0}
     - target: {fileID: 2085254490671003437, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: audioSource
       value: 
@@ -4690,7 +4706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3757486578644410247, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3757486578644410265, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: rateOfFire
@@ -4748,6 +4764,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 53275898}
+    - target: {fileID: 4081812560268438586, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.20799999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455625698292893950, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5758044301797083659, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: cubeWeapons.Array.data[0]
       value: 
@@ -4756,6 +4780,14 @@ PrefabInstance:
       propertyPath: cubeWeapons.Array.data[4]
       value: 
       objectReference: {fileID: 3796742104837735128}
+    - target: {fileID: 5947581802380710363, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.012417914
+      objectReference: {fileID: 0}
+    - target: {fileID: 5947581802380710363, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.42728457
+      objectReference: {fileID: 0}
     - target: {fileID: 6557873537676906476, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: burnVFX
       value: 
@@ -4776,10 +4808,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 6579278032264320417, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.016351607
+      objectReference: {fileID: 0}
     - target: {fileID: 8146352213444667838, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: d3faad9e30f1e754295ea46e3de5a85c, type: 3}
+    - target: {fileID: 8649432337890070779, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8670534410664316202, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: rateOfFire
       value: 2
@@ -4790,11 +4830,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8670534410664316203, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8670534410664316207, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109090282277806950, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.023461878
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109090282277806950, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.17871228
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8670534410664316202, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}

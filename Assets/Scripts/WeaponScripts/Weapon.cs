@@ -9,16 +9,9 @@ public class Weapon : MonoBehaviour {
 	[Header("Main Weapon Vars")]
 	public string weaponName;
 	public string weaponDescription;
-	public int weaponDamage = 1;
+	public float weaponDamage = 1f;
 
 	private void Start() {
 		audioSource = GetComponent<AudioSource>();
 	}
-
-
-
-
-
-
-
 }
