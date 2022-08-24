@@ -363,17 +363,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &70036181 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8670534410664316202, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
-  m_PrefabInstance: {fileID: 3796742104837735127}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33052def576bcde42b47b58361e5dfbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &144615594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,7 +1164,12 @@ MonoBehaviour:
   - {fileID: 1415127119}
   - {fileID: 747224058}
   - {fileID: 1136044458}
-  - {fileID: 70036181}
+  - {fileID: 0}
+--- !u!1 &272587430 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5024502061502636722, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+  m_PrefabInstance: {fileID: 3796742104837735127}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &341786060
 GameObject:
   m_ObjectHideFlags: 0
@@ -3177,6 +3171,11 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8580788137629703848, guid: b2453c2903af94a46aea8436563a7f17, type: 3}
   m_PrefabInstance: {fileID: 1444894753}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1488036011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5024502063168033208, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+  m_PrefabInstance: {fileID: 3796742104837735127}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1504286895
 GameObject:
   m_ObjectHideFlags: 0
@@ -3705,6 +3704,47 @@ RectTransform:
   m_AnchoredPosition: {x: 0.6108017, y: 0}
   m_SizeDelta: {x: -1.2216, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1788401176 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8670534410664316203, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+  m_PrefabInstance: {fileID: 3796742104837735127}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1788401178 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8670534410664316207, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+  m_PrefabInstance: {fileID: 3796742104837735127}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1788401180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788401176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2507a8314cd8da04d91e0fd5d7a75916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSprite: {fileID: 21300000, guid: 1076b120f868f7b43a90b668e62af0fa, type: 3}
+  audioSource: {fileID: 1788401178}
+  weaponName: RapidGun
+  weaponDescription: It shoots lots of bullets!
+  weaponDamage: 1
+  weaponRange: 3
+  weaponLevel: 1
+  rateOfFire: 2
+  canFire: 1
+  nextFire: 0
+  firePointArray:
+  - {fileID: 1488036011}
+  - {fileID: 272587430}
+  projectile: {fileID: 1655789376720695905, guid: c2094a1ac03b5124994e1521878082c0, type: 3}
+  enemyTarget: {x: 0, y: 0}
+  weaponUpgrades: []
+  targetingSys: {fileID: 1986229677}
+  isRapidFiring: 0
+  weaponCoolDown: 0
 --- !u!1 &1796236233
 GameObject:
   m_ObjectHideFlags: 0
@@ -4111,6 +4151,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1986229677 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6656534616049659761, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+  m_PrefabInstance: {fileID: 3796742104837735127}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c69085917c9b360458cf947f8c03be4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &2023402968 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 3796742106572517135, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
@@ -4403,7 +4454,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8670534410664316207, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8670534410664316202, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
 --- !u!1001 &4024868235645168736
 PrefabInstance:
