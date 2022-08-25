@@ -44,7 +44,7 @@ public class ProjectileWeapon : Weapon {
 	}
 	
 	public void AquireTarget(BaseEnemy enemy) {
-		Debug.Log($"aquired target: {enemy}");
+		// Debug.Log($"aquired target: {enemy}");
 		enemyTarget = enemy.transform.position;
 	}
 }

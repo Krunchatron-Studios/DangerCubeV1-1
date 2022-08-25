@@ -1,23 +1,14 @@
 using UnityEngine;
 
-public class OrbitalProjectile : Projectile {
-    public AudioSource audio;
+public class OrbitalProjectile : MonoBehaviour {
 
-    private void Awake() {
-        Sound();
-    }
-
-    public override void ResolveProjectile(Collider2D other) {
+    public Weapon weapon;
+    public void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Enemy")) {
-				
             IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
             hit.TakeDamage(weapon.weaponDamage);
         }
         if (other.CompareTag("Wall")) {
         }
     }
-
-    void Sound() {
-        audio.Play();
-    } 
 }
