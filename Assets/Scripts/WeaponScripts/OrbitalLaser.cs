@@ -14,6 +14,7 @@ public class OrbitalLaser : ProjectileWeapon {
     }
     public override void FireWeapon(Vector3 firePoint, Vector3 targetPosition) {
         float startX = _enemyPosition.x;
+        float startY = _enemyPosition.y;
         Transform bulletTransform = Instantiate(projectile, new Vector3(startX, 50, 0), Quaternion.identity);
         StartCoroutine(BeamCo(bulletTransform));
         Projectile bullet = bulletTransform.GetComponent<Projectile>();
@@ -21,20 +22,19 @@ public class OrbitalLaser : ProjectileWeapon {
     }
 
     IEnumerator BeamCo(Transform bulletTransform) {
+        float distance = Vector3.Distance(bulletTransform.position, _enemyPosition);
+        GameObject explosionTransform = Instantiate(explosion, _enemyPosition, Quaternion.identity);
+        StartCoroutine(ExplodeCo(explosionTransform));
         audioSource.Play();
-        int lerpMax = 2;
-        // float time = 0;
-        for (float time = 0; time <= lerpMax; time += 0.5f) {
-            bulletTransform.localScale = new Vector3(2, Mathf.Lerp(50, _enemyPosition.y, time / lerpMax), 0);
-            // time += Time.deltaTime;
+        float time = 0;
+        while (time < 1) {
+            Debug.Log("this is the current time: " + (time < 1));
+            bulletTransform.localScale = new Vector3(Mathf.Lerp(2, 0, time / 1), distance + 5, 0);
+
+            time += Time.deltaTime;
             yield return null;
         }
-   
-        Debug.Log("made it here");
-        GameObject explosionTransform = Instantiate(explosion, _enemyPosition, Quaternion.identity);
-
-        StartCoroutine(ExplodeCo(explosionTransform));
-        Destroy(bulletTransform);
+        Destroy(bulletTransform.gameObject);
     }
 
     IEnumerator ExplodeCo(GameObject explosion) {

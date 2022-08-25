@@ -103,17 +103,15 @@ MonoBehaviour:
   weaponName: OrbitalLaser
   weaponDescription: Make it rain baby!
   weaponDamage: 1
-  weaponRange: 3
-  weaponLevel: 1
-  rateOfFire: 2
-  canFire: 1
-  nextFire: 0
   firePointArray: []
   projectile: {fileID: 6588101289259591081, guid: b872d41b887444baf9dc0a13b49ba79f, type: 3}
   enemyTarget: {x: -12.213808, y: 6.7464404}
-  weaponUpgrades: []
   targetingSys: {fileID: 2608481302110575300, guid: 12602ce919ca01443b18db03fe04235a, type: 3}
-  explosion: {fileID: 7541819283699558946, guid: d00b829bdd86a4de488d62e5753024df, type: 3}
+  weaponRange: 3
+  rateOfFire: 2
+  canFire: 1
+  nextFire: 0
+  explosion: {fileID: 121774, guid: 5d24c8b5c9abd754d877d25ebd733bdf, type: 3}
 --- !u!82 &1605000266149368324
 AudioSource:
   m_ObjectHideFlags: 0
