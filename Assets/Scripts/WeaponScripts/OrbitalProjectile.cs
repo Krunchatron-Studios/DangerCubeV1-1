@@ -1,23 +1,18 @@
+using MoreMountains.Tools;
 using UnityEngine;
 
-public class OrbitalProjectile : Projectile {
-    public AudioSource audio;
+public class OrbitalProjectile : MonoBehaviour {
 
-    private void Awake() {
-        Sound();
-    }
-
-    public override void ResolveProjectile(Collider2D other) {
+    public GameObject bloodSplash;
+    public Weapon weapon;
+    public void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log("Here is some trigger shit");
         if (other.CompareTag("Enemy")) {
-				
+            MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
+                weapon.weaponDamage.ToString(), Vector3.up, .2f);
+            bloodSplash = Instantiate(bloodSplash, other.transform.position, Quaternion.identity);
             IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
             hit.TakeDamage(weapon.weaponDamage);
         }
-        if (other.CompareTag("Wall")) {
-        }
     }
-
-    void Sound() {
-        audio.Play();
-    } 
 }
