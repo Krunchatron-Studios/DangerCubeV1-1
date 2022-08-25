@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
@@ -9,6 +10,9 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 	public int experienceValue;
 	public Rigidbody2D enemyRb2D;
 	public Transform playerPosition;
+
+	[Header("Flash Feedback")] 
+	public MMF_Player hitFlashFeedback;
 	
 	[Header("Spawn Mechanics")] 
 	public float spawnDistance;
@@ -37,11 +41,15 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 	}
 	public void TakeDamage(float dmgAmount) {
 		currentHealth -= dmgAmount;
+		hitFlashFeedback?.PlayFeedbacks();
+		
 		if (currentHealth <= 0) {
 			playerResources.experience += experienceValue;
 			Instantiate(drop, transform.position, Quaternion.identity);
-			Destroy(gameObject);
+			Destroy(gameObject, .2f);
 		}
+		
+
 	}
 	public void HealDamage(int healAmount) {
 		currentHealth += healAmount;

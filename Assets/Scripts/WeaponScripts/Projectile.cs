@@ -9,8 +9,7 @@ public class Projectile : MonoBehaviour {
 	public Vector3 targetPosition;
 	public GameObject bloodSplash;
 	private float _distance;
-
-
+	
 	private void Update() {
 		_distance = Vector3.Distance(weapon.transform.position, transform.position);
 		if (_distance > weapon.weaponRange) {
@@ -46,6 +45,4 @@ public class Projectile : MonoBehaviour {
 			Destroy(gameObject);
 		}
 	}
-
-	
 }

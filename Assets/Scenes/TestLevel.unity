@@ -4685,7 +4685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3757486578644410247, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3757486578644410265, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: rateOfFire
@@ -4747,6 +4747,10 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.y
       value: -0.20799999
       objectReference: {fileID: 0}
+    - target: {fileID: 5024502061502636723, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.21
+      objectReference: {fileID: 0}
     - target: {fileID: 5455625698292893950, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4805,7 +4809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6603447944439953792, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: longRof
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6603447944439953792, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: projectile
@@ -4837,7 +4841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8670534410664316203, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8670534410664316207, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_PlayOnAwake
