@@ -1,10 +1,13 @@
 using UnityEngine;
 
-public class RapidFireWeapon : Weapon
-{
+public class RapidFireWeapon : ProjectileWeapon {
+	
 	[Header("Rapid fire weapon exclusive stats")]
 	public bool isRapidFiring;
 	public float weaponCoolDown;
+	[SerializeField] private float longRof = 3;
+	[SerializeField] private float fastRof = 1;
+
 
 	private void Start() {
 		weaponCoolDown = Time.time + 2;
@@ -22,14 +25,14 @@ public class RapidFireWeapon : Weapon
 		bool rapidFireTimerTriggered = false;
 		
 		if (!isRapidFiring) {
-			rateOfFire = .15f;
+			rateOfFire = fastRof;
 			isRapidFiring = true;
 			Debug.Log($"time: {Time.time}");
 			rapidFireTimerTriggered = true;
 		}
 		
 		if (isRapidFiring && !rapidFireTimerTriggered) {
-			rateOfFire = 1f;
+			rateOfFire = longRof;
 			isRapidFiring = false;
 			Debug.Log($"weaponCD: {weaponCoolDown}");
 		}

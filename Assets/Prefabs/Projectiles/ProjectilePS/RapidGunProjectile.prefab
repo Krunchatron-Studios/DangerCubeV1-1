@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1655789376720695905}
+  - component: {fileID: -8309369519932356767}
   - component: {fileID: 254271668005075209}
-  - component: {fileID: 1655789376720695906}
   - component: {fileID: 2576749402811358335}
   - component: {fileID: 924206450}
   m_Layer: 15
@@ -29,12 +29,31 @@ Transform:
   m_GameObject: {fileID: 1655789376720695904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-8309369519932356767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655789376720695904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99280fe0a6d5454abe0e1c9ddcbfcf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileVelocity: 300
+  weapon: {fileID: 2117454392042047476, guid: c65ad5cd03f055e4dbd5e7b644466cc8, type: 3}
+  projectileRb2D: {fileID: 2576749402811358335}
+  targetPosition: {x: 0, y: 0, z: 0}
+  bloodSplash: {fileID: 2512025392852149761, guid: 8df12292ad0e89947a87dee41a86f181, type: 3}
+  projectileParticle: {fileID: 6609792059005856855, guid: 2f0cce7ba504b4c4bba12b7011703695, type: 3}
+  muzzleFlashParticle: {fileID: 5235355868479108926, guid: 935f378eab76c184a837132a598d5d19, type: 3}
 --- !u!212 &254271668005075209
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -76,40 +95,17 @@ SpriteRenderer:
   m_SortingLayerID: -598322915
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-<<<<<<<< HEAD:Assets/Prefabs/Projectiles/ProjectilePS/RapidGunProjectile.prefab
-  m_Color: {r: 0.7237897, g: 0, b: 1, a: 0}
-========
-  m_Color: {r: 0.7237897, g: 0, b: 1, a: 1}
->>>>>>>> 8f0fff073c100a9a045b542eee3820fe63151a89:Assets/Prefabs/Projectiles/RapidGunProjectile.prefab
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0.8283458, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.2, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1655789376720695906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655789376720695904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c010d6c147971a4a95a2c58d0cc2140, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileVelocity: 250
-  weapon: {fileID: 4509634286547317598, guid: c65ad5cd03f055e4dbd5e7b644466cc8, type: 3}
-  projectileRb2D: {fileID: 2576749402811358335}
-  projectileParticle: {fileID: 6609792059005856855, guid: 2f0cce7ba504b4c4bba12b7011703695, type: 3}
-  muzzleFlashParticle: {fileID: 5235355868479108926, guid: 935f378eab76c184a837132a598d5d19, type: 3}
-  targetPosition: {x: 0, y: 0, z: 0}
-  bloodSplash: {fileID: 2512025392852149761, guid: 8df12292ad0e89947a87dee41a86f181, type: 3}
 --- !u!50 &2576749402811358335
 Rigidbody2D:
   serializedVersion: 4
@@ -130,7 +126,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &924206450
 CircleCollider2D:
   m_ObjectHideFlags: 0

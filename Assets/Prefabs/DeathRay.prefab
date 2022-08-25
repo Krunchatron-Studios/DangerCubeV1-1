@@ -321,7 +321,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8678118045615468125}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2552662885870406299
 SpriteRenderer:
@@ -435,7 +435,7 @@ Transform:
   - {fileID: 8678118045508909587}
   - {fileID: 4539409639283689612}
   m_Father: {fileID: 8678118045615468125}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7142115600890460211
 GameObject:
@@ -635,8 +635,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2552662885870406300}
   - {fileID: 369622203138816264}
+  - {fileID: 2552662885870406300}
   - {fileID: 9195537134137375023}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -752,11 +752,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509173377196bfd48abb4fe3192baa56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCube: {fileID: 0}
+  weaponSprite: {fileID: 21300000, guid: ac5d1de98466c3345a21d02554557b9f, type: 3}
+  audioSource: {fileID: 0}
+  weaponName: DeathRay
+  weaponDescription: Zap! Yer dead...
+  weaponDamage: 1
   laserHitMarker: {fileID: 2552662885870406301}
   laserStartMarker: {fileID: 4539409639283689612}
   laserEndMarker: {fileID: 8678118045508909587}
-  burnVFX: {fileID: 0}
+  burnVFX: {fileID: 1926705737399484858, guid: e608b3579e39c1140bcc7c4d35ea987b, type: 3}
   beamHitBox: {fileID: 2552662885870406298}
-  laserDamage: 0.05
-  laserFeedbackPlayer: {fileID: 0}
+  laserFeedbackPlayer: {fileID: 5593154845026965308}
