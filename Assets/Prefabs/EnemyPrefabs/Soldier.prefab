@@ -15,14 +15,13 @@ GameObject:
   - component: {fileID: 6973780780784977513}
   - component: {fileID: 6709959086897223377}
   - component: {fileID: 9036932339232477918}
-  - component: {fileID: -484082443945653121}
   m_Layer: 10
   m_Name: Soldier
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4924161943832233526
 Transform:
   m_ObjectHideFlags: 0
@@ -58,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2aa7128bdd2dd9746933cd7f394bd7c7, type: 2}
+  - {fileID: 2100000, guid: 5b8723abded1fe043b4a8cca03c184a4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -176,7 +175,7 @@ MonoBehaviour:
   experienceValue: 5
   enemyRb2D: {fileID: 6973780780784977513}
   playerPosition: {fileID: 0}
-  hitFlashFeedback: {fileID: 0}
+  hitFlashFeedback: {fileID: 9036932339232477918}
   spawnDistance: 5
   drop: {fileID: 1527084982249308848, guid: aa8fef295bf4542edb7f38a866479ce6, type: 3}
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
@@ -276,20 +275,3 @@ MonoBehaviour:
         FlickerColor: {r: 4, g: 0, b: 0, a: 1}
         MaterialIndexes: 
         UseMaterialPropertyBlocks: 0
---- !u!114 &-484082443945653121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130156450002828641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e342bdf7562c0374381c8694c2b91606, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dissolveAmount: 0
-  dissolveSpeed: 0.005
-  isDissolving: 0
-  outColor: {r: 1, g: 0.14877309, b: 0, a: 1}
-  inColor: {r: 4, g: 0, b: 0, a: 1}
