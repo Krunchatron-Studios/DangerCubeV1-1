@@ -4620,6 +4620,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 995797804, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_Size.x
+      value: 2.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 995797804, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_Size.y
+      value: 2.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 995797804, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
@@ -4639,6 +4647,10 @@ PrefabInstance:
       propertyPath: weapon
       value: 
       objectReference: {fileID: 1681303303}
+    - target: {fileID: 1407013482471996297, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_Radius
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1543983828490129111, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_ConnectedAnchor.y
       value: -0.20112562
@@ -4685,7 +4697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3757486578644410247, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3757486578644410265, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: rateOfFire
@@ -4825,7 +4837,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: d3faad9e30f1e754295ea46e3de5a85c, type: 3}
     - target: {fileID: 8649432337890070779, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8670534410664316202, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: rateOfFire

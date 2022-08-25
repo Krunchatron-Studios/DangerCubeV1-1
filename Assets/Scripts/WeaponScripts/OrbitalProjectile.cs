@@ -1,14 +1,18 @@
+using MoreMountains.Tools;
 using UnityEngine;
 
 public class OrbitalProjectile : MonoBehaviour {
 
+    public GameObject bloodSplash;
     public Weapon weapon;
     public void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log("Here is some trigger shit");
         if (other.CompareTag("Enemy")) {
+            MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
+                weapon.weaponDamage.ToString(), Vector3.up, .2f);
+            bloodSplash = Instantiate(bloodSplash, other.transform.position, Quaternion.identity);
             IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
             hit.TakeDamage(weapon.weaponDamage);
-        }
-        if (other.CompareTag("Wall")) {
         }
     }
 }
