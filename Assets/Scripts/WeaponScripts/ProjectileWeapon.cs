@@ -15,6 +15,9 @@ public class ProjectileWeapon : Weapon {
 	[SerializeField] private bool canFire = true;
 	public float nextFire;
 
+	private void Start() {
+		targetingSys.circleCol2D.radius = weaponRange;
+	}
 	private void Update() {
 		CanFireTimer();
 	}
@@ -41,6 +44,7 @@ public class ProjectileWeapon : Weapon {
 	}
 	
 	public void AquireTarget(BaseEnemy enemy) {
+		Debug.Log($"aquired target: {enemy}");
 		enemyTarget = enemy.transform.position;
 	}
 }

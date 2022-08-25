@@ -4,11 +4,20 @@ using MoreMountains.Tools;
 public class Projectile : MonoBehaviour {
 
 	public int projectileVelocity = 10;
-	public Weapon weapon;
+	public ProjectileWeapon weapon;
 	public Rigidbody2D projectileRb2D;
 	public Vector3 targetPosition;
 	public GameObject bloodSplash;
-	
+	private float _distance;
+
+
+	private void Update() {
+		_distance = Vector3.Distance(weapon.transform.position, transform.position);
+		if (_distance > weapon.weaponRange) {
+			Destroy(gameObject);
+		}
+	}
+
 	void OnTriggerEnter2D(Collider2D other) {
 		ResolveProjectile(other);
 		if (other.CompareTag("Enemy")) {
@@ -17,7 +26,9 @@ public class Projectile : MonoBehaviour {
 			bloodSplash = Instantiate(bloodSplash, other.transform.position, Quaternion.identity);
 		}
 	}
+
 	
+
 	public void Setup(Vector3 targetPos) {
 		targetPosition = targetPos;
 	}

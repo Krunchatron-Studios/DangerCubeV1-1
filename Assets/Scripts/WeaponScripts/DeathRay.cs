@@ -1,9 +1,8 @@
 using MoreMountains.Feedbacks;
-using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Laser : Weapon {
+public class DeathRay : Weapon {
 	
 	[Header("Important Laser Components")]
 	private LineRenderer _lineRenderer;

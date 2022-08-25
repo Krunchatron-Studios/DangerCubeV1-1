@@ -4839,6 +4839,7 @@ GameObject:
   - component: {fileID: 5235355868478866200}
   - component: {fileID: 5235355868460563668}
   - component: {fileID: 5235355868459350730}
+  - component: {fileID: 5164885967855373553}
   m_Layer: 0
   m_Name: SoulMuzzlePurple
   m_TagString: Untagged
@@ -9694,6 +9695,20 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &5164885967855373553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5235355868479108926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f13474093d5e96142b32136ddb5a8a14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestroyParent: 0
+  DestroyDelay: 0
 --- !u!1 &5235355868479137534
 GameObject:
   m_ObjectHideFlags: 0
