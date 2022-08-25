@@ -4643,6 +4643,10 @@ PrefabInstance:
       propertyPath: beamDamage
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 439751057566335770, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 6039074600034411127, guid: fca9d07ff4d5c4907ac25899c5ca97c0, type: 3}
     - target: {fileID: 1281579486220931497, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: weapon
       value: 
@@ -4697,7 +4701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3757486578644410247, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3757486578644410265, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: rateOfFire
@@ -4837,7 +4841,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: d3faad9e30f1e754295ea46e3de5a85c, type: 3}
     - target: {fileID: 8649432337890070779, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8670534410664316202, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: rateOfFire
