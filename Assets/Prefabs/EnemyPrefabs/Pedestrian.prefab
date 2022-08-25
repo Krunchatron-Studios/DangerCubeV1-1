@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &130156450002828641
+--- !u!1 &6442908101038264799
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4924161943832233526}
-  - component: {fileID: 2622835267438477535}
-  - component: {fileID: 8156983058750925689}
-  - component: {fileID: 4773665382273124543}
-  - component: {fileID: 6973780780784977513}
-  - component: {fileID: 6709959086897223377}
-  - component: {fileID: 9036932339232477918}
-  - component: {fileID: -484082443945653121}
+  - component: {fileID: 2955592121180907604}
+  - component: {fileID: 7234724318379709333}
+  - component: {fileID: 4544797165188165519}
+  - component: {fileID: 7795988897305405232}
+  - component: {fileID: 5557189108395349622}
+  - component: {fileID: 7501968618825653282}
   m_Layer: 10
-  m_Name: Soldier
+  m_Name: Pedestrian
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4924161943832233526
+--- !u!4 &2955592121180907604
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130156450002828641}
+  m_GameObject: {fileID: 6442908101038264799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -6.17, y: -1.7850208, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2622835267438477535
+--- !u!212 &7234724318379709333
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130156450002828641}
+  m_GameObject: {fileID: 6442908101038264799}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -58,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2aa7128bdd2dd9746933cd7f394bd7c7, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -76,10 +74,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2055319811
-  m_SortingLayer: 3
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ba587b6cea2ec4ff5a34bac0a128d28d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2f4424299909c4b5d9026bdabad5b39a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -90,33 +88,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &8156983058750925689
-Animator:
+--- !u!50 &4544797165188165519
+Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130156450002828641}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6b8a63496a37d45f7af586be80d38c60, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &4773665382273124543
+  m_GameObject: {fileID: 6442908101038264799}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!61 &7795988897305405232
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130156450002828641}
+  m_GameObject: {fileID: 6442908101038264799}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -136,57 +135,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &6973780780784977513
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130156450002828641}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &6709959086897223377
+--- !u!114 &5557189108395349622
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130156450002828641}
+  m_GameObject: {fileID: 6442908101038264799}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6425189fe27f2cb438e35ecc581bc364, type: 3}
+  m_Script: {fileID: 11500000, guid: cc841c1201c4041dd9804e972c909557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
-  currentHealth: 1
+  maxHealth: 10
+  currentHealth: 10
   damage: 1
   moveSpeed: 2
-  experienceValue: 5
-  enemyRb2D: {fileID: 6973780780784977513}
+  experienceValue: 0
+  enemyRb2D: {fileID: 4544797165188165519}
   playerPosition: {fileID: 0}
-  hitFlashFeedback: {fileID: 0}
-  spawnDistance: 5
+  hitFlashFeedback: {fileID: 7501968618825653282}
+  spawnDistance: 1
   drop: {fileID: 1527084982249308848, guid: aa8fef295bf4542edb7f38a866479ce6, type: 3}
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
---- !u!114 &9036932339232477918
+  _safetyTime: 3
+--- !u!114 &7501968618825653282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130156450002828641}
+  m_GameObject: {fileID: 6442908101038264799}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6da43522623d4704e979466dc7650b65, type: 3}
@@ -230,18 +209,18 @@ MonoBehaviour:
         m_Calls: []
   DebugActive: 0
   FeedbacksList:
-  - rid: 7468192518195904522
+  - rid: 784015046545768448
   KeepPlayModeChanges: 0
   PerformanceMode: 0
   ForceStopFeedbacksOnDisable: 1
   references:
     version: 2
     RefIds:
-    - rid: 7468192518195904522
+    - rid: 784015046545768448
       type: {class: MMF_Flicker, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
         Active: 1
-        UniqueID: -1622733977
+        UniqueID: 1745967750
         Label: Flicker
         Channel: 0
         Chance: 100
@@ -266,30 +245,13 @@ MonoBehaviour:
           TrackID: 0
           Quantized: 0
           TargetBPM: 120
-        Owner: {fileID: 9036932339232477918}
+        Owner: {fileID: 7501968618825653282}
         DebugActive: 0
-        BoundRenderer: {fileID: 2622835267438477535}
+        BoundRenderer: {fileID: 7234724318379709333}
         Mode: 0
         PropertyName: _Tint
         FlickerDuration: 0.2
         FlickerOctave: 0.04
-        FlickerColor: {r: 4, g: 0, b: 0, a: 1}
+        FlickerColor: {r: 0.08829588, g: 0.07843137, b: 1, a: 1}
         MaterialIndexes: 
         UseMaterialPropertyBlocks: 0
---- !u!114 &-484082443945653121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130156450002828641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e342bdf7562c0374381c8694c2b91606, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dissolveAmount: 0
-  dissolveSpeed: 0.005
-  isDissolving: 0
-  outColor: {r: 1, g: 0.14877309, b: 0, a: 1}
-  inColor: {r: 4, g: 0, b: 0, a: 1}
