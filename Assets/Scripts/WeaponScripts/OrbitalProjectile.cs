@@ -5,8 +5,7 @@ public class OrbitalProjectile : MonoBehaviour {
 
     public GameObject bloodSplash;
     public Weapon weapon;
-    public void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("Here is some trigger shit");
+    public void OnTriggerStay2D(Collider2D other) {
         if (other.CompareTag("Enemy")) {
             MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
                 weapon.weaponDamage.ToString(), Vector3.up, .2f);
