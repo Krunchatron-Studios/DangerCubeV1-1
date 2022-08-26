@@ -22,7 +22,7 @@ public class DeathRay : Weapon {
 		audioSource = GetComponent<AudioSource>();
 	}
 	private void Update() {
-		if (Keyboard.current.eKey.wasPressedThisFrame && !laserFeedbackPlayer.IsPlaying) {
+		if (Keyboard.current.eKey.wasPressedThisFrame && !laserFeedbackPlayer.IsPlaying || Gamepad.current.bButton.wasPressedThisFrame) {
 			FireLaser();
 		}
 
