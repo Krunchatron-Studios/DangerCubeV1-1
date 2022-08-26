@@ -155,7 +155,6 @@ MonoBehaviour:
   enemyRb2D: {fileID: 4544797165188165519}
   playerPosition: {fileID: 0}
   dissolve: {fileID: 6572378921376988044}
-  hitFlashFeedback: {fileID: 0}
   spawnDistance: 1
   drop: {fileID: 1527084982249308848, guid: aa8fef295bf4542edb7f38a866479ce6, type: 3}
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
@@ -174,4 +173,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disAmountPerFrame: 0.04
   _renderer: {fileID: 7234724318379709333}
+  ashes: {fileID: 3424906339606567161, guid: b256623201b9eba4cb6aaaa1cc86041f, type: 3}
   isDissolving: 0
