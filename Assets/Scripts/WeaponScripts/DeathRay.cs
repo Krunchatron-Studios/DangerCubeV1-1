@@ -10,6 +10,8 @@ public class DeathRay : Weapon {
 	public Transform laserStartMarker;
 	public Transform laserEndMarker;
 	public ParticleSystem burnVFX;
+	public ParticleSystem sparkVFX;
+	public ParticleSystem eyeVFX;
 	public CircleCollider2D beamHitBox;
 
 	[Header("Laser Feedbacks")]
@@ -20,22 +22,30 @@ public class DeathRay : Weapon {
 		audioSource = GetComponent<AudioSource>();
 	}
 	private void Update() {
-		if (Keyboard.current.eKey.wasPressedThisFrame /*|| Gamepad.current.bButton.wasPressedThisFrame*/) {
+		if (Keyboard.current.eKey.wasPressedThisFrame && !laserFeedbackPlayer.IsPlaying) {
 			FireLaser();
 		}
 
 		if (laserFeedbackPlayer.IsPlaying) {
 			burnVFX.gameObject.SetActive(true);
+			sparkVFX.gameObject.SetActive(true);
+			eyeVFX.gameObject.SetActive(true);
 			_lineRenderer.SetPosition(0, transform.position);
 			_lineRenderer.SetPosition(1, laserHitMarker.transform.position);
 			burnVFX.transform.position = laserHitMarker.transform.position;
+			sparkVFX.transform.position = laserHitMarker.transform.position;
+			eyeVFX.transform.position = transform.position;
 		}
 
 		if (!laserFeedbackPlayer.IsPlaying) {
 			audioSource.Stop();
 			_lineRenderer.enabled = false;
 			burnVFX.transform.position = laserStartMarker.position;
+			sparkVFX.transform.position = laserStartMarker.position;
+			eyeVFX.transform.position = transform.position;
 			burnVFX.gameObject.SetActive(false);
+			sparkVFX.gameObject.SetActive(false);
+			eyeVFX.gameObject.SetActive(false);
 			beamHitBox.gameObject.SetActive(false);
 		}
 	}
