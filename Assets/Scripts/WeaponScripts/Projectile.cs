@@ -9,6 +9,7 @@ public class Projectile : MonoBehaviour {
 	public Vector3 targetPosition;
 	public GameObject bloodSplash;
 	private float _distance;
+	private Vector3 _direction;
 	
 	private void Update() {
 		_distance = Vector3.Distance(weapon.transform.position, transform.position);
@@ -20,6 +21,7 @@ public class Projectile : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		ResolveProjectile(other);
 		if (other.CompareTag("Enemy")) {
+			weapon.enemyKnockBack(_direction, other.attachedRigidbody);
 			MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
 				weapon.weaponDamage.ToString(), Vector3.up, .2f);
 			bloodSplash = Instantiate(bloodSplash, other.transform.position, Quaternion.identity);
@@ -33,6 +35,7 @@ public class Projectile : MonoBehaviour {
 	}
 	public void MoveProjectile() {
 		Vector3 moveDirection = (targetPosition - transform.position).normalized;
+		_direction = moveDirection;
 		projectileRb2D.AddForce(moveDirection * projectileVelocity * Time.deltaTime, ForceMode2D.Impulse);
 	}
 	public virtual void ResolveProjectile(Collider2D other) {

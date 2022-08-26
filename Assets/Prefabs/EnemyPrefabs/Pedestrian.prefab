@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7795988897305405232}
   - component: {fileID: 5557189108395349622}
   - component: {fileID: 7501968618825653282}
+  - component: {fileID: 6572378921376988044}
   m_Layer: 10
   m_Name: Pedestrian
   m_TagString: Enemy
@@ -56,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 0f7a929ab7c288547b94186787fc400f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -154,6 +155,7 @@ MonoBehaviour:
   experienceValue: 0
   enemyRb2D: {fileID: 4544797165188165519}
   playerPosition: {fileID: 0}
+  dissolve: {fileID: 6572378921376988044}
   hitFlashFeedback: {fileID: 7501968618825653282}
   spawnDistance: 1
   drop: {fileID: 1527084982249308848, guid: aa8fef295bf4542edb7f38a866479ce6, type: 3}
@@ -166,7 +168,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6442908101038264799}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6da43522623d4704e979466dc7650b65, type: 3}
   m_Name: 
@@ -219,7 +221,7 @@ MonoBehaviour:
     - rid: 784015046545768448
       type: {class: MMF_Flicker, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
-        Active: 1
+        Active: 0
         UniqueID: 1745967750
         Label: Flicker
         Channel: 0
@@ -255,3 +257,18 @@ MonoBehaviour:
         FlickerColor: {r: 0.08829588, g: 0.07843137, b: 1, a: 1}
         MaterialIndexes: 
         UseMaterialPropertyBlocks: 0
+--- !u!114 &6572378921376988044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6442908101038264799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4594deaa8329dc40ad66ddcc5fd1f7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disAmountPerFrame: 0.04
+  _renderer: {fileID: 7234724318379709333}
+  isDissolving: 0

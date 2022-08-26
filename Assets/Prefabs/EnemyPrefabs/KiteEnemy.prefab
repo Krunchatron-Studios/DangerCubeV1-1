@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4811333372491251381}
   - component: {fileID: 9094206048140135736}
   - component: {fileID: 422046014494508817}
+  - component: {fileID: 8853119362373875803}
   m_Layer: 10
   m_Name: KiteEnemy
   m_TagString: Enemy
@@ -58,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0f7a929ab7c288547b94186787fc400f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: effc1d92744b442199f6b2a56d1fefa0, type: 3}
-  m_Color: {r: 0.2747885, g: 0.8773585, b: 0.053800307, a: 1}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -109,6 +110,7 @@ MonoBehaviour:
   experienceValue: 20
   enemyRb2D: {fileID: 2008833507525818049}
   playerPosition: {fileID: 0}
+  dissolve: {fileID: 8853119362373875803}
   hitFlashFeedback: {fileID: 0}
   spawnDistance: 6
   drop: {fileID: 7611086095773957346, guid: 1c96af257f4a44dbeb63708b4fb57c11, type: 3}
@@ -296,3 +298,18 @@ MonoBehaviour:
         FlickerColor: {r: 4, g: 2.8078432, b: 0, a: 1}
         MaterialIndexes: 
         UseMaterialPropertyBlocks: 0
+--- !u!114 &8853119362373875803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3136071779676470157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4594deaa8329dc40ad66ddcc5fd1f7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disAmountPerFrame: 0.04
+  _renderer: {fileID: 8619952144322271204}
+  isDissolving: 0
