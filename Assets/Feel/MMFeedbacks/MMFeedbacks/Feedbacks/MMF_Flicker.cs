@@ -184,6 +184,7 @@ namespace MoreMountains.Feedbacks
 
 			if (!_propertiesFound[materialIndex])
 			{
+				Debug.Log($"no properties at {materialIndex}");
 				yield break;
 			}
 
