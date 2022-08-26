@@ -12,7 +12,6 @@ public class ProjectileWeapon : Weapon {
 	[Header("Firing Vars")]
 	public float weaponRange = 3;
 	public float rateOfFire = 2.0f;
-	public float knockBackPower = 1f;
 	[SerializeField] private bool canFire = true;
 	public float nextFire;
 
@@ -47,10 +46,5 @@ public class ProjectileWeapon : Weapon {
 	public void AquireTarget(BaseEnemy enemy) {
 		// Debug.Log($"aquired target: {enemy}");
 		enemyTarget = enemy.transform.position;
-	}
-
-	public void enemyKnockBack(Vector3 direction, Rigidbody2D enemy) {
-		Debug.Log("we hit them with the knockback");
-		enemy.AddForce(direction * knockBackPower, ForceMode2D.Impulse);
 	}
 }
