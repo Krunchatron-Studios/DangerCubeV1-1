@@ -1,4 +1,3 @@
-using MoreMountains.Feedbacks;
 using UnityEngine;
 
 
@@ -15,9 +14,6 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 	[Header("Dissolve Class")] 
 	public Dissolve dissolve;
 
-	[Header("Flash Feedback")] 
-	public MMF_Player hitFlashFeedback;
-	
 	[Header("Spawn Mechanics")] 
 	public float spawnDistance;
 
@@ -29,7 +25,6 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 	
 	void Start() {
 		playerPosition = GameObject.FindWithTag("Player").transform;
-		hitFlashFeedback = GetComponent<MMF_Player>();
 	}
 	void FixedUpdate() {
 		MoveTowardsPlayer();
@@ -45,15 +40,14 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 		}
 	}
 	public void TakeDamage(float dmgAmount) {
-		hitFlashFeedback?.PlayFeedbacks();
-		
 		currentHealth -= dmgAmount;
 		if (currentHealth <= 0) {
+			dissolve.isDissolving = true;
 			moveSpeed = 0f;
 			playerResources.experience += experienceValue;
 			Instantiate(drop, transform.position, Quaternion.identity);
-			Destroy(gameObject, 1f);
-			dissolve.isDissolving = true;
+			Destroy(gameObject, 1.25f);
+			
 		}
 	}
 	public void HealDamage(int healAmount) {

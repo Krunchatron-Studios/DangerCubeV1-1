@@ -1,4 +1,5 @@
 using UnityEngine;
+using MoreMountains.Tools;
 
 public class ParticleProjectile : Projectile {
 	[SerializeField] private GameObject projectileParticle;
@@ -15,7 +16,6 @@ public class ParticleProjectile : Projectile {
 	}
 	
 	private void Update() {
-
 		_bullet.transform.position = projectileRb2D.transform.position;
 	}
 
@@ -25,14 +25,20 @@ public class ParticleProjectile : Projectile {
 
 	public override void ResolveProjectile(Collider2D other) {
 		if (other.CompareTag("Enemy")) {
+			Debug.Log("Hello");
 			IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
 			hit.TakeDamage(weapon.weaponDamage);
+			MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
+				weapon.weaponDamage.ToString(), Vector3.up, .2f);
+			weapon.enemyKnockBack(direction, other.attachedRigidbody);
+			bloodSplash = Instantiate(bloodSplash, other.transform.position, Quaternion.identity);
 			Destroy(gameObject);
 			Destroy(_bullet);
 		}
 		if (other.CompareTag("Wall")) {
 			Destroy(gameObject);
 			Destroy(_bullet);
+
 		}
 	}
 }

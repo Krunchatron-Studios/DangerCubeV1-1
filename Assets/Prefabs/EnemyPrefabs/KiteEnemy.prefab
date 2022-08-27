@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 843820093244178089}
   - component: {fileID: 8619952144322271204}
+  - component: {fileID: 8853119362373875803}
   - component: {fileID: 2516821719561337926}
+  - component: {fileID: 9094206048140135736}
   - component: {fileID: 2008833507525818049}
   - component: {fileID: 5133577340917086549}
   - component: {fileID: 4811333372491251381}
-  - component: {fileID: 9094206048140135736}
-  - component: {fileID: 422046014494508817}
   m_Layer: 10
   m_Name: KiteEnemy
   m_TagString: Enemy
@@ -58,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0f7a929ab7c288547b94186787fc400f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: effc1d92744b442199f6b2a56d1fefa0, type: 3}
-  m_Color: {r: 0.2747885, g: 0.8773585, b: 0.053800307, a: 1}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -90,6 +90,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8853119362373875803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3136071779676470157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4594deaa8329dc40ad66ddcc5fd1f7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disAmountPerFrame: 0.04
+  _renderer: {fileID: 8619952144322271204}
+  ashes: {fileID: 3424906339606567161, guid: b256623201b9eba4cb6aaaa1cc86041f, type: 3}
+  isDissolving: 0
 --- !u!114 &2516821719561337926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,12 +125,30 @@ MonoBehaviour:
   experienceValue: 20
   enemyRb2D: {fileID: 2008833507525818049}
   playerPosition: {fileID: 0}
-  hitFlashFeedback: {fileID: 0}
+  dissolve: {fileID: 8853119362373875803}
   spawnDistance: 6
   drop: {fileID: 7611086095773957346, guid: 1c96af257f4a44dbeb63708b4fb57c11, type: 3}
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
   kiteDistance: 4
   enemyPosition: {fileID: 843820093244178089}
+--- !u!114 &9094206048140135736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3136071779676470157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e60c37f60c764a069284120c7fb7738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPosition: {fileID: 0}
+  fireRange: 5
+  fireTimer: 5
+  bulletVelocity: 100
+  canFire: 1
+  enemyProjectile: {fileID: 1655789376720695904, guid: 6ad63786457454a868737c9a7e271388, type: 3}
 --- !u!50 &2008833507525818049
 Rigidbody2D:
   serializedVersion: 4
@@ -182,117 +216,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &9094206048140135736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3136071779676470157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e60c37f60c764a069284120c7fb7738, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerPosition: {fileID: 0}
-  fireRange: 5
-  fireTimer: 5
-  bulletVelocity: 100
-  canFire: 1
-  enemyProjectile: {fileID: 1655789376720695904, guid: 6ad63786457454a868737c9a7e271388, type: 3}
---- !u!114 &422046014494508817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3136071779676470157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6da43522623d4704e979466dc7650b65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Feedbacks: []
-  InitializationMode: 2
-  SafeMode: 3
-  Direction: 0
-  AutoChangeDirectionOnEnd: 0
-  AutoPlayOnStart: 0
-  AutoPlayOnEnable: 0
-  ForceTimescaleMode: 0
-  ForcedTimescaleMode: 1
-  DurationMultiplier: 1
-  DisplayFullDurationDetails: 0
-  PlayerTimescaleMode: 1
-  CooldownDuration: 0
-  InitialDelay: 0
-  CanPlay: 1
-  CanPlayWhileAlreadyPlaying: 1
-  ChanceToPlay: 100
-  FeedbacksIntensity: 1
-  Events:
-    TriggerMMFeedbacksEvents: 0
-    TriggerUnityEvents: 1
-    OnPlay:
-      m_PersistentCalls:
-        m_Calls: []
-    OnPause:
-      m_PersistentCalls:
-        m_Calls: []
-    OnResume:
-      m_PersistentCalls:
-        m_Calls: []
-    OnRevert:
-      m_PersistentCalls:
-        m_Calls: []
-    OnComplete:
-      m_PersistentCalls:
-        m_Calls: []
-  DebugActive: 0
-  FeedbacksList:
-  - rid: 7468192518195904521
-  KeepPlayModeChanges: 0
-  PerformanceMode: 0
-  ForceStopFeedbacksOnDisable: 1
-  references:
-    version: 2
-    RefIds:
-    - rid: 7468192518195904521
-      type: {class: MMF_Flicker, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
-      data:
-        Active: 1
-        UniqueID: -1781745680
-        Label: Flicker
-        Channel: 0
-        Chance: 100
-        DisplayColor: {r: 0, g: 0, b: 0, a: 1}
-        Timing:
-          TimescaleMode: 0
-          ExcludeFromHoldingPauses: 0
-          ContributeToTotalDuration: 1
-          InitialDelay: 0
-          CooldownDuration: 0
-          InterruptsOnStop: 1
-          NumberOfRepeats: 0
-          RepeatForever: 0
-          DelayBetweenRepeats: 1
-          MMFeedbacksDirectionCondition: 0
-          PlayDirection: 0
-          ConstantIntensity: 0
-          UseIntensityInterval: 0
-          IntensityIntervalMin: 0
-          IntensityIntervalMax: 0
-          Sequence: {fileID: 0}
-          TrackID: 0
-          Quantized: 0
-          TargetBPM: 120
-        Owner: {fileID: 422046014494508817}
-        DebugActive: 0
-        BoundRenderer: {fileID: 8619952144322271204}
-        Mode: 0
-        PropertyName: _Tint
-        FlickerDuration: 0.2
-        FlickerOctave: 0.04
-        FlickerColor: {r: 4, g: 2.8078432, b: 0, a: 1}
-        MaterialIndexes: 
-        UseMaterialPropertyBlocks: 0
