@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EFleeingPedestrian : BaseEnemy {
     [SerializeField] private float _safetyTime;
-
     void Start() {
         playerPosition = GameObject.FindWithTag("Player").transform;
         StartCoroutine(SuccessfullyFled());

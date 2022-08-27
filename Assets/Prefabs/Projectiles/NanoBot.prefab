@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7964780024412747307}
   - component: {fileID: 3456093621433371501}
-  - component: {fileID: 3878884768147791486}
   - component: {fileID: 6214106462221364362}
-  m_Layer: 0
+  - component: {fileID: 2554096545084712204}
+  - component: {fileID: 4945881303422589490}
+  m_Layer: 15
   m_Name: NanoBot
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,8 +27,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5194531991708600744}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.0057452, y: -1.6055812, z: 0}
+  m_LocalRotation: {x: -0.60738033, y: -0, z: -0, w: 0.7944112}
+  m_LocalPosition: {x: -2.9999948, y: 0.0056497073, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -86,23 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3878884768147791486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5194531991708600744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c010d6c147971a4a95a2c58d0cc2140, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileVelocity: 10
-  weapon: {fileID: 0}
-  projectileRb2D: {fileID: 0}
-  targetPosition: {x: 0, y: 0, z: 0}
-  bloodSplash: {fileID: 0}
 --- !u!50 &6214106462221364362
 Rigidbody2D:
   serializedVersion: 4
@@ -118,9 +102,43 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2554096545084712204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5194531991708600744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68fac8412f9dc4cf6bc675e511f27853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileVelocity: 10
+  weapon: {fileID: 0}
+  projectileRb2D: {fileID: 6214106462221364362}
+  targetPosition: {x: 0, y: 0, z: 0}
+  bloodSplash: {fileID: 0}
+  direction: {x: 0, y: 0, z: 0}
+--- !u!58 &4945881303422589490
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5194531991708600744}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

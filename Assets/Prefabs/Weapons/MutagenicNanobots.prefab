@@ -99,17 +99,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponSprite: {fileID: 21300000, guid: 8a4147a07f19c4b0c8591177521d717b, type: 3}
   audioSource: {fileID: 0}
-  volume: 2.5
   weaponName: Mutagenic Nanobots
   weaponDescription: 
   weaponDamage: 0
-  weaponRange: 15
-  weaponLevel: 1
-  rateOfFire: 1
-  canFire: 1
-  nextFire: 0
-  firePointArray: []
-  projectile: {fileID: 7964780024412747307, guid: 09eeab86aa8df48ba92867ba05ad3512, type: 3}
-  enemyTarget: {x: 0, y: 0}
-  weaponUpgrades: []
-  targetingSys: {fileID: 0}
+  knockBackPower: 0
+  maxNanoBots: 1
+  currentNanoBots: 0
+  playerPosition: {fileID: 0}
+  center: {fileID: 0}
+  nanoBot: {fileID: 5194531991708600744, guid: 09eeab86aa8df48ba92867ba05ad3512, type: 3}
+  rotationSpeed: 20
