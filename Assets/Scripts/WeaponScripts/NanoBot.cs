@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class NanoBot : Projectile {
@@ -8,6 +9,8 @@ public class NanoBot : Projectile {
     public float rotationSpeed;
     public GameObject playerPosition;
     // public int movementSpeed;
+    private GameObject _target;
+    public GameObject zombie;
 
     private void FixedUpdate() {
         playerPosition = GameObject.FindWithTag("Player");
@@ -15,9 +18,11 @@ public class NanoBot : Projectile {
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("Enemy")) {
+        if (other.CompareTag("Enemy") && other.gameObject.name == "Pedestrian(Clone)") {
             Debug.Log("This is a pedestrian impact: " + other.gameObject.name);
             Destroy(this.gameObject);
+            Destroy(other);
+            Instantiate(zombie, transform.position, quaternion.identity);
             nanoManager.currentNanoBots--;
         }
     }
