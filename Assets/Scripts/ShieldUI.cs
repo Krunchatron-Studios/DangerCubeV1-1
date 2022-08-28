@@ -25,8 +25,12 @@ public class ShieldUI : MonoBehaviour {
 	private void Update() {
 		
 		UpdateShieldRadius();
-		if (remainingRadius <= shieldShatterThreshold) { 
+		if (remainingRadius <= shieldShatterThreshold) {
+			healthAndShieldsData.playerHealthCurrent--;
+			Debug.Log($"player health: {healthAndShieldsData.playerHealthCurrent}");
 			healthChunkHolder.UpdateHealthChunks();
+			shieldParticle.transform.localScale = new Vector2(1, 1);
+			healthAndShieldsData.playerShieldsCurrent = healthAndShieldsData.playerShieldsMax;
 		}
 	}
 
