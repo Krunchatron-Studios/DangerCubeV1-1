@@ -20,13 +20,12 @@ public class HealthUI : MonoBehaviour {
 	}
 
 	public void AddHealthChunks() {
-		
 		for (int i = 0; i < playerHealthData.playerHealthMax; i++) {
-			
-			if (i <= playerHealthData.playerHealthCurrent) {
-				healthChunksArray[i].SetActive(true);
-				Debug.Log("health bars");
-			}
+			healthChunksArray[i].SetActive(false);
+		}
+		
+		for (int i = 0; i < playerHealthData.playerHealthCurrent; i++) { 
+			healthChunksArray[i].SetActive(true);
 		}
 	}
 
