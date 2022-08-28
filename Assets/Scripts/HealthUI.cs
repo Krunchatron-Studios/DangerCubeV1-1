@@ -6,17 +6,20 @@ public class HealthUI : MonoBehaviour {
 	public GameObject healthChunk;
 	public PlayerHealthAndShields playerHealthData;
 	public MMF_Player shakeFeedback;
-	
+	public bool canBeHurt;
+	public float invulTimer = 1.5f;
+	private float _resetTimer;
+
+
 	private void Start() {
-		UpdateHealthChunks();
+		AddHealthChunks();
 	}
 
-	public void UpdateHealthChunks() {
-		
-		for (int i = 0; i < playerHealthData.playerHealthMax; i++) {
-			
-			healthChunksArray[i].SetActive(false);
-		}
+	private void Update() {
+		SetInvulTimer();
+	}
+
+	public void AddHealthChunks() {
 		
 		for (int i = 0; i < playerHealthData.playerHealthMax; i++) {
 			
@@ -27,7 +30,26 @@ public class HealthUI : MonoBehaviour {
 		}
 	}
 
-	public void ExplodeHealthChunk() {
-		
+	public void RemoveHealthChunk() {
+		playerHealthData.playerHealthCurrent--;
+		if (playerHealthData.playerHealthCurrent <= 0) {
+			// Game over logic
+		}
+		int chunkIndex = Mathf.FloorToInt(playerHealthData.playerHealthCurrent);
+		if (chunkIndex < 0) {
+			chunkIndex = 0;
+		}
+		healthChunksArray[chunkIndex].SetActive(false);
+		canBeHurt = false;
+	}
+
+	private void SetInvulTimer() {
+		if (!canBeHurt) {
+			_resetTimer = Time.time + invulTimer;
+		}
+
+		if (Time.time > _resetTimer) {
+			canBeHurt = true;
+		}
 	}
 }

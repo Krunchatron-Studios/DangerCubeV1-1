@@ -8,8 +8,6 @@ public class ShieldUI : MonoBehaviour {
 	public float remainingRadius;
 	public float shieldShatterThreshold = 0.5f;
 	public float shieldRechargeSpeed = .01f;
-	public float shieldOpacity = 0f;
-	public float flickerStrength;
 	private bool _shieldsShattered;
 
 	[Header("Health Bar Vars")] 
@@ -22,13 +20,12 @@ public class ShieldUI : MonoBehaviour {
 		shieldParticle.transform.localScale = new Vector2(remainingRadius, remainingRadius);
 	}
 
-	private void Update() {
+	private void FixedUpdate() {
 		
 		UpdateShieldRadius();
+
 		if (remainingRadius <= shieldShatterThreshold) {
-			healthAndShieldsData.playerHealthCurrent--;
-			Debug.Log($"player health: {healthAndShieldsData.playerHealthCurrent}");
-			healthChunkHolder.UpdateHealthChunks();
+			healthChunkHolder.RemoveHealthChunk();
 			shieldParticle.transform.localScale = new Vector2(1, 1);
 			healthAndShieldsData.playerShieldsCurrent = healthAndShieldsData.playerShieldsMax;
 		}
@@ -39,10 +36,5 @@ public class ShieldUI : MonoBehaviour {
 		rawShieldRadius = shieldConversion + 0.15f;
 		transform.localScale = new Vector2(rawShieldRadius, rawShieldRadius);
 		remainingRadius = shieldConversion;
-	}
-
-	private void ShieldFlicker() {
-		if (CompareTag("Enemy") || CompareTag("Projectile")) {
-		}
 	}
 }
