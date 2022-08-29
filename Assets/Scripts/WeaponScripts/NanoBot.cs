@@ -19,10 +19,11 @@ public class NanoBot : Projectile {
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Enemy") && other.gameObject.name == "Pedestrian(Clone)") {
-            Debug.Log("This is a pedestrian impact: " + other.gameObject.name);
-            Destroy(this.gameObject);
+            Instantiate(zombie, transform.position, Quaternion.identity);
+
+            // StartCoroutine(ZombieCo(transform.position));
+            Destroy(gameObject);
             Destroy(other);
-            Instantiate(zombie, transform.position, quaternion.identity);
             nanoManager.currentNanoBots--;
         }
     }
@@ -33,4 +34,14 @@ public class NanoBot : Projectile {
         // Vector3 offset = new Vector3(playerPosition.transform.position.x + 3, playerPosition.transform.position.y + 3, 0);
         // transform.position = Vector3.MoveTowards(transform.position, playerPosition.transform.position, movementSpeed);
     }
+
+    // IEnumerator ZombieCo(Vector3 target) {
+    //     yield return null;
+    //     yield return new WaitForSeconds(2);
+    //     MakeZombie(target);
+    // }
+
+    // void MakeZombie(Vector3 target) {
+    //     Vector3 temp = new Vector3(target.x, target.y, target.z)
+    // }
 }
