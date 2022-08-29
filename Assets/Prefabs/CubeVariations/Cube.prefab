@@ -353,6 +353,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 910208486235270840, guid: 692e806906d55487fb98200bedc726b4, type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 910208486235270840, guid: 692e806906d55487fb98200bedc726b4, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1601880589
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664123916197150076, guid: 692e806906d55487fb98200bedc726b4, type: 3}
+      propertyPath: center
+      value: 
+      objectReference: {fileID: 3796742106572517121}
+    - target: {fileID: 3664123916197150076, guid: 692e806906d55487fb98200bedc726b4, type: 3}
+      propertyPath: playerPosition
+      value: 
+      objectReference: {fileID: 3796742106572517123}
     - target: {fileID: 4990646386255772604, guid: 692e806906d55487fb98200bedc726b4, type: 3}
       propertyPath: m_Name
       value: MutagenicNanobots
@@ -385,6 +401,22 @@ PrefabInstance:
     - target: {fileID: 8678118045615468120, guid: 430b3384d03930f42a003e770aace5a8, type: 3}
       propertyPath: m_Name
       value: DeathRay
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678118045615468123, guid: 430b3384d03930f42a003e770aace5a8, type: 3}
+      propertyPath: eyeVFX
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678118045615468123, guid: 430b3384d03930f42a003e770aace5a8, type: 3}
+      propertyPath: burnVFX
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678118045615468123, guid: 430b3384d03930f42a003e770aace5a8, type: 3}
+      propertyPath: sparkVFX
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678118045615468123, guid: 430b3384d03930f42a003e770aace5a8, type: 3}
+      propertyPath: weaponDamage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8678118045615468125, guid: 430b3384d03930f42a003e770aace5a8, type: 3}
       propertyPath: m_RootOrder
@@ -751,6 +783,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3796742106572517121}
     m_Modifications:
+    - target: {fileID: 1730730711442844080, guid: 05f279626c23a12468f9025d7907416a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.06613207
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730730711442844080, guid: 05f279626c23a12468f9025d7907416a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927858174705817534, guid: 05f279626c23a12468f9025d7907416a, type: 3}
+      propertyPath: m_Name
+      value: NegaShield
+      objectReference: {fileID: 0}
     - target: {fileID: 1929029539102545776, guid: 05f279626c23a12468f9025d7907416a, type: 3}
       propertyPath: remainingRadius
       value: 1.5
@@ -765,7 +809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1929029539102545777, guid: 05f279626c23a12468f9025d7907416a, type: 3}
       propertyPath: m_Name
-      value: Shield
+      value: ShieldSystem
       objectReference: {fileID: 0}
     - target: {fileID: 1929029539102545779, guid: 05f279626c23a12468f9025d7907416a, type: 3}
       propertyPath: m_RootOrder
