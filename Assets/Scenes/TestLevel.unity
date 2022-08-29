@@ -895,7 +895,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1240,11 +1240,11 @@ RectTransform:
   m_Father: {fileID: 1504286899}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.000007629389, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000007629389, y: 163}
   m_SizeDelta: {x: 332.9377, y: 232.2074}
-  m_Pivot: {x: 0.5, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &243156601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1317,6 +1317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 341786061}
   - component: {fileID: 341786062}
+  - component: {fileID: 341786063}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1355,10 +1356,24 @@ MonoBehaviour:
   lvlPanel: {fileID: 243156603}
   resources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
   healthAndShields: {fileID: 11400000, guid: 404bd16f0a52744368f7ba2cc7b117ee, type: 2}
-  hp: 2
-  sp: 10
-  hpMax: 2
-  spMax: 10
+--- !u!114 &341786063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341786060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b3af5e87995ae841b1af7c1c2504380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pedestrian: {fileID: 5557189108395349622, guid: 28bb09b725693465980add74138846e5, type: 3}
+  soldier: {fileID: 9126635317560438138, guid: 57796efae6f264e55b8b7d50413d45de, type: 3}
+  helicopter: {fileID: 2516821719561337926, guid: ec6943e27a9184102957955cc1d9a31e, type: 3}
+  kiwikid: {fileID: 6079774384545484274, guid: 43027c1d08fd34e44849274e80fcb71b, type: 3}
+  enemyParticleArrays: {fileID: 11400000, guid: 497f13b169b34a04a9bcac0d42a4d6df, type: 2}
+  enemyArrays: {fileID: 11400000, guid: 73759d443462b534e885624a1946a327, type: 2}
 --- !u!1 &376095590
 GameObject:
   m_ObjectHideFlags: 0
@@ -3072,7 +3087,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &897763884
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3093,7 +3108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.012207, y: 457.38}
+  m_AnchoredPosition: {x: -0.012207031, y: 457.38}
   m_SizeDelta: {x: -2286.4, y: -975.3934}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &897763885
@@ -5541,7 +5556,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -173}
+  m_AnchoredPosition: {x: 0, y: -91}
   m_SizeDelta: {x: 97.68506, y: 36.37018}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1915704607
