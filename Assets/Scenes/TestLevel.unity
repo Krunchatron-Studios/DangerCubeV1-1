@@ -3093,7 +3093,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.012207, y: 457.38}
+  m_AnchoredPosition: {x: -0.012207031, y: 457.38}
   m_SizeDelta: {x: -2286.4, y: -975.3934}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &897763885
@@ -6007,6 +6007,10 @@ PrefabInstance:
       propertyPath: shieldUI
       value: 
       objectReference: {fileID: 990183375}
+    - target: {fileID: 6374294972671936681, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6557873537676906476, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: eyeVFX
       value: 
