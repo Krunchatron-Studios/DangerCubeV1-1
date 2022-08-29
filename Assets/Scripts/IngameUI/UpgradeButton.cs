@@ -34,5 +34,6 @@ public class UpgradeButton : MonoBehaviour {
 		Debug.Log(upgradeName);
 		WeaponSystem.Instance.ActivateWeaponSystem(upgradeName);
 		lvlPanel.gameObject.SetActive(false);
+		Time.timeScale = 1f;
 	}
 }
