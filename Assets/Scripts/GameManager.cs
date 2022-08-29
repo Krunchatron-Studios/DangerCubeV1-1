@@ -13,8 +13,17 @@ public class GameManager : MonoBehaviour {
 	[Header("Player Scriptables")]
 	public PlayerResources resources;
 	public PlayerHealthAndShields healthAndShields;
+
+	public float hp;
+	public float sp;
+	public float hpMax;
+	public float spMax;
 	
 	private void Start() {
+		hp = healthAndShields.playerHealthCurrent;
+		sp = healthAndShields.playerShieldsCurrent;
+		hpMax = healthAndShields.playerHealthMax;
+		spMax = healthAndShields.playerShieldsMax;
 		resources.experience = 0;
 		resources.metal = 0;
 		resources.bioGoo = 0;
