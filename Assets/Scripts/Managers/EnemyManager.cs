@@ -28,10 +28,10 @@ public class EnemyManager : MonoBehaviour {
 			enemyArrays.helicopters[i] = helicopter;
 			enemyArrays.kiwikids[i] = kiwikid;
 			
-			enemyArrays.pedestrians[i].gameObject.SetActive(false);
-			enemyArrays.soldiers[i].gameObject.SetActive(false);
-			enemyArrays.helicopters[i].gameObject.SetActive(false);
-			enemyArrays.kiwikids[i].gameObject.SetActive(false);
+			// enemyArrays.pedestrians[i].gameObject.SetActive(false);
+			// enemyArrays.soldiers[i].gameObject.SetActive(false);
+			// enemyArrays.helicopters[i].gameObject.SetActive(false);
+			// enemyArrays.kiwikids[i].gameObject.SetActive(false);
 		}
 	}
 }

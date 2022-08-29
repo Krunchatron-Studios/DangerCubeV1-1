@@ -261,6 +261,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509173377196bfd48abb4fe3192baa56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCube: {fileID: 3796742106572517121, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
-  laserDamage: 0.05
+  weaponSprite: {fileID: 21300000, guid: ac5d1de98466c3345a21d02554557b9f, type: 3}
+  audioSource: {fileID: 0}
+  weaponName: 
+  weaponDescription: 
+  weaponDamage: 1
+  knockBackPower: 1
   laserHitMarker: {fileID: 8525101500933987903}
+  laserStartMarker: {fileID: 0}
+  laserEndMarker: {fileID: 0}
+  burnVFX: {fileID: 0}
+  sparkVFX: {fileID: 0}
+  eyeVFX: {fileID: 0}
+  beamHitBox: {fileID: 0}
+  laserFeedbackPlayer: {fileID: 0}
