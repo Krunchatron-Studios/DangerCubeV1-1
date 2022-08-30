@@ -1,5 +1,6 @@
 using UnityEngine;
 using MoreMountains.Feedbacks;
+using UnityEngine.SceneManagement;
 
 public class HealthUI : MonoBehaviour {
 	public GameObject[] healthChunksArray;
@@ -17,6 +18,9 @@ public class HealthUI : MonoBehaviour {
 
 	private void Update() {
 		SetInvulTimer();
+		if (playerHealthData.playerHealthCurrent <= 0) {
+			SceneManager.LoadScene("GameOverScene");
+		}
 	}
 
 	public void AddHealthChunks() {

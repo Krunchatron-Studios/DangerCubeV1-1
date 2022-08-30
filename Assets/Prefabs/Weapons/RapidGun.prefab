@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4509634286547317596
 Transform:
   m_ObjectHideFlags: 0
@@ -54,18 +54,21 @@ MonoBehaviour:
   weaponName: RapidGun
   weaponDescription: Ratta tat tat, GI Joe dead like that
   weaponDamage: 1
+  knockBackPower: 200
   firePointArray:
   - {fileID: 251079421563809740}
   - {fileID: 251079421114752198}
   projectile: {fileID: 1655789376720695905, guid: fda5d909c1a0f4f45b1a96e4ae70d7dc, type: 3}
   enemyTarget: {x: 0, y: 0}
   targetingSys: {fileID: 1920327367836471557}
-  weaponRange: 3
+  weaponRange: 7
   rateOfFire: 2
   canFire: 1
   nextFire: 0
   isRapidFiring: 0
   weaponCoolDown: 0
+  longRof: 2
+  fastRof: 0.15
 --- !u!212 &4509634286547317597
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -86,7 +89,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,7 +132,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f9ccdb916ca1dea4ea6ecbdd7dc4d9f9, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
@@ -224,7 +227,7 @@ PrefabInstance:
     - target: {fileID: 2608481302110575300, guid: 12602ce919ca01443b18db03fe04235a, type: 3}
       propertyPath: weapon
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2117454392042047476}
     - target: {fileID: 2608481302110575300, guid: 12602ce919ca01443b18db03fe04235a, type: 3}
       propertyPath: firePoint1
       value: 
@@ -391,7 +394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4461223465438186823, guid: 5e4a2809856898a4aa1a086c177c3bf3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.093
+      value: -0.21
       objectReference: {fileID: 0}
     - target: {fileID: 4461223465438186823, guid: 5e4a2809856898a4aa1a086c177c3bf3, type: 3}
       propertyPath: m_LocalPosition.z
