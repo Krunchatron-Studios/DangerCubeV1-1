@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2756158425578597176}
   - component: {fileID: 2756158425563281384}
   - component: {fileID: 2756158425564452868}
+  - component: {fileID: -2836173721301298557}
   m_Layer: 0
   m_Name: SmokeDarkSoftTrail
   m_TagString: Untagged
@@ -4752,3 +4753,17 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-2836173721301298557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2756158425578296610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285f99e0a15c96a47ae846b7c3b17656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  returnParent: 0
+  returnDelay: 0

@@ -4822,7 +4822,7 @@ GameObject:
   - component: {fileID: 2512025392851909717}
   - component: {fileID: 2512025392833586683}
   - component: {fileID: 2512025392833624801}
-  - component: {fileID: 1754450703571819574}
+  - component: {fileID: -156142834366289964}
   m_Layer: 0
   m_Name: BloodSplatCritical2D
   m_TagString: Untagged
@@ -9623,7 +9623,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &1754450703571819574
+--- !u!114 &-156142834366289964
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9632,11 +9632,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2512025392852149761}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f13474093d5e96142b32136ddb5a8a14, type: 3}
+  m_Script: {fileID: 11500000, guid: 285f99e0a15c96a47ae846b7c3b17656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DestroyParent: 0
-  DestroyDelay: 0
+  returnParent: 0
+  returnDelay: 0.5
 --- !u!1 &2512025392852161507
 GameObject:
   m_ObjectHideFlags: 0
