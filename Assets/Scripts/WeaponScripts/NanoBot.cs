@@ -1,3 +1,7 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class NanoBot : Projectile {
@@ -14,13 +18,9 @@ public class NanoBot : Projectile {
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Enemy") && other.gameObject.name == "Pedestrian(Clone)") {
-            
-
-            // StartCoroutine(ZombieCo(transform.position));
-            Destroy(gameObject);
             Destroy(other);
+            Destroy(gameObject); 
             nanoManager.currentNanoBots--;
-            Instantiate(zombie, transform.position, Quaternion.identity);
         }
     }
     
@@ -31,13 +31,11 @@ public class NanoBot : Projectile {
         // transform.position = Vector3.MoveTowards(transform.position, playerPosition.transform.position, movementSpeed);
     }
 
-    // IEnumerator ZombieCo(Vector3 target) {
-    //     yield return null;
-    //     yield return new WaitForSeconds(2);
-    //     MakeZombie(target);
-    // }
+    private void OnDestroy() {
+        CreateZombie();
+    }
 
-    // void MakeZombie(Vector3 target) {
-    //     Vector3 temp = new Vector3(target.x, target.y, target.z)
-    // }
+    private void CreateZombie() {
+        Instantiate(zombie, transform.position, Quaternion.identity);
+    }
 }
