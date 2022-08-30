@@ -8,9 +8,8 @@ public class NanoBot : Projectile {
     public NanoManager nanoManager;
     public float rotationSpeed;
     public GameObject playerPosition;
-    // public int movementSpeed;
     private GameObject _target;
-    public GameObject zombie;
+    public NanoZombie zombie;
 
     private void FixedUpdate() {
         playerPosition = GameObject.FindWithTag("Player");
@@ -19,11 +18,8 @@ public class NanoBot : Projectile {
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Enemy") && other.gameObject.name == "Pedestrian(Clone)") {
-            Instantiate(zombie, transform.position, Quaternion.identity);
-
-            // StartCoroutine(ZombieCo(transform.position));
-            Destroy(gameObject);
             Destroy(other);
+            Destroy(gameObject); 
             nanoManager.currentNanoBots--;
         }
     }
@@ -35,13 +31,11 @@ public class NanoBot : Projectile {
         // transform.position = Vector3.MoveTowards(transform.position, playerPosition.transform.position, movementSpeed);
     }
 
-    // IEnumerator ZombieCo(Vector3 target) {
-    //     yield return null;
-    //     yield return new WaitForSeconds(2);
-    //     MakeZombie(target);
-    // }
+    private void OnDestroy() {
+        CreateZombie();
+    }
 
-    // void MakeZombie(Vector3 target) {
-    //     Vector3 temp = new Vector3(target.x, target.y, target.z)
-    // }
+    private void CreateZombie() {
+        Instantiate(zombie, transform.position, Quaternion.identity);
+    }
 }
