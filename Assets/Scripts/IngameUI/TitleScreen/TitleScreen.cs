@@ -2,12 +2,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TitleScreen : MonoBehaviour {
-	
+
+	public AudioSource audioSource;
 	public void StartGame() {
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		audioSource.Play();
+		SceneManager.LoadScene("TestLevel");
 	}
 
-	public void ExitGame() {
-		Application.Quit();
+	public void LoadLevel(string lvlToLoad) {
+		audioSource.Stop();
+		SceneManager.LoadScene(lvlToLoad);
+	}
+
+	public void ExitToDesktop() {
+		audioSource.Stop();
+		SceneManager.LoadScene("TitleScreen");
 	}
 }
