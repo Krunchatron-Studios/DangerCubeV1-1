@@ -6,36 +6,40 @@ using UnityEngine;
 
 public class NanoBot : Projectile {
     public NanoManager nanoManager;
-    public float rotationSpeed;
-    public GameObject playerPosition;
+    private Vector3 _playerPosition;
+    private Vector3 _anchorPoint;
+    private Vector3 _nanoTransform;
     private GameObject _target;
+    private float rotationSpeed = 50;
+    [Header("Mutatation Payload")]
     public NanoZombie zombie;
 
+    private void Start() {
+        _nanoTransform = transform.position;
+    }
+
     private void FixedUpdate() {
-        playerPosition = GameObject.FindWithTag("Player");
+        _playerPosition = GameObject.FindWithTag("Player").transform.position;
+        _nanoTransform = transform.position;
         RotateNanos();
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Enemy") && other.gameObject.name == "Pedestrian(Clone)") {
             Destroy(other);
-            Destroy(gameObject); 
-            nanoManager.currentNanoBots--;
+            Destroy(gameObject);
+            if (nanoManager.currentNanoBots >= 1) {
+                nanoManager.currentNanoBots--;
+            }
         }
     }
-    
     private void RotateNanos() {
         Vector3 move = new Vector3(0, 0, 1);
-        transform.RotateAround(playerPosition.transform.position, move, rotationSpeed * Time.deltaTime);
-        // Vector3 offset = new Vector3(playerPosition.transform.position.x + 3, playerPosition.transform.position.y + 3, 0);
-        // transform.position = Vector3.MoveTowards(transform.position, playerPosition.transform.position, movementSpeed);
+        transform.RotateAround(_playerPosition, move, rotationSpeed * Time.deltaTime);
+        _anchorPoint = (_nanoTransform - _playerPosition).normalized * 3 + _playerPosition;
+        transform.position = Vector3.MoveTowards(_nanoTransform, _anchorPoint, 2);
     }
-
     private void OnDestroy() {
-        CreateZombie();
-    }
-
-    private void CreateZombie() {
-        Instantiate(zombie, transform.position, Quaternion.identity);
+        Instantiate(zombie, _nanoTransform, Quaternion.identity);
     }
 }
