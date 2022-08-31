@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public class PausePanel : MonoBehaviour {
     private bool _isPaused;
     public GameObject pausePanel;
@@ -25,6 +27,17 @@ public class PausePanel : MonoBehaviour {
             Time.timeScale = 1f;
         }
     }
-    
-    
+
+    public void Resume() {
+        pausePanel.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void GiveUp() {
+        SceneManager.LoadScene("LevelSelect");
+    }
+
+    public void ExitGame() {
+        Application.Quit();
+    }
 }
