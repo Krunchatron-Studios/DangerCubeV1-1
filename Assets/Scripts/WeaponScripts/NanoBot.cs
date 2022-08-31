@@ -16,6 +16,7 @@ public class NanoBot : Projectile {
 
     private void Start() {
         _nanoTransform = transform.position;
+        _playerPosition = GameObject.FindWithTag("Player").transform.position;
     }
 
     private void FixedUpdate() {
@@ -36,8 +37,8 @@ public class NanoBot : Projectile {
     private void RotateNanos() {
         Vector3 move = new Vector3(0, 0, 1);
         transform.RotateAround(_playerPosition, move, rotationSpeed * Time.deltaTime);
-        _anchorPoint = (_nanoTransform - _playerPosition).normalized * 3 + _playerPosition;
-        transform.position = Vector3.MoveTowards(_nanoTransform, _anchorPoint, 2);
+        // _anchorPoint = (_nanoTransform - _playerPosition).normalized * 3 + _playerPosition;
+        // transform.position = Vector3.MoveTowards(_nanoTransform, _anchorPoint, 0.5f);
     }
     private void OnDestroy() {
         Instantiate(zombie, _nanoTransform, Quaternion.identity);
