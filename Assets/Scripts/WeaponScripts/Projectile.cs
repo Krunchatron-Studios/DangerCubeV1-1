@@ -23,17 +23,16 @@ public class Projectile : MonoBehaviour {
 	}
 	public virtual void ResolveProjectile(Collider2D other) {
 		if (other.CompareTag("Enemy")) {
-			Debug.Log("Hello");
 			IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
 			hit.TakeDamage(weapon.weaponDamage);
 			MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
 				weapon.weaponDamage.ToString(), Vector3.up, .2f);
-			weapon.enemyKnockBack(direction, other.attachedRigidbody);
-			bloodSplash = Instantiate(bloodSplash, other.transform.position, Quaternion.identity);
-			Destroy(gameObject);
+			// bloodSplash = Instantiate(bloodSplash, other.transform.position, Quaternion.identity);
+			gameObject.SetActive(false);
 		}
 		if (other.CompareTag("Wall")) {
-			Destroy(gameObject);
+			gameObject.SetActive(false);
+			
 		}
 	}
 }

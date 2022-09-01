@@ -8,6 +8,9 @@ public class ProjectileWeapon : Weapon {
 	public Transform projectile;
 	public Vector2 enemyTarget;
 	public TargetingSystem targetingSys;
+
+	public ObjectPool bulletPool;
+	public ParticlePool particlePool;
 	
 	[Header("Firing Vars")]
 	public float weaponRange = 3;
@@ -23,8 +26,18 @@ public class ProjectileWeapon : Weapon {
 	}
 	public virtual void FireWeapon(Vector3 firePoint, Vector3 targetPosition) {
 		audioSource.Play();
-		Transform bulletTransform = Instantiate(projectile, firePoint, Quaternion.identity);
-		Projectile bullet = bulletTransform.GetComponent<Projectile>();
+		GameObject bulletObject = bulletPool.GetPooledObject();
+		Debug.Log($"bullet obj: {bulletObject}");
+		ParticleSystem bulletParticle = particlePool.GetPooledParticle();
+		Debug.Log($"bullet part: {bulletParticle}");
+
+		Projectile bullet = bulletObject.GetComponent<Projectile>();
+		bulletObject.transform.position = transform.position;
+		bulletParticle.transform.position = transform.position;
+		bulletObject.SetActive(true);
+		bulletParticle.Play();
+		
+		
 		bullet.Setup(targetPosition);
 		nextFire = Time.time + rateOfFire;
 		bullet.MoveProjectile();

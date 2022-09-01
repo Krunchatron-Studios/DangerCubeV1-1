@@ -41,15 +41,15 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 	}
 	public void TakeDamage(float dmgAmount) {
 		currentHealth -= dmgAmount;
-		GameObject ashes;
 		if (currentHealth <= 0) {
 			dissolve.isDissolving = true;
 			moveSpeed = 0f;
-			playerResources.experience += experienceValue;
-			ashes = PoolManager.pm.ashesPool.GetPooledGameObject();
+			GameObject ashes = PoolManager.pm.ashesPool.GetPooledObject();
+			ParticleSystem ashParticle = PoolManager.pm.ashesPool.GetPooledParticle();
 			ashes.transform.position = transform.position;
 			ashes.SetActive(true);
-			
+			ashParticle.Play();
+
 		}
 	}
 	public void HealDamage(int healAmount) {

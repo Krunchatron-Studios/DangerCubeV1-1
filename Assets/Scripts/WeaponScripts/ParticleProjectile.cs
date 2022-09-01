@@ -9,10 +9,13 @@ public class ParticleProjectile : Projectile {
 	private Vector3 _bulletPos;
 	private Vector3 _startPos;
 	
+	public ObjectPool bulletPool;
+	public ParticlePool particlePool;
+	
 	private void Start() {
 		_bulletPos = projectileRb2D.transform.position;
-		_bullet = Instantiate(projectileParticle, _bulletPos, Quaternion.identity);
-		_flash = Instantiate(muzzleFlashParticle, _bulletPos, Quaternion.identity);
+		_bullet = 
+		_flash = ParticlePool.op.GetPooledObject();
 	}
 	
 	private void Update() {
@@ -25,20 +28,20 @@ public class ParticleProjectile : Projectile {
 
 	public override void ResolveProjectile(Collider2D other) {
 		if (other.CompareTag("Enemy")) {
-			Debug.Log("Hello");
 			IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
 			hit.TakeDamage(weapon.weaponDamage);
 			MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
 				weapon.weaponDamage.ToString(), Vector3.up, .2f);
-			weapon.enemyKnockBack(direction, other.attachedRigidbody);
-			bloodSplash = Instantiate(bloodSplash, other.transform.position, Quaternion.identity);
-			Destroy(gameObject);
-			Destroy(_bullet);
+			
+			// weapon.enemyKnockBack(direction, other.attachedRigidbody);
+			// bloodSplash = Instantiate(bloodSplash, other.transform.position, Quaternion.identity);
+			
+			gameObject.SetActive(false);
+			_bullet.gameObject.SetActive(false);
 		}
 		if (other.CompareTag("Wall")) {
-			Destroy(gameObject);
-			Destroy(_bullet);
-
+			gameObject.SetActive(false);
+			_bullet.gameObject.SetActive(false);
 		}
 	}
 }
