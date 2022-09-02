@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using MoreMountains.Tools;
 
@@ -6,8 +7,7 @@ public class ParticleProjectile : Projectile {
 	private ParticleSystem _bullet;
 	private Vector3 _bulletPos;
 	private Vector3 _startPos;
-	
-	
+
 	private void Update() {
 		projectileParticle.transform.position = projectileRb2D.transform.position;
 	}

@@ -26,12 +26,10 @@ public class Projectile : MonoBehaviour {
 		
 		Vector3 moveDirection = (targetPosition - transform.position).normalized;
 		direction = moveDirection;
-		Debug.Log($"on the move {direction}");
-		projectileRb2D.AddForce(moveDirection * (projectileVelocity * Time.deltaTime), ForceMode2D.Impulse);
+		projectileRb2D.AddForce(moveDirection * projectileVelocity * Time.deltaTime, ForceMode2D.Impulse);
 	}
 	public virtual void ResolveProjectile(Collider2D other) {
 		if (other.CompareTag("Enemy")) {
-			Debug.Log("Hello");
 			IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
 			hit.TakeDamage(weapon.weaponDamage, weapon.damageType);
 			MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 

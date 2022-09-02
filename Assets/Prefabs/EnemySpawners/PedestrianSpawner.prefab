@@ -45,11 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1078567caf914672bcb6ae2e5c043f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 0
-  spawnQuantity: 0
-  enemy: {fileID: 6442908101038264799, guid: 28bb09b725693465980add74138846e5, type: 3}
-  playerPosition: {fileID: 0}
-  enemyPooler: {fileID: 1317646901}
+  _waitTime: 2
+  _spawnQuantity: 2
+  _enemy: {fileID: 6442908101038264799, guid: 28bb09b725693465980add74138846e5, type: 3}
+  _playerPosition: {fileID: 0}
+  objectPooler: {fileID: 1317646901}
 --- !u!114 &1317646901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,6 +65,6 @@ MonoBehaviour:
   MutualizeWaitingPools: 0
   NestWaitingPool: 1
   NestUnderThis: 0
-  GameObjectToPool: {fileID: 6442908101038264799, guid: 28bb09b725693465980add74138846e5, type: 3}
+  GameObjectToPool: {fileID: 573598938223131650, guid: abea8e78c63c4044c87ca0233fc95e1d, type: 3}
   PoolSize: 40
   PoolCanExpand: 1

@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class BackToPool : MonoBehaviour
 {
-    public bool returnParent;
-
     public float returnDelay;
     
     private ParticleSystem _returnParticleSystem;
@@ -18,20 +16,13 @@ public class BackToPool : MonoBehaviour
 
     protected virtual void Update() {	
         if (returnDelay != 0 && Time.time - _startTime > returnDelay) {
-            ReturnParticleSystem();
+            _returnParticleSystem.Stop();
+            gameObject.SetActive(false);
         }	
         if (_returnParticleSystem.isPlaying) {
             return;
         }
-        ReturnParticleSystem();
-    }
-
-    protected virtual void ReturnParticleSystem() {
-        if (transform.parent) {
-            if (returnParent) {
-                gameObject.SetActive(false);
-            }
-        }					
+        _returnParticleSystem.Stop();
         gameObject.SetActive(false);
     }
 }

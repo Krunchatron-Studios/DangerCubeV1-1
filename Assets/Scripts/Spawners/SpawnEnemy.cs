@@ -62,10 +62,10 @@ public class SpawnEnemy : MonoBehaviour {
                 break;
         }
         
-        // GameObject spawnedEnemy = objectPooler.GetPooledGameObject();
-        // spawnedEnemy.transform.position = transform.position;
-        // spawnedEnemy.SetActive(true);
-        // Debug.Log("enemy spawned");
-        Instantiate(_enemy, new Vector3(tempX, tempY, 0), Quaternion.identity);
+        GameObject spawnedEnemy = objectPooler.GetPooledGameObject();
+        spawnedEnemy.transform.position = transform.position;
+        spawnedEnemy.SetActive(true);
+        Debug.Log("enemy spawned");
+        //Instantiate(_enemy, new Vector3(tempX, tempY, 0), Quaternion.identity);
     }
 }
