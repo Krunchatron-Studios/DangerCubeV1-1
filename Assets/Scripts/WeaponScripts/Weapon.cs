@@ -11,9 +11,9 @@ public class Weapon : MonoBehaviour {
 	public string weaponName;
 	public string weaponDescription;
 	public float weaponDamage = 1f;
+	public string damageType;
 
 	public MMSimpleObjectPooler objectPooler;
-	
 	private void Start() {
 		audioSource = GetComponent<AudioSource>();
 	}

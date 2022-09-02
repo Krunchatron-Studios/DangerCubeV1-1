@@ -8,10 +8,11 @@ public class EnemyProjectile : MonoBehaviour {
     {
         if (other.CompareTag("Player")) {
             IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
-            hit.TakeDamage(enemyDamage);
-            Destroy(gameObject);
+            hit.TakeDamage(enemyDamage, "Physical");
+            gameObject.SetActive(false);
         } else if (other.CompareTag("Wall")) {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            
         }
     }
 }

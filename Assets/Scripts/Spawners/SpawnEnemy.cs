@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.Tools;
 using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour {
@@ -10,6 +11,8 @@ public class SpawnEnemy : MonoBehaviour {
     [Header("Game Objects")]
     [SerializeField] private GameObject _enemy;
     [SerializeField] private Transform _playerPosition;
+
+    public MMSimpleObjectPooler objectPooler;
     void Update() {
         if (Time.time > _nextSpawn) {
             _nextSpawn += _waitTime;
@@ -59,6 +62,10 @@ public class SpawnEnemy : MonoBehaviour {
                 break;
         }
         
+        // GameObject spawnedEnemy = objectPooler.GetPooledGameObject();
+        // spawnedEnemy.transform.position = transform.position;
+        // spawnedEnemy.SetActive(true);
+        // Debug.Log("enemy spawned");
         Instantiate(_enemy, new Vector3(tempX, tempY, 0), Quaternion.identity);
     }
 }

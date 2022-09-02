@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using MoreMountains.Tools;
 
@@ -9,7 +10,12 @@ public class Projectile : MonoBehaviour {
 	public Vector3 targetPosition;
 	public GameObject bloodSplash;
 	public Vector3 direction;
+	public float moveTime;
 
+	private void Awake() {
+		MoveProjectile();
+	}
+	
 	void OnTriggerEnter2D(Collider2D other) {
 		ResolveProjectile(other);
 	}
@@ -17,15 +23,17 @@ public class Projectile : MonoBehaviour {
 		targetPosition = targetPos;
 	}
 	public void MoveProjectile() {
+		
 		Vector3 moveDirection = (targetPosition - transform.position).normalized;
 		direction = moveDirection;
-		projectileRb2D.AddForce(moveDirection * projectileVelocity * Time.deltaTime, ForceMode2D.Impulse);
+		Debug.Log($"on the move {direction}");
+		projectileRb2D.AddForce(moveDirection * (projectileVelocity * Time.deltaTime), ForceMode2D.Impulse);
 	}
 	public virtual void ResolveProjectile(Collider2D other) {
 		if (other.CompareTag("Enemy")) {
 			Debug.Log("Hello");
 			IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
-			hit.TakeDamage(weapon.weaponDamage);
+			hit.TakeDamage(weapon.weaponDamage, weapon.damageType);
 			MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
 				weapon.weaponDamage.ToString(), Vector3.up, .2f);
 			bloodSplash = Instantiate(bloodSplash, other.transform.position, Quaternion.identity);

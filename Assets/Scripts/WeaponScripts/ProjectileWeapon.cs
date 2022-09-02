@@ -27,17 +27,13 @@ public class ProjectileWeapon : Weapon {
 		audioSource.Play();
 		GameObject spawnedBullet = objectPooler.GetPooledGameObject();
 		Projectile bullet = spawnedBullet.GetComponent<Projectile>();
-		Debug.Log($"spawned bullet3: {bullet}");
 		bullet.transform.position = firePoint;
 	
 		
 		bullet.Setup(targetPosition);
 		nextFire = Time.time + rateOfFire;
-		Debug.Log($"spawned bullet1: {spawnedBullet}");
-		bullet.MoveProjectile();
 		MMCameraShakeEvent.Trigger(.1f, .2f, 40, 0, 0, 0, false);
 		bullet.gameObject.SetActive(true);
-		Debug.Log($"spawned bullet2: {bullet}");
 	}
 	
 	public void CanFireTimer() {
@@ -46,9 +42,6 @@ public class ProjectileWeapon : Weapon {
 			_canFire = true;
 			for (int i = 0; i < firePointArray.Length; i++) {
 				if (firePointArray[i].activeInHierarchy) {
-					Debug.Log("Active");
-					Debug.Log($"fire point: {firePointArray[i]}");
-					Debug.Log($"enemy target: {enemyTarget}");
 					FireWeapon(firePointArray[i].transform.position, enemyTarget);
 				}
 			}

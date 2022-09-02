@@ -39,6 +39,6 @@ public class EnemyWeapon : MonoBehaviour {
 
     IEnumerator BulletCo(GameObject bullet) {
         yield return new WaitForSeconds(bulletDecay);
-        Destroy(bullet);
+        bullet.gameObject.SetActive(false);
     }
 }

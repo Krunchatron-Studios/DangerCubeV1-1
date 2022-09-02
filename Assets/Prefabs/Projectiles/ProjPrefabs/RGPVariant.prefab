@@ -7,6 +7,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8309369519932356767, guid: fda5d909c1a0f4f45b1a96e4ae70d7dc, type: 3}
+      propertyPath: projectileParticle
+      value: 
+      objectReference: {fileID: 7391453575316446817}
+    - target: {fileID: 254271668005075209, guid: fda5d909c1a0f4f45b1a96e4ae70d7dc, type: 3}
+      propertyPath: m_Size.x
+      value: 2.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 254271668005075209, guid: fda5d909c1a0f4f45b1a96e4ae70d7dc, type: 3}
+      propertyPath: m_Size.y
+      value: 2.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 254271668005075209, guid: fda5d909c1a0f4f45b1a96e4ae70d7dc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 254271668005075209, guid: fda5d909c1a0f4f45b1a96e4ae70d7dc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254271668005075209, guid: fda5d909c1a0f4f45b1a96e4ae70d7dc, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1655789376720695904, guid: fda5d909c1a0f4f45b1a96e4ae70d7dc, type: 3}
       propertyPath: m_Name
       value: RGPVariant
@@ -57,3 +81,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fda5d909c1a0f4f45b1a96e4ae70d7dc, type: 3}
+--- !u!1 &7391453575316446817 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5727111095848374647, guid: fda5d909c1a0f4f45b1a96e4ae70d7dc, type: 3}
+  m_PrefabInstance: {fileID: 3020084593374695190}
+  m_PrefabAsset: {fileID: 0}

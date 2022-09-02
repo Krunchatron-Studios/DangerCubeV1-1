@@ -21,7 +21,7 @@ public class NanoZombie : MonoBehaviour {
                 damage.ToString(), Vector3.up, .2f);
             // bloodSplash = Instantiate(bloodSplash, other.transform.position, Quaternion.identity);
             IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
-            hit.TakeDamage(damage);
+            hit.TakeDamage(damage, "Physical");
         }
     }
 
