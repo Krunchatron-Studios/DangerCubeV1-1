@@ -8,23 +8,23 @@ using UnityEngine;
 public class NanoZombie : MonoBehaviour {
     private Vector3 _target;
     private int moveSpeed = 1;
-    private int damage = 1;
+    private int damage = 5;
     public int lifeTime = 5;
     public int chaseRadius = 3;
     public GameObject bloodSplash;
     void Awake() {
         StartCoroutine(ZombieLife());
     }
-    private void Update() {
+    private void FixedUpdate() {
         ChaseEnemy();
     }
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Enemy")) {
             MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
                 damage.ToString(), Vector3.up, .2f);
-            // bloodSplash = Instantiate(bloodSplash, other.transform.position, Quaternion.identity);
+            bloodSplash = Instantiate(bloodSplash, other.transform.position, Quaternion.identity);
             IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
-            hit.TakeDamage(damage, "Physical");
+            hit.TakeDamage(damage);
         }
     }
 
@@ -43,6 +43,7 @@ public class NanoZombie : MonoBehaviour {
     IEnumerator ZombieLife() {
         yield return null;
         yield return new WaitForSeconds(lifeTime);
+        Debug.Log("A ZOMBIE DIED!!!");
         Destroy(gameObject);
     }
 }

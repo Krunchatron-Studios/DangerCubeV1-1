@@ -201,7 +201,7 @@ SpriteRenderer:
   m_SortingLayerID: 2055319811
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6d58094e3a580a94dbfb0149f4c5e691, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ac5d1de98466c3345a21d02554557b9f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -250,7 +250,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -424,11 +424,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8678118045615468125, guid: 430b3384d03930f42a003e770aace5a8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.347
+      value: 0.084
       objectReference: {fileID: 0}
     - target: {fileID: 8678118045615468125, guid: 430b3384d03930f42a003e770aace5a8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.026
+      value: 0.084
       objectReference: {fileID: 0}
     - target: {fileID: 8678118045615468125, guid: 430b3384d03930f42a003e770aace5a8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -462,30 +462,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9195537134137375023, guid: 430b3384d03930f42a003e770aace5a8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9195537134137375023, guid: 430b3384d03930f42a003e770aace5a8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9195537134137375023, guid: 430b3384d03930f42a003e770aace5a8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9195537134137375023, guid: 430b3384d03930f42a003e770aace5a8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9195537134137375023, guid: 430b3384d03930f42a003e770aace5a8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9195537134137375023, guid: 430b3384d03930f42a003e770aace5a8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 430b3384d03930f42a003e770aace5a8, type: 3}
 --- !u!4 &6557873537676906474 stripped
@@ -511,10 +487,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1048116768}
     m_Modifications:
-    - target: {fileID: 1136044463, guid: 4e60abf489b53446a93c82af3e913274, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2655124810910713274, guid: 4e60abf489b53446a93c82af3e913274, type: 3}
       propertyPath: m_RootOrder
       value: 4
