@@ -13,6 +13,7 @@ public class MechanicalMeatSeparator : Weapon {
     }
 
     void MoveSaw() {
+        transform.localScale = GameManager.gm.playerCube.transform.localScale;
         Vector3 moveDirection = (_enemyPosition.transform.position - transform.position).normalized;
         thisRigidBody.AddForce(moveDirection * sawVelocity * Time.deltaTime, ForceMode2D.Impulse);
     }
