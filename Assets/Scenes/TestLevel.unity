@@ -1371,12 +1371,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b3af5e87995ae841b1af7c1c2504380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pedestrian: {fileID: 5557189108395349622, guid: 28bb09b725693465980add74138846e5, type: 3}
-  soldier: {fileID: 9126635317560438138, guid: 57796efae6f264e55b8b7d50413d45de, type: 3}
-  helicopter: {fileID: 2516821719561337926, guid: ec6943e27a9184102957955cc1d9a31e, type: 3}
-  kiwikid: {fileID: 6079774384545484274, guid: 43027c1d08fd34e44849274e80fcb71b, type: 3}
-  enemyParticleArrays: {fileID: 11400000, guid: 497f13b169b34a04a9bcac0d42a4d6df, type: 2}
-  enemyArrays: {fileID: 11400000, guid: 73759d443462b534e885624a1946a327, type: 2}
 --- !u!82 &341786064
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6313,6 +6307,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6374294972671936681, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6557873537676906476, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: eyeVFX
       value: 
@@ -6357,9 +6355,13 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.524
       objectReference: {fileID: 0}
-    - target: {fileID: 8670534410664316203, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+    - target: {fileID: 8649432337890070779, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8670534410664316203, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5099936691306231938, guid: b00bb1a9d06731f459ab2801166aa6c6, type: 3}
