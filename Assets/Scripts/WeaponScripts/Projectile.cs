@@ -28,12 +28,11 @@ public class Projectile : MonoBehaviour {
 			hit.TakeDamage(weapon.weaponDamage);
 			MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
 				weapon.weaponDamage.ToString(), Vector3.up, .2f);
-			weapon.enemyKnockBack(direction, other.attachedRigidbody);
 			bloodSplash = Instantiate(bloodSplash, other.transform.position, Quaternion.identity);
-			Destroy(gameObject);
+			gameObject.SetActive(false);
 		}
 		if (other.CompareTag("Wall")) {
-			Destroy(gameObject);
+			gameObject.SetActive(false);
 		}
 	}
 }

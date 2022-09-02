@@ -21,20 +21,17 @@ public class RapidFireWeapon : ProjectileWeapon {
 	}
 	
 	public void RapidFireTimer() {
-		// Debug.Log("we made it!");
 		bool rapidFireTimerTriggered = false;
 		
 		if (!isRapidFiring) {
 			rateOfFire = fastRof;
 			isRapidFiring = true;
-			// Debug.Log($"time: {Time.time}");
 			rapidFireTimerTriggered = true;
 		}
 		
 		if (isRapidFiring && !rapidFireTimerTriggered) {
 			rateOfFire = longRof;
 			isRapidFiring = false;
-			// Debug.Log($"weaponCD: {weaponCoolDown}");
 		}
 	}
 }

@@ -32,7 +32,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5727111095848212465}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -54,8 +55,7 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0, z: 0}
   bloodSplash: {fileID: 2512025392852149761, guid: 8df12292ad0e89947a87dee41a86f181, type: 3}
   direction: {x: 0, y: 0, z: 0}
-  projectileParticle: {fileID: 6609792059005856855, guid: 2f0cce7ba504b4c4bba12b7011703695, type: 3}
-  muzzleFlashParticle: {fileID: 5235355868479108926, guid: 935f378eab76c184a837132a598d5d19, type: 3}
+  projectileParticle: {fileID: 4922136431080144685, guid: ddba4269544eca04e8872b60cd12335b, type: 3}
 --- !u!212 &254271668005075209
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -224,3 +224,65 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1001 &1495331317968043296
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1655789376720695905}
+    m_Modifications:
+    - target: {fileID: 6609792059005692625, guid: 2f0cce7ba504b4c4bba12b7011703695, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609792059005692625, guid: 2f0cce7ba504b4c4bba12b7011703695, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609792059005692625, guid: 2f0cce7ba504b4c4bba12b7011703695, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609792059005692625, guid: 2f0cce7ba504b4c4bba12b7011703695, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609792059005692625, guid: 2f0cce7ba504b4c4bba12b7011703695, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609792059005692625, guid: 2f0cce7ba504b4c4bba12b7011703695, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609792059005692625, guid: 2f0cce7ba504b4c4bba12b7011703695, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609792059005692625, guid: 2f0cce7ba504b4c4bba12b7011703695, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609792059005692625, guid: 2f0cce7ba504b4c4bba12b7011703695, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609792059005692625, guid: 2f0cce7ba504b4c4bba12b7011703695, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609792059005692625, guid: 2f0cce7ba504b4c4bba12b7011703695, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609792059005856855, guid: 2f0cce7ba504b4c4bba12b7011703695, type: 3}
+      propertyPath: m_Name
+      value: NovaMissilePink
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2f0cce7ba504b4c4bba12b7011703695, type: 3}
+--- !u!4 &5727111095848212465 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6609792059005692625, guid: 2f0cce7ba504b4c4bba12b7011703695, type: 3}
+  m_PrefabInstance: {fileID: 1495331317968043296}
+  m_PrefabAsset: {fileID: 0}
