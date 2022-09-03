@@ -4763,14 +4763,13 @@ GameObject:
   - component: {fileID: 3744292617004343048}
   - component: {fileID: 3744292616984916328}
   - component: {fileID: 3744292616984966720}
-  - component: {fileID: 7039531659875582542}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: SparkLoopYellow
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3744292617004343048
 Transform:
   m_ObjectHideFlags: 0
@@ -4780,7 +4779,7 @@ Transform:
   m_GameObject: {fileID: 3744292617004521566}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -3.4012458, y: 0.11679363, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3744292617004294222}
@@ -5389,7 +5388,7 @@ ParticleSystem:
     radiusThickness: 0.5
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: 0, y: -10, z: 0}
+    m_Rotation: {x: -10, y: -10, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -9555,20 +9554,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &7039531659875582542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3744292617004521566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 285f99e0a15c96a47ae846b7c3b17656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  returnParent: 0
-  returnDelay: 0
 --- !u!1 &3744292617004525578
 GameObject:
   m_ObjectHideFlags: 0
@@ -10195,13 +10180,13 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 45
+    angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: 0, y: 0, z: 0}
+    m_Rotation: {x: -10, y: -10, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -10281,7 +10266,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.01
+      value: 1
       mode: 0
       spread: 0
       speed:
