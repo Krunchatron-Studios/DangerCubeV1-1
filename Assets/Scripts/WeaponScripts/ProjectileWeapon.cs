@@ -29,7 +29,6 @@ public class ProjectileWeapon : Weapon {
 		Projectile bullet = spawnedBullet.GetComponent<Projectile>();
 		bullet.transform.position = firePoint;
 	
-		
 		bullet.Setup(targetPosition);
 		nextFire = Time.time + rateOfFire;
 		MMCameraShakeEvent.Trigger(.1f, .2f, 40, 0, 0, 0, false);

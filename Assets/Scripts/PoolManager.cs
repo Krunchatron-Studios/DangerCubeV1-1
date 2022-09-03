@@ -17,6 +17,6 @@ public class PoolManager : MonoBehaviour {
 
 	[Header("Particle Pools")] 
 	public MMSimpleObjectPooler ashesPool;
-
 	public MMSimpleObjectPooler bloodPool;
+	public MMSimpleObjectPooler acidPool;
 }
