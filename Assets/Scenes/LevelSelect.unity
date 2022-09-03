@@ -465,6 +465,8 @@ GameObject:
   - component: {fileID: 516017440}
   - component: {fileID: 516017439}
   - component: {fileID: 516017438}
+  - component: {fileID: 516017443}
+  - component: {fileID: 516017442}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -555,6 +557,30 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &516017442
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516017437}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &516017443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516017437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c35feada76fc426ca2847c6593a97c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1357933835
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,19 +746,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1561548043}
-        m_TargetAssemblyTypeName: LevelSelect, Assembly-CSharp
-        m_MethodName: GoToEarth
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2020761025}
+      - m_Target: {fileID: 516017443}
         m_TargetAssemblyTypeName: Fade, Assembly-CSharp
         m_MethodName: FadeOutFunc
         m_Mode: 1
@@ -793,8 +807,6 @@ GameObject:
   - component: {fileID: 2020761020}
   - component: {fileID: 2020761024}
   - component: {fileID: 2020761023}
-  - component: {fileID: 2020761026}
-  - component: {fileID: 2020761025}
   m_Layer: 5
   m_Name: FadePanel
   m_TagString: Untagged
@@ -860,28 +872,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020761019}
   m_CullTransparentMesh: 1
---- !u!114 &2020761025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2020761019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c35feada76fc426ca2847c6593a97c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisFadePanel: {fileID: 2020761026}
---- !u!225 &2020761026
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2020761019}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0

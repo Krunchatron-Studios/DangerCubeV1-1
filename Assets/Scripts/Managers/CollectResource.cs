@@ -11,8 +11,8 @@ public class CollectResource : MonoBehaviour {
     public Rigidbody2D resourceRb2D;
     private Transform _resourcePosition;
     private Transform _playerPosition;
-    private readonly int moveSpeed = 3;
-    private float distance;
+    private readonly int _moveSpeed = 3;
+    private float _distance;
     void Awake() {
         _resourcePosition = GameObject.FindWithTag("Item").transform;
         _playerPosition = GameObject.FindWithTag("Player").transform;
@@ -23,22 +23,22 @@ public class CollectResource : MonoBehaviour {
         AbsorbResources();
     }
     void AbsorbResources() {
-        distance = Vector3.Distance(_resourcePosition.position, _playerPosition.position);
-        if (distance <= playerResources.collectionRange) {
-            Vector3 temp = Vector3.MoveTowards(_resourcePosition.position, _playerPosition.position, moveSpeed * Time.deltaTime);
+        _distance = Vector3.Distance(_resourcePosition.position, _playerPosition.position);
+        if (_distance <= playerResources.collectionRange) {
+            Vector3 temp = Vector3.MoveTowards(_resourcePosition.position, _playerPosition.position, _moveSpeed * Time.deltaTime);
             resourceRb2D.MovePosition(temp);
         }
     }
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("Collector") && this.type == "BioGoo") {
+        if (other.CompareTag("Collector") && type == "BioGoo") {
             playerResources.bioGoo += value;
-            Destroy(this.gameObject);
-        } else if (other.CompareTag("Collector") && this.type == "Metal") {
+            gameObject.SetActive(false);
+        } else if (other.CompareTag("Collector") && type == "Metal") {
             playerResources.metal += value;
-            Destroy(this.gameObject);
-        } else if (other.CompareTag("Collector") && this.type == "Silicate") {
+            gameObject.SetActive(false);
+        } else if (other.CompareTag("Collector") && type == "Silicate") {
             playerResources.silicate += value;
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
         }
     }
 

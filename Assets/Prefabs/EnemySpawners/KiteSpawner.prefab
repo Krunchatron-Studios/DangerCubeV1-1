@@ -10,13 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 3352747951422525273}
   - component: {fileID: 3352747951422525272}
+  - component: {fileID: 1132888239}
   m_Layer: 0
   m_Name: KiteSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3352747951422525273
 Transform:
   m_ObjectHideFlags: 0
@@ -48,3 +49,22 @@ MonoBehaviour:
   _spawnQuantity: 1
   _enemy: {fileID: 3136071779676470157, guid: ec6943e27a9184102957955cc1d9a31e, type: 3}
   _playerPosition: {fileID: 0}
+  objectPooler: {fileID: 1132888239}
+--- !u!114 &1132888239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3352747951422525271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7277539b95c0d45895792ecc99ce66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MutualizeWaitingPools: 0
+  NestWaitingPool: 1
+  NestUnderThis: 0
+  GameObjectToPool: {fileID: 3136071779676470157, guid: ec6943e27a9184102957955cc1d9a31e, type: 3}
+  PoolSize: 20
+  PoolCanExpand: 1

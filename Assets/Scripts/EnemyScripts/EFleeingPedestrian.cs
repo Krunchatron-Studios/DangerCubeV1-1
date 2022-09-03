@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class EFleeingPedestrian : BaseEnemy {
@@ -18,6 +16,6 @@ public class EFleeingPedestrian : BaseEnemy {
     private IEnumerator SuccessfullyFled() {
         yield return null;
         yield return new WaitForSeconds(_safetyTime);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

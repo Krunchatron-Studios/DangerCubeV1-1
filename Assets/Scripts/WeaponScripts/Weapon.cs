@@ -1,3 +1,4 @@
+using MoreMountains.Tools;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
@@ -10,17 +11,10 @@ public class Weapon : MonoBehaviour {
 	public string weaponName;
 	public string weaponDescription;
 	public float weaponDamage = 1f;
-	public float knockBackPower = 1f;
+	public string damageType;
 
-
+	public MMSimpleObjectPooler objectPooler;
 	private void Start() {
 		audioSource = GetComponent<AudioSource>();
-	}
-	
-	public void enemyKnockBack(Vector3 direction, Rigidbody2D enemy) {
-		enemy.AddForce(direction * knockBackPower, ForceMode2D.Impulse);
-		Debug.Log("we hit them with the knockback");
-		Debug.Log(direction.normalized);
-
 	}
 }
