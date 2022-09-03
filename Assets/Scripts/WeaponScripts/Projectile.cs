@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using MoreMountains.Tools;
 
@@ -9,6 +10,19 @@ public class Projectile : MonoBehaviour {
 	public Vector3 targetPosition;
 	public GameObject bloodSplash;
 	public Vector3 direction;
+	public float moveTime;
+
+	private void Awake() {
+		Vector3 reset = transform.position;
+		projectileRb2D.velocity = Vector3.zero;
+		projectileRb2D.angularVelocity = 0f;
+		transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+		transform.position = reset;
+	}
+
+	private void Start() {
+		MoveProjectile();
+	}
 
 	void OnTriggerEnter2D(Collider2D other) {
 		ResolveProjectile(other);
@@ -23,17 +37,16 @@ public class Projectile : MonoBehaviour {
 	}
 	public virtual void ResolveProjectile(Collider2D other) {
 		if (other.CompareTag("Enemy")) {
-			Debug.Log("Hello");
 			IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
-			hit.TakeDamage(weapon.weaponDamage);
+			hit.TakeDamage(weapon.weaponDamage, weapon.damageType);
 			MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
 				weapon.weaponDamage.ToString(), Vector3.up, .2f);
-			weapon.enemyKnockBack(direction, other.attachedRigidbody);
 			bloodSplash = Instantiate(bloodSplash, other.transform.position, Quaternion.identity);
-			Destroy(gameObject);
+			gameObject.SetActive(false);
+
 		}
 		if (other.CompareTag("Wall")) {
-			Destroy(gameObject);
+			gameObject.SetActive(false);
 		}
 	}
 }

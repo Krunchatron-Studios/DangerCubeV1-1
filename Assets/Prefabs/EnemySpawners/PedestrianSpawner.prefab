@@ -10,13 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 8124348886498426970}
   - component: {fileID: 8124348886498426965}
+  - component: {fileID: 1317646901}
   m_Layer: 0
   m_Name: PedestrianSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8124348886498426970
 Transform:
   m_ObjectHideFlags: 0
@@ -44,7 +45,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1078567caf914672bcb6ae2e5c043f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waitTime: 3
-  _spawnQuantity: 10
-  _enemy: {fileID: 5697742466669956576, guid: bd1d9c15080864191b6d6dbcedb187a7, type: 3}
+  _waitTime: 2
+  _spawnQuantity: 2
+  _enemy: {fileID: 6442908101038264799, guid: 28bb09b725693465980add74138846e5, type: 3}
   _playerPosition: {fileID: 0}
+  objectPooler: {fileID: 1317646901}
+--- !u!114 &1317646901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8124348886498426964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7277539b95c0d45895792ecc99ce66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MutualizeWaitingPools: 0
+  NestWaitingPool: 1
+  NestUnderThis: 0
+  GameObjectToPool: {fileID: 573598938223131650, guid: abea8e78c63c4044c87ca0233fc95e1d, type: 3}
+  PoolSize: 40
+  PoolCanExpand: 1

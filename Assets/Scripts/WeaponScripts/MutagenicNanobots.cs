@@ -5,34 +5,29 @@ using UnityEngine.Serialization;
 
 public class MutagenicNanobots : Weapon {
     public NanoManager nanoManager;
-    public GameObject playerPosition;
-    public Transform center;
+    private GameObject _playerPosition;
+    private Vector3 _center;
     public GameObject nanoBot;
     public float spawnDelay;
 
     void Start() {
-        playerPosition = GameObject.FindWithTag("Player");
-        center = playerPosition.transform;
+        _playerPosition = GameObject.FindWithTag("Player");
+        _center = _playerPosition.transform.position;
         nanoManager.currentNanoBots = 0;
-        SpawnNanos();
+        InvokeRepeating("SpawnNanos", 2f, spawnDelay);
     }
     void FixedUpdate() {
-        playerPosition = GameObject.FindWithTag("Player");
-        center = playerPosition.transform;
+        _playerPosition = GameObject.FindWithTag("Player");
+        _center = _playerPosition.transform.position;
     }
 
     private void SpawnNanos() {
         if (nanoManager.currentNanoBots < nanoManager.maxNanoBots) {
-            Vector3 offset = new Vector3(center.position.x, center.position.y + 3, 0);
-            Instantiate(nanoBot, offset, Quaternion.identity);
-            nanoManager.currentNanoBots++;
-            StartCoroutine(SpawnCo());
+            Vector3 offset = new Vector3(_center.x, _center.y + 3, 0);
+            if (nanoManager.currentNanoBots < nanoManager.maxNanoBots) {
+                Instantiate(nanoBot, offset, Quaternion.identity);
+                nanoManager.currentNanoBots++;
+            }
         }
-    }
-
-    IEnumerator SpawnCo() {
-        yield return null;
-        yield return new WaitForSeconds(spawnDelay);
-        SpawnNanos();
     }
 }

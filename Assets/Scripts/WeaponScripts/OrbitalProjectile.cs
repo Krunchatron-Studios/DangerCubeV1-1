@@ -11,7 +11,7 @@ public class OrbitalProjectile : MonoBehaviour {
                 weapon.weaponDamage.ToString(), Vector3.up, .2f);
             bloodSplash = Instantiate(bloodSplash, other.transform.position, Quaternion.identity);
             IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
-            hit.TakeDamage(weapon.weaponDamage);
+            hit.TakeDamage(weapon.weaponDamage, weapon.damageType);
         }
     }
 }
