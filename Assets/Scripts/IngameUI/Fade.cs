@@ -1,14 +1,11 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using MoreMountains.Tools;
 using UnityEngine;
 
-public class Fade : MonoBehaviour
-{
-    // private void Awake() {
-    //     FadeInFunc();
-    // }
+public class Fade : MonoBehaviour {
+    public CanvasGroup thisFadePanel;
+    private void Awake() {
+        FadeInFunc();
+    }
 
     public void FadeInFunc() {
         StartCoroutine(FadeIn());
@@ -19,23 +16,20 @@ public class Fade : MonoBehaviour
     }
 
     IEnumerator FadeIn() {
-        CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
-        while (canvasGroup.alpha > 0) {
-            canvasGroup.alpha -= canvasGroup.alpha - Time.deltaTime / 2;
+        while (thisFadePanel.alpha > 0) {
+            thisFadePanel.alpha -= thisFadePanel.alpha - Time.deltaTime / 2;
             yield return null;
         }
-        // canvasGroup.interactable = false;
-        // yield return null;
+        thisFadePanel.interactable = false;
+        yield return null;
     }
     
     IEnumerator FadeOut() {
-        CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
-        while (canvasGroup.alpha < 1) {
-            canvasGroup.alpha += canvasGroup.alpha - Time.deltaTime / 2;
+        while (thisFadePanel.alpha < 1) {
+            thisFadePanel.alpha += thisFadePanel.alpha - Time.deltaTime / 2;
             yield return null;
         }
-        // canvasGroup.interactable = false;
-        // yield return null;
+        thisFadePanel.interactable = false;
+        yield return null;
     }
-    
 }
