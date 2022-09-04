@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1350479393458706205}
   - component: {fileID: 1183497370904608901}
   - component: {fileID: 1184162558992207551}
-  - component: {fileID: -6198416951296318103}
   m_Layer: 0
   m_Name: RocketMeshMissileFire
   m_TagString: Untagged
@@ -4765,19 +4764,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &-6198416951296318103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1344357935046343875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 285f99e0a15c96a47ae846b7c3b17656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  returnDelay: 0
 --- !u!1 &1344774949540538301
 GameObject:
   m_ObjectHideFlags: 0

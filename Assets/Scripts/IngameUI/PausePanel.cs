@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PausePanel : MonoBehaviour {
@@ -11,8 +12,7 @@ public class PausePanel : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetKeyDown("escape")) {
-            Debug.Log("button registered");
+        if (Keyboard.current.escapeKey.wasPressedThisFrame || Gamepad.current.startButton.wasPressedThisFrame) {
             PauseGame();
         }
     }

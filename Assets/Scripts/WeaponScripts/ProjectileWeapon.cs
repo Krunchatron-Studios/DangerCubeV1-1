@@ -50,7 +50,6 @@ public class ProjectileWeapon : Weapon {
 	
 	public void AquireTarget(BaseEnemy enemy) {
 		enemyTarget = enemy.transform.position;
-		Debug.Log($"enemy position: {enemyTarget}");
 	}
 }
 

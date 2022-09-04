@@ -11,15 +11,6 @@ public class Projectile : MonoBehaviour {
 	public Vector3 direction;
 	public float moveTime;
 
-	private void Awake() {
-		// Vector3 reset = transform.position;
-		// projectileRb2D.velocity = Vector3.zero;
-		// projectileRb2D.angularVelocity = 0f;
-		// transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-		// transform.position = reset;
-		//MoveProjectile();
-	}
-
 	void OnTriggerEnter2D(Collider2D other) {
 		ResolveProjectile(other);
 	}

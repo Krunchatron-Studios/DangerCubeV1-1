@@ -5,7 +5,6 @@ public class MineSlayerMine : ParticleProjectile {
 
 	[Header("AcidMinePool goes here")]
 	public MMSimpleObjectPooler minePooler;
-
 	public MMSimpleObjectPooler detonationPooler;
 	
 	private void OnTriggerStay2D(Collider2D other) {
