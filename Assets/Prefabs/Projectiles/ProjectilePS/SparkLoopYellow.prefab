@@ -4763,7 +4763,6 @@ GameObject:
   - component: {fileID: 3744292617004343048}
   - component: {fileID: 3744292616984916328}
   - component: {fileID: 3744292616984966720}
-  - component: {fileID: 7039531659875582542}
   m_Layer: 0
   m_Name: SparkLoopYellow
   m_TagString: Untagged
@@ -9555,20 +9554,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &7039531659875582542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3744292617004521566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 285f99e0a15c96a47ae846b7c3b17656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  returnParent: 0
-  returnDelay: 0
 --- !u!1 &3744292617004525578
 GameObject:
   m_ObjectHideFlags: 0
