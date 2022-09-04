@@ -28,11 +28,12 @@ public class ProjectileWeapon : Weapon {
 		GameObject spawnedBullet = objectPooler.GetPooledGameObject();
 		Projectile bullet = spawnedBullet.GetComponent<Projectile>();
 		bullet.transform.position = firePoint;
-	
+		
 		bullet.Setup(targetPosition);
 		nextFire = Time.time + rateOfFire;
 		MMCameraShakeEvent.Trigger(.1f, .2f, 40, 0, 0, 0, false);
 		bullet.gameObject.SetActive(true);
+		bullet.MoveProjectile();
 	}
 	
 	public void CanFireTimer() {
@@ -49,6 +50,7 @@ public class ProjectileWeapon : Weapon {
 	
 	public void AquireTarget(BaseEnemy enemy) {
 		enemyTarget = enemy.transform.position;
+		Debug.Log($"enemy position: {enemyTarget}");
 	}
 }
 
