@@ -20,8 +20,8 @@ public class Fade : MonoBehaviour {
             thisFadePanel.alpha -= thisFadePanel.alpha - Time.deltaTime / 2;
             yield return null;
         }
-        thisFadePanel.interactable = false;
-        yield return null;
+        // thisFadePanel.interactable = false;
+        // yield return null;
     }
     
     IEnumerator FadeOut() {
@@ -29,7 +29,7 @@ public class Fade : MonoBehaviour {
             thisFadePanel.alpha += thisFadePanel.alpha - Time.deltaTime / 2;
             yield return null;
         }
-        thisFadePanel.interactable = false;
-        yield return null;
+        // thisFadePanel.interactable = false;
+        // yield return null;
     }
 }
