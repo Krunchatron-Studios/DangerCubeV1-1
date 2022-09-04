@@ -10,7 +10,6 @@ public class MainCamera : MonoBehaviour {
 	private void Update() {
 		FollowPlayer();
 	}
-	// Script to make the camera follow the player (IDmgAndHpInterface = true)
 	public void FollowPlayer() {
 
 		if (playerRb2D) {

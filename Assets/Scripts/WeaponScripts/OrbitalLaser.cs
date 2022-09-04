@@ -8,14 +8,14 @@ public class OrbitalLaser : ProjectileWeapon {
     private void FixedUpdate() {
         CanFireTimer();
         _playerPosition = GameObject.FindWithTag("Player").transform;
-        if (GameObject.FindWithTag("Enemy")) {
-            _enemyPosition = GameObject.FindWithTag("Enemy").transform.position;
-        }
+        _enemyPosition = targetingSys.weapon.enemyTarget;
+        // if (GameObject.FindWithTag("Enemy")) {
+        //     _enemyPosition = GameObject.FindWithTag("Enemy").transform.position;
+        //     Debug.Log($"enemy position: {_enemyPosition}");
+        // }
     }
     public override void FireWeapon(Vector3 firePoint, Vector3 targetPosition) {
-        float startX = _enemyPosition.x;
-        float startY = _enemyPosition.y;
-        GameObject bulletTransform = Instantiate(projectile, new Vector3(startX, startY, 0), Quaternion.Euler(0,0,90));
+        GameObject bulletTransform = Instantiate(projectile, _enemyPosition, Quaternion.Euler(0,0,90));
         StartCoroutine(BeamCo(bulletTransform));
         Projectile bullet = bulletTransform.GetComponent<Projectile>();
         nextFire = Time.time + rateOfFire;

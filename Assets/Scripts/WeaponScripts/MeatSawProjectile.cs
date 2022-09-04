@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Tools;
 
@@ -15,7 +13,7 @@ public class MeatSawProjectile : MonoBehaviour {
             audioSource.Play();
             MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
                 damage.ToString(), Vector3.up, .2f);
-            bloodSplash = Instantiate(bloodSplash, other.transform.position, Quaternion.identity);
+            // bloodSplash = Instantiate(bloodSplash, other.transform.position, Quaternion.identity);
         }
     }
 }
