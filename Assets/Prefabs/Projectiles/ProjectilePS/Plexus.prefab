@@ -4939,7 +4939,6 @@ GameObject:
   - component: {fileID: 4290322687740600}
   - component: {fileID: 198335520421428854}
   - component: {fileID: 199391431023727296}
-  - component: {fileID: -6650738591589461564}
   m_Layer: 0
   m_Name: Plexus
   m_TagString: Untagged
@@ -9854,20 +9853,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &-6650738591589461564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1548498989132598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 285f99e0a15c96a47ae846b7c3b17656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  returnParent: 0
-  returnDelay: 0
 --- !u!1 &1699653028645452
 GameObject:
   m_ObjectHideFlags: 0

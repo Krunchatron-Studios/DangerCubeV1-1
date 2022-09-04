@@ -36,7 +36,6 @@ public class HealthUI : MonoBehaviour {
 	public void RemoveHealthChunk() {
 		playerHealthData.playerHealthCurrent--;
 		if (playerHealthData.playerHealthCurrent <= 0) {
-			// Game over logic
 		}
 		int chunkIndex = Mathf.FloorToInt(playerHealthData.playerHealthCurrent);
 		if (chunkIndex < 0) {

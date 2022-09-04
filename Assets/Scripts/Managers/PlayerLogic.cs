@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerLogic : MonoBehaviour, IDmgAndHpInterface {
@@ -10,7 +8,6 @@ public class PlayerLogic : MonoBehaviour, IDmgAndHpInterface {
             healthAndShields.playerShieldsCurrent -= damageAmount;
         } else if (healthAndShields.playerHealthCurrent <= 0) {
             Destroy(gameObject);
-            // add logic to go to game over screen
         }
     }
 }

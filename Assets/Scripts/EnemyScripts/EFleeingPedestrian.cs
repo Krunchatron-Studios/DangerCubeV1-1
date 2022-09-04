@@ -6,7 +6,6 @@ public class EFleeingPedestrian : BaseEnemy {
     private GameObject _enemy;
     void Start() {
         playerPosition = GameObject.FindWithTag("Player").transform;
-        _enemy = GameObject.FindWithTag("Enemy");
         StartCoroutine(SuccessfullyFled());
     }
     public override void MoveTowardsPlayer() {

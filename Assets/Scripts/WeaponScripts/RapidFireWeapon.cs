@@ -7,8 +7,7 @@ public class RapidFireWeapon : ProjectileWeapon {
 	public float weaponCoolDown;
 	[SerializeField] private float longRof = 3;
 	[SerializeField] private float fastRof = 1;
-
-
+	
 	private void Start() {
 		weaponCoolDown = Time.time + 2;
 	}
