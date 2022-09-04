@@ -17,19 +17,19 @@ public class Fade : MonoBehaviour {
 
     IEnumerator FadeIn() {
         while (thisFadePanel.alpha > 0) {
-            thisFadePanel.alpha -= thisFadePanel.alpha - Time.deltaTime / 2;
+            thisFadePanel.alpha -= 0.01f;
             yield return null;
         }
-        // thisFadePanel.interactable = false;
-        // yield return null;
+        thisFadePanel.interactable = false;
+        yield return null;
     }
     
     IEnumerator FadeOut() {
         while (thisFadePanel.alpha < 1) {
-            thisFadePanel.alpha += thisFadePanel.alpha - Time.deltaTime / 2;
+            thisFadePanel.alpha += 0.01f;
             yield return null;
         }
-        // thisFadePanel.interactable = false;
-        // yield return null;
+        thisFadePanel.interactable = false;
+        yield return null;
     }
 }
