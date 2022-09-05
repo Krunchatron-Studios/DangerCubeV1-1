@@ -7,7 +7,7 @@ public class NanoBot : Projectile {
     private Vector3 _nanoTransform;
     private GameObject _target;
     private float rotationSpeed = 50;
-    [Header("Mutatation Payload")]
+    [Header("Mutation Payload")]
     public NanoZombie zombie;
 
     private void Start() {
@@ -23,8 +23,8 @@ public class NanoBot : Projectile {
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Enemy") && other.gameObject.name == "Pedestrian(Clone)") {
-            Destroy(other);
-            Destroy(gameObject);
+            other.gameObject.SetActive(false);
+            gameObject.SetActive(false);
             if (nanoManager.currentNanoBots >= 1) {
                 nanoManager.currentNanoBots--;
             }

@@ -3,31 +3,31 @@ using UnityEngine;
 
 public class MineSlayerMine : ParticleProjectile {
 
-	[Header("AcidMinePool goes here")]
-	public MMSimpleObjectPooler minePooler;
-	public MMSimpleObjectPooler detonationPooler;
+	[SerializeField] private float blastRadius = 3f;
 	
-	private void OnTriggerStay2D(Collider2D other) {
-
+	private void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag("Enemy")) {
 			ResolveProjectile(other);
 		}
 	}
 	
 	public override void ResolveProjectile(Collider2D other) {
-		if (other.CompareTag("Enemy")) {
-			GameObject explosion = detonationPooler.GetPooledGameObject();
-			explosion.gameObject.SetActive(true);
-			explosion.transform.position = transform.position;
-			
-			IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
-			hit.TakeDamage(weapon.weaponDamage, weapon.damageType);
-			MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
-				weapon.weaponDamage.ToString(), Vector3.up, .2f);
-			gameObject.SetActive(false);
-		}
-		if (other.CompareTag("Wall")) {
-			gameObject.SetActive(false);
+		GameObject blast = PoolManager.pm.acidBlastPool.GetPooledGameObject();
+		blast.SetActive(true);
+		blast.transform.position = other.transform.position;
+		HitBlast();
+		gameObject.SetActive(false);
+	}
+
+	private void HitBlast() {
+		Collider2D[] colliderArray = Physics2D.OverlapCircleAll(transform.position, blastRadius);
+		foreach(Collider2D col in colliderArray) {
+			if (col.CompareTag("Enemy")) {
+				IDmgAndHpInterface hit = col.GetComponent<IDmgAndHpInterface>();
+				hit.TakeDamage(weapon.weaponDamage, weapon.damageType);
+				MMFloatingTextSpawnEvent.Trigger(0, col.attachedRigidbody.transform.position, 
+					weapon.weaponDamage.ToString(), Vector3.up, .2f);
+			}
 		}
 	}
 }
