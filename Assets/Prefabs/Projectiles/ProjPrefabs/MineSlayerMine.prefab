@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7833131675388058624}
-  - component: {fileID: 5557245043926668066}
-  - component: {fileID: 5557245043926668065}
   - component: {fileID: 5778658797537174221}
+  - component: {fileID: 5557245043926668066}
+  - component: {fileID: 426579861103780617}
   m_Layer: 15
   m_Name: MineSlayerMine
   m_TagString: Projectile
@@ -36,43 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &5557245043926668066
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7900070642359580819}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &5557245043926668065
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7900070642359580819}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!114 &5778658797537174221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,7 +58,44 @@ MonoBehaviour:
   projectileParticle: {fileID: 7900070642359580819}
   minePooler: {fileID: 0}
   blastPooler: {fileID: 0}
-  blastCircle: {fileID: 5557245043926668065}
+  blastCircle: {fileID: 426579861103780617}
+--- !u!50 &5557245043926668066
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7900070642359580819}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &426579861103780617
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7900070642359580819}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1001 &6022519353518956287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103,6 +103,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7833131675388058624}
     m_Modifications:
+    - target: {fileID: 4950811112371341299, guid: 79a05d93262f5b441b9cee5e0001bb6f, type: 3}
+      propertyPath: m_SortingLayer
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950811112371341299, guid: 79a05d93262f5b441b9cee5e0001bb6f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -598322915
+      objectReference: {fileID: 0}
     - target: {fileID: 5071544529686165701, guid: 79a05d93262f5b441b9cee5e0001bb6f, type: 3}
       propertyPath: m_RootOrder
       value: 0
