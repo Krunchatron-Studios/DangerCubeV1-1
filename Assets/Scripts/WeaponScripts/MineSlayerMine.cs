@@ -20,6 +20,7 @@ public class MineSlayerMine : ParticleProjectile {
 	}
 
 	private void HitBlast() {
+		SoundManager.sm.mineSlayerMine.Play();
 		Collider2D[] colliderArray = Physics2D.OverlapCircleAll(transform.position, blastRadius);
 		foreach(Collider2D col in colliderArray) {
 			if (col.CompareTag("Enemy")) {

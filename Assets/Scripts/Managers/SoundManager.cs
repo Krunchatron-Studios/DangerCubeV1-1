@@ -25,4 +25,7 @@ public class SoundManager : MonoBehaviour
 	public AudioSource mineSlayer;
 	public AudioSource meatSaw;
 	public AudioSource deathRay;
+
+	[Header("Projectile Sounds")]
+	public AudioSource mineSlayerMine;
 }
