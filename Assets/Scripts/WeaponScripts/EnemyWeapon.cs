@@ -20,7 +20,7 @@ public class EnemyWeapon : MonoBehaviour {
 
     public void ShootPlayer() {
         float distance = Vector3.Distance(playerPosition.position, transform.position);
-        if (distance <= fireRange && canFire == true) {
+        if (distance <= fireRange && canFire) {
             GameObject bullet = Instantiate(enemyProjectile, transform.position, Quaternion.identity);
             _projectileBody = bullet.GetComponent<Rigidbody2D>();
             Vector3 moveDirection = (playerPosition.position - transform.position).normalized;

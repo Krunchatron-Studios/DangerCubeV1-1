@@ -16,13 +16,11 @@ public class BackToPool : MonoBehaviour
 
     protected virtual void Update() {	
         if (returnDelay != 0 && Time.time - _startTime > returnDelay) {
-            _returnParticleSystem.Stop();
             gameObject.SetActive(false);
         }	
         if (_returnParticleSystem.isPlaying) {
             return;
         }
-        _returnParticleSystem.Stop();
         gameObject.SetActive(false);
     }
 }

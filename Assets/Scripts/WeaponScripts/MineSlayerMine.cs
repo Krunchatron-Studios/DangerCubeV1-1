@@ -25,12 +25,8 @@ public class MineSlayerMine : ParticleProjectile {
 			if (col.CompareTag("Enemy")) {
 				IDmgAndHpInterface hit = col.GetComponent<IDmgAndHpInterface>();
 				hit.TakeDamage(weapon.weaponDamage, weapon.damageType);
-				Debug.Log("this is a test3");
-
 				MMFloatingTextSpawnEvent.Trigger(0, col.attachedRigidbody.transform.position, 
 					weapon.weaponDamage.ToString(), Vector3.up, .2f);
-				Debug.Log("this is a test4");
-
 			}
 		}
 	}
