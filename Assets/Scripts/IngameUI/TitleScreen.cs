@@ -15,7 +15,6 @@ public class TitleScreen : MonoBehaviour {
 	}
 
 	public void ExitToDesktop() {
-		audioSource.Stop();
-		SceneManager.LoadScene("TitleScreen");
+		Application.Quit();
 	}
 }
