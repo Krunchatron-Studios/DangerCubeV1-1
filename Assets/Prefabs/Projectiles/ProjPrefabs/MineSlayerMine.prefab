@@ -55,10 +55,8 @@ MonoBehaviour:
   bloodSplash: {fileID: 2512025392852149761, guid: 8df12292ad0e89947a87dee41a86f181, type: 3}
   direction: {x: 0, y: 0, z: 0}
   moveTime: 0
-  projectileParticle: {fileID: 7900070642359580819}
-  minePooler: {fileID: 0}
-  blastPooler: {fileID: 0}
-  blastCircle: {fileID: 426579861103780617}
+  projectileParticle: {fileID: 3244036842967547112, guid: f68a89ac45bc90a45a948e8083b6b746, type: 3}
+  blastRadius: 3
 --- !u!50 &5557245043926668066
 Rigidbody2D:
   serializedVersion: 4
