@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2055319811
-  m_SortingLayer: 4
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1470425831, guid: 764120a36c1fd487aba946474e52fc58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -118,10 +118,7 @@ MonoBehaviour:
   value: 5
   type: Metal
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
-  resourcePosition: {fileID: 0}
-  playerPosition: {fileID: 0}
   resourceRb2D: {fileID: 3356573455310882395}
-  moveSpeed: 3
 --- !u!50 &3356573455310882395
 Rigidbody2D:
   serializedVersion: 4

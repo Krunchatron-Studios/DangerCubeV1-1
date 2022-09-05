@@ -19,9 +19,11 @@ public class NanoZombie : MonoBehaviour {
         if (other.CompareTag("Enemy")) {
             MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
                 damage.ToString(), Vector3.up, .2f);
-            // bloodSplash = Instantiate(bloodSplash, other.transform.position, Quaternion.identity);
             IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
             hit.TakeDamage(damage, "Physical");
+            bloodSplash = PoolManager.pm.bloodPool.GetPooledGameObject();
+            bloodSplash.SetActive(true);
+            bloodSplash.transform.position = other.transform.position;
         }
     }
 
@@ -40,6 +42,6 @@ public class NanoZombie : MonoBehaviour {
     IEnumerator ZombieLife() {
         yield return null;
         yield return new WaitForSeconds(lifeTime);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

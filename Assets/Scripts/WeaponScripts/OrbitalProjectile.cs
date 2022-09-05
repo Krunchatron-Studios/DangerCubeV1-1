@@ -9,9 +9,11 @@ public class OrbitalProjectile : MonoBehaviour {
         if (other.CompareTag("Enemy")) {
             MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
                 weapon.weaponDamage.ToString(), Vector3.up, .2f);
-            // bloodSplash = Instantiate(bloodSplash, other.transform.position, Quaternion.identity);
             IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
             hit.TakeDamage(weapon.weaponDamage, weapon.damageType);
+            bloodSplash = PoolManager.pm.bloodPool.GetPooledGameObject();
+            bloodSplash.SetActive(true);
+            bloodSplash.transform.position = other.transform.position;
         }
     }
 }

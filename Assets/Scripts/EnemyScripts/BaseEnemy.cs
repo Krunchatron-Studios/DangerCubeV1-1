@@ -51,7 +51,7 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 				ashes.SetActive(true);
 			}
 
-			if (dmgType != "DeathRay") {
+			if (dmgType != "Physical") {
 				GameObject blood = PoolManager.pm.bloodPool.GetPooledGameObject();
 				dissolve.isDissolving = true;
 				StartCoroutine(dieAfterParticles() as IEnumerator);
@@ -60,6 +60,7 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 			}
 			moveSpeed = 0f;
 			Instantiate(drop, transform.position, Quaternion.identity);
+			// Needs pooling but may require reworking some things
 			gameObject.SetActive(false);
 		}
 	}
