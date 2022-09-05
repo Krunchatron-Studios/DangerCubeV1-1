@@ -38,7 +38,7 @@ public class DeathRay : Weapon {
 		}
 
 		if (!laserFeedbackPlayer.IsPlaying) {
-			audioSource.Stop();
+			SoundManager.sm.deathRay.Stop();
 			_lineRenderer.enabled = false;
 			burnVFX.transform.position = laserStartMarker.position;
 			sparkVFX.transform.position = laserStartMarker.position;
@@ -51,9 +51,9 @@ public class DeathRay : Weapon {
 	}
 	public void FireLaser() {
 		if (!laserFeedbackPlayer.IsPlaying) {
-			audioSource.Play();
+			SoundManager.sm.deathRay.Play();
 		}
-		
+	
 		_lineRenderer.enabled = true;
 		beamHitBox.gameObject.SetActive(true);
 		Vector3 position = transform.position;
