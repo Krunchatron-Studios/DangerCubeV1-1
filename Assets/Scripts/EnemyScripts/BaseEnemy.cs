@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
@@ -54,14 +52,16 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 			if (dmgType != "Physical") {
 				GameObject blood = PoolManager.pm.bloodPool.GetPooledGameObject();
 				dissolve.isDissolving = true;
-				StartCoroutine(dieAfterParticles() as IEnumerator);
 				blood.transform.position = transform.position;
 				blood.SetActive(true);
 			}
+			
 			moveSpeed = 0f;
 			Instantiate(drop, transform.position, Quaternion.identity);
 			// Needs pooling but may require reworking some things
 			gameObject.SetActive(false);
+			int deathSoundIndex = Random.Range(0, 3);
+			SoundManager.sm.humanDying[deathSoundIndex].Play();
 		}
 	}
 	public void HealDamage(int healAmount) {
@@ -69,11 +69,6 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 		if (currentHealth > maxHealth) {
 			currentHealth = maxHealth;
 		}
-	}
-
-	private IEnumerable<WaitForSeconds> dieAfterParticles() {
-		yield return new WaitForSeconds(1.25f);
-		gameObject.SetActive(false);
 	}
 }
 

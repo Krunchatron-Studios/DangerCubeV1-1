@@ -12,10 +12,7 @@ public class SoundManager : MonoBehaviour
 	}
 
 	[Header("Death Sounds")]
-	public AudioSource humanDying1;
-	public AudioSource humanDying2;
-	public AudioSource humanDying3;
-
+	public AudioSource[] humanDying;
 
 	[Header("Weapon Sounds")] 
 	public AudioSource rapidGun;
