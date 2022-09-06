@@ -1,8 +1,10 @@
 using Interfaces;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 
+	public MMPositionShaker shaker;
 	public SpriteRenderer spriteRenderer;
 	public Sprite noDmgSprite;
 	public Sprite stage1Dmg;
@@ -23,6 +25,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	}
 
 	public void DamageStructure(float damageAmount, string damageType) {
+		shaker.Play();
 
 		float actualDamage = damageAmount - toughness;
 		if (toughness >= damageAmount) {
