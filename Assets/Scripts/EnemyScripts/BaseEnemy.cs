@@ -1,6 +1,7 @@
+using Interfaces;
 using UnityEngine;
 
-public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
+public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 
 	[Header("Enemy Stats")] 
 	public float maxHealth = 10f;
@@ -33,7 +34,7 @@ public class BaseEnemy : MonoBehaviour, IDmgAndHpInterface {
 		enemyRb2D.MovePosition(temp);
 	}
 	void OnTriggerEnter2D(Collider2D other) {
-		IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
+		IHurtThingsInterface hit = other.GetComponent<IHurtThingsInterface>();
 		if (other.CompareTag("Player")) {
 			hit.TakeDamage(damage, "Physical");
 		}

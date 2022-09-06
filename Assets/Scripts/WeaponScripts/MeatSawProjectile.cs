@@ -1,3 +1,4 @@
+using Interfaces;
 using UnityEngine;
 using MoreMountains.Tools;
 
@@ -7,7 +8,7 @@ public class MeatSawProjectile : MonoBehaviour {
     
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Enemy")) {
-            IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
+            IHurtThingsInterface hit = other.GetComponent<IHurtThingsInterface>();
             hit.TakeDamage(damage, "Physical");
             SoundManager.sm.meatSaw.Play();
             MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 

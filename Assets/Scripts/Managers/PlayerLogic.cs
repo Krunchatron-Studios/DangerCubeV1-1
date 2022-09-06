@@ -1,8 +1,9 @@
+using Interfaces;
 using UnityEngine;
 using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
 
-public class PlayerLogic : MonoBehaviour, IDmgAndHpInterface {
+public class PlayerLogic : MonoBehaviour, IHurtThingsInterface {
     public PlayerHealthAndShields healthAndShields;
     public GameObject player;
     
