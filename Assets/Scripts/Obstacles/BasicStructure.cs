@@ -25,6 +25,11 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	public void DamageStructure(float damageAmount, string damageType) {
 
 		float actualDamage = damageAmount - toughness;
+		if (toughness >= damageAmount) {
+			actualDamage = 0;
+		} else {
+			actualDamage = Mathf.FloorToInt(damageAmount - toughness);
+		}
 		currentIntegrity -= actualDamage;
 		percentDestroyed = currentIntegrity / maxIntegrity;
 		Debug.Log($"percent destroyed: {percentDestroyed}");
