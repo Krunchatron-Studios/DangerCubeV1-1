@@ -1,6 +1,7 @@
+using Interfaces;
 using UnityEngine;
 
-public class BasicStructure : MonoBehaviour {
+public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 
 	public SpriteRenderer spriteRenderer;
 	public Sprite noDmgSprite;
@@ -26,15 +27,21 @@ public class BasicStructure : MonoBehaviour {
 		float actualDamage = damageAmount - toughness;
 		currentIntegrity -= actualDamage;
 		percentDestroyed = currentIntegrity / maxIntegrity;
-		
+		Debug.Log($"percent destroyed: {percentDestroyed}");
 		if (percentDestroyed > 0 && percentDestroyed < stage3Threshold && stage3Dmg) {
 			spriteRenderer.sprite = stage3Dmg;
+			Debug.Log($"stage 3: {stage3Dmg}");
+
 		}
 		if (percentDestroyed > stage3Threshold && percentDestroyed < stage2Threshold && stage2Dmg) {
 			spriteRenderer.sprite = stage2Dmg;
+			Debug.Log($"stage 2: {stage2Dmg}");
+
 		}
 		if (percentDestroyed > stage2Threshold && percentDestroyed < stage1Threshold && stage1Dmg) {
 			spriteRenderer.sprite = stage1Dmg;
+			Debug.Log($"stage 1: {stage1Dmg}");
+
 		}
 
 		if (currentIntegrity <= 0) {

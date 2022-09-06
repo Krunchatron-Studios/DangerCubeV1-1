@@ -14,7 +14,9 @@ public class DeathRayBeam : MonoBehaviour {
 		}
 
 		if (other.CompareTag("Obstacle")) {
-			MMFloatingTextSpawnEvent.Trigger(1, other.attachedRigidbody.transform.position);
+			Debug.Log($"other: {other.name}");
+			MMFloatingTextSpawnEvent.Trigger(1, other.attachedRigidbody.transform.position,
+				deathRay.weaponDamage.ToString(), Vector3.up, .3f);
 			ISmashThingsInterface hit = other.GetComponent<ISmashThingsInterface>();
 			hit.DamageStructure(deathRay.weaponDamage, "DeathRay");
 		}
