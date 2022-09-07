@@ -12,7 +12,7 @@ public class PausePanel : MonoBehaviour {
     }
 
     void Update() {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame || Gamepad.current.startButton.wasPressedThisFrame) {
+        if (Keyboard.current.escapeKey.wasPressedThisFrame /*|| Gamepad.current.startButton.wasPressedThisFrame*/) {
             PauseGame();
         }
     }
