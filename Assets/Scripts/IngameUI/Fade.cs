@@ -15,6 +15,7 @@ public class Fade : MonoBehaviour {
             thisFadePanel.alpha -= 0.01f;
             yield return null;
         }
+        
         thisFadePanel.interactable = false;
         yield return null;
     }
