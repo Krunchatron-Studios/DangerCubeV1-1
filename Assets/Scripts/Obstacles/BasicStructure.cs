@@ -24,10 +24,14 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 		spriteRenderer.sprite = noDmgSprite;
 	}
 
-	public void DamageStructure(float damageAmount, string damageType) {
+	public void DamageStructure(float damageAmount, string damageType, Vector3 location) {
 		shaker.Play();
-
+		GameObject dustPoof = PoolManager.pm.softDustPool.GetPooledGameObject();
+		dustPoof.SetActive(true);
+		dustPoof.transform.position = location;
+		
 		float actualDamage = damageAmount - toughness;
+		Debug.Log($"actual dmg: {actualDamage}");
 		if (toughness >= damageAmount) {
 			actualDamage = 0;
 		} else {

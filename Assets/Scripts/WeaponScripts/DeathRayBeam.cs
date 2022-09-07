@@ -18,7 +18,7 @@ public class DeathRayBeam : MonoBehaviour {
 			MMFloatingTextSpawnEvent.Trigger(1, other.attachedRigidbody.transform.position,
 				deathRay.weaponDamage.ToString(), Vector3.up, .3f);
 			ISmashThingsInterface hit = other.GetComponent<ISmashThingsInterface>();
-			hit.DamageStructure(deathRay.weaponDamage, "DeathRay");
+			hit.DamageStructure(deathRay.weaponDamage, "DeathRay", other.transform.position);
 			UpdateVisibleDamage(other);
 		}
 	}
