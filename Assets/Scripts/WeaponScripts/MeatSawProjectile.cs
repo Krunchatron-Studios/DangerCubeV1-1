@@ -20,9 +20,6 @@ public class MeatSawProjectile : MonoBehaviour {
         }
         
         if (other.CompareTag("Obstacle")) {
-            Debug.Log($"other: {other.name}");
-            MMFloatingTextSpawnEvent.Trigger(1, other.attachedRigidbody.transform.position,
-                damage.ToString(), Vector3.up, .3f);
             ISmashThingsInterface hit = other.GetComponent<ISmashThingsInterface>();
             hit.DamageStructure(damage, "Physical", other.transform.position);
         }

@@ -5,13 +5,11 @@ using UnityEngine;
 public class MineSlayerMine : ParticleProjectile {
 
 	[SerializeField] private float blastRadius = 3f;
-	
 	private void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag("Enemy")) {
 			ResolveProjectile(other);
 		}
 	}
-	
 	public override void ResolveProjectile(Collider2D other) {
 		GameObject blast = PoolManager.pm.acidBlastPool.GetPooledGameObject();
 		blast.SetActive(true);
@@ -19,7 +17,6 @@ public class MineSlayerMine : ParticleProjectile {
 		HitBlast();
 		gameObject.SetActive(false);
 	}
-
 	private void HitBlast() {
 		SoundManager.sm.mineSlayerMine.Play();
 		Collider2D[] colliderArray = Physics2D.OverlapCircleAll(transform.position, blastRadius);

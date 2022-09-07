@@ -1,6 +1,7 @@
 using Interfaces;
 using MoreMountains.Feedbacks;
 using UnityEngine;
+using MoreMountains.Tools;
 
 public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 
@@ -28,6 +29,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 
 	public void DamageStructure(float damageAmount, string damageType, Vector3 location) {
 		shaker.Play();
+
 		GameObject dustPoof = PoolManager.pm.softDustPool.GetPooledGameObject();
 		dustPoof.SetActive(true);
 		dustPoof.transform.position = location;
@@ -39,6 +41,8 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 		} else {
 			actualDamage = Mathf.FloorToInt(damageAmount - toughness);
 		}
+		MMFloatingTextSpawnEvent.Trigger(1, transform.position,
+			actualDamage.ToString(), Vector3.up, .3f);
 		currentIntegrity -= actualDamage;
 		percentDestroyed = currentIntegrity / maxIntegrity;
 		
@@ -48,7 +52,6 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 		if (percentDestroyed > stage3Threshold && percentDestroyed < stage2Threshold && stage2Dmg) {
 			spriteRenderer.sprite = stage2Dmg;
 			structureParent.evacuateThreshold--;
-
 		}
 		if (percentDestroyed > stage2Threshold && percentDestroyed < stage1Threshold && stage1Dmg) {
 			spriteRenderer.sprite = stage1Dmg;
@@ -56,10 +59,6 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 			rockShatter.SetActive(true);
 			rockShatter.transform.position = location;
 			structureParent.evacuateThreshold -= 2;
-
-		}
-		if (currentIntegrity <= 0) {
-			// we destroy the object
 		}
 
 		if (structureParent.evacuateThreshold <= 0 && !structureParent.hasEvacuated) {
