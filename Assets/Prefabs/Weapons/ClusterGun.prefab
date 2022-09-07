@@ -247,7 +247,8 @@ MonoBehaviour:
   weaponName: ClusterGun
   weaponDescription: Ball O' Bullets for all!
   weaponDamage: 1
-  knockBackPower: 1
+  damageType: 
+  objectPooler: {fileID: 0}
   firePointArray:
   - {fileID: 5540794475001378500}
   - {fileID: 5540794474269357689}
@@ -258,7 +259,6 @@ MonoBehaviour:
   targetingSys: {fileID: 5780026266065048204}
   weaponRange: 10
   rateOfFire: 3
-  canFire: 1
   nextFire: 0
 --- !u!212 &935498610684718217
 SpriteRenderer:
@@ -299,7 +299,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1601880589
-  m_SortingLayer: 6
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 37141a44ee7f96f44a2cce91de093d60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

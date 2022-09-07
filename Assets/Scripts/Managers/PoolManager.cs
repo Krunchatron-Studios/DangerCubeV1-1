@@ -11,14 +11,7 @@ public class PoolManager : MonoBehaviour {
 	[Header("Enemy Pools")] 
 	public MMSimpleObjectPooler pedestrianPool;
 	public MMSimpleObjectPooler helicopterPool;
-
-	[Header("Projectile Pools")] 
-	public MMSimpleObjectPooler clusterPool;
-	public MMSimpleObjectPooler acidMinePool;
-	public MMSimpleObjectPooler rapidPool;
-	public MMSimpleObjectPooler nanoPool;
 	
-
 	[Header("Particle Pools")] 
 	public MMSimpleObjectPooler ashesPool;
 	public MMSimpleObjectPooler bloodPool;
@@ -41,6 +34,4 @@ public class PoolManager : MonoBehaviour {
 	public MMSimpleObjectPooler sSilicatePool;
 	public MMSimpleObjectPooler mSilicatePool;
 	public MMSimpleObjectPooler lSilicatePool;
-
-	
 }

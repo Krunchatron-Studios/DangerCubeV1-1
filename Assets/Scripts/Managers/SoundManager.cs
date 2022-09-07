@@ -11,10 +11,6 @@ public class SoundManager : MonoBehaviour
 	[Header("Death Sounds")]
 	public AudioSource[] humanDying;
 
-	[Header("Weapon Sounds")] 
-	public AudioSource meatSaw;
-	public AudioSource deathRay;
-
 	[Header("Projectile Sounds")]
 	public AudioSource mineSlayerMine;
 }
