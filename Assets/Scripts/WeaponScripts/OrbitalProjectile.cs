@@ -1,3 +1,4 @@
+using Interfaces;
 using MoreMountains.Tools;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ public class OrbitalProjectile : MonoBehaviour {
         if (other.CompareTag("Enemy")) {
             MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
                 weapon.weaponDamage.ToString(), Vector3.up, .2f);
-            IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
+            IHurtThingsInterface hit = other.GetComponent<IHurtThingsInterface>();
             hit.TakeDamage(weapon.weaponDamage, weapon.damageType);
             bloodSplash = PoolManager.pm.bloodPool.GetPooledGameObject();
             bloodSplash.SetActive(true);

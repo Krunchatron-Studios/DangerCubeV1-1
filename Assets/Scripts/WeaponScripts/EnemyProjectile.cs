@@ -1,3 +1,4 @@
+using Interfaces;
 using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour {
@@ -5,7 +6,7 @@ public class EnemyProjectile : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player")) {
-            IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
+            IHurtThingsInterface hit = other.GetComponent<IHurtThingsInterface>();
             hit.TakeDamage(enemyDamage, "Physical");
             gameObject.SetActive(false);
         } else if (other.CompareTag("Wall")) {

@@ -1,4 +1,5 @@
 using System.Collections;
+using Interfaces;
 using MoreMountains.Tools;
 using UnityEngine;
 
@@ -19,7 +20,7 @@ public class NanoZombie : MonoBehaviour {
         if (other.CompareTag("Enemy")) {
             MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
                 damage.ToString(), Vector3.up, .2f);
-            IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
+            IHurtThingsInterface hit = other.GetComponent<IHurtThingsInterface>();
             hit.TakeDamage(damage, "Physical");
             bloodSplash = PoolManager.pm.bloodPool.GetPooledGameObject();
             bloodSplash.SetActive(true);

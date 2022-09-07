@@ -24,18 +24,23 @@ public class PoolManager : MonoBehaviour {
 	public MMSimpleObjectPooler bloodPool;
 	public MMSimpleObjectPooler acidBlastPool;
 
+	[Header("Structure Particle Pools")] 
+	public MMSimpleObjectPooler softDustPool;
+	public MMSimpleObjectPooler rockShatterPool;
+	public MMSimpleObjectPooler glassShatterPool;
+
 	[Header("Resource Pools")] 
 	public MMSimpleObjectPooler sBioGooPool;
 	public MMSimpleObjectPooler mBioGooPool;
 	public MMSimpleObjectPooler lBioGooPool;
 
-	public MMSimpleObjectPooler sMetal;
-	public MMSimpleObjectPooler mMetal;
-	public MMSimpleObjectPooler lMetal;
+	public MMSimpleObjectPooler sMetalPool;
+	public MMSimpleObjectPooler mMetalPool;
+	public MMSimpleObjectPooler lMetalPool;
 
-	public MMSimpleObjectPooler sSilicate;
-	public MMSimpleObjectPooler mSilicate;
-	public MMSimpleObjectPooler lSilicate;
+	public MMSimpleObjectPooler sSilicatePool;
+	public MMSimpleObjectPooler mSilicatePool;
+	public MMSimpleObjectPooler lSilicatePool;
 
 	
 }
