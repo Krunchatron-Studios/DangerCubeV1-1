@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 6659172821923877623}
   - component: {fileID: 7284800961402381166}
   m_Layer: 5
-  m_Name: RedFloatingText
+  m_Name: GreyFloatingText
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -444,7 +444,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1906808429
-  m_SortingLayer: 5
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &8042657054365514525
@@ -476,8 +476,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4286874756
+  m_fontColor: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

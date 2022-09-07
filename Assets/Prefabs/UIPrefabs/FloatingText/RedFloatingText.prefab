@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 6659172821923877623}
   - component: {fileID: 7284800961402381166}
   m_Layer: 5
-  m_Name: GreyFloatingText
+  m_Name: RedFloatingText
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 7099137272689354293}
   - component: {fileID: 8042657054365514525}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: DamageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -476,8 +476,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
