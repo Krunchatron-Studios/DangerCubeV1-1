@@ -1,3 +1,4 @@
+using Interfaces;
 using UnityEngine;
 using MoreMountains.Tools;
 
@@ -17,7 +18,7 @@ public class ParticleProjectile : Projectile {
 
 	public override void ResolveProjectile(Collider2D other) {
 		if (other.CompareTag("Enemy")) {
-			IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
+			IHurtThingsInterface hit = other.GetComponent<IHurtThingsInterface>();
 			hit.TakeDamage(weapon.weaponDamage, weapon.damageType);
 			MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
 				weapon.weaponDamage.ToString(), Vector3.up, .2f);

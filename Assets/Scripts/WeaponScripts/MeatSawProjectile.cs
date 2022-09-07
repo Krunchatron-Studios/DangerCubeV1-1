@@ -1,16 +1,16 @@
+using Interfaces;
 using UnityEngine;
 using MoreMountains.Tools;
 
 public class MeatSawProjectile : MonoBehaviour {
     public int damage;
     public GameObject bloodSplash;
-    public AudioSource audioSource;
     
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Enemy")) {
-            IDmgAndHpInterface hit = other.GetComponent<IDmgAndHpInterface>();
+            IHurtThingsInterface hit = other.GetComponent<IHurtThingsInterface>();
             hit.TakeDamage(damage, "Physical");
-            audioSource.Play();
+            SoundManager.sm.meatSaw.Play();
             MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
                 damage.ToString(), Vector3.up, .2f);
             bloodSplash = PoolManager.pm.bloodPool.GetPooledGameObject();

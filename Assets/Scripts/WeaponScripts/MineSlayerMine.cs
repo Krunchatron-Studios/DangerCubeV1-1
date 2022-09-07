@@ -1,3 +1,4 @@
+using Interfaces;
 using MoreMountains.Tools;
 using UnityEngine;
 
@@ -20,10 +21,11 @@ public class MineSlayerMine : ParticleProjectile {
 	}
 
 	private void HitBlast() {
+		SoundManager.sm.mineSlayerMine.Play();
 		Collider2D[] colliderArray = Physics2D.OverlapCircleAll(transform.position, blastRadius);
 		foreach(Collider2D col in colliderArray) {
 			if (col.CompareTag("Enemy")) {
-				IDmgAndHpInterface hit = col.GetComponent<IDmgAndHpInterface>();
+				IHurtThingsInterface hit = col.GetComponent<IHurtThingsInterface>();
 				hit.TakeDamage(weapon.weaponDamage, weapon.damageType);
 				MMFloatingTextSpawnEvent.Trigger(0, col.attachedRigidbody.transform.position, 
 					weapon.weaponDamage.ToString(), Vector3.up, .2f);

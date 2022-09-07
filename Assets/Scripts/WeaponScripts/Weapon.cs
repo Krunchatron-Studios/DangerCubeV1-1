@@ -14,7 +14,4 @@ public class Weapon : MonoBehaviour {
 	public string damageType;
 
 	public MMSimpleObjectPooler objectPooler;
-	private void Start() {
-		audioSource = GetComponent<AudioSource>();
-	}
 }
