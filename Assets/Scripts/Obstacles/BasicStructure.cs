@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 
+	public string structureType;
 	public MMPositionShaker shaker;
 	public SpriteRenderer spriteRenderer;
 	public Sprite noDmgSprite;
@@ -29,9 +30,9 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 		GameObject dustPoof = PoolManager.pm.softDustPool.GetPooledGameObject();
 		dustPoof.SetActive(true);
 		dustPoof.transform.position = location;
+		WindowShatter(location);
 		
 		float actualDamage = damageAmount - toughness;
-		Debug.Log($"actual dmg: {actualDamage}");
 		if (toughness >= damageAmount) {
 			actualDamage = 0;
 		} else {
@@ -39,27 +40,34 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 		}
 		currentIntegrity -= actualDamage;
 		percentDestroyed = currentIntegrity / maxIntegrity;
-		Debug.Log($"percent destroyed: {percentDestroyed}");
+		
 		if (percentDestroyed > 0 && percentDestroyed < stage3Threshold && stage3Dmg) {
 			spriteRenderer.sprite = stage3Dmg;
-			Debug.Log($"stage 3: {stage3Dmg}");
-
 		}
 		if (percentDestroyed > stage3Threshold && percentDestroyed < stage2Threshold && stage2Dmg) {
 			spriteRenderer.sprite = stage2Dmg;
-			Debug.Log($"stage 2: {stage2Dmg}");
-
 		}
 		if (percentDestroyed > stage2Threshold && percentDestroyed < stage1Threshold && stage1Dmg) {
 			spriteRenderer.sprite = stage1Dmg;
-			Debug.Log($"stage 1: {stage1Dmg}");
-
+			GameObject rockShatter = PoolManager.pm.rockShatterPool.GetPooledGameObject();
+			rockShatter.SetActive(true);
+			rockShatter.transform.position = location;
 		}
 
 		if (currentIntegrity <= 0) {
 			// we destroy the object
 		}
 	}
-	
-	
+
+	private void WindowShatter(Vector3 location) {
+		if (structureType == "Window") {
+			GameObject  glassShatter = PoolManager.pm.glassShatterPool.GetPooledGameObject();
+			glassShatter.SetActive(true);
+			glassShatter.transform.position = location;
+		} else {
+			GameObject rockShatter = PoolManager.pm.rockShatterPool.GetPooledGameObject();
+			rockShatter.SetActive(true);
+			rockShatter.transform.position = location;
+		}
+	}
 }

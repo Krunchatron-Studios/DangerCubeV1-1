@@ -26,6 +26,8 @@ public class PoolManager : MonoBehaviour {
 
 	[Header("Structure Particle Pools")] 
 	public MMSimpleObjectPooler softDustPool;
+	public MMSimpleObjectPooler rockShatterPool;
+	public MMSimpleObjectPooler glassShatterPool;
 
 	[Header("Resource Pools")] 
 	public MMSimpleObjectPooler sBioGooPool;
