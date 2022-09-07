@@ -30,7 +30,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	public void DamageStructure(float damageAmount, string damageType, Vector3 location) {
 		shaker.Play();
 
-		GameObject dustPoof = PoolManager.pm.softDustPool.GetPooledGameObject();
+		GameObject dustPoof = StructureDamagePool.sdp.softDustPool.GetPooledGameObject();
 		dustPoof.SetActive(true);
 		dustPoof.transform.position = location;
 		WindowShatter(location);
@@ -55,7 +55,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 		}
 		if (percentDestroyed > stage2Threshold && percentDestroyed < stage1Threshold && stage1Dmg) {
 			spriteRenderer.sprite = stage1Dmg;
-			GameObject rockShatter = PoolManager.pm.rockShatterPool.GetPooledGameObject();
+			GameObject rockShatter = StructureDamagePool.sdp.rockShatterPool.GetPooledGameObject();
 			rockShatter.SetActive(true);
 			rockShatter.transform.position = location;
 			structureParent.evacuateThreshold -= 2;
@@ -68,13 +68,18 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 
 	private void WindowShatter(Vector3 location) {
 		if (structureType == "Window") {
-			GameObject  glassShatter = PoolManager.pm.glassShatterPool.GetPooledGameObject();
+			GameObject  glassShatter = StructureDamagePool.sdp.glassShatterPool.GetPooledGameObject();
 			glassShatter.SetActive(true);
 			glassShatter.transform.position = location;
 		} else {
-			GameObject rockShatter = PoolManager.pm.rockShatterPool.GetPooledGameObject();
+			GameObject rockShatter = StructureDamagePool.sdp.rockShatterPool.GetPooledGameObject();
 			rockShatter.SetActive(true);
 			rockShatter.transform.position = location;
 		}
+	}
+
+	private void CatchFire() {
+		
+		
 	}
 }

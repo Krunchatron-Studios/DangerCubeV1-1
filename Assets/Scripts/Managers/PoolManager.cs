@@ -19,16 +19,10 @@ public class PoolManager : MonoBehaviour {
 	public MMSimpleObjectPooler helicopterPool;
 	public MMSimpleObjectPooler soldierPool;
 	
-	
 	[Header("Particle Pools")] 
 	public MMSimpleObjectPooler ashesPool;
 	public MMSimpleObjectPooler bloodPool;
 	public MMSimpleObjectPooler acidBlastPool;
-
-	[Header("Structure Particle Pools")] 
-	public MMSimpleObjectPooler softDustPool;
-	public MMSimpleObjectPooler rockShatterPool;
-	public MMSimpleObjectPooler glassShatterPool;
 
 	[Header("Resource Pools")] 
 	public MMSimpleObjectPooler sBioGooPool;
