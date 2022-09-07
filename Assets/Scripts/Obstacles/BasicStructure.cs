@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 
+	public CombinedStructure structureParent;
 	public string structureType;
 	public MMPositionShaker shaker;
 	public SpriteRenderer spriteRenderer;
@@ -46,16 +47,23 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 		}
 		if (percentDestroyed > stage3Threshold && percentDestroyed < stage2Threshold && stage2Dmg) {
 			spriteRenderer.sprite = stage2Dmg;
+			structureParent.evacuateThreshold--;
+
 		}
 		if (percentDestroyed > stage2Threshold && percentDestroyed < stage1Threshold && stage1Dmg) {
 			spriteRenderer.sprite = stage1Dmg;
 			GameObject rockShatter = PoolManager.pm.rockShatterPool.GetPooledGameObject();
 			rockShatter.SetActive(true);
 			rockShatter.transform.position = location;
-		}
+			structureParent.evacuateThreshold -= 2;
 
+		}
 		if (currentIntegrity <= 0) {
 			// we destroy the object
+		}
+
+		if (structureParent.evacuateThreshold <= 0 && !structureParent.hasEvacuated) {
+			structureParent.EvacuateBuilding(structureParent.buildingSize);
 		}
 	}
 

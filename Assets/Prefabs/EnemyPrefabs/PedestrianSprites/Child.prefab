@@ -75,7 +75,7 @@ MonoBehaviour:
   spawnDistance: 1
   drop: {fileID: 1527084982249308848, guid: aa8fef295bf4542edb7f38a866479ce6, type: 3}
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
-  _safetyTime: 3
+  _safetyTime: 10
 --- !u!212 &7172159491085496831
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -114,8 +114,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2055319811
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1030393294, guid: 21880464bdc3b284985ed85d6bb998b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

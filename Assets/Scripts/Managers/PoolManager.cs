@@ -9,6 +9,7 @@ public class PoolManager : MonoBehaviour {
 	}
 
 	[Header("Enemy Pools")] 
+	public MMSimpleObjectPooler[] allPedestrians;
 	public MMSimpleObjectPooler pedestrianPool;
 	public MMSimpleObjectPooler pedestrianPool2;
 	public MMSimpleObjectPooler pedestrianPool3;
