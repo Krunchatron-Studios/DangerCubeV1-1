@@ -35,6 +35,14 @@ public class Projectile : MonoBehaviour {
 			gameObject.SetActive(false);
 
 		}
+		
+		if (other.CompareTag("Obstacle")) {
+			Debug.Log($"other: {other.name}");
+			MMFloatingTextSpawnEvent.Trigger(1, other.attachedRigidbody.transform.position,
+				weapon.weaponDamage.ToString(), Vector3.up, .3f);
+			ISmashThingsInterface hit = other.GetComponent<ISmashThingsInterface>();
+			hit.DamageStructure(weapon.weaponDamage, weapon.damageType, other.transform.position);
+		}
 		if (other.CompareTag("Wall")) {
 			gameObject.SetActive(false);
 		}

@@ -19,11 +19,6 @@ public class DeathRayBeam : MonoBehaviour {
 				deathRay.weaponDamage.ToString(), Vector3.up, .3f);
 			ISmashThingsInterface hit = other.GetComponent<ISmashThingsInterface>();
 			hit.DamageStructure(deathRay.weaponDamage, "DeathRay", other.transform.position);
-			UpdateVisibleDamage(other);
 		}
-	}
-
-	private void UpdateVisibleDamage(Collider2D other) {
-		// look at the array of parts in the array on the collider
 	}
 }
