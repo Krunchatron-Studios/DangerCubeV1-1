@@ -1,9 +1,11 @@
 using Interfaces;
 using MoreMountains.Feedbacks;
 using UnityEngine;
+using MoreMountains.Tools;
 
 public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 
+	public CombinedStructure structureParent;
 	public string structureType;
 	public MMPositionShaker shaker;
 	public SpriteRenderer spriteRenderer;
@@ -11,7 +13,6 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	public Sprite stage1Dmg;
 	public Sprite stage2Dmg;
 	public Sprite stage3Dmg;
-
 	public float stage1Threshold = .9f;
 	public float stage2Threshold = .6f;
 	public float stage3Threshold = .3f;
@@ -20,54 +21,104 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	public float maxIntegrity;
 	public float currentIntegrity;
 	public float percentDestroyed;
+	
 
 	private void Start() {
 		spriteRenderer.sprite = noDmgSprite;
 	}
 
 	public void DamageStructure(float damageAmount, string damageType, Vector3 location) {
+		Debug.Log($"input dmg: {damageAmount}");
 		shaker.Play();
-		GameObject dustPoof = PoolManager.pm.softDustPool.GetPooledGameObject();
-		dustPoof.SetActive(true);
-		dustPoof.transform.position = location;
-		WindowShatter(location);
-		
+		GetDustParticle(location);
+		WindowShatterCheck(location);
+		// CalculateDamage(damageAmount);
 		float actualDamage = damageAmount - toughness;
+		Debug.Log($"dmg amount: {damageAmount}");
+		Debug.Log($"actual dmg: {actualDamage}");
 		if (toughness >= damageAmount) {
 			actualDamage = 0;
 		} else {
 			actualDamage = Mathf.FloorToInt(damageAmount - toughness);
 		}
+		MMFloatingTextSpawnEvent.Trigger(1, transform.position,
+			actualDamage.ToString(), Vector3.up, .3f);
 		currentIntegrity -= actualDamage;
+		DamageTiersCheck(location);
 		percentDestroyed = currentIntegrity / maxIntegrity;
-		
+		CatchFire(damageType);
+		EvacuateCheck();
+	}
+
+	private void WindowShatterCheck(Vector3 location) {
+		if (structureType == "Window") {
+			GameObject  glassShatter = StructureDamagePool.sdp.glassShatterPool.GetPooledGameObject();
+			glassShatter.SetActive(true);
+			glassShatter.transform.position = location;
+		} else {
+			GameObject rockShatter = StructureDamagePool.sdp.rockShatterPool.GetPooledGameObject();
+			rockShatter.SetActive(true);
+			rockShatter.transform.position = location;
+		}
+	}
+	private void DamageTiersCheck(Vector3 location) {
 		if (percentDestroyed > 0 && percentDestroyed < stage3Threshold && stage3Dmg) {
 			spriteRenderer.sprite = stage3Dmg;
 		}
 		if (percentDestroyed > stage3Threshold && percentDestroyed < stage2Threshold && stage2Dmg) {
 			spriteRenderer.sprite = stage2Dmg;
+			structureParent.evacuateThreshold--;
 		}
 		if (percentDestroyed > stage2Threshold && percentDestroyed < stage1Threshold && stage1Dmg) {
 			spriteRenderer.sprite = stage1Dmg;
-			GameObject rockShatter = PoolManager.pm.rockShatterPool.GetPooledGameObject();
+			GameObject rockShatter = StructureDamagePool.sdp.rockShatterPool.GetPooledGameObject();
 			rockShatter.SetActive(true);
 			rockShatter.transform.position = location;
-		}
-
-		if (currentIntegrity <= 0) {
-			// we destroy the object
+			structureParent.evacuateThreshold -= 2;
 		}
 	}
-
-	private void WindowShatter(Vector3 location) {
-		if (structureType == "Window") {
-			GameObject  glassShatter = PoolManager.pm.glassShatterPool.GetPooledGameObject();
-			glassShatter.SetActive(true);
-			glassShatter.transform.position = location;
+	private void GetDustParticle(Vector3 location) {
+		GameObject dustPoof = StructureDamagePool.sdp.softDustPool.GetPooledGameObject();
+		dustPoof.SetActive(true);
+		dustPoof.transform.position = location;
+	}
+	private void CalculateDamage(float damageAmount) {
+		float actualDamage = damageAmount - toughness;
+		Debug.Log($"dmg amount: {damageAmount}");
+		Debug.Log($"actual dmg: {actualDamage}");
+		if (toughness >= damageAmount) {
+			actualDamage = 0;
 		} else {
-			GameObject rockShatter = PoolManager.pm.rockShatterPool.GetPooledGameObject();
-			rockShatter.SetActive(true);
-			rockShatter.transform.position = location;
+			actualDamage = Mathf.FloorToInt(damageAmount - toughness);
+		}
+		MMFloatingTextSpawnEvent.Trigger(1, transform.position,
+			actualDamage.ToString(), Vector3.up, .3f);
+		currentIntegrity -= actualDamage;
+	}
+	private void EvacuateCheck() {
+		if (structureParent.evacuateThreshold <= 0 && !structureParent.hasEvacuated) {
+			structureParent.EvacuateBuilding(structureParent.buildingSize);
+		}
+	}
+	private void CatchFire(string damageType) {
+		if (damageType == "Fire" || damageType == "DeathRay") {
+
+			if (percentDestroyed < 0.9f) {
+				structureParent.fireAndSmokeDamageArray[0].SetActive(true);
+			}
+
+			if (percentDestroyed < 0.7f) {
+				structureParent.fireAndSmokeDamageArray[1].SetActive(true);
+			}
+
+			if (percentDestroyed < 0.5f) {
+				structureParent.fireAndSmokeDamageArray[2].SetActive(true);
+			}
+
+			if (percentDestroyed < 0.3f) {
+				structureParent.fireAndSmokeDamageArray[3].SetActive(true);
+			}
+			
 		}
 	}
 }

@@ -16,5 +16,11 @@ public class OrbitalProjectile : MonoBehaviour {
             bloodSplash.SetActive(true);
             bloodSplash.transform.position = other.transform.position;
         }
+        
+        if (other.CompareTag("Obstacle")) {
+            ISmashThingsInterface hit = other.GetComponent<ISmashThingsInterface>();
+            hit.DamageStructure(weapon.weaponDamage, weapon.damageType, other.transform.position);
+            gameObject.SetActive(false);
+        }
     }
 }

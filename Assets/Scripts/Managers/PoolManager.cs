@@ -9,25 +9,20 @@ public class PoolManager : MonoBehaviour {
 	}
 
 	[Header("Enemy Pools")] 
+	public MMSimpleObjectPooler[] allPedestrians;
 	public MMSimpleObjectPooler pedestrianPool;
+	public MMSimpleObjectPooler pedestrianPool2;
+	public MMSimpleObjectPooler pedestrianPool3;
+	public MMSimpleObjectPooler childPool;
+	public MMSimpleObjectPooler pedGroupPool;
+	public MMSimpleObjectPooler pedGroupPool2;
 	public MMSimpleObjectPooler helicopterPool;
-
-	[Header("Projectile Pools")] 
-	public MMSimpleObjectPooler clusterPool;
-	public MMSimpleObjectPooler acidMinePool;
-	public MMSimpleObjectPooler rapidPool;
-	public MMSimpleObjectPooler nanoPool;
+	public MMSimpleObjectPooler soldierPool;
 	
-
 	[Header("Particle Pools")] 
 	public MMSimpleObjectPooler ashesPool;
 	public MMSimpleObjectPooler bloodPool;
 	public MMSimpleObjectPooler acidBlastPool;
-
-	[Header("Structure Particle Pools")] 
-	public MMSimpleObjectPooler softDustPool;
-	public MMSimpleObjectPooler rockShatterPool;
-	public MMSimpleObjectPooler glassShatterPool;
 
 	[Header("Resource Pools")] 
 	public MMSimpleObjectPooler sBioGooPool;
@@ -41,6 +36,4 @@ public class PoolManager : MonoBehaviour {
 	public MMSimpleObjectPooler sSilicatePool;
 	public MMSimpleObjectPooler mSilicatePool;
 	public MMSimpleObjectPooler lSilicatePool;
-
-	
 }

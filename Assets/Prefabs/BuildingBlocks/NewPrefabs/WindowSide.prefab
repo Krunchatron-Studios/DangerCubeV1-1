@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2355275728618235721}
   m_Layer: 10
   m_Name: WindowSide
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278092109799932821}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.009638, y: -0.4445501, z: 0.051780004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -146,11 +146,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5278d2e12c44a342a7c8abe040d11f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  structureParent: {fileID: 0}
+  structureType: Window
+  shaker: {fileID: 0}
   spriteRenderer: {fileID: 278092109799932818}
   noDmgSprite: {fileID: 1411610441, guid: 907ae090bfe19194aa0829644d973646, type: 3}
-  stage1Dmg: {fileID: 0}
+  stage1Dmg: {fileID: 1064877515, guid: 8bc8b1e3853891d43b6ee067c047c275, type: 3}
   stage2Dmg: {fileID: 0}
   stage3Dmg: {fileID: 0}
+  fireType: fire2
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3
