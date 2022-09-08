@@ -51,7 +51,6 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 			rockShatter.transform.position = location;
 		}
 	}
-
 	private void DamageTiersCheck(Vector3 location) {
 		if (percentDestroyed > 0 && percentDestroyed < stage3Threshold && stage3Dmg) {
 			spriteRenderer.sprite = stage3Dmg;
@@ -68,13 +67,11 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 			structureParent.evacuateThreshold -= 2;
 		}
 	}
-
 	private void GetDustParticle(Vector3 location) {
 		GameObject dustPoof = StructureDamagePool.sdp.softDustPool.GetPooledGameObject();
 		dustPoof.SetActive(true);
 		dustPoof.transform.position = location;
 	}
-
 	private void CalculateDamage(float damageAmount) {
 		float actualDamage = damageAmount - toughness;
 		if (toughness >= damageAmount) {
@@ -112,6 +109,4 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 			
 		}
 	}
-	
-	
 }
