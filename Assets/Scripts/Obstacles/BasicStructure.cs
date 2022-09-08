@@ -13,8 +13,6 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	public Sprite stage1Dmg;
 	public Sprite stage2Dmg;
 	public Sprite stage3Dmg;
-	public string fireType;
-	
 	public float stage1Threshold = .9f;
 	public float stage2Threshold = .6f;
 	public float stage3Threshold = .3f;

@@ -61,6 +61,7 @@ MonoBehaviour:
   - {fileID: 2121883774}
   - {fileID: 1378482830}
   - {fileID: 1537146353}
+  fireAndSmokeDamageArray: []
 --- !u!114 &1673163706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +143,10 @@ PrefabInstance:
     - target: {fileID: 1545251734432736587, guid: 6df031aa4d299394c861d0e8b4fcf1fd, type: 3}
       propertyPath: shaker
       value: 
+      objectReference: {fileID: 1673163706}
+    - target: {fileID: 1545251734432736587, guid: 6df031aa4d299394c861d0e8b4fcf1fd, type: 3}
+      propertyPath: fireType
+      value: Fire3
       objectReference: {fileID: 0}
     - target: {fileID: 1545251734432736587, guid: 6df031aa4d299394c861d0e8b4fcf1fd, type: 3}
       propertyPath: stage1Dmg
@@ -241,6 +246,10 @@ PrefabInstance:
       propertyPath: shaker
       value: 
       objectReference: {fileID: 1673163706}
+    - target: {fileID: 1712142221815726888, guid: f94f5d5239dc185468f7cad7cb4e194c, type: 3}
+      propertyPath: fireType
+      value: Smoke1
+      objectReference: {fileID: 0}
     - target: {fileID: 1712142221815726888, guid: f94f5d5239dc185468f7cad7cb4e194c, type: 3}
       propertyPath: stage1Dmg
       value: 
@@ -403,6 +412,10 @@ PrefabInstance:
       propertyPath: shaker
       value: 
       objectReference: {fileID: 1673163706}
+    - target: {fileID: 2355275728618235721, guid: e6ef587c4bb75aa4ba26fa7398fb4ffa, type: 3}
+      propertyPath: fireType
+      value: Fire2
+      objectReference: {fileID: 0}
     - target: {fileID: 2355275728618235721, guid: e6ef587c4bb75aa4ba26fa7398fb4ffa, type: 3}
       propertyPath: stage1Dmg
       value: 
@@ -700,6 +713,10 @@ PrefabInstance:
       propertyPath: shaker
       value: 
       objectReference: {fileID: 1673163706}
+    - target: {fileID: 7392495022268810052, guid: 4edfb47a9d00f7e4cac38bbb50bbdc43, type: 3}
+      propertyPath: fireType
+      value: Smoke2
+      objectReference: {fileID: 0}
     - target: {fileID: 7392495022268810052, guid: 4edfb47a9d00f7e4cac38bbb50bbdc43, type: 3}
       propertyPath: stage1Dmg
       value: 
