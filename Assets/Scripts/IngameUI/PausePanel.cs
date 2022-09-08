@@ -8,7 +8,6 @@ public class PausePanel : MonoBehaviour {
         _isPaused = false;
         pausePanel.SetActive(false);
     }
-
     void Update() {
         if (Keyboard.current.escapeKey.wasPressedThisFrame) {
             PauseGame();
@@ -16,6 +15,7 @@ public class PausePanel : MonoBehaviour {
     }
     private void PauseGame() {
         _isPaused = !_isPaused;
+        SoundManager.sm.pauseMenu.Play();
         if (_isPaused) {
             pausePanel.SetActive(true);
             Time.timeScale = 0f;
@@ -23,7 +23,6 @@ public class PausePanel : MonoBehaviour {
             pausePanel.SetActive(false);
             Time.timeScale = 1f;
         }
-        SoundManager.sm.pauseMenu.Play();
     }
     public void Resume() {
         pausePanel.SetActive(false);
