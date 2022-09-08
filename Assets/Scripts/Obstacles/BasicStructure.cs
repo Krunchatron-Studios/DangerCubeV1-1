@@ -74,6 +74,8 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	}
 	private void CalculateDamage(float damageAmount) {
 		float actualDamage = damageAmount - toughness;
+		Debug.Log($"dmg amount: {damageAmount}");
+		Debug.Log($"actual dmg: {actualDamage}");
 		if (toughness >= damageAmount) {
 			actualDamage = 0;
 		} else {

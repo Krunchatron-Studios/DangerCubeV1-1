@@ -9,9 +9,9 @@ public class MeatSawProjectile : MonoBehaviour {
     
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Enemy")) {
+            audioSource.Play();
             IHurtThingsInterface hit = other.GetComponent<IHurtThingsInterface>();
             hit.TakeDamage(damage, "Physical");
-            audioSource.Play();
             MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
                 damage.ToString(), Vector3.up, .2f);
             bloodSplash = PoolManager.pm.bloodPool.GetPooledGameObject();
