@@ -19,6 +19,7 @@ public class HealthUI : MonoBehaviour {
 	private void Update() {
 		SetInvulTimer();
 		if (playerHealthData.playerHealthCurrent <= 0) {
+			SoundManager.sm.powerDown.Play();
 			SceneManager.LoadScene("GameOverScene");
 		}
 	}
@@ -34,6 +35,7 @@ public class HealthUI : MonoBehaviour {
 	}
 
 	public void RemoveHealthChunk() {
+		SoundManager.sm.healthChunkLost.Play();
 		playerHealthData.playerHealthCurrent--;
 		if (playerHealthData.playerHealthCurrent <= 0) {
 		}
