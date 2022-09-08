@@ -31,7 +31,18 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 		shaker.Play();
 		GetDustParticle(location);
 		WindowShatterCheck(location);
-		CalculateDamage(damageAmount);
+		// CalculateDamage(damageAmount);
+		float actualDamage = damageAmount - toughness;
+		Debug.Log($"dmg amount: {damageAmount}");
+		Debug.Log($"actual dmg: {actualDamage}");
+		if (toughness >= damageAmount) {
+			actualDamage = 0;
+		} else {
+			actualDamage = Mathf.FloorToInt(damageAmount - toughness);
+		}
+		MMFloatingTextSpawnEvent.Trigger(1, transform.position,
+			actualDamage.ToString(), Vector3.up, .3f);
+		currentIntegrity -= actualDamage;
 		DamageTiersCheck(location);
 		percentDestroyed = currentIntegrity / maxIntegrity;
 		CatchFire(damageType);

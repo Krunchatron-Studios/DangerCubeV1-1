@@ -25,7 +25,21 @@ public class DeathRay : Weapon {
 		if (Keyboard.current.eKey.wasPressedThisFrame) {
 			FireLaser();
 		}
+		ResolveDeathRay();
+	}
+	public void FireLaser() {
+		if (!laserFeedbackPlayer.IsPlaying) {
+			audioSource.Play();
+		}
+	
+		_lineRenderer.enabled = true;
+		beamHitBox.gameObject.SetActive(true);
+		Vector3 position = transform.position;
+		_lineRenderer.SetPosition(0, position);
+		laserFeedbackPlayer?.PlayFeedbacks();
+	}
 
+	private void ResolveDeathRay() {
 		if (laserFeedbackPlayer.IsPlaying) {
 			burnVFX.gameObject.SetActive(true);
 			sparkVFX.gameObject.SetActive(true);
@@ -48,17 +62,6 @@ public class DeathRay : Weapon {
 			eyeVFX.gameObject.SetActive(false);
 			beamHitBox.gameObject.SetActive(false);
 		}
-	}
-	public void FireLaser() {
-		if (!laserFeedbackPlayer.IsPlaying) {
-			audioSource.Play();
-		}
-	
-		_lineRenderer.enabled = true;
-		beamHitBox.gameObject.SetActive(true);
-		Vector3 position = transform.position;
-		_lineRenderer.SetPosition(0, position);
-		laserFeedbackPlayer?.PlayFeedbacks();
 	}
 	
 }
