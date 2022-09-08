@@ -6,6 +6,7 @@ public class CombinedStructure : MonoBehaviour {
 	public int buildingSize = 1;
 	public bool hasEvacuated;
 	public BasicStructure[] structurePiecesArray;
+	public GameObject[] fireAndSmokeDamageArray;
 	
 	public void EvacuateBuilding(int groupsToEvacuate) {
 		hasEvacuated = true;
