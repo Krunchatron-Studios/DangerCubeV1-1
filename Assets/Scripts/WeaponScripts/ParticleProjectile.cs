@@ -27,6 +27,7 @@ public class ParticleProjectile : Projectile {
 		
 		if (other.CompareTag("Obstacle")) {
 			ISmashThingsInterface hit = other.GetComponent<ISmashThingsInterface>();
+			Debug.Log($"particle proj dmg: {weapon.weaponDamage}");
 			hit.DamageStructure(weapon.weaponDamage, weapon.damageType, other.transform.position);
 			gameObject.SetActive(false);
 		}

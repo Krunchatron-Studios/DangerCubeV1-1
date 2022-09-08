@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4509634286547317597}
   - component: {fileID: 4509634286547317595}
   - component: {fileID: 2775467922387448597}
-  - component: {fileID: 1386759926}
   m_Layer: 0
   m_Name: RapidGun
   m_TagString: Untagged
@@ -57,14 +56,15 @@ MonoBehaviour:
   audioSource: {fileID: 4509634286547317595}
   weaponName: RapidGun
   weaponDescription: Ratta tat tat, GI Joe dead like that
-  weaponDamage: 1
-  objectPooler: {fileID: 1386759926}
+  weaponDamage: 2
+  damageType: '"Energy"'
+  objectPooler: {fileID: 0}
   firePointArray:
   - {fileID: 251079421563809740}
   - {fileID: 251079421114752198}
   - {fileID: 5737395334980069407}
   - {fileID: 5737395335837983103}
-  projectile: {fileID: 1655789376720695904, guid: fda5d909c1a0f4f45b1a96e4ae70d7dc, type: 3}
+  projectile: {fileID: 4227069353825714561, guid: e71643f553fddfc4da7791f0a2b76242, type: 3}
   enemyTarget: {x: 0, y: 0}
   targetingSys: {fileID: 1920327367836471557}
   weaponRange: 7
@@ -113,7 +113,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1601880589
-  m_SortingLayer: 6
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1076b120f868f7b43a90b668e62af0fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -237,26 +237,8 @@ MonoBehaviour:
   MutualizeWaitingPools: 0
   NestWaitingPool: 1
   NestUnderThis: 0
-  GameObjectToPool: {fileID: 1655789376720695904, guid: fda5d909c1a0f4f45b1a96e4ae70d7dc, type: 3}
-  PoolSize: 20
-  PoolCanExpand: 1
---- !u!114 &1386759926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4509634286547317599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b7277539b95c0d45895792ecc99ce66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MutualizeWaitingPools: 0
-  NestWaitingPool: 1
-  NestUnderThis: 0
-  GameObjectToPool: {fileID: 4922136431080144685, guid: ddba4269544eca04e8872b60cd12335b, type: 3}
-  PoolSize: 30
+  GameObjectToPool: {fileID: 4227069353825714561, guid: e71643f553fddfc4da7791f0a2b76242, type: 3}
+  PoolSize: 100
   PoolCanExpand: 1
 --- !u!1001 &4509634286534921153
 PrefabInstance:

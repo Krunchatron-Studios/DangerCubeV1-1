@@ -28,6 +28,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	}
 
 	public void DamageStructure(float damageAmount, string damageType, Vector3 location) {
+		Debug.Log($"input dmg: {damageAmount}");
 		shaker.Play();
 		GetDustParticle(location);
 		WindowShatterCheck(location);

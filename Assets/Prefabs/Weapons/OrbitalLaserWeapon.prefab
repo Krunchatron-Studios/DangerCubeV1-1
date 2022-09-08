@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3814871437317594700}
   - component: {fileID: 7039479160622258171}
   - component: {fileID: 1605000266149368324}
+  - component: {fileID: 6232059995250928630}
   m_Layer: 16
   m_Name: OrbitalLaserWeapon
   m_TagString: Weapon
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1601880589
-  m_SortingLayer: 6
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8171799896c777540bf3edd243559a83, type: 3}
   m_Color: {r: 0.101326115, g: 0.14025111, b: 0.9339623, a: 1}
@@ -107,19 +108,19 @@ MonoBehaviour:
   audioSource: {fileID: 1605000266149368324}
   weaponName: OrbitalLaser
   weaponDescription: Make it rain baby!
-  weaponDamage: 1
-  knockBackPower: 1
+  weaponDamage: 2
+  damageType: '"Energy"'
+  objectPooler: {fileID: 6232059995250928630}
   firePointArray:
   - {fileID: 4285387142156465725}
   - {fileID: 8811883566265359798}
   - {fileID: 2580817550918879614}
   - {fileID: 98918085002990290}
-  projectile: {fileID: 4007605511143258759, guid: 9c4f96192390546df8c35e9c4923c657, type: 3}
+  projectile: {fileID: 4003393644203996623, guid: 9c4f96192390546df8c35e9c4923c657, type: 3}
   enemyTarget: {x: 0, y: 3.5404346}
   targetingSys: {fileID: 8371550627369725801}
-  weaponRange: 3
+  weaponRange: 20
   rateOfFire: 2
-  canFire: 1
   nextFire: 0
   explosion: {fileID: 6039074600034411127, guid: fca9d07ff4d5c4907ac25899c5ca97c0, type: 3}
 --- !u!82 &1605000266149368324
@@ -218,6 +219,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6232059995250928630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2279942210206647322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7277539b95c0d45895792ecc99ce66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MutualizeWaitingPools: 0
+  NestWaitingPool: 1
+  NestUnderThis: 0
+  GameObjectToPool: {fileID: 4003393644203996623, guid: 9c4f96192390546df8c35e9c4923c657, type: 3}
+  PoolSize: 20
+  PoolCanExpand: 1
 --- !u!1001 &473357332581432187
 PrefabInstance:
   m_ObjectHideFlags: 0

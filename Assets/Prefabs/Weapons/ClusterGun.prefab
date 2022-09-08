@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 7485021606706960250}
   - component: {fileID: 935498610684718217}
   - component: {fileID: 3527016346985065115}
+  - component: {fileID: 5639441978635504735}
   m_Layer: 16
   m_Name: ClusterGun
   m_TagString: Weapon
@@ -246,15 +247,15 @@ MonoBehaviour:
   audioSource: {fileID: 3527016346985065115}
   weaponName: ClusterGun
   weaponDescription: Ball O' Bullets for all!
-  weaponDamage: 1
-  damageType: 
+  weaponDamage: 3
+  damageType: '"Fire"'
   objectPooler: {fileID: 0}
   firePointArray:
   - {fileID: 5540794475001378500}
   - {fileID: 5540794474269357689}
   - {fileID: 5540794473067231761}
   - {fileID: 5540794473035678637}
-  projectile: {fileID: 1655789376720695905, guid: 47ede0959822f854994d4baea34e962b, type: 3}
+  projectile: {fileID: 5263029095085973483, guid: 2a00f38dfaded1f4ea7ab4992d2c25c5, type: 3}
   enemyTarget: {x: 0, y: 0}
   targetingSys: {fileID: 5780026266065048204}
   weaponRange: 10
@@ -408,3 +409,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5639441978635504735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8492263470177819810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7277539b95c0d45895792ecc99ce66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MutualizeWaitingPools: 0
+  NestWaitingPool: 1
+  NestUnderThis: 0
+  GameObjectToPool: {fileID: 5263029095085973483, guid: 2a00f38dfaded1f4ea7ab4992d2c25c5, type: 3}
+  PoolSize: 40
+  PoolCanExpand: 1
