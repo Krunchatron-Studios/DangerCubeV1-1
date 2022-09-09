@@ -1,4 +1,4 @@
-using Interfaces;
+﻿using Interfaces;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 using MoreMountains.Tools;
@@ -87,7 +87,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 		}
 	}
 	private void CatchFire(string damageType) {
-		if (damageType is "Fire" or "DeathRay") {
+		if (damageType == "Fire" || damageType == "DeathRay") {
 
 			if (percentDestroyed < 0.9f) {
 				structureParent.fireAndSmokeDamageArray[0].SetActive(true);
