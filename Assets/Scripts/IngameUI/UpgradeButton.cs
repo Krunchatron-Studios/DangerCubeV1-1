@@ -31,7 +31,7 @@ public class UpgradeButton : MonoBehaviour {
 	}
 
 	public void SelectUpgrade() {
-		Debug.Log(upgradeName);
+		SoundManager.sm.buttonPress.Play();
 		WeaponSystem.Instance.ActivateWeaponSystem(upgradeName);
 		lvlPanel.gameObject.SetActive(false);
 		Time.timeScale = 1f;

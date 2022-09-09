@@ -9,7 +9,7 @@ public class LevelSelect : MonoBehaviour {
     public void GoToScene() {
         SceneManager.LoadScene(sceneToLoad);
     }
-    public void StartFade() {
+    public void StartFadeOut() {
         StartCoroutine(FadeOut());
     }
     IEnumerator FadeOut() {

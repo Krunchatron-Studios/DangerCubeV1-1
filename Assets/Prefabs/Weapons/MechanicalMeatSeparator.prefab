@@ -9,11 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2655124810910713274}
-  - component: {fileID: 1327207215730875267}
   - component: {fileID: 3417617060092069337}
+  - component: {fileID: 1327207215730875267}
   - component: {fileID: 6454908755577207748}
-  - component: {fileID: 1136044463}
   - component: {fileID: 4081812560268438586}
+  - component: {fileID: 5638447487245539788}
+  - component: {fileID: 4325532238569768180}
   m_Layer: 16
   m_Name: MechanicalMeatSeparator
   m_TagString: Weapon
@@ -38,6 +39,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3417617060092069337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8659254231319738890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1648f054589da4b7faaa2c916c76e85c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSprite: {fileID: 21300000, guid: 323158a20ae4145f7a364b2e1997d9d0, type: 3}
+  audioSource: {fileID: 4325532238569768180}
+  weaponName: MechanicalMeatSeparator
+  weaponDescription: It slices, it dices, and it also fucks shit up!
+  weaponDamage: 5
+  damageType: Physical
+  objectPooler: {fileID: 5638447487245539788}
+  thisRigidBody: {fileID: 6454908755577207748}
+  sawVelocity: 0
 --- !u!212 &1327207215730875267
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -77,7 +99,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2055319811
-  m_SortingLayer: 3
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 323158a20ae4145f7a364b2e1997d9d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -90,26 +112,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3417617060092069337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8659254231319738890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1648f054589da4b7faaa2c916c76e85c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponSprite: {fileID: 21300000, guid: 323158a20ae4145f7a364b2e1997d9d0, type: 3}
-  audioSource: {fileID: 1136044463}
-  weaponName: MechanicalMeatSeparator
-  weaponDescription: It slices, it dices, and it also fucks shit up!
-  weaponDamage: 1
-  knockBackPower: 1
-  thisRigidBody: {fileID: 6454908755577207748}
-  sawVelocity: 0
 --- !u!50 &6454908755577207748
 Rigidbody2D:
   serializedVersion: 4
@@ -131,18 +133,54 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!82 &1136044463
+--- !u!255 &4081812560268438586
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8659254231319738890}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 6451673417352101565}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -0.015999984, y: -0.20799999}
+  m_DampingRatio: 0
+  m_Frequency: 1
+--- !u!114 &5638447487245539788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8659254231319738890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7277539b95c0d45895792ecc99ce66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MutualizeWaitingPools: 0
+  NestWaitingPool: 1
+  NestUnderThis: 0
+  GameObjectToPool: {fileID: 0}
+  PoolSize: 20
+  PoolCanExpand: 1
+--- !u!82 &4325532238569768180
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8659254231319738890}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 132f794a010cf43abb2635eb6d1652fc, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -227,24 +265,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!255 &4081812560268438586
-FixedJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8659254231319738890}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 6451673417352101565}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.015999984, y: -0.20799999}
-  m_DampingRatio: 0
-  m_Frequency: 1
 --- !u!1001 &2613727194724414959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -372,7 +392,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3997921572081723246, guid: 1ceea6ac96bda48d585e54b82bf17ee8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1ceea6ac96bda48d585e54b82bf17ee8, type: 3}
 --- !u!50 &983093237734736512 stripped
 Rigidbody2D:

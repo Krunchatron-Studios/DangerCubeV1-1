@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2955592121180907604}
+  - component: {fileID: 6572378921376988044}
+  - component: {fileID: -6966868393121060382}
   - component: {fileID: 7234724318379709333}
   - component: {fileID: 4544797165188165519}
   - component: {fileID: 7795988897305405232}
-  - component: {fileID: 6572378921376988044}
-  - component: {fileID: -6966868393121060382}
   - component: {fileID: 319828529135606413}
   m_Layer: 15
   m_Name: NanoZombie
@@ -31,12 +31,43 @@ Transform:
   m_GameObject: {fileID: 6442908101038264799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6572378921376988044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6442908101038264799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4594deaa8329dc40ad66ddcc5fd1f7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disAmountPerFrame: 0.04
+  _renderer: {fileID: 7234724318379709333}
+  ashes: {fileID: 3424906339606567161, guid: b256623201b9eba4cb6aaaa1cc86041f, type: 3}
+  isDissolving: 0
+--- !u!114 &-6966868393121060382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6442908101038264799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33e194c64fc7348ee9929f0cae001707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 5
+  chaseRadius: 3
+  bloodSplash: {fileID: 2512025392852149761, guid: 8df12292ad0e89947a87dee41a86f181, type: 3}
 --- !u!212 &7234724318379709333
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -136,37 +167,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.22301254, y: 0.28334215}
   m_EdgeRadius: 0
---- !u!114 &6572378921376988044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6442908101038264799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4594deaa8329dc40ad66ddcc5fd1f7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  disAmountPerFrame: 0.04
-  _renderer: {fileID: 7234724318379709333}
-  ashes: {fileID: 3424906339606567161, guid: b256623201b9eba4cb6aaaa1cc86041f, type: 3}
-  isDissolving: 0
---- !u!114 &-6966868393121060382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6442908101038264799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33e194c64fc7348ee9929f0cae001707, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeTime: 5
-  chaseRadius: 3
-  bloodSplash: {fileID: 2512025392852149761, guid: 8df12292ad0e89947a87dee41a86f181, type: 3}
 --- !u!114 &319828529135606413
 MonoBehaviour:
   m_ObjectHideFlags: 0

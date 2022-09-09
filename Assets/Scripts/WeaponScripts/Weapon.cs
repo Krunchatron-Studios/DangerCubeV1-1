@@ -9,7 +9,7 @@ public class Weapon : MonoBehaviour {
 	[Header("Main Weapon Vars")]
 	public string weaponName;
 	public string weaponDescription;
-	public float weaponDamage = 1f;
+	public float weaponDamage;
 	public string damageType;
 	public float knockForce;
 

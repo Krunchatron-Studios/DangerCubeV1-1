@@ -8,13 +8,20 @@ public class SoundManager : MonoBehaviour
 		sm = this;
 	}
 
+	[Header("Damage Sounds")] 
+	public AudioSource burning1;
+
 	[Header("Death Sounds")]
 	public AudioSource[] humanDying;
 
-	[Header("Weapon Sounds")] 
-	public AudioSource meatSaw;
-	public AudioSource deathRay;
-
 	[Header("Projectile Sounds")]
 	public AudioSource mineSlayerMine;
+
+	[Header("UI Sounds")] 
+	public AudioSource resourcePickup;
+	public AudioSource pauseMenu;
+	public AudioSource buttonPress;
+	public AudioSource levelUp;
+	public AudioSource powerDown;
+	public AudioSource healthChunkLost;
 }

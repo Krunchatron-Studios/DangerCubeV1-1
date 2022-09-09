@@ -21,7 +21,7 @@ public class MutagenicNanobots : Weapon {
         if (nanoManager.currentNanoBots < nanoManager.maxNanoBots) {
             Vector3 offset = new Vector3(_center.x, _center.y + 3, 0);
             if (nanoManager.currentNanoBots < nanoManager.maxNanoBots) {
-                GameObject nano = PoolManager.pm.nanoPool.GetPooledGameObject();
+                GameObject nano = objectPooler.GetPooledGameObject();
                 nano.SetActive(true);
                 nano.transform.position = offset;
                 nanoManager.currentNanoBots++;

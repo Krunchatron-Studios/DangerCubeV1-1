@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour {
 	public ProjectileWeapon weapon;
 	public Rigidbody2D projectileRb2D;
 	public Vector3 targetPosition;
-	public GameObject bloodSplash;
+	private GameObject _bloodSplash;
 	public Vector3 direction;
 	public float moveTime;
 
@@ -29,13 +29,20 @@ public class Projectile : MonoBehaviour {
 			hit.TakeDamage(weapon.weaponDamage, weapon.damageType);
 			MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
 				weapon.weaponDamage.ToString(), Vector3.up, .2f);
-			bloodSplash = PoolManager.pm.bloodPool.GetPooledGameObject();
-			bloodSplash.SetActive(true);
-			bloodSplash.transform.position = other.transform.position;
+			_bloodSplash = PoolManager.pm.bloodPool.GetPooledGameObject();
+			_bloodSplash.SetActive(true);
+			_bloodSplash.transform.position = other.transform.position;
 			gameObject.SetActive(false);
 			weapon.Knockback(other);
 
 
+		}
+		
+		if (other.CompareTag("Obstacle")) {
+			ISmashThingsInterface hit = other.GetComponent<ISmashThingsInterface>();
+			Debug.Log($"Damage: {weapon.weaponDamage}");
+			hit.DamageStructure(weapon.weaponDamage, weapon.damageType, other.transform.position);
+			gameObject.SetActive(false);
 		}
 		if (other.CompareTag("Wall")) {
 			gameObject.SetActive(false);

@@ -24,6 +24,13 @@ public class ParticleProjectile : Projectile {
 				weapon.weaponDamage.ToString(), Vector3.up, .2f);
 			gameObject.SetActive(false);
 		}
+		
+		if (other.CompareTag("Obstacle")) {
+			ISmashThingsInterface hit = other.GetComponent<ISmashThingsInterface>();
+			Debug.Log($"particle proj dmg: {weapon.weaponDamage}");
+			hit.DamageStructure(weapon.weaponDamage, weapon.damageType, other.transform.position);
+			gameObject.SetActive(false);
+		}
 		if (other.CompareTag("Wall")) {
 			gameObject.SetActive(false);
 		}
