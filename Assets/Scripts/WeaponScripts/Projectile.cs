@@ -33,6 +33,8 @@ public class Projectile : MonoBehaviour {
 			bloodSplash.SetActive(true);
 			bloodSplash.transform.position = other.transform.position;
 			gameObject.SetActive(false);
+			weapon.Knockback(other);
+
 
 		}
 		if (other.CompareTag("Wall")) {
