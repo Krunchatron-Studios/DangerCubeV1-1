@@ -70,6 +70,7 @@ public class ResourcesPanel : MonoBehaviour {
 
 	private void LevelUpCheck() {
 		if (bioGooCurExp >= bioGooResToLvlArray[bioGooCurrentLvl + 1]) {
+			SoundManager.sm.levelUp.Play();
 			lvlPanel.SetActive(true);
 			Time.timeScale = 0f;
 			resRef.bioGoo = 0;
@@ -77,6 +78,7 @@ public class ResourcesPanel : MonoBehaviour {
 			levelUpPanel.RefreshChoices();
 		}
 		if (metalCurExp >= metalResToLvlArray[metalCurrentLvl + 1]) {
+			SoundManager.sm.levelUp.Play();
 			lvlPanel.SetActive(true);
 			Time.timeScale = 0f;
 			resRef.metal = 0;
@@ -84,6 +86,7 @@ public class ResourcesPanel : MonoBehaviour {
 			levelUpPanel.RefreshChoices();
 		}
 		if (silicateCurExp >= silicateResToLvlArray[silicateCurrentLvl + 1]) {
+			SoundManager.sm.levelUp.Play();
 			lvlPanel.SetActive(true);
 			Time.timeScale = 0f;
 			resRef.silicate = 0;

@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
-
 public class PausePanel : MonoBehaviour {
     private bool _isPaused;
     public GameObject pausePanel;
@@ -10,15 +8,14 @@ public class PausePanel : MonoBehaviour {
         _isPaused = false;
         pausePanel.SetActive(false);
     }
-
     void Update() {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame || Gamepad.current.startButton.wasPressedThisFrame) {
+        if (Keyboard.current.escapeKey.wasPressedThisFrame) {
             PauseGame();
         }
     }
     private void PauseGame() {
         _isPaused = !_isPaused;
-        Debug.Log(_isPaused + " ,pause panel status.");
+        SoundManager.sm.pauseMenu.Play();
         if (_isPaused) {
             pausePanel.SetActive(true);
             Time.timeScale = 0f;
@@ -30,5 +27,10 @@ public class PausePanel : MonoBehaviour {
     public void Resume() {
         pausePanel.SetActive(false);
         Time.timeScale = 1f;
+        SoundManager.sm.buttonPress.Play();
+    }
+
+    public void ExitGame() {
+        Application.Quit();
     }
 }

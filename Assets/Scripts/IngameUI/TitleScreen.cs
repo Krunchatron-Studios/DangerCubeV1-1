@@ -10,11 +10,13 @@ public class TitleScreen : MonoBehaviour {
 	}
 
 	public void LoadLevel(string lvlToLoad) {
+		SoundManager.sm.buttonPress.Play();
 		audioSource.Stop();
 		SceneManager.LoadScene(lvlToLoad);
 	}
 
 	public void ExitToDesktop() {
+		SoundManager.sm.buttonPress.Play();
 		Application.Quit();
 	}
 }

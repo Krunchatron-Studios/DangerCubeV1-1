@@ -27,6 +27,7 @@ public class CollectResource : MonoBehaviour {
         }
     }
     void OnTriggerEnter2D(Collider2D other) {
+        SoundManager.sm.resourcePickup.Play();
         if (other.CompareTag("Collector") && type == "BioGoo") {
             playerResources.bioGoo += value;
             gameObject.SetActive(false);

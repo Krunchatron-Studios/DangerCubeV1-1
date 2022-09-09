@@ -28,22 +28,10 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	}
 
 	public void DamageStructure(float damageAmount, string damageType, Vector3 location) {
-		Debug.Log($"input dmg: {damageAmount}");
 		shaker.Play();
 		GetDustParticle(location);
 		WindowShatterCheck(location);
-		// CalculateDamage(damageAmount);
-		float actualDamage = damageAmount - toughness;
-		Debug.Log($"dmg amount: {damageAmount}");
-		Debug.Log($"actual dmg: {actualDamage}");
-		if (toughness >= damageAmount) {
-			actualDamage = 0;
-		} else {
-			actualDamage = Mathf.FloorToInt(damageAmount - toughness);
-		}
-		MMFloatingTextSpawnEvent.Trigger(1, transform.position,
-			actualDamage.ToString(), Vector3.up, .3f);
-		currentIntegrity -= actualDamage;
+		CalculateDamage(damageAmount);
 		DamageTiersCheck(location);
 		percentDestroyed = currentIntegrity / maxIntegrity;
 		CatchFire(damageType);
@@ -84,8 +72,6 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	}
 	private void CalculateDamage(float damageAmount) {
 		float actualDamage = damageAmount - toughness;
-		Debug.Log($"dmg amount: {damageAmount}");
-		Debug.Log($"actual dmg: {actualDamage}");
 		if (toughness >= damageAmount) {
 			actualDamage = 0;
 		} else {
@@ -101,7 +87,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 		}
 	}
 	private void CatchFire(string damageType) {
-		if (damageType == "Fire" || damageType == "DeathRay") {
+		if (damageType is "Fire" or "DeathRay") {
 
 			if (percentDestroyed < 0.9f) {
 				structureParent.fireAndSmokeDamageArray[0].SetActive(true);
@@ -113,6 +99,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 
 			if (percentDestroyed < 0.5f) {
 				structureParent.fireAndSmokeDamageArray[2].SetActive(true);
+				SoundManager.sm.burning1.Play();
 			}
 
 			if (percentDestroyed < 0.3f) {
