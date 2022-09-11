@@ -13,10 +13,11 @@ public class ProjectileWeapon : Weapon {
 	[Header("Firing Vars")]
 	public float weaponRange = 3;
 	public float rateOfFire = 2.0f;
-	private bool _canFire = true;
+	private bool _canFire;
 	public float nextFire;
 
 	private void Start() {
+		_canFire = true;
 		targetingSys.circleCol2D.radius = weaponRange;
 		objectPooler = GetComponent<MMSimpleObjectPooler>();
 	}

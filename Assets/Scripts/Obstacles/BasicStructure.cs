@@ -8,6 +8,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	public CombinedStructure structureParent;
 	public string structureType;
 	public MMPositionShaker shaker;
+	public MMRotationShaker rotationShaker;
 	public SpriteRenderer spriteRenderer;
 	public Sprite noDmgSprite;
 	public Sprite stage1Dmg;
@@ -27,7 +28,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 		spriteRenderer.sprite = noDmgSprite;
 	}
 
-	public void DamageStructure(float damageAmount, string damageType, Vector3 location) {
+	public virtual void DamageStructure(float damageAmount, string damageType, Vector3 location) {
 		shaker.Play();
 		GetDustParticle(location);
 		WindowShatterCheck(location);
@@ -49,7 +50,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 			rockShatter.transform.position = location;
 		}
 	}
-	private void DamageTiersCheck(Vector3 location) {
+	public virtual void DamageTiersCheck(Vector3 location) {
 		if (percentDestroyed > 0 && percentDestroyed < stage3Threshold && stage3Dmg) {
 			spriteRenderer.sprite = stage3Dmg;
 		}
@@ -65,7 +66,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 			structureParent.evacuateThreshold -= 2;
 		}
 	}
-	private void GetDustParticle(Vector3 location) {
+	public virtual void GetDustParticle(Vector3 location) {
 		GameObject dustPoof = StructureDamagePool.sdp.softDustPool.GetPooledGameObject();
 		dustPoof.SetActive(true);
 		dustPoof.transform.position = location;
@@ -86,7 +87,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 			structureParent.EvacuateBuilding(structureParent.buildingSize);
 		}
 	}
-	private void CatchFire(string damageType) {
+	public virtual void CatchFire(string damageType) {
 		if (damageType == "Fire" || damageType == "DeathRay") {
 
 			if (percentDestroyed < 0.9f) {
@@ -99,14 +100,15 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 
 			if (percentDestroyed < 0.5f) {
 				structureParent.fireAndSmokeDamageArray[2].SetActive(true);
-
-				if (structureType != "Vehicle") {
-					SoundManager.sm.burning1.Play();
-				}
+				SoundManager.sm.burning1.Play();
 			}
 
 			if (percentDestroyed < 0.3f) {
 				structureParent.fireAndSmokeDamageArray[3].SetActive(true);
+			}
+
+			if (percentDestroyed <= 0.0f) {
+				SoundManager.sm.burning1.Stop();
 			}
 			
 		}

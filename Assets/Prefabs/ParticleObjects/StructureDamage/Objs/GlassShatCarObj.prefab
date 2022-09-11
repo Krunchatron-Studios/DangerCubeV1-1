@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &288079541424042765
+--- !u!1 &4849180644219318402
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,56 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 288079541424042764}
-  m_Layer: 0
-  m_Name: GlassShatCar
-  m_TagString: Untagged
+  - component: {fileID: 4849180644219318403}
+  m_Layer: 19
+  m_Name: GlassShatCarObj
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &288079541424042764
+--- !u!4 &4849180644219318403
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 288079541424042765}
+  m_GameObject: {fileID: 4849180644219318402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8533258, y: -0.77774644, z: 0.024932653}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 283417179920934196}
+  - {fileID: 4853280230789965499}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &288079541920121696
+--- !u!1001 &4849180644664901871
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 288079541424042764}
+    m_TransformParent: {fileID: 4849180644219318403}
     m_Modifications:
     - target: {fileID: 1364846237022580, guid: 990ce8da5db516343b9d9233a8cf7685, type: 3}
       propertyPath: m_Name
       value: GibletExplodeGlass
+      objectReference: {fileID: 0}
+    - target: {fileID: 1364846237022580, guid: 990ce8da5db516343b9d9233a8cf7685, type: 3}
+      propertyPath: m_Layer
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1364846237022580, guid: 990ce8da5db516343b9d9233a8cf7685, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595970549429026, guid: 990ce8da5db516343b9d9233a8cf7685, type: 3}
+      propertyPath: m_Layer
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595970549429026, guid: 990ce8da5db516343b9d9233a8cf7685, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 4944217224439380, guid: 990ce8da5db516343b9d9233a8cf7685, type: 3}
       propertyPath: m_RootOrder
@@ -117,8 +133,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 990ce8da5db516343b9d9233a8cf7685, type: 3}
---- !u!4 &283417179920934196 stripped
+--- !u!4 &4853280230789965499 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4944217224439380, guid: 990ce8da5db516343b9d9233a8cf7685, type: 3}
-  m_PrefabInstance: {fileID: 288079541920121696}
+  m_PrefabInstance: {fileID: 4849180644664901871}
   m_PrefabAsset: {fileID: 0}
