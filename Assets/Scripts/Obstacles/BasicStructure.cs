@@ -99,7 +99,10 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 
 			if (percentDestroyed < 0.5f) {
 				structureParent.fireAndSmokeDamageArray[2].SetActive(true);
-				SoundManager.sm.burning1.Play();
+
+				if (structureType != "Vehicle") {
+					SoundManager.sm.burning1.Play();
+				}
 			}
 
 			if (percentDestroyed < 0.3f) {
