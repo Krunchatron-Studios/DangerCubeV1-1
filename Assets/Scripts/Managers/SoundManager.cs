@@ -10,6 +10,7 @@ public class SoundManager : MonoBehaviour
 
 	[Header("Damage Sounds")] 
 	public AudioSource burning1;
+	public AudioSource explosion1;
 
 	[Header("Death Sounds")]
 	public AudioSource[] humanDying;

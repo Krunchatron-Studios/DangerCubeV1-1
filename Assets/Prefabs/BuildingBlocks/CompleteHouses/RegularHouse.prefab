@@ -189,6 +189,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -451832568, guid: c1264e3d722e02e43be3444484af715b, type: 3}
     - target: {fileID: 1545251734432736587, guid: 6df031aa4d299394c861d0e8b4fcf1fd, type: 3}
+      propertyPath: stage2Dmg
+      value: 
+      objectReference: {fileID: -451832568, guid: c1264e3d722e02e43be3444484af715b, type: 3}
+    - target: {fileID: 1545251734432736587, guid: 6df031aa4d299394c861d0e8b4fcf1fd, type: 3}
+      propertyPath: stage3Dmg
+      value: 
+      objectReference: {fileID: -451832568, guid: c1264e3d722e02e43be3444484af715b, type: 3}
+    - target: {fileID: 1545251734432736587, guid: 6df031aa4d299394c861d0e8b4fcf1fd, type: 3}
       propertyPath: noDmgSprite
       value: 
       objectReference: {fileID: 215206202, guid: af0186f41736d0b4f81c14b59b0be135, type: 3}
@@ -283,6 +291,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1712142221815726888, guid: f94f5d5239dc185468f7cad7cb4e194c, type: 3}
       propertyPath: stage1Dmg
+      value: 
+      objectReference: {fileID: 1929754731, guid: c1264e3d722e02e43be3444484af715b, type: 3}
+    - target: {fileID: 1712142221815726888, guid: f94f5d5239dc185468f7cad7cb4e194c, type: 3}
+      propertyPath: stage2Dmg
+      value: 
+      objectReference: {fileID: 1929754731, guid: c1264e3d722e02e43be3444484af715b, type: 3}
+    - target: {fileID: 1712142221815726888, guid: f94f5d5239dc185468f7cad7cb4e194c, type: 3}
+      propertyPath: stage3Dmg
       value: 
       objectReference: {fileID: 1929754731, guid: c1264e3d722e02e43be3444484af715b, type: 3}
     - target: {fileID: 1712142221815726888, guid: f94f5d5239dc185468f7cad7cb4e194c, type: 3}
@@ -533,7 +549,19 @@ PrefabInstance:
     - target: {fileID: 2355275728618235721, guid: e6ef587c4bb75aa4ba26fa7398fb4ffa, type: 3}
       propertyPath: stage1Dmg
       value: 
-      objectReference: {fileID: 1064877515, guid: 8bc8b1e3853891d43b6ee067c047c275, type: 3}
+      objectReference: {fileID: 324000394, guid: c1264e3d722e02e43be3444484af715b, type: 3}
+    - target: {fileID: 2355275728618235721, guid: e6ef587c4bb75aa4ba26fa7398fb4ffa, type: 3}
+      propertyPath: stage2Dmg
+      value: 
+      objectReference: {fileID: 324000394, guid: c1264e3d722e02e43be3444484af715b, type: 3}
+    - target: {fileID: 2355275728618235721, guid: e6ef587c4bb75aa4ba26fa7398fb4ffa, type: 3}
+      propertyPath: stage3Dmg
+      value: 
+      objectReference: {fileID: 324000394, guid: c1264e3d722e02e43be3444484af715b, type: 3}
+    - target: {fileID: 2355275728618235721, guid: e6ef587c4bb75aa4ba26fa7398fb4ffa, type: 3}
+      propertyPath: noDmgSprite
+      value: 
+      objectReference: {fileID: 521013862, guid: af0186f41736d0b4f81c14b59b0be135, type: 3}
     - target: {fileID: 2355275728618235721, guid: e6ef587c4bb75aa4ba26fa7398fb4ffa, type: 3}
       propertyPath: structureType
       value: Window
@@ -705,7 +733,19 @@ PrefabInstance:
     - target: {fileID: 3443412897715284535, guid: 64511da09b7e2c14a848b749b813d879, type: 3}
       propertyPath: stage1Dmg
       value: 
-      objectReference: {fileID: -1817919115, guid: 8cf619fb8511e4e4c962357b414eded3, type: 3}
+      objectReference: {fileID: 749743609, guid: c1264e3d722e02e43be3444484af715b, type: 3}
+    - target: {fileID: 3443412897715284535, guid: 64511da09b7e2c14a848b749b813d879, type: 3}
+      propertyPath: stage2Dmg
+      value: 
+      objectReference: {fileID: 749743609, guid: c1264e3d722e02e43be3444484af715b, type: 3}
+    - target: {fileID: 3443412897715284535, guid: 64511da09b7e2c14a848b749b813d879, type: 3}
+      propertyPath: stage3Dmg
+      value: 
+      objectReference: {fileID: 749743609, guid: c1264e3d722e02e43be3444484af715b, type: 3}
+    - target: {fileID: 3443412897715284535, guid: 64511da09b7e2c14a848b749b813d879, type: 3}
+      propertyPath: noDmgSprite
+      value: 
+      objectReference: {fileID: -1782389873, guid: af0186f41736d0b4f81c14b59b0be135, type: 3}
     - target: {fileID: 3443412897715284535, guid: 64511da09b7e2c14a848b749b813d879, type: 3}
       propertyPath: structureType
       value: Window
@@ -754,6 +794,14 @@ PrefabInstance:
       objectReference: {fileID: 1673163706}
     - target: {fileID: 6260769656414545493, guid: f69d8a456898ab24784e0e03170bf94a, type: 3}
       propertyPath: stage1Dmg
+      value: 
+      objectReference: {fileID: 1040197534, guid: c1264e3d722e02e43be3444484af715b, type: 3}
+    - target: {fileID: 6260769656414545493, guid: f69d8a456898ab24784e0e03170bf94a, type: 3}
+      propertyPath: stage2Dmg
+      value: 
+      objectReference: {fileID: 1040197534, guid: c1264e3d722e02e43be3444484af715b, type: 3}
+    - target: {fileID: 6260769656414545493, guid: f69d8a456898ab24784e0e03170bf94a, type: 3}
+      propertyPath: stage3Dmg
       value: 
       objectReference: {fileID: 1040197534, guid: c1264e3d722e02e43be3444484af715b, type: 3}
     - target: {fileID: 6260769656414545493, guid: f69d8a456898ab24784e0e03170bf94a, type: 3}
@@ -921,15 +969,19 @@ PrefabInstance:
     - target: {fileID: 7392495022268810052, guid: 4edfb47a9d00f7e4cac38bbb50bbdc43, type: 3}
       propertyPath: stage1Dmg
       value: 
-      objectReference: {fileID: 1614435426, guid: 8cf619fb8511e4e4c962357b414eded3, type: 3}
+      objectReference: {fileID: -485670743, guid: c1264e3d722e02e43be3444484af715b, type: 3}
     - target: {fileID: 7392495022268810052, guid: 4edfb47a9d00f7e4cac38bbb50bbdc43, type: 3}
       propertyPath: stage2Dmg
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: -485670743, guid: c1264e3d722e02e43be3444484af715b, type: 3}
     - target: {fileID: 7392495022268810052, guid: 4edfb47a9d00f7e4cac38bbb50bbdc43, type: 3}
       propertyPath: stage3Dmg
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: -485670743, guid: c1264e3d722e02e43be3444484af715b, type: 3}
+    - target: {fileID: 7392495022268810052, guid: 4edfb47a9d00f7e4cac38bbb50bbdc43, type: 3}
+      propertyPath: noDmgSprite
+      value: 
+      objectReference: {fileID: 1617780689, guid: af0186f41736d0b4f81c14b59b0be135, type: 3}
     - target: {fileID: 7392495022268810052, guid: 4edfb47a9d00f7e4cac38bbb50bbdc43, type: 3}
       propertyPath: structureType
       value: Window
