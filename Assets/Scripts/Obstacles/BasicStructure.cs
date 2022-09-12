@@ -1,4 +1,4 @@
-using Interfaces;
+﻿using Interfaces;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 using MoreMountains.Tools;
@@ -87,7 +87,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 		}
 	}
 	private void CatchFire(string damageType) {
-		if (damageType is "Fire" or "DeathRay") {
+		if (damageType == "Fire" || damageType == "DeathRay") {
 
 			if (percentDestroyed < 0.9f) {
 				structureParent.fireAndSmokeDamageArray[0].SetActive(true);
@@ -99,7 +99,10 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 
 			if (percentDestroyed < 0.5f) {
 				structureParent.fireAndSmokeDamageArray[2].SetActive(true);
-				SoundManager.sm.burning1.Play();
+
+				if (structureType != "Vehicle") {
+					SoundManager.sm.burning1.Play();
+				}
 			}
 
 			if (percentDestroyed < 0.3f) {
