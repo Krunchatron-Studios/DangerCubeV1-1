@@ -191,7 +191,7 @@ PrefabInstance:
     - target: {fileID: 6260769656414545493, guid: f69d8a456898ab24784e0e03170bf94a, type: 3}
       propertyPath: stage1Dmg
       value: 
-      objectReference: {fileID: 960291093, guid: c1264e3d722e02e43be3444484af715b, type: 3}
+      objectReference: {fileID: 1572596336, guid: c1264e3d722e02e43be3444484af715b, type: 3}
     - target: {fileID: 6260769656414545493, guid: f69d8a456898ab24784e0e03170bf94a, type: 3}
       propertyPath: noDmgSprite
       value: 
@@ -212,6 +212,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -118033933, guid: af0186f41736d0b4f81c14b59b0be135, type: 3}
+    - target: {fileID: 8473203100517694150, guid: f69d8a456898ab24784e0e03170bf94a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8473203100517694151, guid: f69d8a456898ab24784e0e03170bf94a, type: 3}
       propertyPath: m_Name
       value: HouseRoof

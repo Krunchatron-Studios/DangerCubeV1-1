@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3585608636617964940}
   - component: {fileID: 7503624841701220669}
   - component: {fileID: 1545251734432736587}
+  - component: {fileID: 7288560829738214537}
   m_Layer: 10
   m_Name: SingleFloorBlank
   m_TagString: Obstacle
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3892715109699647922}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.6706381, y: -0.4655501, z: 0.051780004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 2055319811
   m_SortingLayer: -3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1086192405, guid: a1ae8c62f79ecca448ad6d5aa9dbd454, type: 3}
+  m_Sprite: {fileID: 1235871422, guid: af0186f41736d0b4f81c14b59b0be135, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -151,9 +152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5278d2e12c44a342a7c8abe040d11f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
-  noDmgSprite: {fileID: 1086192405, guid: a1ae8c62f79ecca448ad6d5aa9dbd454, type: 3}
-  stage1Dmg: {fileID: 0}
+  structureParent: {fileID: 0}
+  structureType: House
+  shaker: {fileID: 0}
+  spriteRenderer: {fileID: 3892715109699647923}
+  noDmgSprite: {fileID: 1235871422, guid: af0186f41736d0b4f81c14b59b0be135, type: 3}
+  stage1Dmg: {fileID: -1901573140, guid: c1264e3d722e02e43be3444484af715b, type: 3}
   stage2Dmg: {fileID: 0}
   stage3Dmg: {fileID: 0}
   stage1Threshold: 0.9
@@ -163,3 +167,40 @@ MonoBehaviour:
   maxIntegrity: 10
   currentIntegrity: 10
   percentDestroyed: 0
+--- !u!114 &7288560829738214537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3892715109699647922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5783dbbad6a59184fa58aa75d79bcc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shadowType: 1
+  shadowLayer: 0
+  shadowDistance: 0
+  shadowDistanceMin: 0.5
+  shadowDistanceMax: 1
+  shadowTranslucency: 0
+  maskType: 0
+  maskLit: 0
+  maskPivot: 0
+  maskLayer: 0
+  maskLitCustom: 1
+  bumpMapMode:
+    type: 0
+    textureType: 0
+    texture: {fileID: 0}
+    sprite: {fileID: 0}
+    invertX: 0
+    invertY: 0
+    depth: 1
+    spriteRenderer: {fileID: 3892715109699647923}
+  mainShape:
+    shadowType: 1
+    maskType: 0
+    maskPivot: 0
+    transform: {fileID: 3892715109699647920}
