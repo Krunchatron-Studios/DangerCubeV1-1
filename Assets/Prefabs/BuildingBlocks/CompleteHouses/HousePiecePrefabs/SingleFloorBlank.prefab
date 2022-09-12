@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7503624841701220669}
   - component: {fileID: 1545251734432736587}
   - component: {fileID: 7288560829738214537}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: SingleFloorBlank
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2055319811
-  m_SortingLayer: -3
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1235871422, guid: af0186f41736d0b4f81c14b59b0be135, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -163,9 +163,9 @@ MonoBehaviour:
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3
-  toughness: 1
-  maxIntegrity: 10
-  currentIntegrity: 10
+  toughness: 2
+  maxIntegrity: 25
+  currentIntegrity: 25
   percentDestroyed: 0
 --- !u!114 &7288560829738214537
 MonoBehaviour:

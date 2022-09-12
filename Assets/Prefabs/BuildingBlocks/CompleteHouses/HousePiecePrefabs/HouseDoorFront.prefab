@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5869804154152983973}
   - component: {fileID: 7722695421422929771}
   - component: {fileID: 1712142221815726888}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: HouseDoorFront
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2055319811
-  m_SortingLayer: -3
-  m_SortingOrder: 1
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
+  m_SortingOrder: 0
   m_Sprite: {fileID: 1426627891, guid: 239053710835cc346ae49a89789fc441, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -146,6 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5278d2e12c44a342a7c8abe040d11f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  structureParent: {fileID: 0}
+  structureType: 
+  shaker: {fileID: 0}
   spriteRenderer: {fileID: 0}
   noDmgSprite: {fileID: 1426627891, guid: 239053710835cc346ae49a89789fc441, type: 3}
   stage1Dmg: {fileID: 0}

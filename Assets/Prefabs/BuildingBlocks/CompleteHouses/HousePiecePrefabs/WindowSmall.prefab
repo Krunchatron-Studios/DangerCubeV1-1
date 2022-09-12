@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7578716656495126970}
   - component: {fileID: 8596139603616482190}
   - component: {fileID: 7392495022268810052}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: WindowSmall
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2055319811
-  m_SortingLayer: -3
-  m_SortingOrder: 1
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
+  m_SortingOrder: 0
   m_Sprite: {fileID: -83037136, guid: 0f0a852e333ef9245b868bbc8db0ddc6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -146,6 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5278d2e12c44a342a7c8abe040d11f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  structureParent: {fileID: 0}
+  structureType: 
+  shaker: {fileID: 0}
   spriteRenderer: {fileID: 0}
   noDmgSprite: {fileID: -83037136, guid: 0f0a852e333ef9245b868bbc8db0ddc6, type: 3}
   stage1Dmg: {fileID: 0}
@@ -154,7 +157,7 @@ MonoBehaviour:
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3
-  toughness: 1
+  toughness: 0
   maxIntegrity: 10
   currentIntegrity: 10
   percentDestroyed: 0

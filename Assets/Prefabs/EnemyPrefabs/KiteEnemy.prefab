@@ -77,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2055319811
-  m_SortingLayer: -3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: effc1d92744b442199f6b2a56d1fefa0, type: 3}
   m_Color: {r: 1, g: 1, b: 0, a: 1}
@@ -118,18 +118,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee5f3c7ba5812448fbb85a75ad8314b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyName: 
   maxHealth: 10
   currentHealth: 10
   damage: 3
   moveSpeed: 3
   enemyRb2D: {fileID: 2008833507525818049}
-  playerPosition: {fileID: 0}
+  weapon: {fileID: 0}
   dissolve: {fileID: 8853119362373875803}
-  spawnDistance: 6
   drop: {fileID: 7611086095773957346, guid: 1c96af257f4a44dbeb63708b4fb57c11, type: 3}
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
-  kiteDistance: 4
-  enemyPosition: {fileID: 843820093244178089}
 --- !u!114 &9094206048140135736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,10 +142,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPosition: {fileID: 0}
   fireRange: 5
-  fireTimer: 5
-  bulletVelocity: 100
+  reloadTimer: 3
+  rateOfFire: 0.3
   canFire: 1
-  enemyProjectile: {fileID: 1655789376720695904, guid: 6ad63786457454a868737c9a7e271388, type: 3}
+  bulletSpeed: 10
+  ammo: 3
+  enemyProjectile: {fileID: 1655789376720695904, guid: 6ad63786457454a868737c9a7e271388,
+    type: 3}
 --- !u!50 &2008833507525818049
 Rigidbody2D:
   serializedVersion: 4

@@ -65,17 +65,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc841c1201c4041dd9804e972c909557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyName: 
   maxHealth: 3
   currentHealth: 3
   damage: 0
   moveSpeed: 2
   enemyRb2D: {fileID: 4454939362888915732}
-  playerPosition: {fileID: 0}
+  weapon: {fileID: 0}
   dissolve: {fileID: 6481951452912193303}
-  spawnDistance: 1
   drop: {fileID: 1527084982249308848, guid: aa8fef295bf4542edb7f38a866479ce6, type: 3}
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
-  _safetyTime: 10
 --- !u!212 &7397061377963009806
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -115,7 +114,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2055319811
-  m_SortingLayer: -3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -40834202, guid: f3880009882d57a4f8466853dfe6f1a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
