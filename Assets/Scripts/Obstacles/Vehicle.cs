@@ -4,27 +4,26 @@ using MoreMountains.Feedbacks;
 
 public class Vehicle : BasicStructure {
 
-	private bool hasExploded = false;
+	private bool _hasExploded = false;
 	public override void DamageStructure(float damageAmount, string damageType, Vector3 location) {
 		shaker.Play();
 		GetDustParticle(location);
 		CalculateDamage(damageAmount);
-		DamageTiersCheck(location);
 		percentDestroyed = currentIntegrity / maxIntegrity;
+		DamageTiersCheck(location);
 		CatchFire(damageType);
-		
 	}
 
 	public override void DamageTiersCheck(Vector3 location) {
 
-		if (percentDestroyed > 0 && percentDestroyed < stage3Threshold && stage3Dmg) {
+		if (percentDestroyed < stage3Threshold && stage3Dmg) {
 			spriteRenderer.sprite = stage3Dmg;
 		}
-		if (percentDestroyed > stage3Threshold && percentDestroyed < stage2Threshold && stage2Dmg) {
+		if (percentDestroyed < stage2Threshold && stage2Dmg) {
 			spriteRenderer.sprite = stage2Dmg;
 			structureParent.evacuateThreshold--;
 		}
-		if (percentDestroyed > stage2Threshold && percentDestroyed < stage1Threshold && stage1Dmg) {
+		if (percentDestroyed < stage1Threshold && stage1Dmg) {
 			spriteRenderer.sprite = stage1Dmg;
 			GameObject glassShatter = StructureDamagePool.sdp.glassShatterPool.GetPooledGameObject();
 			glassShatter.SetActive(true);
@@ -59,10 +58,13 @@ public class Vehicle : BasicStructure {
 				structureParent.fireAndSmokeDamageArray[3].SetActive(true);
 			}
 
-			if (percentDestroyed <= 0.0f && !hasExploded) {
+			if (percentDestroyed <= 0.0f && !_hasExploded) {
 				StartCoroutine(VehicleExplosion(3));
 				MMCameraShakeEvent.Trigger(.5f, .5f, 40, 0, 0, 0, false);
-				hasExploded = true;
+				GameObject rubble = PoolManager.pm.sMetalPool.GetPooledGameObject();
+				rubble.SetActive(true);
+				rubble.transform.position = transform.position;
+				_hasExploded = true;
 			}
 			
 		}

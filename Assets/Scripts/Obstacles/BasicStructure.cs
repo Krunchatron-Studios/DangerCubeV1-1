@@ -106,7 +106,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 				structureParent.fireAndSmokeDamageArray[3].SetActive(true);
 			}
 
-			if (percentDestroyed <= 0.0f) {
+			if (currentIntegrity <= 0.0f) {
 				SoundManager.sm.burning1.Stop();
 			}
 			
