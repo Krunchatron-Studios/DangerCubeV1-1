@@ -8,6 +8,7 @@ public class MechanicalMeatSeparator : Weapon {
         _enemyPosition = GameObject.FindWithTag("Enemy");
     }
     void Update() {
+        // Does the enemies position even matter for this?
         _enemyPosition = GameObject.FindWithTag("Enemy");
         MoveSaw();
     }
