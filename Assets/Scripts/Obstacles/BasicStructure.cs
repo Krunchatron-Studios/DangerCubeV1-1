@@ -8,7 +8,6 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	public CombinedStructure structureParent;
 	public string structureType;
 	public MMPositionShaker shaker;
-	public MMRotationShaker rotationShaker;
 	public SpriteRenderer spriteRenderer;
 	public Sprite noDmgSprite;
 	public Sprite stage1Dmg;
@@ -71,7 +70,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 		dustPoof.SetActive(true);
 		dustPoof.transform.position = location;
 	}
-	private void CalculateDamage(float damageAmount) {
+	public void CalculateDamage(float damageAmount) {
 		float actualDamage = damageAmount - toughness;
 		if (toughness >= damageAmount) {
 			actualDamage = 0;

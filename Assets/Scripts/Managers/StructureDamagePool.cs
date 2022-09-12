@@ -25,4 +25,6 @@ public class StructureDamagePool : MonoBehaviour
     public MMSimpleObjectPooler smoke2;
     public MMSimpleObjectPooler smoke3;
 
+    [Header("Explosion Particle Pool")] 
+    public MMSimpleObjectPooler carExplosionPool;
 }
