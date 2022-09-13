@@ -13,11 +13,11 @@ public class ProjectileWeapon : Weapon {
 	[Header("Firing Vars")]
 	public float weaponRange = 3;
 	public float rateOfFire = 2.0f;
-	private bool _canFire;
+	public bool canFire;
 	public float nextFire;
 
 	private void Start() {
-		_canFire = true;
+		canFire = true;
 		targetingSys.circleCol2D.radius = weaponRange;
 		objectPooler = GetComponent<MMSimpleObjectPooler>();
 	}
@@ -37,9 +37,9 @@ public class ProjectileWeapon : Weapon {
 	}
 	
 	public virtual void CanFireTimer() {
-		_canFire = false;
+		canFire = false;
 		if (Time.time > nextFire) {
-			_canFire = true;
+			canFire = true;
 			FireWeapon(firingPoint.transform.position, enemyTarget);
 		}
 	}

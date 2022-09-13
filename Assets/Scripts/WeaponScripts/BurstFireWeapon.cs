@@ -6,28 +6,27 @@ public class BurstFireWeapon : ProjectileWeapon  {
 	[Header("Firing Vars")]
 	public float reloadTimer = 2.0f;
 	public int ammo = 5;
-	private bool _canFire;
 
 	private void Start() {
-		_canFire = true;
+		canFire = true;
 		targetingSys.circleCol2D.radius = weaponRange;
 	}
 
 	private void FixedUpdate() {
-		if (_canFire) {
+		if (canFire) {
 			StartCoroutine(BurstFire());
 		}
 	}
 	
 	IEnumerator BurstFire() {
-		_canFire = false;
+		canFire = false;
 		for (int i = 0; i < ammo; i++) {
 			FireWeapon(enemyTarget);
 			yield return new WaitForSeconds(rateOfFire);
 		}
 
 		yield return new WaitForSeconds(reloadTimer);
-		_canFire = true;
+		canFire = true;
 	}
 
 	void FireWeapon(Vector3 targetPosition) {
