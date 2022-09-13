@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 2632857695451030558}
   m_Layer: 5
   m_Name: DamageText
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,9 +180,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1906808429
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 961700441
+  m_SortingLayer: 5
+  m_SortingOrder: 1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &2632857695451030558
 MonoBehaviour:
@@ -287,7 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2869883833231626881}
   - component: {fileID: 1344776618282632943}
-  - component: {fileID: 1249313340319437335}
+  - component: {fileID: 9056601131438058542}
   m_Layer: 5
   m_Name: AppearFeedbacks
   m_TagString: Untagged
@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Feedbacks:
-  - {fileID: 1249313340319437335}
+  - {fileID: 9056601131438058542}
   InitializationMode: 1
   SafeMode: 3
   Direction: 0
@@ -360,7 +360,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   DebugActive: 0
---- !u!114 &1249313340319437335
+--- !u!114 &9056601131438058542
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
