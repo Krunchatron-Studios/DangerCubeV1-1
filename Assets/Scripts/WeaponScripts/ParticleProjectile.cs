@@ -18,6 +18,8 @@ public class ParticleProjectile : Projectile {
 
 	public override void ResolveProjectile(Collider2D other) {
 		if (other.CompareTag("Enemy")) {
+			weapon.Knockback(other);
+
 			IHurtThingsInterface hit = other.GetComponent<IHurtThingsInterface>();
 			hit.TakeDamage(weapon.weaponDamage, weapon.damageType);
 			MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 

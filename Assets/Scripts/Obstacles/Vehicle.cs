@@ -66,7 +66,6 @@ public class Vehicle : BasicStructure {
 				rubble.transform.position = transform.position;
 				_hasExploded = true;
 			}
-			
 		}
 	}
 

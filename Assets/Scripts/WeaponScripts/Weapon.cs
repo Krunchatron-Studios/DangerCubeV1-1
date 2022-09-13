@@ -17,9 +17,9 @@ public class Weapon : MonoBehaviour {
 	public void Knockback (Collider2D other) {
 		Debug.Log("this is a test ");
 
-		// _thisRigidBody = other.GetComponent<Rigidbody2D>();
-		// Vector3 difference = (transform.position - other.transform.position).normalized;
-		// Vector3 appliedForce = difference * knockForce;
-		// _thisRigidBody.AddForce(appliedForce, ForceMode2D.Impulse);
+		Rigidbody2D thisRigidBody = other.GetComponent<Rigidbody2D>();
+		Vector3 difference = (transform.position - other.transform.position).normalized;
+		Vector3 appliedForce = difference * knockForce;
+		thisRigidBody.AddForce(appliedForce, ForceMode2D.Impulse);
 	}
 }

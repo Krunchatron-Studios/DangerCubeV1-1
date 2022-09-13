@@ -13,6 +13,7 @@ public class Projectile : MonoBehaviour {
 	public float moveTime;
 
 	void OnTriggerEnter2D(Collider2D other) {
+
 		ResolveProjectile(other);
 	}
 	public void Setup(Vector3 targetPos) {
@@ -24,6 +25,7 @@ public class Projectile : MonoBehaviour {
 		projectileRb2D.velocity = direction * projectileVelocity;
 	}
 	public virtual void ResolveProjectile(Collider2D other) {
+
 		if (other.CompareTag("Enemy")) {
 			IHurtThingsInterface hit = other.GetComponent<IHurtThingsInterface>();
 			hit.TakeDamage(weapon.weaponDamage, weapon.damageType);
@@ -33,9 +35,7 @@ public class Projectile : MonoBehaviour {
 			_bloodSplash.SetActive(true);
 			_bloodSplash.transform.position = other.transform.position;
 			gameObject.SetActive(false);
-			weapon.Knockback(other);
-
-
+			// Knockback(other);
 		}
 		
 		if (other.CompareTag("Obstacle")) {
