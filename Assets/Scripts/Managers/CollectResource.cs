@@ -12,12 +12,12 @@ namespace Managers {
         public float moveSpeed = 5;
         private float _distance;
         void Awake() {
-            _resourcePosition = GameObject.FindWithTag("Item").transform;
+            _resourcePosition = GameObject.FindWithTag("Loot").transform;
             _playerPosition = GameObject.FindWithTag("Player").transform;
         }
         private void FixedUpdate() {
             _playerPosition = GameObject.FindWithTag("Player").transform;
-            _resourcePosition = GameObject.FindWithTag("Item").transform;
+            _resourcePosition = GameObject.FindWithTag("Loot").transform;
             AbsorbResources();
         }
         void AbsorbResources() {
