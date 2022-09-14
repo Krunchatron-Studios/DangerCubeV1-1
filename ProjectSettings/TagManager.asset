@@ -9,6 +9,13 @@ TagManager:
   - Enemy
   - World
   - NoMask
+  - Obstacle
+  - Wall
+  - Projectile
+  - Collector
+  - Item
+  - Weapon
+  - Lighting
   layers:
   - Default
   - TransparentFX
@@ -16,14 +23,14 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Enemies
   - Obstacles
-  - Ground
   - Player
+  - 
+  - 
   - ObstaclesDoors
   - NoPathfinding
-  - Enemies
+  - 
   - NoCollisions
   - Hole
   - MovingPlatform
@@ -41,7 +48,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Ground
   m_SortingLayers:
   - name: Default
     uniqueID: 0

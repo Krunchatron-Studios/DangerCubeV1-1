@@ -59,7 +59,7 @@ MonoBehaviour:
   ExecuteOnDisable:
     m_PersistentCalls:
       m_Calls: []
-  LifeTime: 5
+  LifeTime: 7
 --- !u!114 &3880151527371331521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,12 +79,12 @@ MonoBehaviour:
   ExecuteOnDisable:
     m_PersistentCalls:
       m_Calls: []
-  LifeTime: 2
+  LifeTime: 7
   FaceDirection: 1
   FaceMovement: 0
   MovementVector: 0
-  Speed: 10
-  Acceleration: 0
+  Speed: 15
+  Acceleration: 5
   Direction: {x: -1, y: 0, z: 0}
   DirectionCanBeChangedBySpawner: 1
   FlipValue: {x: -1, y: 1, z: 1}
@@ -107,9 +107,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 12032
   Owner: {fileID: 0}
-  TriggerFilter: 195
-  MinDamageCaused: 10
-  MaxDamageCaused: 10
+  TriggerFilter: 193
+  MinDamageCaused: 1
+  MaxDamageCaused: 2
   TypedDamages: []
   DamageCausedKnockbackType: 1
   DamageCausedKnockbackDirection: 3
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObstaclesLayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 128
   SkinWidth: 0.1
   RepositionRigidbody: 1
 --- !u!114 &5461297059523746723
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b5efd8658a97749a87733fd4bddb28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PushPower: 50
+  PushPower: 10
   PositionOffset: 0
 --- !u!50 &2518568153118849296
 Rigidbody2D:
@@ -248,7 +248,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0.8220843, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.8220843, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -272,18 +272,6 @@ PrefabInstance:
     - target: {fileID: 454532, guid: baf45fcc725d71e47ad7c6944cf0bd31, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 454532, guid: baf45fcc725d71e47ad7c6944cf0bd31, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 454532, guid: baf45fcc725d71e47ad7c6944cf0bd31, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 454532, guid: baf45fcc725d71e47ad7c6944cf0bd31, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 454532, guid: baf45fcc725d71e47ad7c6944cf0bd31, type: 3}
       propertyPath: m_LocalPosition.x
@@ -325,25 +313,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 19834160, guid: baf45fcc725d71e47ad7c6944cf0bd31, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0
+    - target: {fileID: 8262514, guid: baf45fcc725d71e47ad7c6944cf0bd31, type: 3}
+      propertyPath: m_Pitch
+      value: 0.93
       objectReference: {fileID: 0}
-    - target: {fileID: 19834160, guid: baf45fcc725d71e47ad7c6944cf0bd31, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.8612033
-      objectReference: {fileID: 0}
-    - target: {fileID: 19834160, guid: baf45fcc725d71e47ad7c6944cf0bd31, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19945852, guid: baf45fcc725d71e47ad7c6944cf0bd31, type: 3}
-      propertyPath: m_SortingLayer
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 19945852, guid: baf45fcc725d71e47ad7c6944cf0bd31, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 47421343
+    - target: {fileID: 8262514, guid: baf45fcc725d71e47ad7c6944cf0bd31, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baf45fcc725d71e47ad7c6944cf0bd31, type: 3}
