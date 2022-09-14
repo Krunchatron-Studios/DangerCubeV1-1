@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2055319811
-  m_SortingLayer: -3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2047084737, guid: 764120a36c1fd487aba946474e52fc58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -119,6 +119,7 @@ MonoBehaviour:
   type: BioGoo
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
   resourceRb2D: {fileID: -5377898931931559962}
+  moveSpeed: 3
 --- !u!50 &-5377898931931559962
 Rigidbody2D:
   serializedVersion: 4

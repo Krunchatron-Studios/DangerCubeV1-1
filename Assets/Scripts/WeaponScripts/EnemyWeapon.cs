@@ -1,15 +1,18 @@
-using System.Collections;
+﻿using System.Collections;
+using Managers;
 using UnityEngine;
 
 public class EnemyWeapon : MonoBehaviour {
     [Header("Player Position")]
     public Transform playerPosition;
-    [Header("Weapon Paramters")]
-    public int fireRange;
-    public int fireTimer;
-    public int bulletVelocity;
+
+    [Header("Weapon Parameters")] 
+    public float fireRange = 4.0f;
+    public float reloadTimer = 3.0f;
+    public float rateOfFire = 0.3f;
     public bool canFire = true;
-    private int bulletDecay = 3;
+    public float bulletSpeed = 10f;
+    public int ammo = 3;
     [Header("Projectile Parameters")]
     public GameObject enemyProjectile;
     private Rigidbody2D _projectileBody;
@@ -21,22 +24,27 @@ public class EnemyWeapon : MonoBehaviour {
     public void ShootPlayer() {
         float distance = Vector3.Distance(playerPosition.position, transform.position);
         if (distance <= fireRange && canFire) {
-            GameObject bullet = Instantiate(enemyProjectile, transform.position, Quaternion.identity);
-            _projectileBody = bullet.GetComponent<Rigidbody2D>();
-            Vector3 moveDirection = (playerPosition.position - transform.position).normalized;
-            _projectileBody.AddForce(moveDirection * bulletVelocity * Time.deltaTime, ForceMode2D.Impulse);
-            StartCoroutine(ToggleCo());
-            StartCoroutine(BulletCo(bullet));
+            canFire = false;
+            StartCoroutine(UseWeapon());
         }
     }
-    IEnumerator ToggleCo() {
-        canFire = false;
-        yield return new WaitForSeconds(fireTimer);
+
+    IEnumerator UseWeapon() {
+        int currentAmmo = ammo;
+        for (int i = 0; i < currentAmmo; i++) {
+            GameObject bullet = EnemyPoolManager.epm.enemyBulletPool.GetPooledGameObject();
+            bullet.SetActive(true);
+            bullet.transform.position = transform.position;
+            _projectileBody = bullet.GetComponent<Rigidbody2D>();
+            Vector3 moveDirection = (playerPosition.position - transform.position).normalized;
+            MoveProjectile(moveDirection);
+            yield return new WaitForSeconds(rateOfFire);
+        }
+        yield return new WaitForSeconds(reloadTimer);
         canFire = true;
     }
-
-    IEnumerator BulletCo(GameObject bullet) {
-        yield return new WaitForSeconds(bulletDecay);
-        bullet.gameObject.SetActive(false);
+    
+    public void MoveProjectile(Vector3 direction) {
+        _projectileBody.velocity = direction * bulletSpeed;
     }
 }

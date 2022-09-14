@@ -81,7 +81,6 @@ namespace MoreMountains.Tools
 				if (!_pooledGameObjects[i].gameObject.activeInHierarchy)
 				{
 					// if we find one, we return it
-					Debug.Log($"great success: {_pooledGameObjects[i]}");
 					return _pooledGameObjects[i];
 				}
 			}
