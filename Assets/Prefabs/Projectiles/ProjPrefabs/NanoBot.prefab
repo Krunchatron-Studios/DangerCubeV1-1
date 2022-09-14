@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6214106462221364362}
   - component: {fileID: 2554096545084712204}
   - component: {fileID: 4945881303422589490}
-  - component: {fileID: -9196031564810975277}
   m_Layer: 15
   m_Name: NanoBot
   m_TagString: Projectile
@@ -128,6 +127,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   moveTime: 0
   nanoManager: {fileID: 11400000, guid: 2a3316d7509d9504d89d183fd5768835, type: 2}
+  rotationSpeed: 100
   zombie: {fileID: -6966868393121060382, guid: a3d375f3c8ce1154580fd865a64532ad, type: 3}
 --- !u!58 &4945881303422589490
 CircleCollider2D:
@@ -145,34 +145,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &-9196031564810975277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5194531991708600744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f009572b4d918346b24337ef83f88c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Rotating: 0
-  RotationSpace: 0
-  UpdateMode: 1
-  RotationSpeed: {x: 100, y: 0, z: 0}
-  Orbiting: 1
-  AdditiveOrbitRotation: 1
-  OrbitCenterTransform: {fileID: 4761883307903263, guid: 692e806906d55487fb98200bedc726b4, type: 3}
-  OrbitCenterOffset: {x: 0, y: 0, z: 0}
-  OrbitRotationAxis: {x: 1, y: 1, z: 1}
-  OrbitRotationSpeed: 100
-  OrbitRadius: 3
-  OrbitCorrectionSpeed: 100
-  DrawGizmos: 1
-  OrbitPlaneColor: {r: 0.14005175, g: 0.9150943, b: 0, a: 0.92941177}
-  OrbitLineColor: {r: 0.9056604, g: 0.03844783, b: 0.03844783, a: 0.9372549}
-  _orbitCenter: {x: 0, y: 0, z: 0}
-  _worldRotationAxis: {x: 0, y: 0, z: 0}
-  _snappedPosition: {x: 0, y: 0, z: 0}
-  _radius: {x: 0, y: 0, z: 0}

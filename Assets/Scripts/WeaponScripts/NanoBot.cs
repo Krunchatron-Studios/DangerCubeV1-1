@@ -6,7 +6,7 @@ public class NanoBot : Projectile {
     private Vector3 _anchorPoint;
     private Vector3 _nanoTransform;
     private GameObject _target;
-    private float rotationSpeed = 50;
+    public float rotationSpeed = 50;
     [Header("Mutation Payload")]
     public NanoZombie zombie;
 
@@ -16,9 +16,9 @@ public class NanoBot : Projectile {
     }
 
     private void FixedUpdate() {
-        // _playerPosition = GameObject.FindWithTag("Player").transform.position;
-        // _nanoTransform = transform.position;
-        // RotateNanos();
+        _playerPosition = GameObject.FindWithTag("Player").transform.position;
+        _nanoTransform = transform.position;
+        RotateNanos();
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -30,12 +30,12 @@ public class NanoBot : Projectile {
             }
         }
     }
-    // private void RotateNanos() {
-    //     Vector3 move = new Vector3(0, 0, 1);
-    //     transform.RotateAround(_playerPosition, move, rotationSpeed * Time.deltaTime);
-    //     // _anchorPoint = (_nanoTransform - _playerPosition).normalized * 3 + _playerPosition;
-    //     // transform.position = Vector3.MoveTowards(_nanoTransform, _anchorPoint, 0.5f);
-    // }
+    private void RotateNanos() {
+        Vector3 move = new Vector3(0, 0, 1);
+        transform.RotateAround(_playerPosition, move, rotationSpeed * Time.deltaTime);
+        _anchorPoint = (_nanoTransform - _playerPosition).normalized * 3 + _playerPosition;
+        transform.position = Vector3.MoveTowards(_nanoTransform, _anchorPoint, 3f);
+    }
     private void OnDestroy() {
         Instantiate(zombie, _nanoTransform, Quaternion.identity);
     }
