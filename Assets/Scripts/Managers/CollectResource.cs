@@ -21,21 +21,24 @@ namespace Managers {
             AbsorbResources();
         }
         void AbsorbResources() {
+            Debug.Log($"absorb: {_playerPosition}");
             _distance = Vector3.Distance(_resourcePosition.position, _playerPosition.position);
+            Debug.Log($"dist: {_distance}");
             if (_distance <= playerResources.collectionRange) {
+                Debug.Log($"test: test");
                 Vector3 temp = Vector3.MoveTowards(_resourcePosition.position, _playerPosition.position, moveSpeed * Time.deltaTime);
                 resourceRb2D.MovePosition(temp);
             }
         }
         void OnTriggerEnter2D(Collider2D other) {
             SoundManager.sm.resourcePickup.Play();
-            if (other.CompareTag("Collector") && type == "BioGoo") {
+            if (other.CompareTag("Player") && type == "BioGoo") {
                 playerResources.bioGoo += value;
                 gameObject.SetActive(false);
-            } else if (other.CompareTag("Collector") && type == "Metal") {
+            } else if (other.CompareTag("Player") && type == "Metal") {
                 playerResources.metal += value;
                 gameObject.SetActive(false);
-            } else if (other.CompareTag("Collector") && type == "Silicate") {
+            } else if (other.CompareTag("Player") && type == "Silicate") {
                 playerResources.silicate += value;
                 gameObject.SetActive(false);
             }

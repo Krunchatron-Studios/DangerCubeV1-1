@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8683572587875949575}
   - component: {fileID: 147848958258905746}
   - component: {fileID: -5164733321427251078}
-  m_Layer: 29
+  m_Layer: 8
   m_Name: SmallBioGoo
   m_TagString: Loot
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: -724903122, guid: 764120a36c1fd487aba946474e52fc58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -115,11 +115,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b476ac8ab7b944a99993d67f0be57e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 1
+  value: 2
   type: BioGoo
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
   resourceRb2D: {fileID: -5164733321427251078}
-  moveSpeed: 3
+  moveSpeed: 5
 --- !u!50 &-5164733321427251078
 Rigidbody2D:
   serializedVersion: 4
