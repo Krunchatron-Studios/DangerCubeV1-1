@@ -1,3 +1,4 @@
+using System.Collections;
 using Interfaces;
 using UnityEngine;
 
@@ -39,8 +40,7 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 			
 			moveSpeed = 0f;
 			Instantiate(drop, transform.position, Quaternion.identity);
-			// Needs pooling but may require reworking some things
-			gameObject.SetActive(false);
+			StartCoroutine(PostponeDeath(1f));
 			int deathSoundIndex = Random.Range(0, 3);
 			SoundManager.sm.humanDying[deathSoundIndex].Play();
 		}
@@ -50,6 +50,11 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 		if (currentHealth > maxHealth) {
 			currentHealth = maxHealth;
 		}
+	}
+
+	IEnumerator PostponeDeath(float waitTime) {
+		yield return new WaitForSeconds(waitTime);
+		gameObject.SetActive(false);
 	}
 }
 
