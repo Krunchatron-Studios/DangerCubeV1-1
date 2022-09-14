@@ -1,98 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5540794473035678637
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4870638081648507647}
-  m_Layer: 15
-  m_Name: FiringPoint (3)
-  m_TagString: Projectile
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4870638081648507647
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5540794473035678637}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.271, y: -0.018, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8492263470177819837}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5540794473067231761
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 584216815327801693}
-  m_Layer: 15
-  m_Name: FiringPoint (2)
-  m_TagString: Projectile
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &584216815327801693
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5540794473067231761}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.212, y: -0.011, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8492263470177819837}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5540794474269357689
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8323412857044950319}
-  m_Layer: 15
-  m_Name: FiringPoint (1)
-  m_TagString: Projectile
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8323412857044950319
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5540794474269357689}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0.174, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8492263470177819837}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5540794475001378500
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6347541077754232035}
-  m_Layer: 15
+  m_Layer: 30
   m_Name: FiringPoint
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -135,9 +42,9 @@ GameObject:
   - component: {fileID: 7856834035675329121}
   - component: {fileID: 5780026266065048204}
   - component: {fileID: 1230682316949238728}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: TargetingSystem
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,9 +79,9 @@ MonoBehaviour:
   weapon: {fileID: 7485021606706960250}
   circleCol2D: {fileID: 1230682316949238728}
   firePoint1: {fileID: 5540794475001378500}
-  firePoint2: {fileID: 5540794474269357689}
-  firePoint3: {fileID: 5540794473067231761}
-  firePoint4: {fileID: 5540794473035678637}
+  firePoint2: {fileID: 0}
+  firePoint3: {fileID: 0}
+  firePoint4: {fileID: 0}
 --- !u!58 &1230682316949238728
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -204,7 +111,7 @@ GameObject:
   - component: {fileID: 935498610684718217}
   - component: {fileID: 3527016346985065115}
   - component: {fileID: 5639441978635504735}
-  m_Layer: 16
+  m_Layer: 30
   m_Name: ClusterGun
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -225,9 +132,6 @@ Transform:
   m_Children:
   - {fileID: 7856834035675329121}
   - {fileID: 6347541077754232035}
-  - {fileID: 8323412857044950319}
-  - {fileID: 584216815327801693}
-  - {fileID: 4870638081648507647}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -250,8 +154,8 @@ MonoBehaviour:
   weaponDamage: 3
   damageType: '"Fire"'
   objectPooler: {fileID: 0}
-  firingPoint: {fileID: 0}
-  projectile: {fileID: 5263029095085973483, guid: 2a00f38dfaded1f4ea7ab4992d2c25c5,
+  firingPoint: {fileID: 5540794475001378500}
+  projectile: {fileID: 5560214801928622059, guid: eee1772510e4bd4428aa74152f1f9a6f,
     type: 3}
   enemyTarget: {x: 0, y: 0}
   targetingSys: {fileID: 5780026266065048204}
@@ -422,7 +326,7 @@ MonoBehaviour:
   MutualizeWaitingPools: 0
   NestWaitingPool: 1
   NestUnderThis: 0
-  GameObjectToPool: {fileID: 5263029095085973483, guid: 2a00f38dfaded1f4ea7ab4992d2c25c5,
+  GameObjectToPool: {fileID: 5560214801928622059, guid: eee1772510e4bd4428aa74152f1f9a6f,
     type: 3}
   PoolSize: 40
   PoolCanExpand: 1

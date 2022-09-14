@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7039479160622258171}
   - component: {fileID: 1605000266149368324}
   - component: {fileID: 6232059995250928630}
-  m_Layer: 16
+  m_Layer: 8
   m_Name: OrbitalLaserWeapon
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -111,8 +111,8 @@ MonoBehaviour:
   weaponDamage: 2
   damageType: '"Energy"'
   objectPooler: {fileID: 6232059995250928630}
-  firingPoint: {fileID: 0}
-  projectile: {fileID: 4003393644203996623, guid: 9c4f96192390546df8c35e9c4923c657,
+  firingPoint: {fileID: 4285387142156465725}
+  projectile: {fileID: 4003393644203996623, guid: 45f91a174b71b804eabd97bccec12ca1,
     type: 3}
   enemyTarget: {x: 0, y: 3.5404346}
   targetingSys: {fileID: 8371550627369725801}
@@ -120,7 +120,7 @@ MonoBehaviour:
   rateOfFire: 2
   canFire: 0
   nextFire: 0
-  explosion: {fileID: 6039074600034411127, guid: fca9d07ff4d5c4907ac25899c5ca97c0,
+  explosion: {fileID: 6039074600034411127, guid: 3774de1abe1e25d4fa95f0ea0ea9769a,
     type: 3}
 --- !u!82 &1605000266149368324
 AudioSource:
@@ -249,6 +249,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FiringPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 4461223465438186822, guid: 5e4a2809856898a4aa1a086c177c3bf3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4461223465438186823, guid: 5e4a2809856898a4aa1a086c177c3bf3,
         type: 3}
       propertyPath: m_RootOrder
@@ -329,6 +334,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FiringPoint (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461223465438186822, guid: 5e4a2809856898a4aa1a086c177c3bf3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4461223465438186822, guid: 5e4a2809856898a4aa1a086c177c3bf3,
         type: 3}
@@ -418,6 +428,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4461223465438186822, guid: 5e4a2809856898a4aa1a086c177c3bf3,
         type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461223465438186822, guid: 5e4a2809856898a4aa1a086c177c3bf3,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -501,6 +516,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FiringPoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461223465438186822, guid: 5e4a2809856898a4aa1a086c177c3bf3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4461223465438186822, guid: 5e4a2809856898a4aa1a086c177c3bf3,
         type: 3}
@@ -617,6 +637,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TargetingSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 2608481302110575306, guid: 12602ce919ca01443b18db03fe04235a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2608481302110575307, guid: 12602ce919ca01443b18db03fe04235a,
         type: 3}
