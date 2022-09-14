@@ -45,11 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPosition: {fileID: 0}
-  fireRange: 4
+  aimPosition: {x: 0, y: 0, z: 0}
+  fireRange: 6
   reloadTimer: 3
-  rateOfFire: 0.3
+  rateOfFire: 0.05
   canFire: 1
-  bulletSpeed: 10
+  bulletSpeed: 6
   ammo: 3
   enemyProjectile: {fileID: 1642854273536398982, guid: 6fb710d771688ae4d9839f610b6d1766,
     type: 3}

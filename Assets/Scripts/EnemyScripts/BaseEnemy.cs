@@ -1,4 +1,5 @@
 using System.Collections;
+using Effects;
 using Interfaces;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 	public float currentHealth = 3f;
 	public float damage = 1f;
 	public float moveSpeed = 2f;
+	public float lineOfSightDistance = 5f;
 	public Rigidbody2D enemyRb2D;
 	public EnemyWeapon weapon;
 	

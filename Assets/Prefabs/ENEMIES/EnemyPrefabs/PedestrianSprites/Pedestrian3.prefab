@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disAmountPerFrame: 0.04
-  _renderer: {fileID: 177811311523239910}
+  renderer: {fileID: 0}
   ashes: {fileID: 3424906339606567161, guid: b256623201b9eba4cb6aaaa1cc86041f, type: 3}
   isDissolving: 0
 --- !u!114 &3102499728266859013
@@ -70,6 +70,7 @@ MonoBehaviour:
   currentHealth: 3
   damage: 0
   moveSpeed: 2
+  lineOfSightDistance: 5
   enemyRb2D: {fileID: 6413985604114754556}
   weapon: {fileID: 0}
   dissolve: {fileID: 4405812169287155711}
