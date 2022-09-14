@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8248645762553760601}
   - component: {fileID: 3000407080735982657}
   - component: {fileID: 2355275728618235721}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: WindowSide
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1411610441, guid: 907ae090bfe19194aa0829644d973646, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -150,14 +150,14 @@ MonoBehaviour:
   structureType: Window
   shaker: {fileID: 0}
   spriteRenderer: {fileID: 278092109799932818}
-  noDmgSprite: {fileID: 1411610441, guid: 907ae090bfe19194aa0829644d973646, type: 3}
-  stage1Dmg: {fileID: 1064877515, guid: 8bc8b1e3853891d43b6ee067c047c275, type: 3}
-  stage2Dmg: {fileID: 0}
-  stage3Dmg: {fileID: 0}
+  noDmgSprite: {fileID: 521013862, guid: af0186f41736d0b4f81c14b59b0be135, type: 3}
+  stage1Dmg: {fileID: -1597467411, guid: c1264e3d722e02e43be3444484af715b, type: 3}
+  stage2Dmg: {fileID: 324000394, guid: c1264e3d722e02e43be3444484af715b, type: 3}
+  stage3Dmg: {fileID: 324000394, guid: c1264e3d722e02e43be3444484af715b, type: 3}
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3
-  toughness: 1
+  toughness: 0
   maxIntegrity: 10
   currentIntegrity: 10
   percentDestroyed: 0

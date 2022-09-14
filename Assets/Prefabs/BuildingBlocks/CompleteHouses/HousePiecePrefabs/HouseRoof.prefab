@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3936652334640748755}
   - component: {fileID: 6676954712075421098}
   - component: {fileID: 6260769656414545493}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: HouseRoof
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8473203100517694151}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5876381, y: 0.44544992, z: 0.051780004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -155,11 +155,11 @@ MonoBehaviour:
   structureParent: {fileID: 0}
   structureType: House
   shaker: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  noDmgSprite: {fileID: 1002067896, guid: 57845b6c36972b7459bc75357a9f1e9c, type: 3}
-  stage1Dmg: {fileID: 0}
-  stage2Dmg: {fileID: 0}
-  stage3Dmg: {fileID: 0}
+  spriteRenderer: {fileID: 8473203100517694150}
+  noDmgSprite: {fileID: -1378806464, guid: af0186f41736d0b4f81c14b59b0be135, type: 3}
+  stage1Dmg: {fileID: 1040197534, guid: c1264e3d722e02e43be3444484af715b, type: 3}
+  stage2Dmg: {fileID: 1040197534, guid: c1264e3d722e02e43be3444484af715b, type: 3}
+  stage3Dmg: {fileID: 1040197534, guid: c1264e3d722e02e43be3444484af715b, type: 3}
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3

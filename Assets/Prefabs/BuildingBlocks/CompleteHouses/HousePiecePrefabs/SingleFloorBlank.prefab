@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7503624841701220669}
   - component: {fileID: 1545251734432736587}
   - component: {fileID: 7288560829738214537}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: SingleFloorBlank
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 215206202, guid: af0186f41736d0b4f81c14b59b0be135, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -156,8 +156,8 @@ MonoBehaviour:
   structureType: House
   shaker: {fileID: 0}
   spriteRenderer: {fileID: 3892715109699647923}
-  noDmgSprite: {fileID: 1235871422, guid: af0186f41736d0b4f81c14b59b0be135, type: 3}
-  stage1Dmg: {fileID: 215206202, guid: af0186f41736d0b4f81c14b59b0be135, type: 3}
+  noDmgSprite: {fileID: 215206202, guid: af0186f41736d0b4f81c14b59b0be135, type: 3}
+  stage1Dmg: {fileID: -451832568, guid: c1264e3d722e02e43be3444484af715b, type: 3}
   stage2Dmg: {fileID: -451832568, guid: c1264e3d722e02e43be3444484af715b, type: 3}
   stage3Dmg: {fileID: -451832568, guid: c1264e3d722e02e43be3444484af715b, type: 3}
   stage1Threshold: 0.9

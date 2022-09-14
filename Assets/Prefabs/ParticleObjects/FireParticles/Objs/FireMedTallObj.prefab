@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6139694281615056581
 Transform:
   m_ObjectHideFlags: 0
@@ -39,66 +39,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6139694281615056581}
     m_Modifications:
-    - target: {fileID: 6960317078706482245, guid: a518a21232bf3d54c8941a71d5ae9ae9,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6960317078706482245, guid: a518a21232bf3d54c8941a71d5ae9ae9,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6960317078706482245, guid: a518a21232bf3d54c8941a71d5ae9ae9,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1603220759
-      objectReference: {fileID: 0}
-    - target: {fileID: 6961276537795833751, guid: a518a21232bf3d54c8941a71d5ae9ae9,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6961276537795833751, guid: a518a21232bf3d54c8941a71d5ae9ae9,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6961276537795833751, guid: a518a21232bf3d54c8941a71d5ae9ae9,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1603220759
-      objectReference: {fileID: 0}
-    - target: {fileID: 6962062228219921519, guid: a518a21232bf3d54c8941a71d5ae9ae9,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6962062228219921519, guid: a518a21232bf3d54c8941a71d5ae9ae9,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6962062228219921519, guid: a518a21232bf3d54c8941a71d5ae9ae9,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1603220759
-      objectReference: {fileID: 0}
-    - target: {fileID: 6962245635127199089, guid: a518a21232bf3d54c8941a71d5ae9ae9,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6962245635127199089, guid: a518a21232bf3d54c8941a71d5ae9ae9,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6962245635127199089, guid: a518a21232bf3d54c8941a71d5ae9ae9,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1603220759
-      objectReference: {fileID: 0}
     - target: {fileID: 7084965466644104035, guid: a518a21232bf3d54c8941a71d5ae9ae9,
         type: 3}
       propertyPath: m_RootOrder
@@ -154,45 +94,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7086796146051089947, guid: a518a21232bf3d54c8941a71d5ae9ae9,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7086796146051089947, guid: a518a21232bf3d54c8941a71d5ae9ae9,
-        type: 3}
-      propertyPath: m_TagString
-      value: FX
-      objectReference: {fileID: 0}
-    - target: {fileID: 7086924758816126975, guid: a518a21232bf3d54c8941a71d5ae9ae9,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7086924758816126975, guid: a518a21232bf3d54c8941a71d5ae9ae9,
-        type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7087397405123997373, guid: a518a21232bf3d54c8941a71d5ae9ae9,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7087397405123997373, guid: a518a21232bf3d54c8941a71d5ae9ae9,
-        type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
     - target: {fileID: 7087410115385203583, guid: a518a21232bf3d54c8941a71d5ae9ae9,
         type: 3}
       propertyPath: m_Name
       value: ToonTallFireRed
-      objectReference: {fileID: 0}
-    - target: {fileID: 7087410115385203583, guid: a518a21232bf3d54c8941a71d5ae9ae9,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a518a21232bf3d54c8941a71d5ae9ae9, type: 3}

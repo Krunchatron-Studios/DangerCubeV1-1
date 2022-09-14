@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2150091571812332274}
   - component: {fileID: 2490704217908482172}
   - component: {fileID: 3443412897715284535}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: BayWindow
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917907826841195511}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.0186381, y: -0.7775501, z: 0.051780004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -272056482, guid: 0f0a852e333ef9245b868bbc8db0ddc6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -147,13 +147,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   structureParent: {fileID: 0}
-  structureType: 
+  structureType: Window
   shaker: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  noDmgSprite: {fileID: -272056482, guid: 0f0a852e333ef9245b868bbc8db0ddc6, type: 3}
-  stage1Dmg: {fileID: 0}
-  stage2Dmg: {fileID: 0}
-  stage3Dmg: {fileID: 0}
+  spriteRenderer: {fileID: 917907826841195510}
+  noDmgSprite: {fileID: -1782389873, guid: af0186f41736d0b4f81c14b59b0be135, type: 3}
+  stage1Dmg: {fileID: 749743609, guid: c1264e3d722e02e43be3444484af715b, type: 3}
+  stage2Dmg: {fileID: 749743609, guid: c1264e3d722e02e43be3444484af715b, type: 3}
+  stage3Dmg: {fileID: 749743609, guid: c1264e3d722e02e43be3444484af715b, type: 3}
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3
