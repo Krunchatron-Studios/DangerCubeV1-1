@@ -32,7 +32,9 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 		GetDustParticle(location);
 		WindowShatterCheck(location);
 		CalculateDamage(damageAmount);
-		DamageTiersCheck(location);
+		DamageTiersCheck1(location);
+		DamageTiersCheck2(location);
+		DamageTiersCheck3(location);
 		percentDestroyed = currentIntegrity / maxIntegrity;
 		CatchFire(damageType);
 		EvacuateCheck();
@@ -110,6 +112,26 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 				SoundManager.sm.burning1.Stop();
 			}
 			
+		}
+	}
+	public virtual void DamageTiersCheck1(Vector3 location) {
+		if (percentDestroyed < stage1Threshold && stage1Dmg) {
+			spriteRenderer.sprite = stage1Dmg;
+			GameObject rockShatter = StructureDamagePool.sdp.rockShatterPool.GetPooledGameObject();
+			rockShatter.SetActive(true);
+			rockShatter.transform.position = location;
+			structureParent.evacuateThreshold -= 2;
+		}
+	}
+	public virtual void DamageTiersCheck2(Vector3 location) {
+		if (percentDestroyed < stage2Threshold && stage2Dmg) {
+			spriteRenderer.sprite = stage2Dmg;
+			structureParent.evacuateThreshold--;
+		}
+	}
+	public virtual void DamageTiersCheck3(Vector3 location) {
+		if (percentDestroyed < stage3Threshold && stage3Dmg) {
+			spriteRenderer.sprite = stage3Dmg;
 		}
 	}
 }
