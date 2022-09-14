@@ -39,7 +39,6 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 		CatchFire(damageType);
 		EvacuateCheck();
 	}
-
 	private void WindowShatterCheck(Vector3 location) {
 		if (structureType == "Window") {
 			GameObject  glassShatter = StructureDamagePool.sdp.glassShatterPool.GetPooledGameObject();

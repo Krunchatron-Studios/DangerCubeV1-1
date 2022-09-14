@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5953100478545817850}
   - component: {fileID: 5953100478545952040}
   - component: {fileID: 5953100478525931150}
-  - component: {fileID: 5983650398168098968}
   m_Layer: 0
   m_Name: ExplosionFireballFire
   m_TagString: Untagged
@@ -4930,19 +4929,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &5983650398168098968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5953100478526091130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 628ef9b0c7e4fd24db54868035e11237, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  randomPercent: 8
 --- !u!1 &5953100478526168034
 GameObject:
   m_ObjectHideFlags: 0
