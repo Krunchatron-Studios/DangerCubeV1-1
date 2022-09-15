@@ -14,7 +14,6 @@ public class EnemyProjectile : MonoBehaviour {
         } else if (other.CompareTag("Wall")) {
             gameObject.SetActive(false);
         }
-
         StartCoroutine(bulletDecay());
     }
 

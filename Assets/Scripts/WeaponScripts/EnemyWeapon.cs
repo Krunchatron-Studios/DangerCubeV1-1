@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class EnemyWeapon : MonoBehaviour {
     [Header("Player Position")]
-    public Transform playerPosition;
+    public GameObject playerPosition;
+
+    public Vector3 aimPosition;
 
     [Header("Weapon Parameters")] 
     public float fireRange = 4.0f;
@@ -17,12 +19,13 @@ public class EnemyWeapon : MonoBehaviour {
     public GameObject enemyProjectile;
     private Rigidbody2D _projectileBody;
     void FixedUpdate() {
-        playerPosition = GameObject.FindWithTag("Player").transform;
+        playerPosition = GameObject.FindWithTag("Player");
+        aimPosition = playerPosition.transform.position;
         ShootPlayer();
     }
 
     public void ShootPlayer() {
-        float distance = Vector3.Distance(playerPosition.position, transform.position);
+        float distance = Vector3.Distance(playerPosition.transform.position, transform.position);
         if (distance <= fireRange && canFire) {
             canFire = false;
             StartCoroutine(UseWeapon());
@@ -36,7 +39,8 @@ public class EnemyWeapon : MonoBehaviour {
             bullet.SetActive(true);
             bullet.transform.position = transform.position;
             _projectileBody = bullet.GetComponent<Rigidbody2D>();
-            Vector3 moveDirection = (playerPosition.position - transform.position).normalized;
+            aimPosition.y -= .5f;
+            Vector3 moveDirection = (aimPosition - transform.position).normalized;
             MoveProjectile(moveDirection);
             yield return new WaitForSeconds(rateOfFire);
         }

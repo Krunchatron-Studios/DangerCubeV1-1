@@ -104,12 +104,17 @@ PrefabInstance:
     - target: {fileID: 4950811112371341299, guid: 79a05d93262f5b441b9cee5e0001bb6f,
         type: 3}
       propertyPath: m_SortingLayer
-      value: 0
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950811112371341299, guid: 79a05d93262f5b441b9cee5e0001bb6f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4950811112371341299, guid: 79a05d93262f5b441b9cee5e0001bb6f,
         type: 3}
       propertyPath: m_SortingLayerID
-      value: -598322915
+      value: 1603220759
       objectReference: {fileID: 0}
     - target: {fileID: 5071544529686165701, guid: 79a05d93262f5b441b9cee5e0001bb6f,
         type: 3}
@@ -231,45 +236,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AcidBoiling
       objectReference: {fileID: 0}
-    - target: {fileID: 2696239749736172868, guid: 7fa35ad1c61f2584eb860880f25e050a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2696239749736172868, guid: 7fa35ad1c61f2584eb860880f25e050a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Projectile
-      objectReference: {fileID: 0}
-    - target: {fileID: 2696239749736175174, guid: 7fa35ad1c61f2584eb860880f25e050a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2696239749736177056, guid: 7fa35ad1c61f2584eb860880f25e050a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 2696239749736651518, guid: 7fa35ad1c61f2584eb860880f25e050a,
         type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2696239749736651518, guid: 7fa35ad1c61f2584eb860880f25e050a,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2696239749736651518, guid: 7fa35ad1c61f2584eb860880f25e050a,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2696239749736651518, guid: 7fa35ad1c61f2584eb860880f25e050a,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2696239749736651518, guid: 7fa35ad1c61f2584eb860880f25e050a,
         type: 3}
@@ -320,16 +290,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2696239749754066436, guid: 7fa35ad1c61f2584eb860880f25e050a,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2696239749754066436, guid: 7fa35ad1c61f2584eb860880f25e050a,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: -598322915
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fa35ad1c61f2584eb860880f25e050a, type: 3}
