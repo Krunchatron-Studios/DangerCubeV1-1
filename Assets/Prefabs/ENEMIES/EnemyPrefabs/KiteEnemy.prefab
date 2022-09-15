@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disAmountPerFrame: 0.04
-  _renderer: {fileID: 8619952144322271204}
+  renderer: {fileID: 0}
   ashes: {fileID: 3424906339606567161, guid: b256623201b9eba4cb6aaaa1cc86041f, type: 3}
   isDissolving: 0
 --- !u!114 &2516821719561337926
@@ -123,11 +123,15 @@ MonoBehaviour:
   currentHealth: 10
   damage: 3
   moveSpeed: 3
+  lineOfSightDistance: 5
   enemyRb2D: {fileID: 2008833507525818049}
   weapon: {fileID: 0}
   dissolve: {fileID: 8853119362373875803}
   drop: {fileID: 7611086095773957346, guid: 1c96af257f4a44dbeb63708b4fb57c11, type: 3}
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
+  playerPosition: {fileID: 0}
+  kiteDistance: 4
+  enemyPosition: {fileID: 0}
 --- !u!114 &9094206048140135736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPosition: {fileID: 0}
+  aimPosition: {x: 0, y: 0, z: 0}
   fireRange: 5
   reloadTimer: 3
   rateOfFire: 0.3

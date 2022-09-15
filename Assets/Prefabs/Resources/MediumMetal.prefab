@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8664196045892680059}
   - component: {fileID: -5907045334603635400}
   - component: {fileID: 3356573455310882395}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: MediumMetal
-  m_TagString: Item
+  m_TagString: Loot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -73,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2055319811
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1470425831, guid: 764120a36c1fd487aba946474e52fc58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -115,11 +115,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b476ac8ab7b944a99993d67f0be57e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 5
+  value: 2
   type: Metal
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
   resourceRb2D: {fileID: 3356573455310882395}
-  moveSpeed: 3
+  moveSpeed: 5
 --- !u!50 &3356573455310882395
 Rigidbody2D:
   serializedVersion: 4
