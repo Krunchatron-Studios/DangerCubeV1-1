@@ -38,7 +38,7 @@ public class Vehicle : BasicStructure {
 		metalPoof.transform.position = location;
 	}
 
-	public virtual void CatchFire(string damageType) {
+	public override void CatchFire(string damageType) {
 		if (damageType == "Fire" || damageType == "DeathRay") {
 
 			if (percentDestroyed < 0.9f) {

@@ -5,7 +5,7 @@ using MoreMountains.Tools;
 public class ProjectileWeapon : Weapon {
 
 	[Header("Projectile Vars")]
-	public GameObject[] firePointArray;
+	public GameObject firingPoint;
 	public GameObject projectile;
 	public Vector2 enemyTarget;
 	public TargetingSystem targetingSys;
@@ -13,11 +13,11 @@ public class ProjectileWeapon : Weapon {
 	[Header("Firing Vars")]
 	public float weaponRange = 3;
 	public float rateOfFire = 2.0f;
-	private bool _canFire;
+	public bool canFire;
 	public float nextFire;
 
 	private void Start() {
-		_canFire = true;
+		canFire = true;
 		targetingSys.circleCol2D.radius = weaponRange;
 		objectPooler = GetComponent<MMSimpleObjectPooler>();
 	}
@@ -36,15 +36,11 @@ public class ProjectileWeapon : Weapon {
 		bullet.MoveProjectile();
 	}
 	
-	public void CanFireTimer() {
-		_canFire = false;
+	public virtual void CanFireTimer() {
+		canFire = false;
 		if (Time.time > nextFire) {
-			_canFire = true;
-			for (int i = 0; i < firePointArray.Length; i++) {
-				if (firePointArray[i].activeInHierarchy) {
-					FireWeapon(firePointArray[i].transform.position, enemyTarget);
-				}
-			}
+			canFire = true;
+			FireWeapon(firingPoint.transform.position, enemyTarget);
 		}
 	}
 	

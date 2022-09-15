@@ -4,21 +4,17 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Wall
+  - LevelBounds
+  - FX
   - Enemy
+  - World
+  - NoMask
   - Obstacle
-  - NPC
-  - Item
-  - Background
-  - Foreground
-  - Midground
+  - Wall
   - Projectile
-  - Weapon
   - Collector
-  - BioGoo
-  - Metal
-  - Silicate
-  - Missile
+  - Item
+  - Weapon
   - Lighting
   layers:
   - Default
@@ -27,23 +23,23 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Enemies
+  - Obstacles
   - Player
-  - Enemy
-  - Item
-  - NPC
-  - Wall
-  - System
+  - 
+  - 
+  - ObstaclesDoors
+  - NoPathfinding
+  - 
+  - NoCollisions
+  - Hole
+  - MovingPlatform
+  - FallingPlatform
   - Projectile
-  - Weapon
-  - 
-  - 
-  - Structure Related
-  - Background
-  - PostProcessing
-  - Lighting
+  - Camera1
+  - Camera2
+  - Camera3
+  - Camera4
   - 
   - 
   - 
@@ -52,41 +48,23 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Ground
   m_SortingLayers:
-  - name: Background
-    uniqueID: 141617731
-    locked: 0
-  - name: Wall
-    uniqueID: 877834347
-    locked: 0
-  - name: Items
-    uniqueID: 4019772181
-    locked: 0
-  - name: DamageEffectsBack
-    uniqueID: 3850236899
-    locked: 0
-  - name: Player
-    uniqueID: 2055319811
-    locked: 0
-  - name: Projectile
-    uniqueID: 3696644381
-    locked: 0
-  - name: Weapon
-    uniqueID: 1601880589
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: DamageEffectsFront
-    uniqueID: 2036714849
+  - name: Background
+    uniqueID: 1798043625
     locked: 0
-  - name: Lighting
-    uniqueID: 446953439
+  - name: Ground
+    uniqueID: 2296623839
     locked: 0
-  - name: UI
-    uniqueID: 1906808429
+  - name: Foreground
+    uniqueID: 1603220759
     locked: 0
-  - name: FadePanel
-    uniqueID: 3818868637
+  - name: Characters
+    uniqueID: 47421343
+    locked: 0
+  - name: Above
+    uniqueID: 961700441
     locked: 0

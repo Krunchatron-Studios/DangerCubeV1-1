@@ -24,10 +24,8 @@ public class MutagenicNanobots : Weapon {
             if (nanoManager.currentNanoBots < nanoManager.maxNanoBots) {
                 Debug.Log("Nano created");
                 int index = nanoManager.currentNanoBots;
-                NanoBot nano = Instantiate(nanoBots[index]);
-                // GameObject nano = objectPooler.GetPooledGameObject();
-                // nano.SetActive(true);
-                nano.transform.position = offset;
+                nanoBots[index].gameObject.SetActive(true);
+                transform.position = offset;
                 nanoManager.currentNanoBots++;
             }
         }

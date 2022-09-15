@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7931811748982204574}
   m_Layer: 11
   m_Name: SmallMetal
-  m_TagString: Item
+  m_TagString: Collector
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2055319811
-  m_SortingLayer: -3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1278759851, guid: 764120a36c1fd487aba946474e52fc58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -119,6 +119,7 @@ MonoBehaviour:
   type: Metal
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
   resourceRb2D: {fileID: 7931811748982204574}
+  moveSpeed: 1
 --- !u!50 &7931811748982204574
 Rigidbody2D:
   serializedVersion: 4
@@ -136,7 +137,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4

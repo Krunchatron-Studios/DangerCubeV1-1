@@ -31,8 +31,8 @@ public class NanoBot : Projectile {
         }
     }
     private void RotateNanos() {
-        Vector3 move = new Vector3(0, 0, 1);
-        transform.RotateAround(_playerPosition, move, rotationSpeed * Time.deltaTime);
+        // Vector3 move = new Vector3(0, 0, 1);
+        transform.RotateAround(_playerPosition, Vector3.forward, rotationSpeed * Time.deltaTime);
         // _anchorPoint = (_nanoTransform - _playerPosition).normalized * 5 + _playerPosition;
         // transform.position = Vector3.MoveTowards(_nanoTransform, _anchorPoint, 0.0005f);
     }
