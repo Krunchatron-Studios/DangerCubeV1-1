@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6214106462221364362}
   - component: {fileID: 2554096545084712204}
   - component: {fileID: 4945881303422589490}
+  - component: {fileID: -6740720285624403119}
   m_Layer: 8
   m_Name: NanoBot
   m_TagString: Projectile
@@ -145,3 +146,28 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!233 &-6740720285624403119
+HingeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5194531991708600744}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 3796742106572517135, guid: b00bb1a9d06731f459ab2801166aa6c6,
+    type: 3}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_UseMotor: 1
+  m_Motor:
+    m_MotorSpeed: 5
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 0
+  m_AngleLimits:
+    m_LowerAngle: 0
+    m_UpperAngle: 359
