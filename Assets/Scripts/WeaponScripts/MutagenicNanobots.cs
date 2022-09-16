@@ -20,12 +20,12 @@ public class MutagenicNanobots : Weapon {
 
     private void SpawnNanos() {
         if (nanoManager.currentNanoBots < nanoManager.maxNanoBots) {
-            Vector3 offset = new Vector3(_center.x, _center.y + 3, 0);
+            // Vector3 offset = new Vector3(_center.x, _center.y + 3, 0);
             if (nanoManager.currentNanoBots < nanoManager.maxNanoBots) {
                 Debug.Log("Nano created");
                 int index = nanoManager.currentNanoBots;
                 nanoBots[index].gameObject.SetActive(true);
-                transform.position = offset;
+                // transform.position = offset;
                 nanoManager.currentNanoBots++;
             }
         }
