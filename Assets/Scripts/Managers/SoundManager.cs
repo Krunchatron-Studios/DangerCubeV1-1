@@ -8,6 +8,9 @@ public class SoundManager : MonoBehaviour
 		sm = this;
 	}
 
+	[Header("Enemy Weapon Sounds")] 
+	public AudioSource machineGun1;
+
 	[Header("Damage Sounds")] 
 	public AudioSource burning1;
 	public AudioSource explosion1;

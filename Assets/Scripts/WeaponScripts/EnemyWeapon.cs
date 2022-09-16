@@ -3,11 +3,13 @@ using Managers;
 using UnityEngine;
 
 public class EnemyWeapon : MonoBehaviour {
+
+    public AudioSource audioSource;
     [Header("Player Position")]
     public GameObject playerPosition;
 
     public Vector3 aimPosition;
-
+    
     [Header("Weapon Parameters")] 
     public float fireRange = 4.0f;
     public float reloadTimer = 3.0f;
@@ -15,6 +17,7 @@ public class EnemyWeapon : MonoBehaviour {
     public bool canFire = true;
     public float bulletSpeed = 10f;
     public int ammo = 3;
+    public Transform barrel;
     [Header("Projectile Parameters")]
     public GameObject enemyProjectile;
     private Rigidbody2D _projectileBody;
@@ -33,11 +36,12 @@ public class EnemyWeapon : MonoBehaviour {
     }
 
     IEnumerator UseWeapon() {
+        audioSource.Play();
         int currentAmmo = ammo;
         for (int i = 0; i < currentAmmo; i++) {
             GameObject bullet = EnemyPoolManager.epm.enemyBulletPool.GetPooledGameObject();
             bullet.SetActive(true);
-            bullet.transform.position = transform.position;
+            bullet.transform.position = barrel.position;
             _projectileBody = bullet.GetComponent<Rigidbody2D>();
             aimPosition.y -= .5f;
             Vector3 moveDirection = (aimPosition - transform.position).normalized;
@@ -50,5 +54,11 @@ public class EnemyWeapon : MonoBehaviour {
     
     public void MoveProjectile(Vector3 direction) {
         _projectileBody.velocity = direction * bulletSpeed;
+    }
+
+    private void MuzzleFlash() {
+        // GameObject flash = EnemyPoolManager.epm.mgFlashPool.GetPooledGameObject();
+        // flash.SetActive(true);
+        // flash.transform.position = barrel.position;
     }
 }

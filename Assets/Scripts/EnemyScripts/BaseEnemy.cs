@@ -2,6 +2,7 @@ using System.Collections;
 using Effects;
 using Interfaces;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 
@@ -13,15 +14,17 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 	public float moveSpeed = 2f;
 	public float lineOfSightDistance = 5f;
 	public Rigidbody2D enemyRb2D;
+	public Animator animator;
 	public EnemyWeapon weapon;
+	public SpriteRenderer spriteRenderer;
 	
 	[Header("Death Effects")] 
 	public Dissolve dissolve;
-	// spawn distance removed.  Should be added to spawners not enemies
 	
 	[Header("Enemy Drop Related")] 
 	public GameObject drop;
 	public PlayerResources playerResources;
+
 	public void TakeDamage(float dmgAmount, string dmgType) {
 		currentHealth -= dmgAmount;
 		if (currentHealth <= 0) {
@@ -58,5 +61,10 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 		yield return new WaitForSeconds(waitTime);
 		gameObject.SetActive(false);
 	}
+
+	public void GetDamage(GameObject other) {
+		// something goes here later
+	}
+	
 }
 

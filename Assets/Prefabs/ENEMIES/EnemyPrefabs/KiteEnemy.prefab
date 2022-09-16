@@ -125,7 +125,9 @@ MonoBehaviour:
   moveSpeed: 3
   lineOfSightDistance: 5
   enemyRb2D: {fileID: 2008833507525818049}
+  animator: {fileID: 0}
   weapon: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   dissolve: {fileID: 8853119362373875803}
   drop: {fileID: 7611086095773957346, guid: 1c96af257f4a44dbeb63708b4fb57c11, type: 3}
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
@@ -144,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e60c37f60c764a069284120c7fb7738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   playerPosition: {fileID: 0}
   aimPosition: {x: 0, y: 0, z: 0}
   fireRange: 5
@@ -152,6 +155,7 @@ MonoBehaviour:
   canFire: 1
   bulletSpeed: 10
   ammo: 3
+  barrel: {fileID: 0}
   enemyProjectile: {fileID: 1655789376720695904, guid: 6ad63786457454a868737c9a7e271388,
     type: 3}
 --- !u!50 &2008833507525818049
