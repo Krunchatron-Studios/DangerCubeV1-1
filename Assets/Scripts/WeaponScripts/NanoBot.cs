@@ -3,7 +3,6 @@ using UnityEngine;
 public class NanoBot : Projectile {
     public NanoManager nanoManager;
     public GameObject rotationCenter;
-    // private Vector3 _anchorPoint;
     // private Vector3 _nanoTransform;
     // private GameObject _target;
     public float rotationSpeed = 50;
