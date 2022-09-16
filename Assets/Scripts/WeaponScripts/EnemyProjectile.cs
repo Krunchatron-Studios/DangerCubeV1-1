@@ -13,15 +13,16 @@ public class EnemyProjectile : MonoBehaviour {
             gameObject.SetActive(false);
         } else if (other.CompareTag("Wall")) {
             gameObject.SetActive(false);
+        } else if (other.CompareTag("Obstacle")) {
+            gameObject.SetActive(false);
         }
 
         if (gameObject.activeInHierarchy) {
-            StartCoroutine(bulletDecay());
-
+            StartCoroutine(BulletDecay());
         }
     }
 
-    IEnumerator bulletDecay() {
+    IEnumerator BulletDecay() {
         yield return new WaitForSeconds(decayTimer);
         gameObject.SetActive(false);
     }
