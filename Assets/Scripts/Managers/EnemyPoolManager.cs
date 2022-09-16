@@ -10,9 +10,10 @@ namespace Managers {
 			epm = this;
 		}
 
+		[Header("Particles")] 
+		public MMSimpleObjectPooler shieldHit;
+
 		[Header("Enemy Projectiles")]
 		public MMSimpleObjectPooler enemyBulletPool;
-	
-	
 	}
 }

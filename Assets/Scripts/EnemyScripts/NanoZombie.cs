@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class NanoZombie : MonoBehaviour {
     private Vector3 _target;
-    private int moveSpeed = 1;
-    private int damage = 1;
+    private int _moveSpeed = 1;
+    private int _damage = 1;
     public int lifeTime = 5;
     public int chaseRadius = 3;
     public GameObject bloodSplash;
@@ -19,9 +19,9 @@ public class NanoZombie : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Enemy")) {
             MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
-                damage.ToString(), Vector3.up, .2f);
+                _damage.ToString(), Vector3.up, .2f);
             IHurtThingsInterface hit = other.GetComponent<IHurtThingsInterface>();
-            hit.TakeDamage(damage, "Physical");
+            hit.TakeDamage(_damage, "Physical");
             bloodSplash = PoolManager.pm.bloodPool.GetPooledGameObject();
             bloodSplash.SetActive(true);
             bloodSplash.transform.position = other.transform.position;
@@ -37,7 +37,7 @@ public class NanoZombie : MonoBehaviour {
     }
 
     private void MoveTowards() {
-        transform.position = Vector3.MoveTowards(transform.position, _target, moveSpeed);
+        transform.position = Vector3.MoveTowards(transform.position, _target, _moveSpeed);
     }
 
     IEnumerator ZombieLife() {
