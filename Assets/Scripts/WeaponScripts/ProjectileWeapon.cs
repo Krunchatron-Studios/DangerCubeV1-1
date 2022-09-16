@@ -3,7 +3,7 @@ using MoreMountains.Feedbacks;
 using MoreMountains.Tools;
 
 public class ProjectileWeapon : Weapon {
-
+	
 	[Header("Projectile Vars")]
 	public GameObject firingPoint;
 	public GameObject projectile;

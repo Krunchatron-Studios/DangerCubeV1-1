@@ -3,6 +3,7 @@ using UnityEngine;
 using MoreMountains.Feedbacks;
 
 public class BurstFireWeapon : ProjectileWeapon  {
+	
 	[Header("Firing Vars")]
 	public float reloadTimer = 2.0f;
 	public int ammo = 5;

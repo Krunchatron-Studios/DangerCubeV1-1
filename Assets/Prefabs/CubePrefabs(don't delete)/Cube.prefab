@@ -675,7 +675,7 @@ PrefabInstance:
         type: 3}
       propertyPath: objectPooler
       value: 
-      objectReference: {fileID: 1645373517}
+      objectReference: {fileID: 0}
     - target: {fileID: 3664123916197150076, guid: 692e806906d55487fb98200bedc726b4,
         type: 3}
       propertyPath: playerPosition
@@ -725,37 +725,12 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2104410224415208213}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6374294972671936681}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1453080384d4f4b8b93a1bac54076c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &6374294972671936681 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4990646386255772604, guid: 692e806906d55487fb98200bedc726b4,
-    type: 3}
-  m_PrefabInstance: {fileID: 2104410224415208213}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1645373517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6374294972671936681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b7277539b95c0d45895792ecc99ce66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MutualizeWaitingPools: 0
-  NestWaitingPool: 1
-  NestUnderThis: 0
-  GameObjectToPool: {fileID: 5194531991708600744, guid: 09eeab86aa8df48ba92867ba05ad3512,
-    type: 3}
-  PoolSize: 10
-  PoolCanExpand: 1
 --- !u!1001 &2552662884886487479
 PrefabInstance:
   m_ObjectHideFlags: 0

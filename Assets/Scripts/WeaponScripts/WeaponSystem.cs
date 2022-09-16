@@ -1,6 +1,7 @@
 using UnityEngine;
 
 public class WeaponSystem : MonoBehaviour {
+	[Header("Tech Unlocked")]
 
 	public static WeaponSystem Instance;
 	public Weapon[] cubeWeapons;
