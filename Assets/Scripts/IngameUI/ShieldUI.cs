@@ -1,6 +1,8 @@
+using Interfaces;
+using Managers;
 using UnityEngine;
 
-public class ShieldUI : MonoBehaviour { 
+public class ShieldUI : PlayerLogic { 
 	public ParticleSystem shieldParticle;
 	public PlayerHealthAndShields healthAndShieldsData;
 
@@ -9,6 +11,7 @@ public class ShieldUI : MonoBehaviour {
 	public float shieldShatterThreshold = 0.5f;
 	public float shieldRechargeSpeed = .01f;
 	private bool _shieldsShattered;
+	private CircleCollider2D _circleCollider2D;
 
 	[Header("Health Bar Vars")] 
 	public HealthUI healthChunkHolder;
@@ -17,7 +20,9 @@ public class ShieldUI : MonoBehaviour {
 	[SerializeField] private float shieldConversion;
 	[SerializeField] private float rawShieldRadius;
 	private void Start() {
+		_circleCollider2D = GetComponent<CircleCollider2D>();
 		shieldParticle.transform.localScale = new Vector2(remainingRadius, remainingRadius);
+		_circleCollider2D.radius = remainingRadius - .5f;
 	}
 
 	private void FixedUpdate() {
@@ -28,6 +33,15 @@ public class ShieldUI : MonoBehaviour {
 			healthChunkHolder.RemoveHealthChunk();
 			shieldParticle.transform.localScale = new Vector2(1, 1);
 			healthAndShieldsData.playerShieldsCurrent = healthAndShieldsData.playerShieldsMax;
+		}
+	}
+
+	private void OnTriggerEnter2D(Collider2D col) {
+		if (col.CompareTag("Projectile")) {
+			IHurtThingsInterface hit = col.GetComponent<IHurtThingsInterface>();
+			GameObject shield = EnemyPoolManager.epm.shieldHit.GetPooledGameObject();
+			shield .SetActive(true);
+			shield.transform.position = col.transform.position;
 		}
 	}
 

@@ -7,7 +7,7 @@ public class EnemyProjectile : MonoBehaviour {
     public float decayTimer = 3;
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) {
+        if (other.CompareTag("Shield")) {
             IHurtThingsInterface hit = other.GetComponent<IHurtThingsInterface>();
             hit.TakeDamage(enemyDamage, "Physical");
             gameObject.SetActive(false);
@@ -15,8 +15,7 @@ public class EnemyProjectile : MonoBehaviour {
             gameObject.SetActive(false);
         } else if (other.CompareTag("Obstacle")) {
             gameObject.SetActive(false);
-        }
-
+        } 
         if (gameObject.activeInHierarchy) {
             StartCoroutine(BulletDecay());
         }
@@ -25,5 +24,10 @@ public class EnemyProjectile : MonoBehaviour {
     IEnumerator BulletDecay() {
         yield return new WaitForSeconds(decayTimer);
         gameObject.SetActive(false);
+    }
+
+    public void GetDamage(GameObject other) {
+        IHurtThingsInterface hit = other.GetComponent<IHurtThingsInterface>();
+        hit.TakeDamage(enemyDamage, "Physical");
     }
 }

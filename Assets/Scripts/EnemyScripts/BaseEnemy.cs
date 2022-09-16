@@ -61,8 +61,10 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 		yield return new WaitForSeconds(waitTime);
 		gameObject.SetActive(false);
 	}
-	
-	
+
+	public void GetDamage(GameObject other) {
+		// something goes here later
+	}
 	
 }
 

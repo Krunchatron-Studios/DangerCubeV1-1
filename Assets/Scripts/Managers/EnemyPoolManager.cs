@@ -10,8 +10,8 @@ namespace Managers {
 			epm = this;
 		}
 
-		[Header("Muzzle Flashes")] 
-		public MMSimpleObjectPooler mgFlashPool;
+		[Header("Particles")] 
+		public MMSimpleObjectPooler shieldHit;
 
 		[Header("Enemy Projectiles")]
 		public MMSimpleObjectPooler enemyBulletPool;
