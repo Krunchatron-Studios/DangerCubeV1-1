@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6214106462221364362}
   - component: {fileID: 2554096545084712204}
   - component: {fileID: 4945881303422589490}
+  - component: {fileID: 1255143968679700818}
   m_Layer: 8
   m_Name: NanoBot
   m_TagString: Projectile
@@ -127,6 +128,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   moveTime: 0
   nanoManager: {fileID: 11400000, guid: 2a3316d7509d9504d89d183fd5768835, type: 2}
+  rotationCenter: {fileID: 0}
   rotationSpeed: 50
   zombie: {fileID: -6966868393121060382, guid: a3d375f3c8ce1154580fd865a64532ad, type: 3}
 --- !u!58 &4945881303422589490
@@ -145,3 +147,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!233 &1255143968679700818
+HingeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5194531991708600744}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_UseMotor: 0
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 0
+  m_AngleLimits:
+    m_LowerAngle: 0
+    m_UpperAngle: 359
