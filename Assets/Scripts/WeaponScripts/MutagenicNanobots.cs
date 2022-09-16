@@ -5,6 +5,7 @@ public class MutagenicNanobots : Weapon {
     private GameObject _playerPosition;
     private Vector3 _center;
     public float spawnDelay;
+    public NanoBot[] nanoBots;
 
     void Start() {
         _playerPosition = GameObject.FindWithTag("Player");
@@ -19,11 +20,12 @@ public class MutagenicNanobots : Weapon {
 
     private void SpawnNanos() {
         if (nanoManager.currentNanoBots < nanoManager.maxNanoBots) {
-            Vector3 offset = new Vector3(_center.x, _center.y + 3, 0);
+            // Vector3 offset = new Vector3(_center.x, _center.y + 3, 0);
             if (nanoManager.currentNanoBots < nanoManager.maxNanoBots) {
-                GameObject nano = objectPooler.GetPooledGameObject();
-                nano.SetActive(true);
-                nano.transform.position = offset;
+                Debug.Log("Nano created");
+                int index = nanoManager.currentNanoBots;
+                nanoBots[index].gameObject.SetActive(true);
+                // transform.position = offset;
                 nanoManager.currentNanoBots++;
             }
         }
