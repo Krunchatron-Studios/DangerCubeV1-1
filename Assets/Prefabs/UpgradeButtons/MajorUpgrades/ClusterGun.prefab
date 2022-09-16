@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3580796954036354485}
   - component: {fileID: 2191534914065019619}
   - component: {fileID: 291181613844270465}
+  - component: {fileID: 5072474685135683279}
   m_Layer: 5
   m_Name: BlackPanel
   m_TagString: Untagged
@@ -79,6 +80,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5072474685135683279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2546765796114447572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 129
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 50f763e0aa7755245ac2cf6106ced41f, type: 2}
 --- !u!1 &2754310415186713963
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,8 +132,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 123.8, y: 0}
-  m_SizeDelta: {x: 32.0549, y: 30.6894}
+  m_AnchoredPosition: {x: -179.2804, y: -15.5982}
+  m_SizeDelta: {x: 66.4231, y: 63.5936}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1475215385265770224
 CanvasRenderer:
@@ -183,7 +201,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4107950014461562736}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -217,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_Color: {r: 0.8207547, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -303,13 +321,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd8fd85d7a0c45844b4dffbd5916310d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeType: Major
-  upgradeCategory: Silicate
+  glowMaterial: {fileID: 2100000, guid: c362305796a200d43b1a1cb59fbc448f, type: 2}
   lvlPanel: {fileID: 0}
-  weaponOrTechName: ClusterGun
+  weaponOrTechName: 
   upgradeSprite: {fileID: 6176683623071779065}
-  upgradeDescription: Shoots tightly clustered bullets
+  thisImage: {fileID: 0}
+  upgradeDescription: Testing description
   upgradeNameText: {fileID: 4835255223498303951}
+  upgradeDescText: {fileID: 6135279964749485022}
 --- !u!1 &6132718087540765177
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,8 +364,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: 18.8034}
-  m_SizeDelta: {x: 0.0001, y: -37.607}
+  m_AnchoredPosition: {x: -0.000030517578, y: 38.044403}
+  m_SizeDelta: {x: 0.0001, y: -76.089}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2376598136323157428
 CanvasRenderer:
@@ -404,8 +423,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -440,7 +459,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 10, y: 3, z: 0, w: 0}
+  m_margin: {x: 10, y: 3, z: 11.45311, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -481,8 +500,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20.125, y: -8.0642}
-  m_SizeDelta: {x: 249.39, y: 37.607}
+  m_AnchoredPosition: {x: 44.093, y: -2.2059}
+  m_SizeDelta: {x: 351.18, y: 42.0189}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6135279964749485023
 CanvasRenderer:
@@ -512,7 +531,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This is a new weapon with shootiness and blastification!
+  m_text: 'I say things about weapons
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -539,18 +560,18 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 3
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
+  m_characterSpacing: 2
+  m_wordSpacing: 2
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
@@ -575,7 +596,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 10, y: 5, z: 5, w: 5}
+  m_margin: {x: 5, y: 5, z: 5, w: 5}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

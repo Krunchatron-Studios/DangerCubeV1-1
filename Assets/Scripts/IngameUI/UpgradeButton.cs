@@ -1,11 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UpgradeButton : MonoBehaviour {
+public class UpgradeButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 	public LevelUpPanel lvlPanel;
 	public string weaponOrTechName;
 	public Image upgradeSprite;
+	public Image thisImage;
 	public string upgradeDescription = "this is a test string description";
 	public TextMeshProUGUI upgradeNameText;
 	public TextMeshProUGUI upgradeDescText;
@@ -13,8 +15,19 @@ public class UpgradeButton : MonoBehaviour {
 
 	
 	private void Start() {
+		thisImage = GetComponent<Image>();
 		upgradeSprite.sprite = GetComponent<SpriteRenderer>().sprite;
-		lvlPanel = FindObjectOfType<LevelUpPanel>();
+		lvlPanel = GetComponent<LevelUpPanel>();
+	}
+
+	public void OnPointerEnter(PointerEventData eventData) {
+		thisImage.material = ShaderManager.shm.glow;
+		Debug.Log($"testing: {eventData}");
+	}
+	
+	public void OnPointerExit(PointerEventData eventData) {
+		thisImage.material = ShaderManager.shm.spriteLit;
+		Debug.Log("The cursor exited the selectable UI element.");
 	}
 	
 	public void GenerateMinorBioUpgrade() {
@@ -40,7 +53,7 @@ public class UpgradeButton : MonoBehaviour {
 	}
 
 	public void GenerateMajorUpgrade() {
-		string[] temp = new[] { "Bio", "Metal", "Silicate" };
+		string[] temp = { "Bio", "Metal", "Silicate" };
 		int index = Random.Range(0, temp.Length);
 		Upgrade upgrade = null;
 		
@@ -51,9 +64,14 @@ public class UpgradeButton : MonoBehaviour {
 		} else if (index == 2) {
 			upgrade = UpgradesList.ul.silicateUpgradesMajor[Random.Range(0, UpgradesList.ul.silicateUpgradesMajor.Length)];
 		}
-
 		if (upgrade) {
 			weaponOrTechName = upgrade.upgradeName;
+		}
+
+		for (int i = 0; i < WeaponSystem.Instance.cubeWeapons.Length; i++) {
+			if (WeaponSystem.Instance.cubeWeapons[i].weaponName == weaponOrTechName) {
+				GenerateMajorUpgrade();
+			}
 		}
 		UpdateLevelUpPanel();
 	}
