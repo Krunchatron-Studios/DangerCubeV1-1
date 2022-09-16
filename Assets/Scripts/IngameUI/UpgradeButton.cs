@@ -9,6 +9,7 @@ public class UpgradeButton : MonoBehaviour {
 	public string upgradeDescription = "this is a test string description";
 	public TextMeshProUGUI upgradeNameText;
 	public TextMeshProUGUI upgradeDescText;
+	private Upgrade _upgrade;
 
 	
 	private void Start() {
@@ -35,6 +36,25 @@ public class UpgradeButton : MonoBehaviour {
 		int randomIndex = Random.Range(0, UpgradesList.ul.bioUpgradesMinor.Length);
 		Upgrade upgrade = UpgradesList.ul.silicateUpgradesMinor[randomIndex];
 		weaponOrTechName = upgrade.upgradeName;
+		UpdateLevelUpPanel();
+	}
+
+	public void GenerateMajorUpgrade() {
+		string[] temp = new[] { "Bio", "Metal", "Silicate" };
+		int index = Random.Range(0, temp.Length);
+		Upgrade upgrade = null;
+		
+		if (index == 0) {
+			upgrade = UpgradesList.ul.bioUpgradesMajor[Random.Range(0, UpgradesList.ul.bioUpgradesMajor.Length)];
+		} else if (index == 1) {
+			upgrade = UpgradesList.ul.metalUpgradesMajor[Random.Range(0, UpgradesList.ul.metalUpgradesMajor.Length)];
+		} else if (index == 2) {
+			upgrade = UpgradesList.ul.silicateUpgradesMajor[Random.Range(0, UpgradesList.ul.silicateUpgradesMajor.Length)];
+		}
+
+		if (upgrade) {
+			weaponOrTechName = upgrade.upgradeName;
+		}
 		UpdateLevelUpPanel();
 	}
 	
