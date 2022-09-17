@@ -10,13 +10,13 @@ public class UpgradesList : MonoBehaviour {
 		ul = this;
 	}
 
-	public Upgrade[] bioUpgradesMinor;
-	public Upgrade[] metalUpgradesMinor;
-	public Upgrade[] silicateUpgradesMinor;
+	public List<Upgrade> bioUpgradesMinor = new List<Upgrade>();
+	public List<Upgrade> metalUpgradesMinor = new List<Upgrade>();
+	public List<Upgrade> silicateUpgradesMinor = new List<Upgrade>();
 	
-	public Upgrade[] bioUpgradesMajor;
-	public Upgrade[] metalUpgradesMajor;
-	public Upgrade[] silicateUpgradesMajor;
+	public List<Upgrade> bioUpgradesMajor = new List<Upgrade>();
+	public List<Upgrade> metalUpgradesMajor = new List<Upgrade>();
+	public List<Upgrade> silicateUpgradesMajor = new List<Upgrade>();
 
 	public List<Upgrade> upgradeList = new List<Upgrade>();
 }

@@ -20,24 +20,24 @@ public class UpgradeButton : MonoBehaviour {
 	}
 	
 	public void GenerateMinorBioUpgrade() {
-		Debug.Log("test1");
-		int randomIndex = Random.Range(0, UpgradesList.ul.bioUpgradesMinor.Length);
+		int randomIndex = Random.Range(0, UpgradesList.ul.bioUpgradesMinor.Count);
 		Upgrade upgrade = UpgradesList.ul.bioUpgradesMinor[randomIndex];
 		weaponOrTechName = upgrade.upgradeName;
+		_upgrade = upgrade;
 		UpdateLevelUpPanel();
 	}
 	public void GenerateMinorMetalUpgrade() {
-		Debug.Log("test2");
-		int randomIndex = Random.Range(0, UpgradesList.ul.bioUpgradesMinor.Length);
+		int randomIndex = Random.Range(0, UpgradesList.ul.bioUpgradesMinor.Count);
 		Upgrade upgrade = UpgradesList.ul.metalUpgradesMinor[randomIndex];
 		weaponOrTechName = upgrade.upgradeName;
+		_upgrade = upgrade;
 		UpdateLevelUpPanel();
 	}
 	public void GenerateMinorSilicateUpgrade() {
-		Debug.Log("test3");
-		int randomIndex = Random.Range(0, UpgradesList.ul.bioUpgradesMinor.Length);
+		int randomIndex = Random.Range(0, UpgradesList.ul.bioUpgradesMinor.Count);
 		Upgrade upgrade = UpgradesList.ul.silicateUpgradesMinor[randomIndex];
 		weaponOrTechName = upgrade.upgradeName;
+		_upgrade = upgrade;
 		UpdateLevelUpPanel();
 	}
 
@@ -45,25 +45,38 @@ public class UpgradeButton : MonoBehaviour {
 		string[] temp = { "Bio", "Metal", "Silicate" };
 		int index = Random.Range(0, temp.Length);
 		Upgrade upgrade = null;
-		
+		Debug.Log($"Major Index: {index}");
 		if (index == 0) {
-			upgrade = UpgradesList.ul.bioUpgradesMajor[Random.Range(0, UpgradesList.ul.bioUpgradesMajor.Length)];
+			upgrade = UpgradesList.ul.bioUpgradesMajor[Random.Range(0, UpgradesList.ul.bioUpgradesMajor.Count)];
+			Debug.Log($"Major Index1: {upgrade}");
 		} else if (index == 1) {
-			upgrade = UpgradesList.ul.metalUpgradesMajor[Random.Range(0, UpgradesList.ul.metalUpgradesMajor.Length)];
+			upgrade = UpgradesList.ul.metalUpgradesMajor[Random.Range(0, UpgradesList.ul.metalUpgradesMajor.Count)];
+			Debug.Log($"Major Index2: {upgrade}");
 		} else if (index == 2) {
-			upgrade = UpgradesList.ul.silicateUpgradesMajor[Random.Range(0, UpgradesList.ul.silicateUpgradesMajor.Length)];
+			upgrade = UpgradesList.ul.silicateUpgradesMajor[Random.Range(0, UpgradesList.ul.silicateUpgradesMajor.Count)];
+			Debug.Log($"Major Index3: {upgrade}");
 		}
 		if (upgrade) {
 			weaponOrTechName = upgrade.upgradeName;
+			Debug.Log($"upgrade? {upgrade}");
 		}
+		_upgrade = upgrade;
+		
 		UpdateLevelUpPanel();
 	}
 	
 	public void UpdateLevelUpPanel() {
 		List<Upgrade> refArray = UpgradesList.ul.upgradeList;
+		int index = refArray.IndexOf(_upgrade);
+		Debug.Log(index + " index");
+		Debug.Log(_upgrade + " upgrade");
+		Debug.Log(_upgrade.upgradeType + " this type");
+		Debug.Log(_upgrade.upgradeTier + " this tier");
+
 		for (int j = 0; j < refArray.Count; j++) {
-			if (weaponOrTechName == refArray[j].upgradeName) {
-				upgradeSprite.sprite = refArray[j].sprite; 
+			Debug.Log(refArray[j].upgradeName + "test");
+			if (_upgrade.upgradeName == refArray[j].upgradeName) {
+				upgradeSprite.sprite = refArray[j].upgradeSprite; 
 				weaponOrTechName = refArray[j].upgradeName;
 				upgradeNameText.text = weaponOrTechName;
 				upgradeDescription = refArray[j].description;
@@ -76,6 +89,81 @@ public class UpgradeButton : MonoBehaviour {
 		SoundManager.sm.buttonPress.Play();
 		lvlPanel.gameObject.SetActive(false);
 		Time.timeScale = 1f;
-		WeaponSystem.Instance.ActivateWeaponSystem(_upgrade.upgradeName);
+		ActivateAndRemove(_upgrade.upgradeType, _upgrade.upgradeTier, _upgrade.upgradeName);
+	}
+
+	public void ActivateAndRemove(string type, string tier, string name) {
+		UpgradesList list = UpgradesList.ul;
+		Upgrade currentUpgrade;
+		Debug.Log($"type: {type}");
+		Debug.Log($"tier: {tier}");
+		Debug.Log($"name: {name}");
+
+		if (type == "Bio") {
+			if (tier == "Minor") {
+				for (int i = 0; i < list.bioUpgradesMinor.Count; i++) {
+					currentUpgrade = list.bioUpgradesMinor[i];
+					if (list.bioUpgradesMinor[i].upgradeName == name) {
+						list.bioUpgradesMinor[i].gameObject.SetActive(true);
+						list.bioUpgradesMinor.Remove(currentUpgrade);
+					}
+				}
+			}
+
+			if (tier == "Major") {
+				for (int i = 0; i < list.bioUpgradesMajor.Count; i++) {
+					currentUpgrade = list.bioUpgradesMajor[i];
+					if (list.bioUpgradesMajor[i].upgradeName == name) {
+						list.bioUpgradesMajor[i].gameObject.SetActive(true);
+						list.bioUpgradesMajor.Remove(currentUpgrade);
+					}
+				}
+			}
+		}
+
+		if (type == "Metal") {
+			if (tier == "Minor") {
+				for (int i = 0; i < list.metalUpgradesMinor.Count; i++) {
+					currentUpgrade = list.metalUpgradesMinor[i];
+					if (list.metalUpgradesMinor[i].upgradeName == name) {
+						list.metalUpgradesMinor[i].gameObject.SetActive(true);
+						list.metalUpgradesMinor.Remove(currentUpgrade);
+					}
+				}
+			}
+
+			if (tier == "Major") {
+				for (int i = 0; i < list.metalUpgradesMajor.Count; i++) {
+					currentUpgrade = list.metalUpgradesMajor[i];
+					if (list.metalUpgradesMajor[i].upgradeName == name) {
+						list.metalUpgradesMajor[i].gameObject.SetActive(true);
+						list.metalUpgradesMajor.Remove(currentUpgrade);
+					}
+				}
+			}
+		}
+
+		if (type == "Silicate") {
+			if (tier == "Minor") {
+				for (int i = 0; i < list.silicateUpgradesMinor.Count; i++) {
+					currentUpgrade = list.silicateUpgradesMinor[i];
+					if (list.silicateUpgradesMinor[i].upgradeName == name) {
+						list.silicateUpgradesMinor[i].gameObject.SetActive(true);
+						list.silicateUpgradesMinor.Remove(currentUpgrade);
+					}
+				}
+			}
+
+			if (tier == "Major") {
+				for (int i = 0; i < list.silicateUpgradesMajor.Count; i++) {
+					currentUpgrade = list.silicateUpgradesMajor[i];
+					if (list.silicateUpgradesMajor[i].upgradeName == name) {
+						list.silicateUpgradesMajor[i].gameObject.SetActive(true);
+						list.silicateUpgradesMajor.Remove(currentUpgrade);
+					}
+				}
+			}
+		}
+		
 	}
 }

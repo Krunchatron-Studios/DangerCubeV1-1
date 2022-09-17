@@ -5,7 +5,7 @@ public class Upgrade : MonoBehaviour {
 	public string upgradeName;
 	public string upgradeTier;
 	public string upgradeType;
-	public Sprite sprite;
+	public Sprite upgradeSprite;
 	public string description;
 	[Header("Audio")] 
 	public AudioSource audioSource;
