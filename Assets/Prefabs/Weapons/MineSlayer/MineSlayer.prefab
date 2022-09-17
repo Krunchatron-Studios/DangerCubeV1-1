@@ -51,7 +51,7 @@ MonoBehaviour:
   upgradeName: MineSlayer
   upgradeTier: Major
   upgradeType: Metal
-  sprite: {fileID: 21300000, guid: 88e011cc3bff5b7419b617c187c16014, type: 3}
+  upgradeSprite: {fileID: 21300000, guid: 88e011cc3bff5b7419b617c187c16014, type: 3}
   description: Mind the mines!
   audioSource: {fileID: 7542884385270234193}
   upgradeRange: 0
@@ -242,6 +242,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6996422098028261378}
     m_Modifications:
+    - target: {fileID: 2608481302110575300, guid: 12602ce919ca01443b18db03fe04235a,
+        type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 4255465756535646841}
     - target: {fileID: 2608481302110575306, guid: 12602ce919ca01443b18db03fe04235a,
         type: 3}
       propertyPath: m_Name

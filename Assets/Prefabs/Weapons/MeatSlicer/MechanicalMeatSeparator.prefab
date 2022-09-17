@@ -53,7 +53,7 @@ MonoBehaviour:
   upgradeName: MechanicalMeatSeparator
   upgradeTier: Major
   upgradeType: Metal
-  sprite: {fileID: 21300000, guid: 79b0ee0f1a769fd4b87efb0ecf4eb305, type: 3}
+  upgradeSprite: {fileID: 21300000, guid: 79b0ee0f1a769fd4b87efb0ecf4eb305, type: 3}
   description: Slice
   audioSource: {fileID: 4325532238569768180}
   upgradeRange: 3
@@ -346,6 +346,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2655124810910713274}
     m_Modifications:
+    - target: {fileID: 2608481302110575300, guid: 12602ce919ca01443b18db03fe04235a,
+        type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 3417617060092069337}
     - target: {fileID: 2608481302110575301, guid: 12602ce919ca01443b18db03fe04235a,
         type: 3}
       propertyPath: m_Radius
