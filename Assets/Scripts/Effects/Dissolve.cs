@@ -14,6 +14,7 @@ namespace Effects {
 		private static readonly int Fade1 = Shader.PropertyToID("_Fade");
 
 		private void Start() {
+			renderer = GetComponent<SpriteRenderer>();
 			_dissolveTimer = renderer.material.GetFloat(Fade1);
 			_reducedToAshes = true;
 		}

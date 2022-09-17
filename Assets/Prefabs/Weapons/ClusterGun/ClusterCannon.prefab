@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 3527016346985065115}
   - component: {fileID: 5639441978635504735}
   m_Layer: 30
-  m_Name: ClusterGun
+  m_Name: ClusterCannon
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,20 +147,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d20a0e7fa96d3b41940dbda4c77bb23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSprite: {fileID: 21300000, guid: 37141a44ee7f96f44a2cce91de093d60, type: 3}
+  upgradeName: Cluster Cannon
+  upgradeTier: Major
+  upgradeType: Silicate
+  sprite: {fileID: 21300000, guid: 0d35da58c43902c4e88dfaf59823586a, type: 3}
+  description: it shoots
   audioSource: {fileID: 3527016346985065115}
-  weaponName: ClusterGun
-  weaponDescription: Ball O' Bullets for all!
+  upgradeRange: 6
+  upgradeLevel: 0
   weaponDamage: 3
+  attackSpeed: 2
   damageType: '"Fire"'
-  objectPooler: {fileID: 0}
+  knockForce: 2
+  objectPooler: {fileID: 5639441978635504735}
   firingPoint: {fileID: 5540794475001378500}
   projectile: {fileID: 5560214801928622059, guid: eee1772510e4bd4428aa74152f1f9a6f,
     type: 3}
   enemyTarget: {x: 0, y: 0}
   targetingSys: {fileID: 5780026266065048204}
-  weaponRange: 10
-  rateOfFire: 3
   canFire: 0
   nextFire: 0
 --- !u!212 &935498610684718217

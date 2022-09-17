@@ -8,7 +8,7 @@ public class OrbitalLaser : ProjectileWeapon {
     private void FixedUpdate() {
         CanFireTimer();
         _playerPosition = GameObject.FindWithTag("Player").transform;
-        _enemyPosition = targetingSys.weapon.enemyTarget;
+        _enemyPosition = targetingSys.weapon.GetComponent<ProjectileWeapon>().enemyTarget;
         // if (GameObject.FindWithTag("Enemy")) {
         //     _enemyPosition = GameObject.FindWithTag("Enemy").transform.position;
         //     Debug.Log($"enemy position: {_enemyPosition}");
@@ -18,7 +18,7 @@ public class OrbitalLaser : ProjectileWeapon {
         GameObject bulletTransform = Instantiate(projectile, _enemyPosition, Quaternion.Euler(0,0,90));
         StartCoroutine(BeamCo(bulletTransform));
         Projectile bullet = bulletTransform.GetComponent<Projectile>();
-        nextFire = Time.time + rateOfFire;
+        nextFire = Time.time + attackSpeed;
     }
 
     IEnumerator BeamCo(GameObject bulletTransform) {
@@ -36,16 +36,17 @@ public class OrbitalLaser : ProjectileWeapon {
         Destroy(bulletTransform.gameObject);
     }
 
-    IEnumerator ExplodeCo(GameObject explosion) {
-        float currentY = explosion.transform.localScale.y;
-        float currentX = explosion.transform.localScale.x;
+    IEnumerator ExplodeCo(GameObject laserSwirl) {
+        var localScale = laserSwirl.transform.localScale;
+        float currentY = localScale.y;
+        float currentX = localScale.x;
         int lerpMax = 2;
         float time = 0;
-        while (explosion.transform.localScale.x > 0.1f) {
-            explosion.transform.localScale = new Vector3(Mathf.Lerp(currentX, 0, time / lerpMax), Mathf.Lerp(currentY, 0, time / lerpMax), 0);
+        while (laserSwirl.transform.localScale.x > 0.1f) {
+            laserSwirl.transform.localScale = new Vector3(Mathf.Lerp(currentX, 0, time / lerpMax), Mathf.Lerp(currentY, 0, time / lerpMax), 0);
             time += Time.deltaTime;
             yield return null;
         } 
-        Destroy(explosion);
+        Destroy(laserSwirl);
     }
 }

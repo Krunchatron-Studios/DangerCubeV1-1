@@ -11,14 +11,12 @@ public class ProjectileWeapon : Weapon {
 	public TargetingSystem targetingSys;
 	
 	[Header("Firing Vars")]
-	public float weaponRange = 3;
-	public float rateOfFire = 2.0f;
 	public bool canFire;
 	public float nextFire;
 
 	private void Start() {
 		canFire = true;
-		targetingSys.circleCol2D.radius = weaponRange;
+		targetingSys.circleCol2D.radius = upgradeRange;
 		objectPooler = GetComponent<MMSimpleObjectPooler>();
 	}
 	private void Update() {
@@ -30,7 +28,7 @@ public class ProjectileWeapon : Weapon {
 		Projectile bullet = spawnedBullet.GetComponent<Projectile>();
 		bullet.transform.position = firePoint;
 		bullet.Setup(targetPosition);
-		nextFire = Time.time + rateOfFire;
+		nextFire = Time.time + attackSpeed;
 		MMCameraShakeEvent.Trigger(.1f, .2f, 40, 0, 0, 0, false);
 		bullet.gameObject.SetActive(true);
 		bullet.MoveProjectile();

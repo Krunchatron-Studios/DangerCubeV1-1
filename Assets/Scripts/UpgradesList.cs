@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class UpgradesList : MonoBehaviour {
@@ -16,5 +18,5 @@ public class UpgradesList : MonoBehaviour {
 	public Upgrade[] metalUpgradesMajor;
 	public Upgrade[] silicateUpgradesMajor;
 
-	public Upgrade[] referenceArray;
+	public List<Upgrade> upgradeList = new List<Upgrade>();
 }

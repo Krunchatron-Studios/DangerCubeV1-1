@@ -815,12 +815,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509173377196bfd48abb4fe3192baa56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSprite: {fileID: 21300000, guid: ac5d1de98466c3345a21d02554557b9f, type: 3}
+  upgradeName: DeathRay
+  upgradeTier: Major
+  upgradeType: DeathRay
+  sprite: {fileID: 0}
+  description: Zap yer dead!!!
   audioSource: {fileID: 71724504}
-  weaponName: DeathRay
-  weaponDescription: Zap! Yer dead...
-  weaponDamage: 10
+  upgradeRange: 0
+  upgradeLevel: 0
+  weaponDamage: 5
+  attackSpeed: 0
   damageType: DeathRay
+  knockForce: 0
   objectPooler: {fileID: 0}
   laserHitMarker: {fileID: 2552662885870406301}
   laserStartMarker: {fileID: 4539409639283689612}

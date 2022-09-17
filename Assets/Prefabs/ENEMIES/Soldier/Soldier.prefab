@@ -181,11 +181,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8742dd4b1bcf8bd43a9016efe7b1a811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionCollider2D: {fileID: 0}
   enemy: {fileID: 6059390373229456275}
+  spriteRenderer: {fileID: 6059390373229456276}
   distance: 3
   stopDistance: 5
-  spriteRenderer: {fileID: 6059390373229456276}
+  fleeDistance: 2
 --- !u!95 &1674497760
 Animator:
   serializedVersion: 4

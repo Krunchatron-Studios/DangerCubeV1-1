@@ -1,9 +1,9 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UpgradeButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
+public class UpgradeButton : MonoBehaviour {
 	public LevelUpPanel lvlPanel;
 	public string weaponOrTechName;
 	public Image upgradeSprite;
@@ -16,18 +16,7 @@ public class UpgradeButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 	
 	private void Start() {
 		thisImage = GetComponent<Image>();
-		upgradeSprite.sprite = GetComponent<SpriteRenderer>().sprite;
-		lvlPanel = GetComponent<LevelUpPanel>();
-	}
-
-	public void OnPointerEnter(PointerEventData eventData) {
-		thisImage.material = ShaderManager.shm.glow;
-		Debug.Log($"testing: {eventData}");
-	}
-	
-	public void OnPointerExit(PointerEventData eventData) {
-		thisImage.material = ShaderManager.shm.spriteLit;
-		Debug.Log("The cursor exited the selectable UI element.");
+		upgradeSprite = GetComponent<Image>();
 	}
 	
 	public void GenerateMinorBioUpgrade() {
@@ -67,18 +56,12 @@ public class UpgradeButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 		if (upgrade) {
 			weaponOrTechName = upgrade.upgradeName;
 		}
-
-		for (int i = 0; i < WeaponSystem.Instance.cubeWeapons.Length; i++) {
-			if (WeaponSystem.Instance.cubeWeapons[i].weaponName == weaponOrTechName) {
-				GenerateMajorUpgrade();
-			}
-		}
 		UpdateLevelUpPanel();
 	}
 	
 	public void UpdateLevelUpPanel() {
-		Upgrade[] refArray = UpgradesList.ul.referenceArray;
-		for (int j = 0; j < refArray.Length; j++) {
+		List<Upgrade> refArray = UpgradesList.ul.upgradeList;
+		for (int j = 0; j < refArray.Count; j++) {
 			if (weaponOrTechName == refArray[j].upgradeName) {
 				upgradeSprite.sprite = refArray[j].sprite; 
 				weaponOrTechName = refArray[j].upgradeName;
@@ -91,8 +74,8 @@ public class UpgradeButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
 	public void SelectUpgrade() {
 		SoundManager.sm.buttonPress.Play();
-		WeaponSystem.Instance.ActivateWeaponSystem(weaponOrTechName);
 		lvlPanel.gameObject.SetActive(false);
 		Time.timeScale = 1f;
+		WeaponSystem.Instance.ActivateWeaponSystem(_upgrade.upgradeName);
 	}
 }

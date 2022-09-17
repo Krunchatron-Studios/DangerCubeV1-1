@@ -2,19 +2,12 @@ using Interfaces;
 using MoreMountains.Tools;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour, IUpgradeThingInterface {
-
-	public Sprite weaponSprite;
-	private AudioClip _weaponSound;
-	public AudioSource audioSource;
-	[Header("Upgrade Variables")] 
+public class Weapon : Upgrade, IUpgradeThingInterface {
+	
 	public int upgradeLevel = 0;
-	public string thisUpgradesTier;
-	public string weaponType;
 	[Header("Main Weapon Vars")] 
-	public string weaponName;
-	public string weaponDescription;
 	public float weaponDamage;
+	public float attackSpeed;
 	public string damageType;
 	public float knockForce;
 
@@ -25,12 +18,15 @@ public class Weapon : MonoBehaviour, IUpgradeThingInterface {
 		Vector3 appliedForce = difference * knockForce;
 		thisRigidBody.AddForce(transform.up * knockForce);
 	}
-
-	public void UpgradeWeapon(string weapon) {
-		// add upgrade logic
-	}
-
-	public virtual void LevelUp(string weapon) {
-		// add level up logic
+	public virtual void UpgradeWeapon(string weapon, int bonusDamage) {
+		Weapon currentWeapon;
+		for (int i = 0; i < WeaponSystem.Instance.cubeWeapons.Length; i++) {
+			currentWeapon = WeaponSystem.Instance.cubeWeapons[i];
+			if (currentWeapon.upgradeName == weapon &&
+			    !currentWeapon.gameObject.activeInHierarchy) {
+				weaponDamage += bonusDamage;
+			}
+		}
+		upgradeLevel++;
 	}
 }

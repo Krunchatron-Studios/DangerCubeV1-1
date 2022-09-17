@@ -11,7 +11,7 @@ public class WeaponSystem : MonoBehaviour {
 	}
 	public void ActivateWeaponSystem(string weaponToActivate) {
 		for (int i = 0; i < cubeWeapons.Length; i++) {
-			if (cubeWeapons[i].weaponName == weaponToActivate) {
+			if (cubeWeapons[i].upgradeName == weaponToActivate) {
 				cubeWeapons[i].gameObject.SetActive(true);
 			}
 		}
