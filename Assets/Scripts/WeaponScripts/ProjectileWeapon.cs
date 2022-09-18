@@ -45,6 +45,10 @@ public class ProjectileWeapon : Weapon {
 	public void AquireTarget(BaseEnemy enemy) {
 		enemyTarget = enemy.transform.position;
 	}
+
+	public void ChangeProjectile(GameObject newProjectile) {
+		projectile = newProjectile;
+	}
 }
 
 

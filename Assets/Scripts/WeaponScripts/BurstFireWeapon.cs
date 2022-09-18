@@ -35,6 +35,7 @@ public class BurstFireWeapon : ProjectileWeapon  {
 		audioSource.Play();
 		GameObject spawnedBullet = objectPooler.GetPooledGameObject();
 		Projectile bullet = spawnedBullet.GetComponent<Projectile>();
+		bullet.damage = weaponDamage;
 		bullet.transform.position = firingPoint.transform.position;
 		bullet.Setup(targetPosition);
 		nextFire = Time.time + attackSpeed;

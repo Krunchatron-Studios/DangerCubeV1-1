@@ -48,21 +48,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818bccb1b3e072740ba4eebcf15259d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeLevel: 0
   upgradeName: PlasmaBurster
   upgradeTier: Major
   upgradeType: Silicate
-  sprite: {fileID: 21300000, guid: 49ee25a366f7aef408e3846af70b285f, type: 3}
+  upgradeSprite: {fileID: 21300000, guid: 49ee25a366f7aef408e3846af70b285f, type: 3}
   description: Pew pew pew
   audioSource: {fileID: 5440330668561067906}
   upgradeRange: 5
-  upgradeLevel: 0
   weaponDamage: 2
   attackSpeed: 0.2
   damageType: Energy
   knockForce: 2
   objectPooler: {fileID: 5440330668561067907}
   firingPoint: {fileID: 8545189905758337356}
-  projectile: {fileID: 4837917352924149430, guid: 21f4d6b9485e1c648822270f8dabfb88,
+  projectile: {fileID: 4837917352924149430, guid: bed2d0578a993794b95b50f500af5b62,
     type: 3}
   enemyTarget: {x: 0, y: 0}
   targetingSys: {fileID: 8019996175258049880}
@@ -181,7 +181,7 @@ MonoBehaviour:
   MutualizeWaitingPools: 0
   NestWaitingPool: 1
   NestUnderThis: 0
-  GameObjectToPool: {fileID: 4837917352924149430, guid: 21f4d6b9485e1c648822270f8dabfb88,
+  GameObjectToPool: {fileID: 4837917352924149430, guid: bed2d0578a993794b95b50f500af5b62,
     type: 3}
   PoolSize: 20
   PoolCanExpand: 1
@@ -259,6 +259,11 @@ PrefabInstance:
       propertyPath: firePoint1
       value: 
       objectReference: {fileID: 8545189905758337356}
+    - target: {fileID: 2608481302110575300, guid: 12602ce919ca01443b18db03fe04235a,
+        type: 3}
+      propertyPath: firePoint2
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2608481302110575306, guid: 12602ce919ca01443b18db03fe04235a,
         type: 3}
       propertyPath: m_Name

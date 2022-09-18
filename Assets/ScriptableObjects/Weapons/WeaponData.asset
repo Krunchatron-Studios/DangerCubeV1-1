@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7d5daeee79952246ae8d8d39c34fb04, type: 3}
+  m_Name: WeaponData
+  m_EditorClassIdentifier: 
+  variantName: 
+  weaponDamage: 0
+  attackSpeed: 0
+  damageType: 
+  knockForce: 0
+  reloadTimer: 2
+  ammo: 5
+  firingPoint: {fileID: 0}
+  projectile: {fileID: 0}
+  enemyTarget: {x: 0, y: 0}
+  targetingSys: {fileID: 0}

@@ -48,11 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileVelocity: 10
-  weapon: {fileID: 6273430834546850311, guid: aa4808379867f3c46ab2d8beb1bbe72b, type: 3}
+  weapon: {fileID: 6273430834546850311, guid: e9e4ff7857907ff44bbdd617a370d44e, type: 3}
   projectileRb2D: {fileID: 9136337499459341165}
   targetPosition: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
-  moveTime: 0
 --- !u!50 &9136337499459341165
 Rigidbody2D:
   serializedVersion: 4
