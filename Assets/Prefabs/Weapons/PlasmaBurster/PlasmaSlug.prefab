@@ -47,12 +47,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c010d6c147971a4a95a2c58d0cc2140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 1740440436, guid: e9e4ff7857907ff44bbdd617a370d44e, type: 3}
   projectileVelocity: 10
+  weapon: {fileID: 6273430834546850311, guid: e9e4ff7857907ff44bbdd617a370d44e, type: 3}
+  damage: 4
   projectileRb2D: {fileID: 9136337499459341165}
   targetPosition: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
-  decayTimer: 3
 --- !u!50 &9136337499459341165
 Rigidbody2D:
   serializedVersion: 4

@@ -23,13 +23,13 @@ public class RapidFireWeapon : ProjectileWeapon {
 		bool rapidFireTimerTriggered = false;
 		
 		if (!isRapidFiring) {
-			rateOfFire = fastRof;
+			attackSpeed = fastRof;
 			isRapidFiring = true;
 			rapidFireTimerTriggered = true;
 		}
 		
 		if (isRapidFiring && !rapidFireTimerTriggered) {
-			rateOfFire = longRof;
+			attackSpeed = longRof;
 			isRapidFiring = false;
 		}
 	}

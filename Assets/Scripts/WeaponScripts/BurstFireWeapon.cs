@@ -3,13 +3,14 @@ using UnityEngine;
 using MoreMountains.Feedbacks;
 
 public class BurstFireWeapon : ProjectileWeapon  {
+	
 	[Header("Firing Vars")]
 	public float reloadTimer = 2.0f;
 	public int ammo = 5;
 
 	private void Start() {
 		canFire = true;
-		targetingSys.circleCol2D.radius = weaponRange;
+		targetingSys.circleCol2D.radius = upgradeRange;
 	}
 
 	private void FixedUpdate() {
@@ -22,7 +23,7 @@ public class BurstFireWeapon : ProjectileWeapon  {
 		canFire = false;
 		for (int i = 0; i < ammo; i++) {
 			FireWeapon(enemyTarget);
-			yield return new WaitForSeconds(rateOfFire);
+			yield return new WaitForSeconds(attackSpeed);
 		}
 
 		yield return new WaitForSeconds(reloadTimer);
@@ -34,9 +35,10 @@ public class BurstFireWeapon : ProjectileWeapon  {
 		audioSource.Play();
 		GameObject spawnedBullet = objectPooler.GetPooledGameObject();
 		Projectile bullet = spawnedBullet.GetComponent<Projectile>();
+		bullet.damage = weaponDamage;
 		bullet.transform.position = firingPoint.transform.position;
 		bullet.Setup(targetPosition);
-		nextFire = Time.time + rateOfFire;
+		nextFire = Time.time + attackSpeed;
 		MMCameraShakeEvent.Trigger(.1f, .2f, 40, 0, 0, 0, false);
 		bullet.gameObject.SetActive(true);
 		bullet.MoveProjectile();

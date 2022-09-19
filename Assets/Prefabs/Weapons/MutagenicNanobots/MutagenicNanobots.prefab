@@ -138,12 +138,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1453080384d4f4b8b93a1bac54076c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSprite: {fileID: 21300000, guid: 8a4147a07f19c4b0c8591177521d717b, type: 3}
+  upgradeName: MutagenicNanobots
+  upgradeTier: Major
+  upgradeType: Bio
+  upgradeSprite: {fileID: 21300000, guid: 5eda7b2a067ab884186599f65074b1bc, type: 3}
+  description: Bring the change
   audioSource: {fileID: 747224061}
-  weaponName: Mutagenic Nanobots
-  weaponDescription: All brains are belong to us
+  upgradeRange: 0
+  upgradeLevel: 0
   weaponDamage: 0
-  damageType: 
+  attackSpeed: 2
+  damageType: Bio
   knockForce: 0
   objectPooler: {fileID: 0}
   nanoManager: {fileID: 11400000, guid: 2a3316d7509d9504d89d183fd5768835, type: 2}

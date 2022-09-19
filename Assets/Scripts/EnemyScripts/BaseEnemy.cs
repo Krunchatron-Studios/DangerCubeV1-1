@@ -56,15 +56,9 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 			currentHealth = maxHealth;
 		}
 	}
-
 	IEnumerator PostponeDeath(float waitTime) {
 		yield return new WaitForSeconds(waitTime);
 		gameObject.SetActive(false);
 	}
-
-	public void GetDamage(GameObject other) {
-		// something goes here later
-	}
-	
 }
 

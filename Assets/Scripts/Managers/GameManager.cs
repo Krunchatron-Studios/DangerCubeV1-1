@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
 	public static MainCamera mainCam;
 	public AudioSource musicAudioSource;
 	public LevelUpPanel lvlPanel;
+	public WeaponData weaponData;
 	
 	[Header("Scriptable Object")]
 	public PlayerResources resources;

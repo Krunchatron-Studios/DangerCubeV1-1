@@ -1,14 +1,17 @@
+
 using UnityEngine;
 
 public class LevelUpPanel : MonoBehaviour {
 
 	public UpgradeButton[] upgradeButtons;
-	public Weapon[] referenceWeaponsArray;
 
 	public void RefreshChoices() {
-		for (int i = 0; i < upgradeButtons.Length; i++) {
-			upgradeButtons[i].GenerateUpgrade();
-		}
+		Debug.Log("test");
+		upgradeButtons[0].GenerateMinorBioUpgrade();
+		upgradeButtons[1].GenerateMinorMetalUpgrade();
+		upgradeButtons[2].GenerateMinorSilicateUpgrade();
+		upgradeButtons[3].GenerateMajorUpgrade();
+		//upgradeButtons[4].GenerateMajorUpgrade("place holder");
 	}
 	
 	
