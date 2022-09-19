@@ -10,7 +10,6 @@ public class NanoBot : Projectile {
     public NanoZombie zombie;
 
     private void Update() {
-        // rotationCenter = GameObject.FindWithTag("Player").transform;
         // _nanoTransform = transform.position;
         transform.RotateAround(rotationCenter.transform.position, Vector3.forward, rotationSpeed * Time.deltaTime);
     }
