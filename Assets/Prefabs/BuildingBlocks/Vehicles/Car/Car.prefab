@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 877429465944200823}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Fire1
   m_TagString: FX
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6333359257195322784}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: CarExplosion
   m_TagString: FX
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8697196321720182290}
   - component: {fileID: 8697196321720182293}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Car
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 8697196323132477054}
   - component: {fileID: 8697196323132477024}
   - component: {fileID: 8697196323132477025}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: ShittyWagon_0
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 316833862, guid: 1f394eedced616e4a9f9708de7c0178e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -366,7 +366,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8697196323501729642}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: VehicleDamage
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -432,7 +432,7 @@ PrefabInstance:
     - target: {fileID: 242134441293014551, guid: 4b6ba047fb3685b4ca6fdc5b1feb2f6e,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 242134441293014551, guid: 4b6ba047fb3685b4ca6fdc5b1feb2f6e,
         type: 3}
@@ -447,7 +447,7 @@ PrefabInstance:
     - target: {fileID: 242134441293225791, guid: 4b6ba047fb3685b4ca6fdc5b1feb2f6e,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 242134441293225791, guid: 4b6ba047fb3685b4ca6fdc5b1feb2f6e,
         type: 3}
@@ -462,7 +462,7 @@ PrefabInstance:
     - target: {fileID: 242134441293248889, guid: 4b6ba047fb3685b4ca6fdc5b1feb2f6e,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 242134441293248889, guid: 4b6ba047fb3685b4ca6fdc5b1feb2f6e,
         type: 3}
@@ -554,7 +554,7 @@ PrefabInstance:
     - target: {fileID: 5719648435451118214, guid: 6880e8043a7e88546b8c26a235e7dde1,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6686508021945992001, guid: 6880e8043a7e88546b8c26a235e7dde1,
         type: 3}
@@ -619,7 +619,7 @@ PrefabInstance:
     - target: {fileID: 6686508021945992006, guid: 6880e8043a7e88546b8c26a235e7dde1,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6686508021945992006, guid: 6880e8043a7e88546b8c26a235e7dde1,
         type: 3}
@@ -715,7 +715,7 @@ PrefabInstance:
     - target: {fileID: 2769769840765273159, guid: 57a94f3ce5a0dd04d966bcc49e226d8f,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2769769840765273159, guid: 57a94f3ce5a0dd04d966bcc49e226d8f,
         type: 3}
@@ -725,7 +725,7 @@ PrefabInstance:
     - target: {fileID: 4802912583920098230, guid: 57a94f3ce5a0dd04d966bcc49e226d8f,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57a94f3ce5a0dd04d966bcc49e226d8f, type: 3}
@@ -752,6 +752,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ExplosionFireballFire 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261613984306276380, guid: d12aec27d827a6d4caeecbdc0dd5c1f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261613984306304304, guid: d12aec27d827a6d4caeecbdc0dd5c1f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261613984306307896, guid: d12aec27d827a6d4caeecbdc0dd5c1f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261613984306314644, guid: d12aec27d827a6d4caeecbdc0dd5c1f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261613984306322564, guid: d12aec27d827a6d4caeecbdc0dd5c1f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4261613984306637898, guid: d12aec27d827a6d4caeecbdc0dd5c1f9,
         type: 3}

@@ -9,7 +9,7 @@ public class PowerUp : Upgrade {
 	public float attackSpeed;
 	public float knockBack;
 	public float projScale;
-	public float projSpeed;git
+	public float projSpeed;
 	public string damageType;
 	public float reloadSpeed;
 	public int ammoAmount;

@@ -68,18 +68,14 @@ public class UpgradeButton : MonoBehaviour {
 	public void UpdateLevelUpPanel() {
 		List<Upgrade> refArray = UpgradesList.ul.upgradeList;
 		int index = refArray.IndexOf(_upgrade);
-		Debug.Log(index + " index");
-		Debug.Log(_upgrade + " upgrade");
-		Debug.Log(_upgrade.upgradeType + " this type");
-		Debug.Log(_upgrade.upgradeTier + " this tier");
 
-		for (int j = 0; j < refArray.Count; j++) {
-			Debug.Log(refArray[j].upgradeName + "test");
-			if (_upgrade.upgradeName == refArray[j].upgradeName) {
-				upgradeSprite.sprite = refArray[j].upgradeSprite; 
-				weaponOrTechName = refArray[j].upgradeName;
+		for (int i = 0; i < refArray.Count; i++) {
+			Debug.Log(refArray[i].upgradeName + "test");
+			if (_upgrade.upgradeName == refArray[i].upgradeName) {
+				upgradeSprite.sprite = refArray[i].upgradeSprite; 
+				weaponOrTechName = refArray[i].upgradeName;
 				upgradeNameText.text = weaponOrTechName;
-				upgradeDescription = refArray[j].description;
+				upgradeDescription = refArray[i].description;
 				upgradeDescText.text = upgradeDescription;
 			}
 		}
@@ -92,18 +88,15 @@ public class UpgradeButton : MonoBehaviour {
 		ActivateAndRemove(_upgrade.upgradeType, _upgrade.upgradeTier, _upgrade.upgradeName);
 	}
 
-	public void ActivateAndRemove(string type, string tier, string name) {
+	public void ActivateAndRemove(string type, string tier, string abilityName) {
 		UpgradesList list = UpgradesList.ul;
 		Upgrade currentUpgrade;
-		Debug.Log($"type: {type}");
-		Debug.Log($"tier: {tier}");
-		Debug.Log($"name: {name}");
 
 		if (type == "Bio") {
 			if (tier == "Minor") {
 				for (int i = 0; i < list.bioUpgradesMinor.Count; i++) {
 					currentUpgrade = list.bioUpgradesMinor[i];
-					if (list.bioUpgradesMinor[i].upgradeName == name) {
+					if (list.bioUpgradesMinor[i].upgradeName == abilityName) {
 						list.bioUpgradesMinor[i].gameObject.SetActive(true);
 						list.bioUpgradesMinor.Remove(currentUpgrade);
 					}
@@ -113,7 +106,7 @@ public class UpgradeButton : MonoBehaviour {
 			if (tier == "Major") {
 				for (int i = 0; i < list.bioUpgradesMajor.Count; i++) {
 					currentUpgrade = list.bioUpgradesMajor[i];
-					if (list.bioUpgradesMajor[i].upgradeName == name) {
+					if (list.bioUpgradesMajor[i].upgradeName == abilityName) {
 						list.bioUpgradesMajor[i].gameObject.SetActive(true);
 						list.bioUpgradesMajor.Remove(currentUpgrade);
 					}
@@ -125,7 +118,7 @@ public class UpgradeButton : MonoBehaviour {
 			if (tier == "Minor") {
 				for (int i = 0; i < list.metalUpgradesMinor.Count; i++) {
 					currentUpgrade = list.metalUpgradesMinor[i];
-					if (list.metalUpgradesMinor[i].upgradeName == name) {
+					if (list.metalUpgradesMinor[i].upgradeName == abilityName) {
 						list.metalUpgradesMinor[i].gameObject.SetActive(true);
 						list.metalUpgradesMinor.Remove(currentUpgrade);
 					}
@@ -135,7 +128,7 @@ public class UpgradeButton : MonoBehaviour {
 			if (tier == "Major") {
 				for (int i = 0; i < list.metalUpgradesMajor.Count; i++) {
 					currentUpgrade = list.metalUpgradesMajor[i];
-					if (list.metalUpgradesMajor[i].upgradeName == name) {
+					if (list.metalUpgradesMajor[i].upgradeName == abilityName) {
 						list.metalUpgradesMajor[i].gameObject.SetActive(true);
 						list.metalUpgradesMajor.Remove(currentUpgrade);
 					}
@@ -147,7 +140,7 @@ public class UpgradeButton : MonoBehaviour {
 			if (tier == "Minor") {
 				for (int i = 0; i < list.silicateUpgradesMinor.Count; i++) {
 					currentUpgrade = list.silicateUpgradesMinor[i];
-					if (list.silicateUpgradesMinor[i].upgradeName == name) {
+					if (list.silicateUpgradesMinor[i].upgradeName == abilityName) {
 						list.silicateUpgradesMinor[i].gameObject.SetActive(true);
 						list.silicateUpgradesMinor.Remove(currentUpgrade);
 					}
@@ -157,7 +150,7 @@ public class UpgradeButton : MonoBehaviour {
 			if (tier == "Major") {
 				for (int i = 0; i < list.silicateUpgradesMajor.Count; i++) {
 					currentUpgrade = list.silicateUpgradesMajor[i];
-					if (list.silicateUpgradesMajor[i].upgradeName == name) {
+					if (list.silicateUpgradesMajor[i].upgradeName == abilityName) {
 						list.silicateUpgradesMajor[i].gameObject.SetActive(true);
 						list.silicateUpgradesMajor.Remove(currentUpgrade);
 					}

@@ -11,8 +11,5 @@ public class LevelUpPanel : MonoBehaviour {
 		upgradeButtons[1].GenerateMinorMetalUpgrade();
 		upgradeButtons[2].GenerateMinorSilicateUpgrade();
 		upgradeButtons[3].GenerateMajorUpgrade();
-		//upgradeButtons[4].GenerateMajorUpgrade("place holder");
 	}
-	
-	
 }
