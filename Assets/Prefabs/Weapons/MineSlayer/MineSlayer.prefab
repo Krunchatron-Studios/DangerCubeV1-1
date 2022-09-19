@@ -48,20 +48,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d20a0e7fa96d3b41940dbda4c77bb23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSprite: {fileID: 21300000, guid: 88e011cc3bff5b7419b617c187c16014, type: 3}
+  upgradeName: MineSlayer
+  upgradeTier: Major
+  upgradeType: Metal
+  upgradeSprite: {fileID: 21300000, guid: 88e011cc3bff5b7419b617c187c16014, type: 3}
+  description: Mind the mines!
   audioSource: {fileID: 7542884385270234193}
-  weaponName: MineSlayer
-  weaponDescription: Mind the mines
+  upgradeRange: 0
+  upgradeLevel: 0
   weaponDamage: 3
+  attackSpeed: 5
   damageType: Bio
+  knockForce: 5
   objectPooler: {fileID: 4208378019257486495}
   firingPoint: {fileID: 2416134994988136928}
   projectile: {fileID: 8577217122432938290, guid: 449cbc7b33e7d704186cbe2186a3d7a5,
     type: 3}
   enemyTarget: {x: 0, y: 0}
   targetingSys: {fileID: 2322803377979742145}
-  weaponRange: 3
-  rateOfFire: 2
   canFire: 0
   nextFire: 0
 --- !u!82 &7542884385270234193
@@ -238,6 +242,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6996422098028261378}
     m_Modifications:
+    - target: {fileID: 2608481302110575300, guid: 12602ce919ca01443b18db03fe04235a,
+        type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 4255465756535646841}
     - target: {fileID: 2608481302110575306, guid: 12602ce919ca01443b18db03fe04235a,
         type: 3}
       propertyPath: m_Name

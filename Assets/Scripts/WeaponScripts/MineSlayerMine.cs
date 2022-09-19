@@ -10,7 +10,7 @@ public class MineSlayerMine : ParticleProjectile {
 			ResolveProjectile(other);
 		}
 	}
-	public override void ResolveProjectile(Collider2D other) {
+	public void ResolveProjectile(Collider2D other) {
 		GameObject blast = PoolManager.pm.acidBlastPool.GetPooledGameObject();
 		blast.SetActive(true);
 		blast.transform.position = other.transform.position;

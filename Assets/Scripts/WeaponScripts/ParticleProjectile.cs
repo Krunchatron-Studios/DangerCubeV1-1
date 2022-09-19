@@ -13,6 +13,7 @@ public class ParticleProjectile : Projectile {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
+		float gatheredDmg = GameObject.FindGameObjectWithTag("PlasmaBurster").GetComponent<Weapon>().weaponDamage;
 		ResolveProjectile(other);
 	}
 
@@ -21,16 +22,16 @@ public class ParticleProjectile : Projectile {
 			weapon.Knockback(other);
 
 			IHurtThingsInterface hit = other.GetComponent<IHurtThingsInterface>();
-			hit.TakeDamage(weapon.weaponDamage, weapon.damageType);
+			hit.TakeDamage(damage, weapon.damageType);
 			MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
-				weapon.weaponDamage.ToString(), Vector3.up, .2f);
+				damage.ToString(), Vector3.up, .2f);
 			gameObject.SetActive(false);
 		}
 		
 		if (other.CompareTag("Obstacle")) {
 			ISmashThingsInterface hit = other.GetComponent<ISmashThingsInterface>();
-			Debug.Log($"particle proj dmg: {weapon.weaponDamage}");
-			hit.DamageStructure(weapon.weaponDamage, weapon.damageType, other.transform.position);
+			Debug.Log($"particle proj dmg: {damage}");
+			hit.DamageStructure(damage, weapon.damageType, other.transform.position);
 			gameObject.SetActive(false);
 		}
 		if (other.CompareTag("Wall")) {

@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5440330668561067908}
+  - component: {fileID: 6273430834546850311}
   - component: {fileID: 5440330668561067906}
   - component: {fileID: 5440330668561067907}
   - component: {fileID: -6291896116513215748}
-  - component: {fileID: 6273430834546850311}
   m_Layer: 8
   m_Name: PlasmaBurster
   m_TagString: Weapon
@@ -36,6 +36,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6273430834546850311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5440330668561067904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818bccb1b3e072740ba4eebcf15259d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeLevel: 0
+  upgradeName: PlasmaBurster
+  upgradeTier: Major
+  upgradeType: Silicate
+  upgradeSprite: {fileID: 21300000, guid: 49ee25a366f7aef408e3846af70b285f, type: 3}
+  description: Pew pew pew
+  audioSource: {fileID: 5440330668561067906}
+  upgradeRange: 5
+  weaponDamage: 2
+  attackSpeed: 0.2
+  damageType: Energy
+  knockForce: 2
+  objectPooler: {fileID: 5440330668561067907}
+  firingPoint: {fileID: 8545189905758337356}
+  projectile: {fileID: 4837917352924149430, guid: bed2d0578a993794b95b50f500af5b62,
+    type: 3}
+  enemyTarget: {x: 0, y: 0}
+  targetingSys: {fileID: 8019996175258049880}
+  canFire: 0
+  nextFire: 0
+  reloadTimer: 2
+  ammo: 5
 --- !u!82 &5440330668561067906
 AudioSource:
   m_ObjectHideFlags: 0
@@ -48,7 +82,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f9ccdb916ca1dea4ea6ecbdd7dc4d9f9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -147,7 +181,7 @@ MonoBehaviour:
   MutualizeWaitingPools: 0
   NestWaitingPool: 1
   NestUnderThis: 0
-  GameObjectToPool: {fileID: 4837917352924149430, guid: 21f4d6b9485e1c648822270f8dabfb88,
+  GameObjectToPool: {fileID: 4837917352924149430, guid: bed2d0578a993794b95b50f500af5b62,
     type: 3}
   PoolSize: 20
   PoolCanExpand: 1
@@ -203,36 +237,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6273430834546850311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5440330668561067904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 818bccb1b3e072740ba4eebcf15259d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponSprite: {fileID: 21300000, guid: 49ee25a366f7aef408e3846af70b285f, type: 3}
-  audioSource: {fileID: 5440330668561067906}
-  weaponName: PlasmaBurster
-  weaponDescription: PlasmaBurster
-  weaponDamage: 2
-  damageType: Energy
-  objectPooler: {fileID: 5440330668561067907}
-  firingPoint: {fileID: 8545189905758337356}
-  projectile: {fileID: 4837917352924149430, guid: 21f4d6b9485e1c648822270f8dabfb88,
-    type: 3}
-  enemyTarget: {x: 0, y: 0}
-  targetingSys: {fileID: 8019996175258049880}
-  weaponRange: 4
-  rateOfFire: 0.15
-  canFire: 0
-  nextFire: 0
-  reloadTimer: 2
-  ammo: 5
 --- !u!1001 &5440330667780196252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -255,6 +259,11 @@ PrefabInstance:
       propertyPath: firePoint1
       value: 
       objectReference: {fileID: 8545189905758337356}
+    - target: {fileID: 2608481302110575300, guid: 12602ce919ca01443b18db03fe04235a,
+        type: 3}
+      propertyPath: firePoint2
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2608481302110575306, guid: 12602ce919ca01443b18db03fe04235a,
         type: 3}
       propertyPath: m_Name

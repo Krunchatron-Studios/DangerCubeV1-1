@@ -104,20 +104,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff53ab4556e44cc3a0c78ffde82a237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSprite: {fileID: 21300000, guid: 8171799896c777540bf3edd243559a83, type: 3}
+  upgradeName: OrbitalLaserWeapon
+  upgradeTier: Major
+  upgradeType: Metal
+  upgradeSprite: {fileID: 21300000, guid: 4e1511caeefa7e34496a2bd77f645871, type: 3}
+  description: Laser waterfall
   audioSource: {fileID: 1605000266149368324}
-  weaponName: OrbitalLaser
-  weaponDescription: Make it rain baby!
+  upgradeRange: 20
+  upgradeLevel: 0
   weaponDamage: 2
+  attackSpeed: 3
   damageType: '"Energy"'
+  knockForce: 3
   objectPooler: {fileID: 6232059995250928630}
   firingPoint: {fileID: 4285387142156465725}
   projectile: {fileID: 4003393644203996623, guid: 45f91a174b71b804eabd97bccec12ca1,
     type: 3}
   enemyTarget: {x: 0, y: 3.5404346}
   targetingSys: {fileID: 8371550627369725801}
-  weaponRange: 20
-  rateOfFire: 2
   canFire: 0
   nextFire: 0
   explosion: {fileID: 6039074600034411127, guid: 3774de1abe1e25d4fa95f0ea0ea9769a,
@@ -628,20 +632,10 @@ PrefabInstance:
       propertyPath: firePoint4
       value: 
       objectReference: {fileID: 98918085002990290}
-    - target: {fileID: 2608481302110575301, guid: 12602ce919ca01443b18db03fe04235a,
-        type: 3}
-      propertyPath: m_Radius
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 2608481302110575306, guid: 12602ce919ca01443b18db03fe04235a,
         type: 3}
       propertyPath: m_Name
       value: TargetingSystem
-      objectReference: {fileID: 0}
-    - target: {fileID: 2608481302110575306, guid: 12602ce919ca01443b18db03fe04235a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2608481302110575307, guid: 12602ce919ca01443b18db03fe04235a,
         type: 3}
