@@ -9,6 +9,7 @@ public class ProjectileWeapon : Weapon {
 	public GameObject projectile;
 	public Vector2 enemyTarget;
 	public TargetingSystem targetingSys;
+	public Vector2 projectileScale;
 	
 	[Header("Firing Vars")]
 	public bool canFire;
@@ -18,6 +19,7 @@ public class ProjectileWeapon : Weapon {
 		canFire = true;
 		targetingSys.circleCol2D.radius = upgradeRange;
 		objectPooler = GetComponent<MMSimpleObjectPooler>();
+		projectileScale = new Vector2(1, 1);
 	}
 	private void Update() {
 		CanFireTimer();
@@ -29,8 +31,11 @@ public class ProjectileWeapon : Weapon {
 		bullet.transform.position = firePoint;
 		bullet.Setup(targetPosition);
 		nextFire = Time.time + attackSpeed;
-		MMCameraShakeEvent.Trigger(.1f, .2f, 40, 0, 0, 0, false);
+		MMCameraShakeEvent.Trigger(.1f, .2f, 40, 0, 0, 0);
 		bullet.gameObject.SetActive(true);
+		bullet.damage = weaponDamage;
+		bullet.transform.localScale = new Vector2(1.5f, 1.5f);
+		Debug.Log($"bullet scale: {bullet.transform.localScale}");
 		bullet.MoveProjectile();
 	}
 	
@@ -44,6 +49,12 @@ public class ProjectileWeapon : Weapon {
 	
 	public void AquireTarget(BaseEnemy enemy) {
 		enemyTarget = enemy.transform.position;
+	}
+
+	public override void IncreaseProjectileScale(float scaleIncrease) {
+		projectileScale = new Vector2(projectileScale.x + scaleIncrease,
+			projectileScale.y + scaleIncrease);
+		Debug.Log($"proj scale: {projectileScale}");
 	}
 
 	public void ChangeProjectile(GameObject newProjectile) {
