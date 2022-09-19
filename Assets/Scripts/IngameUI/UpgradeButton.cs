@@ -43,7 +43,7 @@ public class UpgradeButton : MonoBehaviour {
 
 	public void GenerateMajorUpgrade() {
 		string[] temp = { "Bio", "Metal", "Silicate" };
-		int index = Random.Range(0, temp.Length);
+		int index = Random.Range(0, 3);
 		Upgrade upgrade = null;
 		Debug.Log($"Major Index: {index}");
 		if (index == 0) {
@@ -67,7 +67,6 @@ public class UpgradeButton : MonoBehaviour {
 	
 	public void UpdateLevelUpPanel() {
 		List<Upgrade> refArray = UpgradesList.ul.upgradeList;
-		int index = refArray.IndexOf(_upgrade);
 
 		for (int i = 0; i < refArray.Count; i++) {
 			Debug.Log(refArray[i].upgradeName + "test");
