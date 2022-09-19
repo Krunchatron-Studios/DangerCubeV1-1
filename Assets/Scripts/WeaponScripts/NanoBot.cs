@@ -3,14 +3,13 @@ using UnityEngine;
 public class NanoBot : Projectile {
     public NanoManager nanoManager;
     public GameObject rotationCenter;
-    // private Vector3 _nanoTransform;
-    // private GameObject _target;
+    private Vector3 _nanoTransform;
     public float rotationSpeed = 50;
     [Header("Mutation Payload")]
     public NanoZombie zombie;
 
     private void Update() {
-        // _nanoTransform = transform.position;
+        _nanoTransform = transform.position;
         transform.RotateAround(rotationCenter.transform.position, Vector3.forward, rotationSpeed * Time.deltaTime);
     }
 
@@ -18,12 +17,13 @@ public class NanoBot : Projectile {
         if (other.CompareTag("Enemy") && other.gameObject.name == "Pedestrian(Clone)") {
             other.gameObject.SetActive(false);
             gameObject.SetActive(false);
+            OnDestroy();
             if (nanoManager.currentNanoBots >= 1) {
                 nanoManager.currentNanoBots--;
             }
         }
     }
-    // private void OnDestroy() {
-    //     Instantiate(zombie, _nanoTransform, Quaternion.identity);
-    // }
+    private void OnDestroy() {
+        Instantiate(zombie, _nanoTransform, Quaternion.identity);
+    }
 }
