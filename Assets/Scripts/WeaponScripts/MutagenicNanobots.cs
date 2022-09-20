@@ -3,13 +3,12 @@ using UnityEngine;
 public class MutagenicNanobots : Weapon {
     public NanoManager nanoManager;
     private GameObject _playerPosition;
-    public float spawnDelay;
     public int distance;
     public NanoBot[] nanoBots;
 
     void Start() {
         nanoManager.currentNanoBots = 0;
-        InvokeRepeating("SpawnNanos", 2f, spawnDelay);
+        InvokeRepeating("SpawnNanos", 2f, attackSpeed);
     }
     void FixedUpdate() {
         _playerPosition = GameObject.FindWithTag("Player");

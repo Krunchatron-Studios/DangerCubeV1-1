@@ -4,13 +4,12 @@ public class NanoBot : Projectile {
     public NanoManager nanoManager;
     public GameObject rotationCenter;
     private Vector3 _nanoTransform;
-    public float rotationSpeed = 50;
     [Header("Mutation Payload")]
     public NanoZombie zombie;
 
     private void Update() {
         _nanoTransform = transform.position;
-        transform.RotateAround(rotationCenter.transform.position, Vector3.forward, rotationSpeed * Time.deltaTime);
+        transform.RotateAround(rotationCenter.transform.position, Vector3.forward, projectileVelocity * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
