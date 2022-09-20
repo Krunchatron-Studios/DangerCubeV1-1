@@ -75,6 +75,7 @@ namespace MoreMountains.Feedbacks
 
 		/// the duration of this feedback is the duration of the scale animation
 		public override float FeedbackDuration { get { return ApplyTimeMultiplier(AnimateScaleDuration); } set { AnimateScaleDuration = value; } }
+		public override bool HasRandomness => true;
 
 		protected Vector3 _initialScale;
 		protected float _initialAxisScale;
@@ -155,7 +156,7 @@ namespace MoreMountains.Feedbacks
             
 			GetAxisScale();
             
-			float intensityMultiplier = Timing.ConstantIntensity ? 1f : feedbacksIntensity;
+			float intensityMultiplier = ComputeIntensity(feedbacksIntensity);
 			if (Active || Owner.AutoPlayOnEnable)
 			{
 				if ((Mode == Modes.Absolute) || (Mode == Modes.Additive))
@@ -164,7 +165,7 @@ namespace MoreMountains.Feedbacks
 					{
 						return;
 					}
-					_coroutine = Owner.StartCoroutine(AnimateScale(SquashAndStretchTarget, FeedbackDuration, AnimateCurve, Axis, RemapCurveZero * intensityMultiplier, RemapCurveOne * intensityMultiplier));
+					_coroutine = Owner.StartCoroutine(AnimateScale(SquashAndStretchTarget, FeedbackDuration, AnimateCurve, Axis, RemapCurveZero, RemapCurveOne * intensityMultiplier));
 				}
 				if (Mode == Modes.ToDestination)
 				{

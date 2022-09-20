@@ -81,7 +81,6 @@ namespace MoreMountains.Tools
 				if (!_pooledGameObjects[i].gameObject.activeInHierarchy)
 				{
 					// if we find one, we return it
-					// Debug.Log($"great success: {_pooledGameObjects[i]}");
 					return _pooledGameObjects[i];
 				}
 			}
@@ -102,7 +101,7 @@ namespace MoreMountains.Tools
 		{
 			if (GameObjectToPool == null)
 			{
-				// Debug.LogWarning("The "+gameObject.name+" ObjectPooler doesn't have any GameObjectToPool defined.", gameObject);
+				Debug.LogWarning("The "+gameObject.name+" ObjectPooler doesn't have any GameObjectToPool defined.", gameObject);
 				return null;
 			}
 

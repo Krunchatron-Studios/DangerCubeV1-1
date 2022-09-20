@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 #if UNITY_EDITOR
@@ -35,6 +36,26 @@ namespace MoreMountains.Feedbacks
 		/// a number of timing-related values (delay, repeat, etc)
 		[Tooltip("a number of timing-related values (delay, repeat, etc)")]
 		public MMFeedbackTiming Timing;
+		
+		[MMFInspectorGroup("Feedback Randomness", true, 58)]
+		/// if this is true, intensity will be multiplied by a random value on play, picked between RandomMultiplier.x and RandomMultiplier.y
+		[Tooltip("if this is true, intensity will be multiplied by a random value on play, picked between RandomMultiplier.x and RandomMultiplier.y")]
+		public bool RandomizeOutput = false;
+		/// a random value (randomized between its x and y) by which to multiply the output of this feedback, if RandomizeOutput is true
+		[Tooltip("a random value (randomized between its x and y) by which to multiply the output of this feedback, if RandomizeOutput is true")] 
+		[MMFCondition("RandomizeOutput", true)] 
+		[MMFVector("Min", "Max")]
+		public Vector2 RandomMultiplier = new Vector2(0.8f, 1f);
+		
+		/// if this is true, this feedback's duration will be multiplied by a random value on play, picked between RandomDurationMultiplier.x and RandomDurationMultiplier.y
+		[Tooltip("if this is true, this feedback's duration will be multiplied by a random value on play, picked between RandomDurationMultiplier.x and RandomDurationMultiplier.y")]
+		public bool RandomizeDuration = false;
+		/// a random value (randomized between its x and y) by which to multiply the duration of this feedback, if RandomizeDuration is true
+		[Tooltip("a random value (randomized between its x and y) by which to multiply the duration of this feedback, if RandomizeDuration is true")] 
+		[MMFCondition("RandomizeDuration", true)] 
+		[MMFVector("Min", "Max")]
+		public Vector2 RandomDurationMultiplier = new Vector2(0.5f, 2f);
+
 		/// the Owner of the feedback, as defined when calling the Initialization method
 		[HideInInspector]
 		public MMF_Player Owner;
@@ -55,6 +76,8 @@ namespace MoreMountains.Feedbacks
 		public virtual bool LooperStart => false;
 		/// if this is true, the Channel property will be displayed, otherwise it'll be hidden        
 		public virtual bool HasChannel => false;
+		/// if this is true, the Randomness group will be displayed, otherwise it'll be hidden        
+		public virtual bool HasRandomness => false;
 		public virtual bool HasCustomInspectors => false;
 		/// an overridable color for your feedback, that can be redefined per feedback. White is the only reserved color, and the feedback will revert to 
 		/// normal (light or dark skin) when left to White
@@ -65,6 +88,50 @@ namespace MoreMountains.Feedbacks
 		public virtual bool InCooldown { get { return (Timing.CooldownDuration > 0f) && (FeedbackTime - _lastPlayTimestamp < Timing.CooldownDuration); } }
 		/// if this is true, this feedback is currently playing
 		public virtual bool IsPlaying { get; set; }
+
+		/// <summary>
+		/// Computes the new intensity, taking into account constant intensity and potential randomness
+		/// </summary>
+		/// <param name="intensity"></param>
+		/// <returns></returns>
+		public virtual float ComputeIntensity(float intensity)
+		{
+			float result = Timing.ConstantIntensity ? 1f : intensity;
+			result *= ComputedRandomMultiplier;
+			return result;
+		}
+		/// <summary>
+		/// Returns the random multiplier to apply to this feedback's output
+		/// </summary>
+		public virtual float ComputedRandomMultiplier => RandomizeOutput ? Random.Range(RandomMultiplier.x, RandomMultiplier.y) : 1f; 
+
+		/// <summary>
+		/// Returns the timescale mode to use in logic, taking into account the one set at the feedback level and the player level
+		/// </summary>
+		public virtual TimescaleModes ComputedTimescaleMode
+		{
+			get
+			{
+				if (Owner.ForceTimescaleMode)
+				{
+					return Owner.ForcedTimescaleMode;
+				}
+				return Timing.TimescaleMode;
+			}
+		}
+
+		/// returns true if this feedback is in Scaled timescale mode, false otherwise
+		public virtual bool InScaledTimescaleMode
+		{
+			get
+			{
+				if (Owner.ForceTimescaleMode)
+				{
+					return (Owner.ForcedTimescaleMode == TimescaleModes.Scaled);
+				}
+				return (Timing.TimescaleMode == TimescaleModes.Scaled);
+			}
+		}
         
 		/// the time (or unscaled time) based on the selected Timing settings
 		public virtual float FeedbackTime 
@@ -77,6 +144,11 @@ namespace MoreMountains.Feedbacks
 					return (float)EditorApplication.timeSinceStartup;
 				}
 				#endif
+
+				if (Timing.UseScriptDrivenTimescale)
+				{
+					return Timing.ScriptDrivenTime;
+				}
 	            
 				if (Owner.ForceTimescaleMode)
 				{
@@ -106,6 +178,11 @@ namespace MoreMountains.Feedbacks
 		{
 			get
 			{
+				if (Timing.UseScriptDrivenTimescale)
+				{
+					return Timing.ScriptDrivenDeltaTime;
+				}
+				
 				if (Owner.ForceTimescaleMode)
 				{
 					if (Owner.ForcedTimescaleMode == TimescaleModes.Scaled)
@@ -204,7 +281,7 @@ namespace MoreMountains.Feedbacks
 		protected Coroutine _repeatedPlayCoroutine;
 		protected bool _requiresSetup = false;
 		protected string _requiredTarget = "";
-        
+		protected float _randomDurationMultiplier = 1f;
 		protected int _sequenceTrackID = 0;
 		protected float _beatInterval;
 		protected bool BeatThisFrame = false;
@@ -265,7 +342,7 @@ namespace MoreMountains.Feedbacks
 			{
 				return;
 			}
-
+			
 			if (Timing.InitialDelay > 0f) 
 			{
 				_playCoroutine = Owner.StartCoroutine(PlayCoroutine(position, feedbacksIntensity));
@@ -285,14 +362,7 @@ namespace MoreMountains.Feedbacks
 		/// <returns></returns>
 		protected virtual IEnumerator PlayCoroutine(Vector3 position, float feedbacksIntensity = 1.0f)
 		{
-			if (Timing.TimescaleMode == TimescaleModes.Scaled)
-			{
-				yield return MMFeedbacksCoroutine.WaitFor(Timing.InitialDelay);
-			}
-			else
-			{
-				yield return MMFeedbacksCoroutine.WaitForUnscaled(Timing.InitialDelay);
-			}
+			yield return WaitFor(Timing.InitialDelay);
 			RegularPlay(position, feedbacksIntensity);
 			_lastPlayTimestamp = FeedbackTime;
 		}
@@ -361,28 +431,14 @@ namespace MoreMountains.Feedbacks
 				{
 					CustomPlayFeedback(position, feedbacksIntensity);
 					_lastPlayTimestamp = FeedbackTime;
-					if (Timing.TimescaleMode == TimescaleModes.Scaled)
-					{
-						yield return MMFeedbacksCoroutine.WaitFor(Timing.DelayBetweenRepeats);
-					}
-					else
-					{
-						yield return MMFeedbacksCoroutine.WaitForUnscaled(Timing.DelayBetweenRepeats);
-					}
+					yield return WaitFor(Timing.DelayBetweenRepeats);
 				}
 				else
 				{
 					_sequenceCoroutine = Owner.StartCoroutine(SequenceCoroutine(position, feedbacksIntensity));
 
 					float delay = ApplyTimeMultiplier(Timing.DelayBetweenRepeats) + Timing.Sequence.Length;
-					if (Timing.TimescaleMode == TimescaleModes.Scaled)
-					{
-						yield return MMFeedbacksCoroutine.WaitFor(delay);
-					}
-					else
-					{
-						yield return MMFeedbacksCoroutine.WaitForUnscaled(delay);
-					}
+					yield return WaitFor(delay);
 				}
 			}
 		}
@@ -402,29 +458,14 @@ namespace MoreMountains.Feedbacks
 				{
 					CustomPlayFeedback(position, feedbacksIntensity);
 					_lastPlayTimestamp = FeedbackTime;
-                    
-					if (Timing.TimescaleMode == TimescaleModes.Scaled)
-					{
-						yield return MMFeedbacksCoroutine.WaitFor(Timing.DelayBetweenRepeats);
-					}
-					else
-					{
-						yield return MMFeedbacksCoroutine.WaitForUnscaled(Timing.DelayBetweenRepeats);
-					}
+					yield return WaitFor(Timing.DelayBetweenRepeats);
 				}
 				else
 				{
 					_sequenceCoroutine = Owner.StartCoroutine(SequenceCoroutine(position, feedbacksIntensity));
                     
 					float delay = ApplyTimeMultiplier(Timing.DelayBetweenRepeats) + Timing.Sequence.Length;
-					if (Timing.TimescaleMode == TimescaleModes.Scaled)
-					{
-						yield return MMFeedbacksCoroutine.WaitFor(delay);
-					}
-					else
-					{
-						yield return MMFeedbacksCoroutine.WaitForUnscaled(delay);
-					}
+					yield return WaitFor(delay);
 				}
 			}
 			_playsLeft = Timing.NumberOfRepeats + 1;
@@ -589,6 +630,14 @@ namespace MoreMountains.Feedbacks
 		}
 
 		/// <summary>
+		/// Computes a new random duration multiplier
+		/// </summary>
+		public virtual void ComputeNewRandomDurationMultiplier()
+		{
+			_randomDurationMultiplier = Random.Range(RandomDurationMultiplier.x, RandomDurationMultiplier.y);
+		}
+		
+		/// <summary>
 		/// Applies the host MMFeedbacks' time multiplier to this feedback
 		/// </summary>
 		/// <param name="duration"></param>
@@ -599,9 +648,30 @@ namespace MoreMountains.Feedbacks
 			{
 				return 0f;
 			}
+			if (RandomizeDuration)
+			{
+				duration = duration * _randomDurationMultiplier;
+			}
 			return Owner.ApplyTimeMultiplier(duration);
 		}
-        
+
+		/// <summary>
+		/// Internal method used to wait for a duration, on scaled or unscaled time
+		/// </summary>
+		/// <param name="delay"></param>
+		/// <returns></returns>
+		protected virtual IEnumerator WaitFor(float delay)
+		{
+			if (InScaledTimescaleMode)
+			{
+				yield return MMFeedbacksCoroutine.WaitFor(delay);
+			}
+			else
+			{
+				yield return MMFeedbacksCoroutine.WaitForUnscaled(delay);
+			}
+		}
+
 		#endregion Time
 
 		#region Direction
@@ -725,6 +795,14 @@ namespace MoreMountains.Feedbacks
 		public virtual void OnDisable()
 		{
 	        
+		}
+
+		/// <summary>
+		/// Triggered when the host MMF Player gets selected, can be used to draw gizmos
+		/// </summary>
+		public virtual void OnDrawGizmosSelected()
+		{
+			
 		}
 
 		#endregion

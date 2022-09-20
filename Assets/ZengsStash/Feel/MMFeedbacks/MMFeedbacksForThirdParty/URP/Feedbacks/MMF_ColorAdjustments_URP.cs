@@ -29,6 +29,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 		/// the duration of this feedback is the duration of the shake
 		public override float FeedbackDuration { get { return ApplyTimeMultiplier(ShakeDuration); } set { ShakeDuration = value; } }
 		public override bool HasChannel => true;
+		public override bool HasRandomness => true;
 
 		[MMFInspectorGroup("Color Grading", true, 43)]
 		/// the duration of the shake, in seconds
@@ -130,14 +131,14 @@ namespace MoreMountains.FeedbacksForThirdParty
 				return;
 			}
             
-			float intensityMultiplier = Timing.ConstantIntensity ? 1f : feedbacksIntensity;
+			float intensityMultiplier = ComputeIntensity(feedbacksIntensity);
 			MMColorAdjustmentsShakeEvent_URP.Trigger(ShakePostExposure, RemapPostExposureZero, RemapPostExposureOne,
 				ShakeHueShift, RemapHueShiftZero, RemapHueShiftOne,
 				ShakeSaturation, RemapSaturationZero, RemapSaturationOne,
 				ShakeContrast, RemapContrastZero, RemapContrastOne,
 				ColorFilterMode, ColorFilterGradient, ColorFilterDestination, ColorFilterCurve,
 				FeedbackDuration,
-				RelativeIntensity, intensityMultiplier, Channel, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, Timing.TimescaleMode);
+				RelativeIntensity, intensityMultiplier, Channel, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, ComputedTimescaleMode);
             
 		}
         

@@ -43,6 +43,8 @@ namespace MoreMountains.Feedbacks
 		protected SerializedProperty _mmfeedbacksEvents;
 		protected SerializedProperty _keepPlayModeChanges;
 		protected SerializedProperty _mmfeedbacksChanceToPlay;
+		protected SerializedProperty _mmfeedbacksRandomizeDuration;
+		protected SerializedProperty _mmfeedbacksRandomDurationMultiplier;
 
 		protected bool _feedbackListIsExpanded;
 		protected string _feedbackListLabel;
@@ -167,6 +169,8 @@ namespace MoreMountains.Feedbacks
 			_mmfeedbacksDirection = serializedObject.FindProperty("Direction");
 			_mmfeedbacksAutoChangeDirectionOnEnd = serializedObject.FindProperty("AutoChangeDirectionOnEnd");
 			_mmfeedbacksDurationMultiplier = serializedObject.FindProperty("DurationMultiplier");
+			_mmfeedbacksRandomizeDuration = serializedObject.FindProperty("RandomizeDuration");
+			_mmfeedbacksRandomDurationMultiplier = serializedObject.FindProperty("RandomDurationMultiplier");
 			_mmfeedbacksForceTimescaleMode = serializedObject.FindProperty("ForceTimescaleMode");
 			_mmfeedbacksForcedTimescaleMode = serializedObject.FindProperty("ForcedTimescaleMode");
 			_mmfeedbacksPlayerTimescaleMode = serializedObject.FindProperty("PlayerTimescaleMode");
@@ -355,6 +359,8 @@ namespace MoreMountains.Feedbacks
 				EditorGUILayout.PropertyField(_mmfeedbacksForceTimescaleMode);
 				EditorGUILayout.PropertyField(_mmfeedbacksForcedTimescaleMode);
 				EditorGUILayout.PropertyField(_mmfeedbacksDurationMultiplier);
+				EditorGUILayout.PropertyField(_mmfeedbacksRandomizeDuration);
+				EditorGUILayout.PropertyField(_mmfeedbacksRandomDurationMultiplier);
 				EditorGUILayout.PropertyField(_mmfeedbacksDisplayFullDurationDetails);
 				EditorGUILayout.PropertyField(_mmfeedbacksCooldownDuration);
 				EditorGUILayout.PropertyField(_mmfeedbacksInitialDelay);

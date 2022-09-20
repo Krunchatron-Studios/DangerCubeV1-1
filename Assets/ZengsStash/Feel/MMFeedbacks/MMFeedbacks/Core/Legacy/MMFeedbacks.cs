@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Feedbacks;
 using System.Linq;
+using MoreMountains.Tools;
 using UnityEditor.Experimental;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
@@ -67,6 +68,13 @@ namespace MoreMountains.Feedbacks
 		/// a time multiplier that will be applied to all feedback durations (initial delay, duration, delay between repeats...)
 		[Tooltip("a time multiplier that will be applied to all feedback durations (initial delay, duration, delay between repeats...)")]
 		public float DurationMultiplier = 1f;
+		/// if this is true, will expose a RandomDurationMultiplier. The final duration of each feedback will be : their base duration * DurationMultiplier * a random value between RandomDurationMultiplier.x and RandomDurationMultiplier.y
+		[Tooltip("if this is true, will expose a RandomDurationMultiplier. The final duration of each feedback will be : their base duration * DurationMultiplier * a random value between RandomDurationMultiplier.x and RandomDurationMultiplier.y")]
+		public bool RandomizeDuration = false;
+		/// if RandomizeDuration is true, the min (x) and max (y) values for the random duration multiplier
+		[Tooltip("if RandomizeDuration is true, the min (x) and max (y) values for the random duration multiplier")]
+		[MMCondition("RandomizeDuration", true)]
+		public Vector2 RandomDurationMultiplier = new Vector2(0.5f, 1.5f);
 		/// if this is true, more editor-only, detailed info will be displayed per feedback in the duration slot
 		[Tooltip("if this is true, more editor-only, detailed info will be displayed per feedback in the duration slot")]
 		public bool DisplayFullDurationDetails = false;
@@ -121,6 +129,8 @@ namespace MoreMountains.Feedbacks
 		public bool ContainsLoop { get; set; }
 		/// true if this feedback should change play direction next time it's played
 		public bool ShouldRevertOnNextPlay { get; set; }
+		/// true if this player is forcing unscaled mode
+		public bool ForcingUnscaledTimescaleMode { get { return (ForceTimescaleMode && ForcedTimescaleMode == TimescaleModes.Unscaled);  } }
 		/// The total duration (in seconds) of all the active feedbacks in this MMFeedbacks
 		public virtual float TotalDuration
 		{
@@ -150,6 +160,8 @@ namespace MoreMountains.Feedbacks
 		protected bool _pauseFound = false;
 		protected float _totalDuration = 0f;
 		protected bool _shouldStop = false;
+		protected const float _smallValue = 0.001f;
+		protected float _randomDurationMultiplier = 1f;
 
 		#region INITIALIZATION
 
@@ -422,6 +434,7 @@ namespace MoreMountains.Feedbacks
 			_startTime = GetTime();
 			_lastStartAt = _startTime;
 			_totalDuration = TotalDuration;
+			CheckForPauses();
             
 			if (InitialDelay > 0f)
 			{
@@ -438,8 +451,21 @@ namespace MoreMountains.Feedbacks
 			Events.TriggerOnPlay(this);
 
 			_holdingMax = 0f;
+			CheckForPauses();
+			
+			if (!_pauseFound)
+			{
+				PlayAllFeedbacks(position, feedbacksIntensity, forceRevert);
+			}
+			else
+			{
+				// if at least one pause was found
+				StartCoroutine(PausedFeedbacksCo(position, feedbacksIntensity));
+			}
+		}
 
-			// test if a pause or holding pause is found
+		protected virtual void CheckForPauses()
+		{
 			_pauseFound = false;
 			for (int i = 0; i < Feedbacks.Count; i++)
 			{
@@ -454,16 +480,6 @@ namespace MoreMountains.Feedbacks
 						_pauseFound = true;
 					}    
 				}
-			}
-
-			if (!_pauseFound)
-			{
-				PlayAllFeedbacks(position, feedbacksIntensity, forceRevert);
-			}
-			else
-			{
-				// if at least one pause was found
-				StartCoroutine(PausedFeedbacksCo(position, feedbacksIntensity));
 			}
 		}
 
@@ -918,7 +934,7 @@ namespace MoreMountains.Feedbacks
 		/// <returns></returns>
 		public virtual float ApplyTimeMultiplier(float duration)
 		{
-			return duration * DurationMultiplier;
+			return duration * Mathf.Clamp(DurationMultiplier, _smallValue, Single.MaxValue);
 		}
 
 		/// <summary>
@@ -971,7 +987,7 @@ namespace MoreMountains.Feedbacks
 		/// </summary>
 		protected virtual void OnValidate()
 		{
-			DurationMultiplier = Mathf.Clamp(DurationMultiplier, 0f, Single.MaxValue);
+			DurationMultiplier = Mathf.Clamp(DurationMultiplier, _smallValue, Single.MaxValue);
 		}
 
 		/// <summary>

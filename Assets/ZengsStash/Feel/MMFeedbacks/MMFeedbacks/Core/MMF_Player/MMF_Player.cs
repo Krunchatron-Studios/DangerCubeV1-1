@@ -325,10 +325,13 @@ namespace MoreMountains.Feedbacks
 			IsPlaying = true;
 			_startTime = GetTime();
 			_lastStartAt = _startTime;
+			ComputeNewRandomDurationMultipliers();
 			_totalDuration = TotalDuration;
+			CheckForPauses();
             
 			if (Time.frameCount < 2)
 			{
+				this.enabled = false;
 				StartCoroutine(FrameOnePlayCo(position, feedbacksIntensity, forceRevert));
 				return;
 			}
@@ -346,6 +349,7 @@ namespace MoreMountains.Feedbacks
 		protected virtual IEnumerator FrameOnePlayCo(Vector3 position, float feedbacksIntensity, bool forceRevert = false)
 		{
 			yield return null;
+			this.enabled = true;
 			_startTime = GetTime();
 			_lastStartAt = _startTime;
 			IsPlaying = true;
@@ -358,8 +362,21 @@ namespace MoreMountains.Feedbacks
 			Events.TriggerOnPlay(this);
 
 			_holdingMax = 0f;
-
-			// test if a pause or holding pause is found
+			CheckForPauses();
+			
+			if (!_pauseFound)
+			{
+				PlayAllFeedbacks(position, feedbacksIntensity, forceRevert);
+			}
+			else
+			{
+				// if at least one pause was found
+				StartCoroutine(PausedFeedbacksCo(position, feedbacksIntensity));
+			}
+		}
+		
+		protected override void CheckForPauses()
+		{
 			_pauseFound = false;
 			int count = FeedbacksList.Count;
 			for (int i = 0; i < count; i++)
@@ -375,16 +392,6 @@ namespace MoreMountains.Feedbacks
 						_pauseFound = true;
 					}    
 				}
-			}
-			
-			if (!_pauseFound)
-			{
-				PlayAllFeedbacks(position, feedbacksIntensity, forceRevert);
-			}
-			else
-			{
-				// if at least one pause was found
-				StartCoroutine(PausedFeedbacksCo(position, feedbacksIntensity));
 			}
 		}
 
@@ -488,7 +495,7 @@ namespace MoreMountains.Feedbacks
 				{
 					Events.TriggerOnPause(this);
 					// we stay here until all previous feedbacks have finished
-					while (GetTime() - _lastStartAt < _holdingMax)
+					while ((GetTime() - _lastStartAt < _holdingMax) && !SkippingToTheEnd)
 					{
 						yield return null;
 					}
@@ -503,7 +510,7 @@ namespace MoreMountains.Feedbacks
 				}
 
 				// Handles pause
-				if ((FeedbacksList[i].Pause != null) && (FeedbacksList[i].Active) && (FeedbacksList[i].ShouldPlayInThisSequenceDirection))
+				if ((FeedbacksList[i].Pause != null) && (FeedbacksList[i].Active) && (FeedbacksList[i].ShouldPlayInThisSequenceDirection) && !SkippingToTheEnd)
 				{
 					bool shouldPause = true;
 					if (FeedbacksList[i].Chance < 100)
@@ -540,7 +547,7 @@ namespace MoreMountains.Feedbacks
 				    && (FeedbacksList[i].ShouldPlayInThisSequenceDirection)
 				    && (((FeedbacksList[i] as MMF_Looper).NumberOfLoopsLeft > 0) || (FeedbacksList[i] as MMF_Looper).InInfiniteLoop))
 				{
-					while (HasFeedbackStillPlaying())
+					while (HasFeedbackStillPlaying() && !SkippingToTheEnd)
 					{
 						yield return null;
 					}
@@ -569,6 +576,7 @@ namespace MoreMountains.Feedbacks
 						}
 						// if we've found a pause
 						if ((FeedbacksList[j].Pause != null)
+						    && !SkippingToTheEnd
 						    && (FeedbacksList[j].FeedbackDuration > 0f)
 						    && loopAtLastPause && (FeedbacksList[j].Active))
 						{
@@ -577,6 +585,7 @@ namespace MoreMountains.Feedbacks
 						}
 						// if we've found a looper start
 						if ((FeedbacksList[j].LooperStart == true)
+						    && !SkippingToTheEnd
 						    && loopAtLastLoopStart
 						    && (FeedbacksList[j].Active))
 						{
@@ -591,11 +600,11 @@ namespace MoreMountains.Feedbacks
 				i += (Direction == Directions.TopToBottom) ? 1 : -1;
 			}
 			float unscaledTimeAtEnd = GetTime();
-			while (GetTime() - unscaledTimeAtEnd < _holdingMax)
+			while ((GetTime() - unscaledTimeAtEnd < _holdingMax) && !SkippingToTheEnd)
 			{
 				yield return null;
 			}
-			while (HasFeedbackStillPlaying())
+			while (HasFeedbackStillPlaying() && !SkippingToTheEnd)
 			{
 				yield return null;
 			}
@@ -606,6 +615,10 @@ namespace MoreMountains.Feedbacks
 
 		protected virtual IEnumerator SkipToTheEndCo()
 		{
+			if (_startTime == GetTime())
+			{
+				yield return null;
+			}
 			SkippingToTheEnd = true;
 			Events.TriggerOnSkip(this);
 			int count = FeedbacksList.Count;
@@ -805,6 +818,26 @@ namespace MoreMountains.Feedbacks
 				}                
 			}
 		}
+
+		/// <summary>
+		/// Computes new random duration multipliers on all feedbacks if needed
+		/// </summary>
+		protected virtual void ComputeNewRandomDurationMultipliers()
+		{
+			if (RandomizeDuration)
+			{
+				_randomDurationMultiplier = Random.Range(RandomDurationMultiplier.x, RandomDurationMultiplier.y);
+			}
+			
+			int count = FeedbacksList.Count;
+			for (int i = 0; i < count; i++)
+			{
+				if ((FeedbacksList[i] != null) && (FeedbacksList[i].RandomizeDuration))
+				{
+					FeedbacksList[i].ComputeNewRandomDurationMultiplier();
+				}                
+			}
+		}
         
 		/// <summary>
 		/// This will return true if the conditions defined in the specified feedback's Timing section allow it to play in the current play direction of this MMFeedbacks
@@ -843,7 +876,7 @@ namespace MoreMountains.Feedbacks
 		/// <returns></returns>
 		public override float ApplyTimeMultiplier(float duration)
 		{
-			return duration * DurationMultiplier;
+			return duration * Mathf.Clamp(DurationMultiplier, _smallValue, float.MaxValue) * _randomDurationMultiplier;
 		}
 
 		/// <summary>
@@ -993,7 +1026,7 @@ namespace MoreMountains.Feedbacks
 				return;
 			}
             
-			DurationMultiplier = Mathf.Clamp(DurationMultiplier, 0f, Single.MaxValue);
+			DurationMultiplier = Mathf.Clamp(DurationMultiplier, _smallValue, Single.MaxValue);
             
 			for (int i = FeedbacksList.Count - 1; i >= 0; i--)
 			{
@@ -1020,6 +1053,22 @@ namespace MoreMountains.Feedbacks
 			foreach (MMF_Feedback feedback in FeedbacksList)
 			{
 				feedback.OnDestroy();
+			}
+		}
+
+		/// <summary>
+		/// Draws gizmos, when the MMF_Player is selected, for all feedbacks that implement the method of the same name 
+		/// </summary>
+		protected void OnDrawGizmosSelected()
+		{
+			if (FeedbacksList == null)
+			{
+				return;
+			}
+            
+			for (int i = FeedbacksList.Count - 1; i >= 0; i--)
+			{
+				FeedbacksList[i].OnDrawGizmosSelected();
 			}
 		}
 

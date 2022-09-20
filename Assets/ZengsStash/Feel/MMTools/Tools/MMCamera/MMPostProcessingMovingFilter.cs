@@ -8,19 +8,12 @@ namespace MoreMountains.Tools
 	/// </summary>
 	public struct MMPostProcessingMovingFilterEvent
 	{
-		public delegate void Delegate(MMTweenType curve, bool active, bool toggle, float duration, int channel = 0, bool stop = false);
 		static private event Delegate OnEvent;
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)] private static void RuntimeInitialization() { OnEvent = null; }
+		static public void Register(Delegate callback) { OnEvent += callback; }
+		static public void Unregister(Delegate callback) { OnEvent -= callback; }
 
-		static public void Register(Delegate callback)
-		{
-			OnEvent += callback;
-		}
-
-		static public void Unregister(Delegate callback)
-		{
-			OnEvent -= callback;
-		}
-
+		public delegate void Delegate(MMTweenType curve, bool active, bool toggle, float duration, int channel = 0, bool stop = false);
 		static public void Trigger(MMTweenType curve, bool active, bool toggle, float duration, int channel = 0, bool stop = false)
 		{
 			OnEvent?.Invoke(curve, active, toggle, duration, channel, stop);

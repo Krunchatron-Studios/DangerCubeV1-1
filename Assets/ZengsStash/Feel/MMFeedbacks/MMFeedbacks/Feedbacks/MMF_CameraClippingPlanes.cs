@@ -23,6 +23,7 @@ namespace MoreMountains.Feedbacks
 		/// returns the duration of the feedback
 		public override float FeedbackDuration { get { return ApplyTimeMultiplier(Duration); } set { Duration = value; } }
 		public override bool HasChannel => true;
+		public override bool HasRandomness => true;
 
 		[MMFInspectorGroup("Clipping Planes", true, 52)]
 		/// the duration of the shake, in seconds
@@ -71,10 +72,13 @@ namespace MoreMountains.Feedbacks
 			{
 				return;
 			}
+
+			feedbacksIntensity = ComputeIntensity(feedbacksIntensity);
+			
 			MMCameraClippingPlanesShakeEvent.Trigger(ShakeNear, FeedbackDuration, RemapNearZero, RemapNearOne, 
 				ShakeFar, RemapFarZero, RemapFarOne,
 				RelativeClippingPlanes,
-				feedbacksIntensity, Channel, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, Timing.TimescaleMode);
+				feedbacksIntensity, Channel, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, ComputedTimescaleMode);
 		}
 
 		/// <summary>

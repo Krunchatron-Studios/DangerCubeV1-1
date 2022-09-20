@@ -26,14 +26,17 @@ namespace MoreMountains.Feedbacks
 		[Tooltip("the rect transform to shake the position of. If left blank, this component will target the transform it's put on.")]
 		[MMEnumCondition("Mode", (int)Modes.RectTransform)]
 		public RectTransform TargetRectTransform;
-        
-        [MMInspectorGroup("Shake Settings", true, 42)]
-        /// the speed at which the transform should shake
+
+		[MMInspectorGroup("Shake Settings", true, 42)]
+		/// the speed at which the transform should shake
         [Tooltip("the speed at which the transform should shake")]
         public float ShakeSpeed = 20f;
         /// the maximum distance from its initial position the transform will move to during the shake
         [Tooltip("the maximum distance from its initial position the transform will move to during the shake")]
         public float ShakeRange = 0.5f;
+        /// an offset to apply to the oscillation
+        [Tooltip("an offset to apply to the oscillation")]
+        public float OscillationOffset = 0f;
         
         [MMInspectorGroup("Direction", true, 43)]
         /// the direction along which to shake the transform's position
@@ -149,7 +152,7 @@ namespace MoreMountains.Feedbacks
         
         protected override void Shake()
         {
-	        _oscillation = Mathf.Sin(ShakeSpeed * (Randomness + _journey));
+	        _oscillation = OscillationOffset + Mathf.Sin(ShakeSpeed * (Randomness + _journey));
            float remappedTime = MMFeedbacksHelpers.Remap(_journey, 0f, ShakeDuration, 0f, 1f);
            
            _attenuation = ComputeAttenuation(remappedTime);
@@ -338,21 +341,15 @@ namespace MoreMountains.Feedbacks
 	
 	public struct MMPositionShakeEvent
 	{
+		static private event Delegate OnEvent;
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)] private static void RuntimeInitialization() { OnEvent = null; }
+		static public void Register(Delegate callback) { OnEvent += callback; }
+		static public void Unregister(Delegate callback) { OnEvent -= callback; }
+
 		public delegate void Delegate(float duration, float shakeSpeed, float shakeRange, Vector3 shakeMainDirection, bool randomizeDirection, Vector3 shakeAltDirection, bool randomizeDirectionOnPlay, bool addDirectionalNoise, 
 			Vector3 directionalNoiseStrengthMin, Vector3 directionalNoiseStrengthMax, Vector3 randomnessSeed, bool randomizeSeedOnShake, bool useAttenuation, AnimationCurve attenuationCurve,
 			float feedbacksIntensity = 1.0f, int channel = 0, bool resetShakerValuesAfterShake = true, 
 			bool resetTargetValuesAfterShake = true, bool forwardDirection = true, TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false);
-		static private event Delegate OnEvent;
-
-		static public void Register(Delegate callback)
-		{
-			OnEvent += callback;
-		}
-
-		static public void Unregister(Delegate callback)
-		{
-			OnEvent -= callback;
-		}
 
 		static public void Trigger(float duration, float shakeSpeed, float shakeRange, Vector3 shakeMainDirection, bool randomizeDirection, Vector3 shakeAltDirection, bool randomizeDirectionOnPlay, bool addDirectionalNoise, 
 			Vector3 directionalNoiseStrengthMin, Vector3 directionalNoiseStrengthMax, Vector3 randomnessSeed, bool randomizeSeedOnShake, bool useAttenuation, AnimationCurve attenuationCurve,

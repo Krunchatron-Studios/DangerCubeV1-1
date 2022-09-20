@@ -26,6 +26,7 @@ namespace MoreMountains.Feedbacks
 		/// the duration of this feedback is the duration of the sprite renderer, or 0 if instant
 		public override float FeedbackDuration { get { return (Mode == Modes.Instant) ? 0f : ApplyTimeMultiplier(Duration); } set { Duration = value; } }
 		public override bool HasChannel => true;
+		public override bool HasRandomness => true;
 
 		/// the possible modes for this feedback
 		public enum Modes { OverTime, Instant, ShakerEvent, ToDestinationColor, ToDestinationColorAndBack }
@@ -149,7 +150,7 @@ namespace MoreMountains.Feedbacks
 				_initialColor = BoundSpriteRenderer.color;
 			}
             
-			float intensityMultiplier = Timing.ConstantIntensity ? 1f : feedbacksIntensity;
+			float intensityMultiplier = ComputeIntensity(feedbacksIntensity);
 			Turn(true);
 			switch (Mode)
 			{
