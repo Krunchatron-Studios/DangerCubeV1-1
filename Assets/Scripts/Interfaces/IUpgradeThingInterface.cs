@@ -10,6 +10,8 @@ namespace Interfaces {
 
 		public void ImproveReloadTimer(float timeReduction);
 
+		public void IncreaseAmmoClipSize(int ammoBonus);
+
 		public void ModifyDmgType(string dmgType);
 
 		public void ChangeProjectile(GameObject newProjectile);

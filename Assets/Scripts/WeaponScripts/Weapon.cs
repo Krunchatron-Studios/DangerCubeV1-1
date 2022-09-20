@@ -20,11 +20,9 @@ public class Weapon : Upgrade, IUpgradeThingInterface {
 
 	public virtual void IncreaseDamage(float dmgIncrease) {
 		weaponDamage += dmgIncrease;
-		Debug.Log($"weapon dmg: {weaponDamage}");
-
 	}
 	public virtual void IncreaseAttackSpeed(float spdIncrease) {
-		attackSpeed += spdIncrease;
+		attackSpeed -= spdIncrease;
 	}
 
 	public virtual void IncreaseKnock(float knkIncrease) {
@@ -35,7 +33,16 @@ public class Weapon : Upgrade, IUpgradeThingInterface {
 	}
 	
 	public virtual void ImproveReloadTimer(float timeReduction) {
+		 // only to be overriden by BurstFire weapons
+	}
+	
+	
+	public virtual void IncreaseAmmoClipSize(int ammoBonus) {
+		// only to be overwritten by BurstFireWeapon
+	}
 
+	public virtual void IncreaseProjectileScale(float scaleIncrease) {
+		// only to be overwritten by projectile weapons
 	}
 
 	public virtual void ChangeProjectile(GameObject newProjectile) {
