@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 532343175, guid: 3ec0bda34d5e036439a875a7a1115f0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -102,11 +102,11 @@ MonoBehaviour:
   structureParent: {fileID: 4963722946610411628}
   structureType: House
   shaker: {fileID: 940747036}
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 4963722946480831644}
   noDmgSprite: {fileID: 532343175, guid: 3ec0bda34d5e036439a875a7a1115f0d, type: 3}
   stage1Dmg: {fileID: 869945993, guid: ff370c14251d70742bcc06bb33246a44, type: 3}
-  stage2Dmg: {fileID: 0}
-  stage3Dmg: {fileID: 0}
+  stage2Dmg: {fileID: 869945993, guid: ff370c14251d70742bcc06bb33246a44, type: 3}
+  stage3Dmg: {fileID: 869945993, guid: ff370c14251d70742bcc06bb33246a44, type: 3}
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3
@@ -369,7 +369,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: -89208740, guid: 121dec917b6a7f44da01c0e0afbfa18f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -396,11 +396,11 @@ MonoBehaviour:
   structureParent: {fileID: 4963722946610411628}
   structureType: House
   shaker: {fileID: 940747036}
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 4963722946826131023}
   noDmgSprite: {fileID: -89208740, guid: 121dec917b6a7f44da01c0e0afbfa18f, type: 3}
   stage1Dmg: {fileID: 1828819574, guid: d3ae057fb15769443806cceedf4d5c72, type: 3}
-  stage2Dmg: {fileID: 0}
-  stage3Dmg: {fileID: 0}
+  stage2Dmg: {fileID: 1828819574, guid: d3ae057fb15769443806cceedf4d5c72, type: 3}
+  stage3Dmg: {fileID: 1828819574, guid: d3ae057fb15769443806cceedf4d5c72, type: 3}
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3
@@ -530,7 +530,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -55272731, guid: bab6d0da10c88ba458bd818f9f759326, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -557,11 +557,11 @@ MonoBehaviour:
   structureParent: {fileID: 4963722946610411628}
   structureType: House
   shaker: {fileID: 940747036}
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 4963722946962762237}
   noDmgSprite: {fileID: -55272731, guid: bab6d0da10c88ba458bd818f9f759326, type: 3}
   stage1Dmg: {fileID: -761339918, guid: 424d36225f746b94dad78fc77383676d, type: 3}
-  stage2Dmg: {fileID: 0}
-  stage3Dmg: {fileID: 0}
+  stage2Dmg: {fileID: -761339918, guid: 424d36225f746b94dad78fc77383676d, type: 3}
+  stage3Dmg: {fileID: -761339918, guid: 424d36225f746b94dad78fc77383676d, type: 3}
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3
@@ -691,7 +691,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2026051669, guid: f876b53bf881c184698c5a90bb05a112, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -718,11 +718,11 @@ MonoBehaviour:
   structureParent: {fileID: 4963722946610411628}
   structureType: House
   shaker: {fileID: 940747036}
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 4963722947330140800}
   noDmgSprite: {fileID: -2026051669, guid: f876b53bf881c184698c5a90bb05a112, type: 3}
   stage1Dmg: {fileID: -219943085, guid: 137cef7056114ef44b0b613988fbe20a, type: 3}
-  stage2Dmg: {fileID: 0}
-  stage3Dmg: {fileID: 0}
+  stage2Dmg: {fileID: -219943085, guid: 137cef7056114ef44b0b613988fbe20a, type: 3}
+  stage3Dmg: {fileID: -219943085, guid: 137cef7056114ef44b0b613988fbe20a, type: 3}
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3
@@ -852,7 +852,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1345153911, guid: 574bb44889cd50449af29c1dcc673739, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -879,11 +879,11 @@ MonoBehaviour:
   structureParent: {fileID: 4963722946610411628}
   structureType: House
   shaker: {fileID: 940747036}
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 4963722947969949486}
   noDmgSprite: {fileID: 1345153911, guid: 574bb44889cd50449af29c1dcc673739, type: 3}
   stage1Dmg: {fileID: -928931591, guid: 3e919caba9833c04b904a7dfe9358f5b, type: 3}
-  stage2Dmg: {fileID: 0}
-  stage3Dmg: {fileID: 0}
+  stage2Dmg: {fileID: -928931591, guid: 3e919caba9833c04b904a7dfe9358f5b, type: 3}
+  stage3Dmg: {fileID: -928931591, guid: 3e919caba9833c04b904a7dfe9358f5b, type: 3}
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3
@@ -1041,11 +1041,11 @@ MonoBehaviour:
   structureParent: {fileID: 4963722946610411628}
   structureType: House
   shaker: {fileID: 940747036}
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 4963722948369716720}
   noDmgSprite: {fileID: -1947996399, guid: c9a613e3362847048b651023d8054a72, type: 3}
   stage1Dmg: {fileID: -1017215405, guid: 209a0de81b0677a4894f2f4217caf787, type: 3}
-  stage2Dmg: {fileID: 0}
-  stage3Dmg: {fileID: 0}
+  stage2Dmg: {fileID: -1017215405, guid: 209a0de81b0677a4894f2f4217caf787, type: 3}
+  stage3Dmg: {fileID: -1017215405, guid: 209a0de81b0677a4894f2f4217caf787, type: 3}
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3
