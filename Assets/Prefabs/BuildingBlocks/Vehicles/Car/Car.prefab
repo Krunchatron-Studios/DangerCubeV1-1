@@ -262,6 +262,7 @@ MonoBehaviour:
   TargetRectTransform: {fileID: 0}
   ShakeSpeed: 20
   ShakeRange: 0.15
+  OscillationOffset: 0
   ShakeMainDirection: {x: 0, y: 1, z: 0}
   RandomizeDirection: 0
   ShakeAltDirection: {x: 0, y: 1, z: 0}
@@ -548,6 +549,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5719648435433132654, guid: 6880e8043a7e88546b8c26a235e7dde1,
         type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5719648435433132654, guid: 6880e8043a7e88546b8c26a235e7dde1,
+        type: 3}
       propertyPath: m_SortingLayerID
       value: 1603220759
       objectReference: {fileID: 0}
@@ -752,31 +758,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ExplosionFireballFire 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4261613984306276380, guid: d12aec27d827a6d4caeecbdc0dd5c1f9,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4261613984306304304, guid: d12aec27d827a6d4caeecbdc0dd5c1f9,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4261613984306307896, guid: d12aec27d827a6d4caeecbdc0dd5c1f9,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4261613984306314644, guid: d12aec27d827a6d4caeecbdc0dd5c1f9,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4261613984306322564, guid: d12aec27d827a6d4caeecbdc0dd5c1f9,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4261613984306637898, guid: d12aec27d827a6d4caeecbdc0dd5c1f9,
         type: 3}

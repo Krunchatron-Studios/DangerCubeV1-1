@@ -22,18 +22,14 @@ public class BurstFireWeapon : ProjectileWeapon  {
 	IEnumerator BurstFire() {
 		canFire = false;
 		for (int i = 0; i < ammo; i++) {
-			for (int j = 0; 0 < firingPoints.Count; j++) {
-				if (firingPoints[j].activeInHierarchy) {
-					FireWeapon(firingPoints[j].transform.position, enemyTarget);
-				}
-			}
+			FireWeapon(firingPoints[0].transform.position, enemyTarget);
 			yield return new WaitForSeconds(attackSpeed);
 		}
 		yield return new WaitForSeconds(reloadTimer);
 		canFire = true;
 	}
 
-	void FireWeapon(Vector3 firePoint, Vector3 targetPosition) {
+	public override void FireWeapon(Vector3 firePoint, Vector3 targetPosition) {
 
 		audioSource.Play();
 		GameObject spawnedBullet = objectPooler.GetPooledGameObject();

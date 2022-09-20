@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class DeathRay : Weapon {
-	
+	public MMF_Player mmfPlayer;
 	[Header("Important Laser Components")]
 	private LineRenderer _lineRenderer;
 	public GameObject laserHitMarker;
