@@ -25,7 +25,6 @@ public class BurstFireWeapon : ProjectileWeapon  {
 			FireWeapon(enemyTarget);
 			yield return new WaitForSeconds(attackSpeed);
 		}
-
 		yield return new WaitForSeconds(reloadTimer);
 		canFire = true;
 	}
@@ -45,6 +44,15 @@ public class BurstFireWeapon : ProjectileWeapon  {
 	}
 
 	public override void CanFireTimer() {
-		// can fire
+		
 	}
+
+	public override void ImproveReloadTimer(float timeReduction) {
+		reloadTimer -= timeReduction;
+	}
+
+	public override void IncreaseAmmoClipSize(int ammoBonus) {
+		ammo += ammoBonus;
+	}
+	
 }
