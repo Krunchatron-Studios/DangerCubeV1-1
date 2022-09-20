@@ -3,9 +3,11 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
 	public static SoundManager sm;
+	public AudioSource sceneMusic;
 
 	private void Start() {
 		sm = this;
+		sceneMusic.Play();
 	}
 
 	[Header("Enemy Weapon Sounds")] 
