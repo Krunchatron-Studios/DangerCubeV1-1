@@ -208,8 +208,8 @@ GameObject:
   - component: {fileID: 8536748995113268248}
   - component: {fileID: 3646279915086521711}
   - component: {fileID: 3646279915086521697}
-  - component: {fileID: 3646279915086521698}
   - component: {fileID: 3646279915086521696}
+  - component: {fileID: 926322013}
   m_Layer: 7
   m_Name: Base_0
   m_TagString: Obstacle
@@ -332,8 +332,45 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &3646279915086521698
-BoxCollider2D:
+--- !u!114 &3646279915086521696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8536748995113268250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5783dbbad6a59184fa58aa75d79bcc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shadowType: 3
+  shadowLayer: 0
+  shadowDistance: 0
+  shadowDistanceMin: 0.5
+  shadowDistanceMax: 1
+  shadowTranslucency: 0
+  maskType: 0
+  maskLit: 0
+  maskPivot: 0
+  maskLayer: 0
+  maskLitCustom: 1
+  bumpMapMode:
+    type: 0
+    textureType: 0
+    texture: {fileID: 0}
+    sprite: {fileID: 0}
+    invertX: 0
+    invertY: 0
+    depth: 1
+    spriteRenderer: {fileID: 8536748995113268248}
+  mainShape:
+    shadowType: 3
+    maskType: 0
+    maskPivot: 0
+    transform: {fileID: 8536748995113268251}
+--- !u!60 &926322013
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -355,46 +392,14 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4.8125, y: 2.6875}
-  m_EdgeRadius: 0
---- !u!114 &3646279915086521696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8536748995113268250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5783dbbad6a59184fa58aa75d79bcc02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shadowType: 1
-  shadowLayer: 0
-  shadowDistance: 0
-  shadowDistanceMin: 0.5
-  shadowDistanceMax: 1
-  shadowTranslucency: 0
-  maskType: 0
-  maskLit: 0
-  maskPivot: 0
-  maskLayer: 0
-  maskLitCustom: 1
-  bumpMapMode:
-    type: 0
-    textureType: 0
-    texture: {fileID: 0}
-    sprite: {fileID: 0}
-    invertX: 0
-    invertY: 0
-    depth: 1
-    spriteRenderer: {fileID: 8536748995113268248}
-  mainShape:
-    shadowType: 1
-    maskType: 0
-    maskPivot: 0
-    transform: {fileID: 8536748995113268251}
+  m_Points:
+    m_Paths:
+    - - {x: -1.730876, y: -0.6597075}
+      - {x: -2.0001383, y: -0.92704993}
+      - {x: -2.40625, y: -1.34375}
+      - {x: 1.7483788, y: -1.3556714}
+      - {x: 2.3108788, y: -0.73952514}
+      - {x: 2.4014416, y: -0.63548064}
 --- !u!1 &8536748995393871222
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,7 +712,7 @@ GameObject:
   - component: {fileID: 8536748995717429159}
   - component: {fileID: 3646279916092221138}
   - component: {fileID: 3646279916092221139}
-  - component: {fileID: 3646279916092221140}
+  - component: {fileID: 2479378180930970836}
   m_Layer: 7
   m_Name: Roof_0
   m_TagString: Obstacle
@@ -830,8 +835,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &3646279916092221140
-BoxCollider2D:
+--- !u!60 &2479378180930970836
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -840,7 +845,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -853,9 +858,15 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.5, y: 1.375}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.508853, y: 0.07049966}
+      - {x: -2.0225563, y: -0.35520732}
+      - {x: -2.3003626, y: -0.6333269}
+      - {x: 1.6538429, y: -0.56828326}
+      - {x: 2.4423656, y: 0.07243329}
+      - {x: 1.8749619, y: 0.073880196}
+      - {x: 1.3470626, y: 0.07443261}
 --- !u!1 &8536748995849324567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,7 +1338,7 @@ PrefabInstance:
     - target: {fileID: 2613880365699835324, guid: 5fba2bc601f498342851a31416413c6c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4124657592382051871, guid: 5fba2bc601f498342851a31416413c6c,
         type: 3}
@@ -1373,7 +1384,7 @@ PrefabInstance:
     - target: {fileID: 623607600825634866, guid: badee77a2593b464aba8d0896acbd2e2,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 623607600825634867, guid: badee77a2593b464aba8d0896acbd2e2,
         type: 3}
@@ -1529,7 +1540,7 @@ PrefabInstance:
     - target: {fileID: 1245104144019035945, guid: b66120c7bed3b6a42b65ba2748a16559,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8173561177800140000, guid: b66120c7bed3b6a42b65ba2748a16559,
         type: 3}
@@ -1585,7 +1596,7 @@ PrefabInstance:
     - target: {fileID: 906546425867221936, guid: 8dea665d5d7a7e048972bcd0dc81c01d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3265379679070379241, guid: 8dea665d5d7a7e048972bcd0dc81c01d,
         type: 3}
