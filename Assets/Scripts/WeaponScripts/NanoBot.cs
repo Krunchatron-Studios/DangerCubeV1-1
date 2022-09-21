@@ -24,14 +24,22 @@ public class NanoBot : Projectile {
                 nanoWeapon.currentNanos--;
                 Debug.Log(nanoWeapon.currentNanos + " second");
                 OnDestroy();
-
             }
         }
         
     }
     private void OnDestroy() {
-        zombies[zombie.currentZombies].gameObject.SetActive(true);
-        zombies[zombie.currentZombies].gameObject.transform.position = _nanoTransform;
-        zombie.currentZombies++;
+        int index = 0;
+        int temp = zombie.currentZombies;
+        while (zombie.currentZombies != temp + 1) {
+            if (zombies[index].gameObject.activeInHierarchy == false) {
+                zombies[index].gameObject.SetActive(true);
+                zombies[index].gameObject.transform.position = _nanoTransform;
+                zombie.currentZombies++;
+            }
+            else {
+                index++;
+            }
+        }
     }
 }
