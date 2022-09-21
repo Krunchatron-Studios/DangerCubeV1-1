@@ -726,6 +726,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 607352134695108080, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: ammoAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 607352134695108080, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: attackSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 607352134695108080, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: rangeAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 607352134695108081, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Mutagenic Upgrade 4
+      objectReference: {fileID: 0}
     - target: {fileID: 910208486235270840, guid: 692e806906d55487fb98200bedc726b4,
         type: 3}
       propertyPath: m_SortingLayer
@@ -736,6 +756,26 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 1601880589
       objectReference: {fileID: 0}
+    - target: {fileID: 3562442920077972182, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: ammoAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562442920077972182, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: attackSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562442920077972182, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: rangeAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562442920077972183, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Mutagenic Upgrade 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3664123916197150076, guid: 692e806906d55487fb98200bedc726b4,
         type: 3}
       propertyPath: center
@@ -743,8 +783,23 @@ PrefabInstance:
       objectReference: {fileID: 3796742106572517121}
     - target: {fileID: 3664123916197150076, guid: 692e806906d55487fb98200bedc726b4,
         type: 3}
+      propertyPath: distance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664123916197150076, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: maxNanos
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664123916197150076, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
       propertyPath: damageType
       value: Bio
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664123916197150076, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: attackSpeed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3664123916197150076, guid: 692e806906d55487fb98200bedc726b4,
         type: 3}
@@ -756,6 +811,51 @@ PrefabInstance:
       propertyPath: playerPosition
       value: 
       objectReference: {fileID: 3796742106572517123}
+    - target: {fileID: 3664123916197150076, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: nanoBots.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664123916197150076, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: nanoBots.Array.data[0]
+      value: 
+      objectReference: {fileID: 2460805118040892478}
+    - target: {fileID: 3664123916197150076, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: nanoBots.Array.data[1]
+      value: 
+      objectReference: {fileID: 2361017591435636175}
+    - target: {fileID: 3664123916197150076, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: nanoBots.Array.data[2]
+      value: 
+      objectReference: {fileID: 320253915359428274}
+    - target: {fileID: 3664123916197150076, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: nanoBots.Array.data[3]
+      value: 
+      objectReference: {fileID: 5030436078529498890}
+    - target: {fileID: 3664123916197150076, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: nanoBots.Array.data[4]
+      value: 
+      objectReference: {fileID: 2872968079946222435}
+    - target: {fileID: 3664123916197150076, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: nanoBots.Array.data[5]
+      value: 
+      objectReference: {fileID: 5371521528074323060}
+    - target: {fileID: 3664123916197150076, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: nanoBots.Array.data[6]
+      value: 
+      objectReference: {fileID: 4132206194228161179}
+    - target: {fileID: 3664123916197150076, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: nanoBots.Array.data[7]
+      value: 
+      objectReference: {fileID: 7349638266847516088}
     - target: {fileID: 4961160354070031810, guid: 692e806906d55487fb98200bedc726b4,
         type: 3}
       propertyPath: m_Layer
@@ -781,19 +881,97 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5924296496621553578, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: ammoAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5924296496621553578, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: attackSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5924296496621553579, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Mutagenic Upgrade 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6762691136588603395, guid: 692e806906d55487fb98200bedc726b4,
         type: 3}
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 7197002026589873732, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: ammoAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7197002026589873732, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: attackSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7197002026589873733, guid: 692e806906d55487fb98200bedc726b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Mutagenic Upgrade 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 692e806906d55487fb98200bedc726b4, type: 3}
+--- !u!114 &320253915359428274 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1821029635695758759, guid: 692e806906d55487fb98200bedc726b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2104410224415208213}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68fac8412f9dc4cf6bc675e511f27853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2100004654278539786 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4761883307903263, guid: 692e806906d55487fb98200bedc726b4,
     type: 3}
   m_PrefabInstance: {fileID: 2104410224415208213}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2361017591435636175 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4463165149302218458, guid: 692e806906d55487fb98200bedc726b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2104410224415208213}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68fac8412f9dc4cf6bc675e511f27853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2460805118040892478 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4544928914492725035, guid: 692e806906d55487fb98200bedc726b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2104410224415208213}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68fac8412f9dc4cf6bc675e511f27853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2872968079946222435 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4245356009843652726, guid: 692e806906d55487fb98200bedc726b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2104410224415208213}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68fac8412f9dc4cf6bc675e511f27853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3453637194110357097 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3664123916197150076, guid: 692e806906d55487fb98200bedc726b4,
@@ -804,6 +982,54 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1453080384d4f4b8b93a1bac54076c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4132206194228161179 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2624708325800188302, guid: 692e806906d55487fb98200bedc726b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2104410224415208213}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68fac8412f9dc4cf6bc675e511f27853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5030436078529498890 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6411981299413203999, guid: 692e806906d55487fb98200bedc726b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2104410224415208213}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68fac8412f9dc4cf6bc675e511f27853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5371521528074323060 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6322816029186340705, guid: 692e806906d55487fb98200bedc726b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2104410224415208213}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68fac8412f9dc4cf6bc675e511f27853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7349638266847516088 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8704179224286045869, guid: 692e806906d55487fb98200bedc726b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2104410224415208213}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68fac8412f9dc4cf6bc675e511f27853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2552662884886487479

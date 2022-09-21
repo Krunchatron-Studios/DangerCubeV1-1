@@ -15,5 +15,7 @@ namespace Interfaces {
 		public void ModifyDmgType(string dmgType);
 
 		public void ChangeProjectile(GameObject newProjectile);
+
+		public void IncreaseRange(int amountToIncrease);
 	}
 }

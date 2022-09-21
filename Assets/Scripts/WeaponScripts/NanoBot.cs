@@ -6,6 +6,7 @@ public class NanoBot : Projectile {
     public GameObject rotationCenter;
     private Vector3 _nanoTransform;
     [Header("Mutation Payload")]
+    public NanoZombie[] zombies;
     public NanoZombie zombie;
 
     private void Update() {
@@ -17,18 +18,25 @@ public class NanoBot : Projectile {
         if (other.GetComponent<EFleeingPedestrian>()) {
             String temp = other.GetComponent<EFleeingPedestrian>().enemyName;
             if (other.CompareTag("Enemy") && temp == "Pedestrian") {
-                Debug.Log("Pedestrian Stuff: " + other.GetComponent<EFleeingPedestrian>().enemyName);
                 other.gameObject.SetActive(false);
                 gameObject.SetActive(false);
+                nanoWeapon.currentNanos--;
                 OnDestroy();
-                if (nanoWeapon.currentNanos >= 1) {
-                    nanoWeapon.currentNanos -= 1;
-                }
             }
         }
-        
     }
     private void OnDestroy() {
-        Instantiate(zombie, _nanoTransform, Quaternion.identity);
+        int index = 0;
+        int temp = zombie.currentZombies;
+        while (zombie.currentZombies != temp + 1) {
+            if (zombies[index].gameObject.activeInHierarchy == false) {
+                zombies[index].gameObject.SetActive(true);
+                zombies[index].gameObject.transform.position = _nanoTransform;
+                zombie.currentZombies++;
+            }
+            else {
+                index++;
+            }
+        }
     }
 }
