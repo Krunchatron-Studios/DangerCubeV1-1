@@ -23,4 +23,11 @@ public class MutagenicNanobots : Weapon {
             currentNanos++;
         }
     }
+    public override void IncreaseAmmoClipSize(int ammoBonus) {
+        maxNanos += ammoBonus;
+    }
+
+    public override void IncreaseRange(int amountToIncrease) {
+        distance += amountToIncrease;
+    }
 }
