@@ -10,6 +10,7 @@ public class NanoZombie : MonoBehaviour {
     public int lifeTime = 5;
     public int chaseRadius = 3;
     public GameObject bloodSplash;
+    public int currentZombies = 0;
     void Awake() {
         StartCoroutine(ZombieLife());
     }
@@ -32,17 +33,18 @@ public class NanoZombie : MonoBehaviour {
         Collider2D foundObject = Physics2D.OverlapCircle(transform.position, chaseRadius);
         if (foundObject.CompareTag("Enemy")) {
             _target = foundObject.transform.position;
-            MoveTowards();
+            InvokeRepeating("MoveTowards", 0.05f, 0.05f);
         }
     }
 
     private void MoveTowards() {
-        transform.position = Vector3.MoveTowards(transform.position, _target, _moveSpeed);
+        transform.position = Vector3.MoveTowards(transform.position, _target, _moveSpeed * Time.deltaTime);
     }
 
     IEnumerator ZombieLife() {
         yield return null;
         yield return new WaitForSeconds(lifeTime);
         gameObject.SetActive(false);
+        currentZombies--;
     }
 }

@@ -13,6 +13,7 @@ public class PowerUp : Upgrade {
 	public string damageType;
 	public float reloadSpeed;
 	public int ammoAmount;
+	public int rangeAmount;
 	private void Awake() {
 		IUpgradeThingInterface other = upgradeTarget.gameObject.GetComponent<IUpgradeThingInterface>();
 		
@@ -22,5 +23,6 @@ public class PowerUp : Upgrade {
 		other.ModifyDmgType(damageType);
 		other.ImproveReloadTimer(reloadSpeed);
 		other.IncreaseAmmoClipSize(ammoAmount);
+		other.IncreaseRange(rangeAmount);
 	}
 }

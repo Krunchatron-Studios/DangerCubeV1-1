@@ -17,10 +17,25 @@ public class MutagenicNanobots : Weapon {
 
     private void SpawnNanos() {
         if (currentNanos < maxNanos) {
-            transform.position = new Vector3(0, distance, 0) + _playerPosition.transform.position;
-            int index = currentNanos;
-            nanoBots[index].gameObject.SetActive(true);
-            currentNanos++;
+            int temp = currentNanos;
+            int index = 0;
+            while (currentNanos != temp + 1) {
+                if (nanoBots[index].gameObject.activeInHierarchy == false) {
+                    transform.position = new Vector3(0, distance, 0) + _playerPosition.transform.position;
+                    nanoBots[index].gameObject.SetActive(true);
+                    currentNanos++;
+                }
+                else {
+                    index++;
+                }
+            }
         }
+    }
+    public override void IncreaseAmmoClipSize(int ammoBonus) {
+        maxNanos += ammoBonus;
+    }
+
+    public override void IncreaseRange(int amountToIncrease) {
+        distance += amountToIncrease;
     }
 }

@@ -40,7 +40,8 @@ public class Weapon : Upgrade, IUpgradeThingInterface {
 	
 	
 	public virtual void IncreaseAmmoClipSize(int ammoBonus) {
-		// only to be overwritten by BurstFireWeapon
+		// overwritten by BurstFireWeapon
+		// overwritten by Nanos
 	}
 
 	public virtual void IncreaseProjectileScale(float scaleIncrease) {
@@ -49,5 +50,9 @@ public class Weapon : Upgrade, IUpgradeThingInterface {
 
 	public virtual void ChangeProjectile(GameObject newProjectile) {
 
+	}
+
+	public virtual void IncreaseRange(int amountToIncrease) {
+		// overwritten by nanos
 	}
 }
