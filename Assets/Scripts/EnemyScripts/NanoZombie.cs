@@ -10,6 +10,7 @@ public class NanoZombie : MonoBehaviour {
     public int lifeTime = 5;
     public int chaseRadius = 3;
     public GameObject bloodSplash;
+    public int currentZombies = 0;
     void Awake() {
         StartCoroutine(ZombieLife());
     }
@@ -44,5 +45,6 @@ public class NanoZombie : MonoBehaviour {
         yield return null;
         yield return new WaitForSeconds(lifeTime);
         gameObject.SetActive(false);
+        currentZombies--;
     }
 }
