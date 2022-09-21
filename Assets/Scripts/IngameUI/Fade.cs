@@ -13,6 +13,7 @@ public class Fade : MonoBehaviour {
     }
     IEnumerator FadeIn() {
         while (thisFadePanel.alpha > 0) {
+            
             thisFadePanel.alpha -= 0.01f;
             yield return null;
         }

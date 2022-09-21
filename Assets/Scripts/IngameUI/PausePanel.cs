@@ -1,8 +1,10 @@
+using MoreMountains.Feedbacks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class PausePanel : MonoBehaviour {
     private bool _isPaused;
     public GameObject pausePanel;
+    public MMTimeManager timeManager;
 
     void Start() {
         _isPaused = false;
@@ -14,20 +16,24 @@ public class PausePanel : MonoBehaviour {
         }
     }
     private void PauseGame() {
-        _isPaused = !_isPaused;
         SoundManager.sm.pauseMenu.Play();
-        if (_isPaused) {
+        if (!_isPaused) {
             pausePanel.SetActive(true);
-            Time.timeScale = 0f;
+            timeManager.SetTimescaleTo(0f);
+            _isPaused = true;
         } else {
             pausePanel.SetActive(false);
-            Time.timeScale = 1f;
+            timeManager.SetTimescaleTo(1f);
+            _isPaused = false;
         }
     }
     public void Resume() {
-        pausePanel.SetActive(false);
-        Time.timeScale = 1f;
-        SoundManager.sm.buttonPress.Play();
+        if (_isPaused) {
+            pausePanel.SetActive(false);
+            timeManager.SetTimescaleTo(1f);
+            SoundManager.sm.buttonPress.Play();
+            _isPaused = false;
+        }
     }
 
     public void ExitGame() {
