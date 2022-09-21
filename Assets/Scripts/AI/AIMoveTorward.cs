@@ -23,6 +23,7 @@ namespace AI {
 		private void LateUpdate() {
 			if (Vector2.Distance(transform.position, _target.position) > stopDistance) {
 				transform.position = Vector2.MoveTowards(transform.position, _target.position, _speed * Time.deltaTime);
+				enemy.animator.SetBool(IsRunning, true);enemy.animator.SetBool(IsRunning, true);
 			}
 			
 			if(Vector2.Distance(transform.position, _target.position) < fleeDistance) {
