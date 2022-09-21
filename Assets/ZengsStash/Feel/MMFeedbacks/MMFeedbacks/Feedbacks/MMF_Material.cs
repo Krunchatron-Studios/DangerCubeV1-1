@@ -62,8 +62,8 @@ namespace MoreMountains.Feedbacks
 		/// the animation curve to interpolate the transition on
 		public AnimationCurve TransitionCurve = new AnimationCurve(new Keyframe(0, 0), new Keyframe(1, 1));
 
-		public virtual float GetTime() { return (Timing.TimescaleMode == TimescaleModes.Scaled) ? Time.time : Time.unscaledTime; }
-		public virtual float GetDeltaTime() { return (Timing.TimescaleMode == TimescaleModes.Scaled) ? Time.deltaTime : Time.unscaledDeltaTime; }
+		public virtual float GetTime() { return (ComputedTimescaleMode == TimescaleModes.Scaled) ? Time.time : Time.unscaledTime; }
+		public virtual float GetDeltaTime() { return (ComputedTimescaleMode == TimescaleModes.Scaled) ? Time.deltaTime : Time.unscaledDeltaTime; }
         
 		protected int _currentIndex;
 		protected float _startedAt;

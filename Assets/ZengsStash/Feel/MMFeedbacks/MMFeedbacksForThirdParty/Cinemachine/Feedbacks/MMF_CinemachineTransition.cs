@@ -89,11 +89,11 @@ namespace MoreMountains.FeedbacksForThirdParty
 			_tempBlend.m_Time = FeedbackDuration;
 			if (Mode == Modes.Event)
 			{
-				MMCinemachinePriorityEvent.Trigger(Channel, ForceMaxPriority, NewPriority, ForceTransition, _tempBlend, ResetValuesAfterTransition, Timing.TimescaleMode);    
+				MMCinemachinePriorityEvent.Trigger(Channel, ForceMaxPriority, NewPriority, ForceTransition, _tempBlend, ResetValuesAfterTransition, ComputedTimescaleMode);    
 			}
 			else
 			{
-				MMCinemachinePriorityEvent.Trigger(Channel, ForceMaxPriority, 0, ForceTransition, _tempBlend, ResetValuesAfterTransition, Timing.TimescaleMode); 
+				MMCinemachinePriorityEvent.Trigger(Channel, ForceMaxPriority, 0, ForceTransition, _tempBlend, ResetValuesAfterTransition, ComputedTimescaleMode); 
 				TargetVirtualCamera.Priority = NewPriority;
 			}
 			#endif

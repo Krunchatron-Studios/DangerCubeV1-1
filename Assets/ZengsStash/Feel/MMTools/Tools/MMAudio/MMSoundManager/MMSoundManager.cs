@@ -841,7 +841,7 @@ namespace MoreMountains.Tools
 		}
 
 		/// <summary>
-		/// Pauses all sounds playing on the MMSoundManager
+		/// Plays all sounds playing on the MMSoundManager
 		/// </summary>
 		public virtual void PlayAllSounds()
 		{
@@ -1057,13 +1057,17 @@ namespace MoreMountains.Tools
 			}
 		}
 
-		public virtual void OnMMSfxEvent(AudioClip clipToPlay, AudioMixerGroup audioGroup = null, float volume = 1f, float pitch = 1f)
+		public virtual void OnMMSfxEvent(AudioClip clipToPlay, AudioMixerGroup audioGroup = null, float volume = 1f, float pitch = 1f, int priority = 128)
 		{
 			MMSoundManagerPlayOptions options = MMSoundManagerPlayOptions.Default;
 			options.Location = this.transform.position;
 			options.AudioGroup = audioGroup;
 			options.Volume = volume;
 			options.Pitch = pitch;
+			if (priority >= 0)
+			{
+				options.Priority = Mathf.Min(priority, 256);
+			}
 			options.MmSoundManagerTrack = MMSoundManagerTracks.Sfx;
 			options.Loop = false;
             

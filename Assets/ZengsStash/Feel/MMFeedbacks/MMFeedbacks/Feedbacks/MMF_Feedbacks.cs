@@ -9,14 +9,14 @@ namespace MoreMountains.Feedbacks
 	/// </summary>
 	[AddComponentMenu("")]
 	[FeedbackHelp("This feedback allows you to trigger a target MMFeedbacks, or any MMFeedbacks on the specified Channel within a certain range. You'll need an MMFeedbacksShaker on them.")]
-	[FeedbackPath("GameObject/Feedbacks Player")]
+	[FeedbackPath("Feedbacks/Feedbacks Player")]
 	public class MMF_Feedbacks : MMF_Feedback
 	{
 		/// a static bool used to disable all feedbacks of this type at once
 		public static bool FeedbackTypeAuthorized = true;
 		/// sets the inspector color for this feedback
 		#if UNITY_EDITOR
-		public override Color FeedbackColor { get { return MMFeedbacksInspectorColors.GameObjectColor; } }
+		public override Color FeedbackColor { get { return MMFeedbacksInspectorColors.FeedbacksColor; } }
 		public override string RequiredTargetText { get { return "Channel "+Channel;  } }
 		#endif
 		/// the duration of this feedback is the duration of the light, or 0 if instant
@@ -24,6 +24,10 @@ namespace MoreMountains.Feedbacks
 		{
 			get
 			{
+				if (TargetFeedbacks == Owner)
+				{
+					return 0f;
+				}
 				if ((Mode == Modes.PlayTargetFeedbacks) && (TargetFeedbacks != null))
 				{
 					return TargetFeedbacks.TotalDuration;
@@ -83,6 +87,11 @@ namespace MoreMountains.Feedbacks
 		/// <param name="feedbacksIntensity"></param>
 		protected override void CustomPlayFeedback(Vector3 position, float feedbacksIntensity = 1.0f)
 		{
+			if (TargetFeedbacks == Owner)
+			{
+				return;
+			}
+			
 			if (!Active || !FeedbackTypeAuthorized)
 			{
 				return;

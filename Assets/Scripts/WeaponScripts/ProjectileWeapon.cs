@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Feedbacks;
 using MoreMountains.Tools;
@@ -5,7 +6,7 @@ using MoreMountains.Tools;
 public class ProjectileWeapon : Weapon {
 	
 	[Header("Projectile Vars")]
-	public GameObject firingPoint;
+	public List<GameObject> firingPoints;
 	public GameObject projectile;
 	public Vector2 enemyTarget;
 	public TargetingSystem targetingSys;
@@ -35,7 +36,6 @@ public class ProjectileWeapon : Weapon {
 		bullet.gameObject.SetActive(true);
 		bullet.damage = weaponDamage;
 		bullet.transform.localScale = new Vector2(1.5f, 1.5f);
-		Debug.Log($"bullet scale: {bullet.transform.localScale}");
 		bullet.MoveProjectile();
 	}
 	
@@ -43,7 +43,11 @@ public class ProjectileWeapon : Weapon {
 		canFire = false;
 		if (Time.time > nextFire) {
 			canFire = true;
-			FireWeapon(firingPoint.transform.position, enemyTarget);
+			for (int i = 0; i < firingPoints.Count; i++) {
+				if (firingPoints[i].activeInHierarchy) {
+					FireWeapon(firingPoints[i].transform.position, enemyTarget);
+				}
+			}
 		}
 	}
 	
@@ -54,7 +58,6 @@ public class ProjectileWeapon : Weapon {
 	public override void IncreaseProjectileScale(float scaleIncrease) {
 		projectileScale = new Vector2(projectileScale.x + scaleIncrease,
 			projectileScale.y + scaleIncrease);
-		Debug.Log($"proj scale: {projectileScale}");
 	}
 
 	public void ChangeProjectile(GameObject newProjectile) {

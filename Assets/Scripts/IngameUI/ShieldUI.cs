@@ -42,7 +42,7 @@ public class ShieldUI : PlayerLogic {
 	}
 
 	private void OnTriggerEnter2D(Collider2D col) {
-		if (col.CompareTag("Projectile")) {
+		if (col.CompareTag("EnemyProjectile")) {
 			IHurtThingsInterface hit = col.GetComponent<IHurtThingsInterface>();
 			GameObject shield = EnemyPoolManager.epm.shieldHit.GetPooledGameObject();
 			shield .SetActive(true);

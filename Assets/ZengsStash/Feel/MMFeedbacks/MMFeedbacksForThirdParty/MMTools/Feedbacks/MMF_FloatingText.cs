@@ -33,6 +33,7 @@ namespace MoreMountains.Feedbacks
 		/// the duration of this feedback is a fixed value or the lifetime
 		public override float FeedbackDuration { get { return ApplyTimeMultiplier(Lifetime); } set { Lifetime = value; } }
 		public override bool HasChannel => true;
+		public override bool HasRandomness => true;
 
 		/// the possible places where the floating text should spawn at
 		public enum PositionModes { TargetTransform, FeedbackPosition, PlayPosition }
@@ -93,7 +94,7 @@ namespace MoreMountains.Feedbacks
 				return;
 			}
             
-			float intensityMultiplier = Timing.ConstantIntensity ? 1f : feedbacksIntensity;
+			float intensityMultiplier = ComputeIntensity(feedbacksIntensity);
 			switch (PositionMode)
 			{
 				case PositionModes.FeedbackPosition:
@@ -107,7 +108,7 @@ namespace MoreMountains.Feedbacks
 					break;
 			}
 			_value = UseIntensityAsValue ? feedbacksIntensity.ToString() : Value;
-			MMFloatingTextSpawnEvent.Trigger(Channel, _playPosition, _value, Direction, Intensity * intensityMultiplier, ForceLifetime, Lifetime, ForceColor, AnimateColorGradient, Timing.TimescaleMode == TimescaleModes.Unscaled);
+			MMFloatingTextSpawnEvent.Trigger(Channel, _playPosition, _value, Direction, Intensity * intensityMultiplier, ForceLifetime, Lifetime, ForceColor, AnimateColorGradient, ComputedTimescaleMode == TimescaleModes.Unscaled);
             
 		}
 	}

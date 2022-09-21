@@ -22,20 +22,21 @@ public class BurstFireWeapon : ProjectileWeapon  {
 	IEnumerator BurstFire() {
 		canFire = false;
 		for (int i = 0; i < ammo; i++) {
-			FireWeapon(enemyTarget);
+			FireWeapon(firingPoints[0].transform.position, enemyTarget);
 			yield return new WaitForSeconds(attackSpeed);
+			WeaponSystem.Instance.player.GetComponent<MMF_Player>().PlayFeedbacks(transform.position, 2f);
 		}
 		yield return new WaitForSeconds(reloadTimer);
 		canFire = true;
 	}
 
-	void FireWeapon(Vector3 targetPosition) {
+	public override void FireWeapon(Vector3 firePoint, Vector3 targetPosition) {
 
 		audioSource.Play();
 		GameObject spawnedBullet = objectPooler.GetPooledGameObject();
 		Projectile bullet = spawnedBullet.GetComponent<Projectile>();
 		bullet.damage = weaponDamage;
-		bullet.transform.position = firingPoint.transform.position;
+		bullet.transform.position = firePoint;
 		bullet.Setup(targetPosition);
 		nextFire = Time.time + attackSpeed;
 		MMCameraShakeEvent.Trigger(.1f, .2f, 40, 0, 0, 0, false);

@@ -72,7 +72,7 @@ namespace MoreMountains.Feedbacks
 			}
         
 			Turn(true);
-			bool ignoreTimeScale = Timing.TimescaleMode == TimescaleModes.Unscaled;
+			bool ignoreTimeScale = !InScaledTimescaleMode;
 			switch (Mode)
 			{
 				case Modes.Alpha:

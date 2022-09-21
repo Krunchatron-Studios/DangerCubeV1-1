@@ -19,6 +19,7 @@ namespace MoreMountains.Feedbacks
 		public override string RequiredTargetText { get { return TargetAudioSource != null ? TargetAudioSource.name : "";  } }
 		public override string RequiresSetupText { get { return "This feedback requires that a TargetAudioSource be set to be able to work properly. You can set one below."; } }
 		#endif
+		public override bool HasRandomness => true;
 
 		/// the possible ways to interact with the audiosource
 		public enum Modes { Play, Pause, UnPause, Stop }
@@ -77,7 +78,7 @@ namespace MoreMountains.Feedbacks
 				return;
 			}
             
-			float intensityMultiplier = Timing.ConstantIntensity ? 1f : feedbacksIntensity;
+			float intensityMultiplier = ComputeIntensity(feedbacksIntensity);
 			switch(Mode)
 			{
 				case Modes.Play:

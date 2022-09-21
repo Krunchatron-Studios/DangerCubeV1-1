@@ -53,10 +53,25 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	public virtual void DamageTiersCheck(Vector3 location) {
 		if (percentDestroyed > 0 && percentDestroyed < stage3Threshold && stage3Dmg) {
 			spriteRenderer.sprite = stage3Dmg;
+						
+			GameObject woodExplode = StructureDamagePool.sdp.woodExplosionPool.GetPooledGameObject();
+			woodExplode.SetActive(true);
+			woodExplode.transform.position = location;
+			
+			GameObject rockShatter = StructureDamagePool.sdp.rockShatterPool.GetPooledGameObject();
+			rockShatter.SetActive(true);
+			rockShatter.transform.position = location;
 		}
 		if (percentDestroyed > stage3Threshold && percentDestroyed < stage2Threshold && stage2Dmg) {
 			spriteRenderer.sprite = stage2Dmg;
-			structureParent.evacuateThreshold--;
+			
+			GameObject woodExplode = StructureDamagePool.sdp.woodExplosionPool.GetPooledGameObject();
+			woodExplode.SetActive(true);
+			woodExplode.transform.position = location;
+			
+			GameObject rockShatter = StructureDamagePool.sdp.rockShatterPool.GetPooledGameObject();
+			rockShatter.SetActive(true);
+			rockShatter.transform.position = location;
 		}
 		if (percentDestroyed > stage2Threshold && percentDestroyed < stage1Threshold && stage1Dmg) {
 			spriteRenderer.sprite = stage1Dmg;

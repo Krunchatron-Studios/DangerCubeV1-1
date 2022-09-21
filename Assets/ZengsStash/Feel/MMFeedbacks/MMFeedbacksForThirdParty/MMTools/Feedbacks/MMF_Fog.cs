@@ -20,6 +20,7 @@ namespace MoreMountains.Feedbacks
 		public override Color FeedbackColor { get { return MMFeedbacksInspectorColors.RendererColor; } }
 		public override string RequiredTargetText { get { return Mode.ToString();  } }
 		#endif
+		public override bool HasRandomness => true;
 
 		/// the possible modes for this feedback
 		public enum Modes { OverTime, Instant }
@@ -117,7 +118,7 @@ namespace MoreMountains.Feedbacks
 				return;
 			}
             
-			float intensityMultiplier = Timing.ConstantIntensity ? 1f : feedbacksIntensity;
+			float intensityMultiplier = ComputeIntensity(feedbacksIntensity);
 			switch (Mode)
 			{
 				case Modes.Instant:
