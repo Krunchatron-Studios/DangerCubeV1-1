@@ -20,13 +20,10 @@ public class NanoBot : Projectile {
             if (other.CompareTag("Enemy") && temp == "Pedestrian") {
                 other.gameObject.SetActive(false);
                 gameObject.SetActive(false);
-                Debug.Log(nanoWeapon.currentNanos + " first");
                 nanoWeapon.currentNanos--;
-                Debug.Log(nanoWeapon.currentNanos + " second");
                 OnDestroy();
             }
         }
-        
     }
     private void OnDestroy() {
         int index = 0;

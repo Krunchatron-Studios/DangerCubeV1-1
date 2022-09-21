@@ -33,12 +33,12 @@ public class NanoZombie : MonoBehaviour {
         Collider2D foundObject = Physics2D.OverlapCircle(transform.position, chaseRadius);
         if (foundObject.CompareTag("Enemy")) {
             _target = foundObject.transform.position;
-            MoveTowards();
+            InvokeRepeating("MoveTowards", 0.05f, 0.05f);
         }
     }
 
     private void MoveTowards() {
-        transform.position = Vector3.MoveTowards(transform.position, _target, _moveSpeed);
+        transform.position = Vector3.MoveTowards(transform.position, _target, _moveSpeed * Time.deltaTime);
     }
 
     IEnumerator ZombieLife() {
