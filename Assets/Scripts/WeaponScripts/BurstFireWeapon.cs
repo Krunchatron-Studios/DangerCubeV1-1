@@ -24,6 +24,7 @@ public class BurstFireWeapon : ProjectileWeapon  {
 		for (int i = 0; i < ammo; i++) {
 			FireWeapon(firingPoints[0].transform.position, enemyTarget);
 			yield return new WaitForSeconds(attackSpeed);
+			WeaponSystem.Instance.player.GetComponent<MMF_Player>().PlayFeedbacks(transform.position, 2f);
 		}
 		yield return new WaitForSeconds(reloadTimer);
 		canFire = true;
