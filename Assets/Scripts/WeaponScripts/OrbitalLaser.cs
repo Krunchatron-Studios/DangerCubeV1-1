@@ -29,7 +29,6 @@ public class OrbitalLaser : ProjectileWeapon {
         float time = 0;
         while (time < 1) {
             bulletTransform.transform.localScale = new Vector3(Mathf.Lerp(2, 0, time / 1), distance + 5, 0);
-
             time += Time.deltaTime;
             yield return null;
         }

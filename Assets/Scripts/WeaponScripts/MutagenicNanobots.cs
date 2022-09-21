@@ -1,33 +1,26 @@
 using UnityEngine;
 
 public class MutagenicNanobots : Weapon {
-    public NanoManager nanoManager;
+    public int maxNanos;
+    public int currentNanos;
     private GameObject _playerPosition;
-    private Vector3 _center;
-    public float spawnDelay;
+    public int distance;
     public NanoBot[] nanoBots;
 
     void Start() {
-        _playerPosition = GameObject.FindWithTag("Player");
-        _center = _playerPosition.transform.position;
-        nanoManager.currentNanoBots = 0;
-        InvokeRepeating("SpawnNanos", 2f, spawnDelay);
+        currentNanos = 0;
+        InvokeRepeating("SpawnNanos", 2f, attackSpeed);
     }
     void FixedUpdate() {
         _playerPosition = GameObject.FindWithTag("Player");
-        _center = _playerPosition.transform.position;
     }
 
     private void SpawnNanos() {
-        if (nanoManager.currentNanoBots < nanoManager.maxNanoBots) {
-            // Vector3 offset = new Vector3(_center.x, _center.y + 3, 0);
-            if (nanoManager.currentNanoBots < nanoManager.maxNanoBots) {
-                Debug.Log("Nano created");
-                int index = nanoManager.currentNanoBots;
-                nanoBots[index].gameObject.SetActive(true);
-                // transform.position = offset;
-                nanoManager.currentNanoBots++;
-            }
+        if (currentNanos < maxNanos) {
+            transform.position = new Vector3(0, distance, 0) + _playerPosition.transform.position;
+            int index = currentNanos;
+            nanoBots[index].gameObject.SetActive(true);
+            currentNanos++;
         }
     }
 }
