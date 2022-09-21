@@ -46,7 +46,7 @@ namespace MoreMountains.Feedbacks
 			{
 				return;
 			}
-			TargetBlink.TimescaleMode = Timing.TimescaleMode;
+			TargetBlink.TimescaleMode = ComputedTimescaleMode;
 			switch (BlinkMode)
 			{
 				case BlinkModes.Toggle:

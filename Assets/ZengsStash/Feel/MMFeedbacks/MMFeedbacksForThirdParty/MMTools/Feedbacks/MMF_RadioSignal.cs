@@ -23,6 +23,7 @@ namespace MoreMountains.Feedbacks
         
 		/// the duration of this feedback is the duration of the light, or 0 if instant
 		public override float FeedbackDuration { get { return 0f; } }
+		public override bool HasRandomness => true;
 
 		[MMFInspectorGroup("Radio Signal", true, 72)]
 		/// The target MMRadioSignal to trigger
@@ -50,7 +51,7 @@ namespace MoreMountains.Feedbacks
 			{
 				if (TargetSignal != null)
 				{
-					float intensityMultiplier = Timing.ConstantIntensity ? 1f : feedbacksIntensity;
+					float intensityMultiplier = ComputeIntensity(feedbacksIntensity);
                     
 					TargetSignal.Duration = Duration;
 					TargetSignal.GlobalMultiplier = GlobalMultiplier * intensityMultiplier;

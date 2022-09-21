@@ -63,18 +63,12 @@ namespace MoreMountains.Feedbacks
 
 	public struct MMFeedbacksShakeEvent
 	{
-		public delegate void Delegate(int channel = 0, bool useRange = false, float eventRange = 0f, Vector3 eventOriginPosition = default(Vector3));
 		static private event Delegate OnEvent;
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)] private static void RuntimeInitialization() { OnEvent = null; }
+		static public void Register(Delegate callback) { OnEvent += callback; }
+		static public void Unregister(Delegate callback) { OnEvent -= callback; }
 
-		static public void Register(Delegate callback)
-		{
-			OnEvent += callback;
-		}
-
-		static public void Unregister(Delegate callback)
-		{
-			OnEvent -= callback;
-		}
+		public delegate void Delegate(int channel = 0, bool useRange = false, float eventRange = 0f, Vector3 eventOriginPosition = default(Vector3));
 
 		static public void Trigger(int channel = 0, bool useRange = false, float eventRange = 0f, Vector3 eventOriginPosition = default(Vector3))
 		{

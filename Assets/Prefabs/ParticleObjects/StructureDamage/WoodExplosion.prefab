@@ -1,10 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
---- !u!1 &4067203812020813368
-========
---- !u!1 &5151808772068190205
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+--- !u!1 &2765816660705447406
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,67 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-  - component: {fileID: 4067203812020614342}
-  - component: {fileID: 4067203812039017596}
-  - component: {fileID: 4067203812039026208}
-========
-  - component: {fileID: 5151808772067905767}
-  - component: {fileID: 5151808772052713953}
-  - component: {fileID: 5151808772052561983}
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+  - component: {fileID: 2771204576676516334}
+  - component: {fileID: 2640407548082698230}
+  - component: {fileID: 2639466167859531330}
   m_Layer: 0
-  m_Name: Cloud
+  m_Name: DustCloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
---- !u!4 &4067203812020614342
-========
---- !u!4 &5151808772067905767
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+--- !u!4 &2771204576676516334
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-  m_GameObject: {fileID: 4067203812020813368}
-========
-  m_GameObject: {fileID: 5151808772068190205}
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 2765816660705447406}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-  m_Father: {fileID: 4067203812020630124}
+  m_Father: {fileID: 2768563385972099826}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!198 &4067203812039017596
-========
-  m_Father: {fileID: 5151808772067939225}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!198 &5151808772052713953
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+--- !u!198 &2640407548082698230
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-  m_GameObject: {fileID: 4067203812020813368}
+  m_GameObject: {fileID: 2765816660705447406}
   serializedVersion: 8
-  lengthInSec: 1
-========
-  m_GameObject: {fileID: 5151808772068190205}
-  serializedVersion: 8
-  lengthInSec: 3
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+  lengthInSec: 0.4
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
@@ -147,12 +116,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-      minScalar: 0.49999997
-========
-      minScalar: 0.5
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+      scalar: 0.4
+      minScalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -167,17 +132,13 @@ ParticleSystem:
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 0
+        m_RotationOrder: 4
       minCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-          value: 0.49999997
-========
-          value: 0.5
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+          value: 0.81818175
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -186,17 +147,12 @@ ParticleSystem:
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 0
+        m_RotationOrder: 4
     startSpeed:
       serializedVersion: 2
-      minMaxState: 3
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-      scalar: 4
-      minScalar: 1
-========
-      scalar: 6
-      minScalar: 2
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+      minMaxState: 0
+      scalar: 0.2
+      minScalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -211,17 +167,13 @@ ParticleSystem:
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 0
+        m_RotationOrder: 4
       minCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-          value: 0.25
-========
-          value: 0.33333334
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+          value: 0.6
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -230,17 +182,12 @@ ParticleSystem:
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 0
+        m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 2
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-      minColor: {r: 0.25882354, g: 0.25882354, b: 0.25882354, a: 1}
-      maxColor: {r: 0.32941177, g: 0.32941177, b: 0.3254902, a: 1}
-========
-      minColor: {r: 0.42647058, g: 0.42647058, b: 0.42647058, a: 0.47058824}
-      maxColor: {r: 0.32941177, g: 0.32941177, b: 0.3254902, a: 0.47058824}
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+      minMaxState: 0
+      minColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.7794118, g: 0.6802858, b: 0.59028983, a: 0.322}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -301,13 +248,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     startSize:
       serializedVersion: 2
-      minMaxState: 3
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-      scalar: 0.9
-========
-      scalar: 1
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
-      minScalar: 0.6
+      minMaxState: 0
+      scalar: 1.5
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -322,17 +265,13 @@ ParticleSystem:
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 0
+        m_RotationOrder: 4
       minCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-          value: 0.6666667
-========
-          value: 0.6
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+          value: 0.7692308
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -341,10 +280,10 @@ ParticleSystem:
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 0
+        m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -397,7 +336,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -597,7 +536,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: -0.2
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -654,7 +593,7 @@ ParticleSystem:
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 1
+    radiusThickness: 0
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
@@ -733,15 +672,11 @@ ParticleSystem:
     m_TextureColorAffectsParticles: 1
     m_TextureAlphaAffectsParticles: 1
     m_TextureBilinearFiltering: 0
-    randomDirectionAmount: 1
+    randomDirectionAmount: 0
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-      value: 0.1
-========
-      value: 0.18955883
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+      value: 0.4
       mode: 0
       spread: 0
       speed:
@@ -970,13 +905,8 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-        scalar: 15
-        minScalar: 15
-========
-        scalar: 30
-        minScalar: 30
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+        scalar: 5
+        minScalar: 1
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -1029,11 +959,7 @@ ParticleSystem:
       repeatInterval: 0.01
       probability: 1
   SizeModule:
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
     enabled: 1
-========
-    enabled: 0
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -1044,35 +970,25 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
+          value: 0.31067657
+          inSlope: 2
+          outSlope: 2
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-          value: 0.3125
-          inSlope: -1.6237746
-          outSlope: -1.6237746
-========
           value: 1
           inSlope: 0
           outSlope: 0
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
         m_RotationOrder: 0
-========
-        m_RotationOrder: 4
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
       minCurve:
         serializedVersion: 2
         m_Curve:
@@ -1205,11 +1121,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   RotationModule:
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-    enabled: 0
-========
     enabled: 1
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -1318,15 +1230,9 @@ ParticleSystem:
         m_RotationOrder: 4
     curve:
       serializedVersion: 2
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-      minMaxState: 0
-      scalar: 0.7853982
+      minMaxState: 2
+      scalar: 3.1415925
       minScalar: 0.7853982
-========
-      minMaxState: 3
-      scalar: 1.5707963
-      minScalar: -1.5707963
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1339,10 +1245,9 @@ ParticleSystem:
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
         - serializedVersion: 3
           time: 1
-          value: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1352,18 +1257,12 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-========
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 0
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
       minCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-          value: 0
+          value: -1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1372,10 +1271,7 @@ ParticleSystem:
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 0
-========
-          value: -1
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+          value: 0.021977961
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1384,11 +1280,7 @@ ParticleSystem:
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
         m_RotationOrder: 4
-========
-        m_RotationOrder: 0
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
     separateAxes: 0
   ColorModule:
     enabled: 1
@@ -1399,21 +1291,16 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0}
-        key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 1}
+        key0: {r: 1, g: 1, b: 1, a: 1}
+        key1: {r: 1, g: 1, b: 1, a: 0}
+        key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
         ctime0: 0
         ctime1: 65535
-========
-        ctime0: 578
-        ctime1: 65150
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
         ctime2: 0
         ctime3: 0
         ctime4: 0
@@ -1421,13 +1308,8 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-        atime1: 10858
-        atime2: 32863
-========
-        atime1: 8867
-        atime2: 17155
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+        atime1: 65535
+        atime2: 65535
         atime3: 65535
         atime4: 0
         atime5: 0
@@ -1435,7 +1317,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 4
+        m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1481,8 +1363,17 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 1
+          value: 0
           inSlope: 0
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
           outSlope: 0
           tangentMode: 0
           weightedMode: 0
@@ -1490,7 +1381,7 @@ ParticleSystem:
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 0
+        m_RotationOrder: 4
       minCurve:
         serializedVersion: 2
         m_Curve:
@@ -1498,6 +1389,15 @@ ParticleSystem:
           time: 0
           value: 0
           inSlope: 0
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
           outSlope: 0
           tangentMode: 0
           weightedMode: 0
@@ -1505,7 +1405,7 @@ ParticleSystem:
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 0
+        m_RotationOrder: 4
     startFrame:
       serializedVersion: 2
       minMaxState: 0
@@ -2657,7 +2557,7 @@ ParticleSystem:
     magnitude:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.7
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2711,11 +2611,7 @@ ParticleSystem:
     inWorldSpace: 0
     multiplyDragByParticleSize: 1
     multiplyDragByParticleVelocity: 1
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-    dampen: 0.15
-========
-    dampen: 0.2
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+    dampen: 0.09
     drag:
       serializedVersion: 2
       minMaxState: 0
@@ -3704,7 +3600,7 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 4
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -3773,7 +3669,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3826,7 +3722,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.3
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -3878,7 +3774,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minKillSpeed: 0
     maxKillSpeed: 10000
-    radiusScale: 1
+    radiusScale: 0.01
     collidesWith:
       serializedVersion: 2
       m_Bits: 4294967295
@@ -4842,22 +4738,14 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
---- !u!199 &4067203812039026208
-========
---- !u!199 &5151808772052561983
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+--- !u!199 &2639466167859531330
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-  m_GameObject: {fileID: 4067203812020813368}
-========
-  m_GameObject: {fileID: 5151808772068190205}
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+  m_GameObject: {fileID: 2765816660705447406}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 1
@@ -4871,11 +4759,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-  - {fileID: 2100000, guid: d386c5d9fb941e845b73fe6da5491ef2, type: 2}
-========
   - {fileID: 2100000, guid: 719f8d52fe2e6b444b41c2f7a8fe587b, type: 2}
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4893,8 +4777,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -4904,7 +4788,7 @@ ParticleSystemRenderer:
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
-  m_SortingFudge: 5
+  m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
   m_RenderAlignment: 0
@@ -4926,11 +4810,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
---- !u!1 &4067203812020850756
-========
---- !u!1 &5151808772068195015
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+--- !u!1 &2765927017024541362
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4938,71 +4818,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-  - component: {fileID: 4067203812020630124}
-  - component: {fileID: 4067203812038953346}
-  - component: {fileID: 4067203812039010380}
+  - component: {fileID: 2768563385972099826}
+  - component: {fileID: 2640445579347885608}
+  - component: {fileID: 2639166301030728312}
   m_Layer: 0
-  m_Name: DustDirtyPoof
-========
-  - component: {fileID: 5151808772067939225}
-  - component: {fileID: 5151808772052645985}
-  - component: {fileID: 5151808772052565341}
-  m_Layer: 0
-  m_Name: DustDirtyPoofSoft
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+  m_Name: WoodExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
---- !u!4 &4067203812020630124
-========
---- !u!4 &5151808772067939225
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+--- !u!4 &2768563385972099826
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-  m_GameObject: {fileID: 4067203812020850756}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -5.638358, y: -1.1849034, z: 0}
+  m_GameObject: {fileID: 2765927017024541362}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 12.08176, y: 3.9606063, z: 0.40751725}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4067203812020614342}
+  - {fileID: 2771204576676516334}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!198 &4067203812038953346
-========
-  m_GameObject: {fileID: 5151808772068195015}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -4.303461, y: 0.8057327, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5151808772067905767}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!198 &5151808772052645985
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+--- !u!198 &2640445579347885608
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-  m_GameObject: {fileID: 4067203812020850756}
-========
-  m_GameObject: {fileID: 5151808772068195015}
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+  m_GameObject: {fileID: 2765927017024541362}
   serializedVersion: 8
-  lengthInSec: 3
+  lengthInSec: 0.4
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
@@ -5077,13 +4927,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-      scalar: 0.7
-      minScalar: 0.3
-========
-      scalar: 0.8
-      minScalar: 0.4
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+      scalar: 0.4
+      minScalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5104,11 +4949,7 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-          value: 0.42857146
-========
-          value: 0.5
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+          value: 0.6
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -5121,13 +4962,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-      scalar: 8
-      minScalar: 3
-========
-      scalar: 6
-      minScalar: 1
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+      scalar: 10
+      minScalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5148,11 +4984,7 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-          value: 0.375
-========
-          value: 0.16666667
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+          value: 0.29166666
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -5164,14 +4996,9 @@ ParticleSystem:
         m_RotationOrder: 0
     startColor:
       serializedVersion: 2
-      minMaxState: 2
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-      minColor: {r: 0.44117647, g: 0.44117647, b: 0.44117647, a: 1}
-      maxColor: {r: 0.30147058, g: 0.30147058, b: 0.30147058, a: 1}
-========
-      minColor: {r: 0.4852941, g: 0.4852941, b: 0.4852941, a: 1}
-      maxColor: {r: 0.3254902, g: 0.3254902, b: 0.3254902, a: 1}
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+      minMaxState: 0
+      minColor: {r: 0.5955882, g: 0.47848883, b: 0.4160359, a: 1}
+      maxColor: {r: 0.375, g: 0.3177992, b: 0.2867647, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5233,13 +5060,22 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.07
-      minScalar: 0.05
+      scalar: 0.15
+      minScalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
           value: 1
           inSlope: 0
           outSlope: 0
@@ -5255,7 +5091,16 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.71428573
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -5268,8 +5113,8 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 1
+      scalar: 0.3
+      minScalar: 0.6
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5321,8 +5166,8 @@ ParticleSystem:
     startSizeZ:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 1
+      scalar: 0.15
+      minScalar: 0.15
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5373,7 +5218,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 0
       maxCurve:
@@ -5426,7 +5271,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 0
       maxCurve:
@@ -5479,23 +5324,14 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotation:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 3
+      scalar: 6.283185
       minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
           value: 1
           inSlope: 0
           outSlope: 0
@@ -5518,28 +5354,19 @@ ParticleSystem:
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     maxNumParticles: 1000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
-    size3D: 0
+    size3D: 1
     rotation3D: 0
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
-      minScalar: 0.2
+      scalar: 1.4
+      minScalar: 1.4
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5678,7 +5505,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.2
+      value: 0.01
       mode: 0
       spread: 0
       speed:
@@ -5907,8 +5734,8 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 12
-        minScalar: 12
+        scalar: 25
+        minScalar: 5
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -5971,16 +5798,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0.0025707483
-          value: 0.37168142
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 0.49614403
+          time: 0
           value: 1
           inSlope: 0
           outSlope: 0
@@ -5990,9 +5808,9 @@ ParticleSystem:
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 0.37168142
-          inSlope: 0
-          outSlope: 0
+          value: 0
+          inSlope: -2
+          outSlope: -2
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
@@ -6132,10 +5950,10 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   RotationModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 2
       scalar: 1
       minScalar: 0
       maxCurve:
@@ -6188,7 +6006,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 2
       scalar: 1
       minScalar: 0
       maxCurve:
@@ -6241,8 +6059,8 @@ ParticleSystem:
         m_RotationOrder: 4
     curve:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0.7853982
+      minMaxState: 2
+      scalar: 12.56637
       minScalar: 0.7853982
       maxCurve:
         serializedVersion: 2
@@ -6250,15 +6068,15 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 1
-          inSlope: 0
-          outSlope: 0
+          inSlope: -1.7000829
+          outSlope: -1.7000829
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 1
-          value: 1
+          time: 0.66358024
+          value: 0.010988995
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -6267,22 +6085,22 @@ ParticleSystem:
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
       minCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
+          value: -0.9395531
+          inSlope: 2.4243748
+          outSlope: 2.4243748
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 1
-          value: 0
+          time: 0.66358024
+          value: 0.010989066
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -6291,10 +6109,10 @@ ParticleSystem:
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -6302,33 +6120,33 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0}
-        key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 1}
+        key0: {r: 1, g: 1, b: 1, a: 1}
+        key1: {r: 1, g: 1, b: 0, a: 1}
+        key2: {r: 1, g: 0.34117648, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 65535
-        ctime2: 0
+        ctime1: 30640
+        ctime2: 65388
         ctime3: 0
         ctime4: 0
         ctime5: 0
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 8216
-        atime2: 56937
+        atime1: 65535
+        atime2: 52734
         atime3: 65535
-        atime4: 65535
+        atime4: 0
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 2
-        m_NumAlphaKeys: 4
+        m_NumColorKeys: 3
+        m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -6360,15 +6178,15 @@ ParticleSystem:
         m_NumAlphaKeys: 2
   UVModule:
     serializedVersion: 2
-    enabled: 0
+    enabled: 1
     mode: 0
     timeMode: 0
     fps: 30
     frameOverTime:
       serializedVersion: 2
-      minMaxState: 1
-      scalar: 0.9999
-      minScalar: 0.9999
+      minMaxState: 3
+      scalar: 0.125
+      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -6471,8 +6289,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     speedRange: {x: 0, y: 1}
-    tilesX: 1
-    tilesY: 1
+    tilesX: 8
+    tilesY: 4
     animationType: 0
     rowIndex: 0
     cycles: 1
@@ -6483,17 +6301,26 @@ ParticleSystem:
     flipU: 0
     flipV: 0
   VelocityModule:
-    enabled: 1
+    enabled: 0
     x:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 0.1
-      minScalar: -0.1
+      minMaxState: 0
+      scalar: 0
+      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
           value: 1
           inSlope: 0
           outSlope: 0
@@ -6509,7 +6336,16 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: -1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -6521,14 +6357,23 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 0.1
-      minScalar: -0.1
+      minMaxState: 0
+      scalar: 0
+      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
           value: 1
           inSlope: 0
           outSlope: 0
@@ -6544,7 +6389,16 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: -1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -6556,14 +6410,23 @@ ParticleSystem:
         m_RotationOrder: 4
     z:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 0.1
-      minScalar: -0.1
+      minMaxState: 0
+      scalar: 0
+      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
           value: 1
           inSlope: 0
           outSlope: 0
@@ -6579,7 +6442,16 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: -1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -7514,7 +7386,7 @@ ParticleSystem:
     magnitude:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 2.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -7568,11 +7440,7 @@ ParticleSystem:
     inWorldSpace: 0
     multiplyDragByParticleSize: 1
     multiplyDragByParticleVelocity: 1
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
     dampen: 0.15
-========
-    dampen: 0.2
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
     drag:
       serializedVersion: 2
       minMaxState: 0
@@ -8559,9 +8427,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -8577,7 +8445,7 @@ ParticleSystem:
     m_Dampen:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.4
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -8629,9 +8497,9 @@ ParticleSystem:
         m_RotationOrder: 4
     m_Bounce:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 1
-      minScalar: 1
+      minMaxState: 3
+      scalar: 0.8
+      minScalar: 0.4
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -8735,7 +8603,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minKillSpeed: 0
     maxKillSpeed: 10000
-    radiusScale: 1
+    radiusScale: 0.01
     collidesWith:
       serializedVersion: 2
       m_Bits: 4294967295
@@ -8744,7 +8612,7 @@ ParticleSystem:
     voxelSize: 0.5
     collisionMessages: 0
     collidesWithDynamic: 1
-    interiorCollisions: 1
+    interiorCollisions: 0
   TriggerModule:
     enabled: 0
     serializedVersion: 2
@@ -9699,22 +9567,14 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
---- !u!199 &4067203812039010380
-========
---- !u!199 &5151808772052565341
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+--- !u!199 &2639166301030728312
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<<< HEAD:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoof.prefab
-  m_GameObject: {fileID: 4067203812020850756}
-========
-  m_GameObject: {fileID: 5151808772068195015}
->>>>>>>> df5cfb806a660b3eae8b04a5b2dbde02e28947f5:Assets/Prefabs/ParticleObjects/StructureDamage/StructureDamage/DustDirtyPoofSoft.prefab
+  m_GameObject: {fileID: 2765927017024541362}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 1
@@ -9728,7 +9588,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 150aee38b5d848b42b75593618992bb7, type: 2}
+  - {fileID: 2100000, guid: 4feedb05f33786a41a00ff08bb601fd6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9746,8 +9606,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -9755,7 +9615,7 @@ ParticleSystemRenderer:
   m_MinParticleSize: 0
   m_MaxParticleSize: 0.5
   m_CameraVelocityScale: 0
-  m_VelocityScale: 0
+  m_VelocityScale: 0.02
   m_LengthScale: 1
   m_SortingFudge: 0
   m_NormalDirection: 1

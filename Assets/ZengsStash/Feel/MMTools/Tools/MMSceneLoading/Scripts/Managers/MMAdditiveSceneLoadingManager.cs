@@ -263,7 +263,7 @@ namespace MoreMountains.Tools
 
 
 		/// <summary>
-		/// On Start(), we start loading the new level asynchronously
+		/// Starts loading the new level asynchronously
 		/// </summary>
 		protected virtual void Awake()
 		{

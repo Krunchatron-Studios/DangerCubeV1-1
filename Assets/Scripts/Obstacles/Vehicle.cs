@@ -5,6 +5,7 @@ using MoreMountains.Feedbacks;
 public class Vehicle : BasicStructure {
 
 	private bool _hasExploded = false;
+	public MMF_Player carExplosionShaker;
 	public override void DamageStructure(float damageAmount, string damageType, Vector3 location) {
 		shaker.Play();
 		GetDustParticle(location);
@@ -60,9 +61,9 @@ public class Vehicle : BasicStructure {
 
 			if (percentDestroyed <= 0.0f && !_hasExploded) {
 				StartCoroutine(VehicleExplosion(3));
-				MMCameraShakeEvent.Trigger(.5f, .5f, 40, 0, 0, 0, false);
 				GameObject rubble = PoolManager.pm.sMetalPool.GetPooledGameObject();
 				rubble.SetActive(true);
+				carExplosionShaker.GetComponent<MMF_Player>()?.PlayFeedbacks(transform.position, 2f);
 				rubble.transform.position = transform.position;
 				_hasExploded = true;
 			}

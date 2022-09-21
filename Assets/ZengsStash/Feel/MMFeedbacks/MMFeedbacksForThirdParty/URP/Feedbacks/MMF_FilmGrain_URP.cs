@@ -29,6 +29,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 		/// the duration of this feedback is the duration of the shake
 		public override float FeedbackDuration { get { return ApplyTimeMultiplier(Duration); } set { Duration = value; } }
 		public override bool HasChannel => true;
+		public override bool HasRandomness => true;
 
 		[MMFInspectorGroup("Film Grain", true, 21)]
 		/// the duration of the shake, in seconds
@@ -69,9 +70,9 @@ namespace MoreMountains.FeedbacksForThirdParty
 				return;
 			}
             
-			float intensityMultiplier = Timing.ConstantIntensity ? 1f : feedbacksIntensity;
+			float intensityMultiplier = ComputeIntensity(feedbacksIntensity);
 			MMFilmGrainShakeEvent_URP.Trigger(Intensity, FeedbackDuration, RemapIntensityZero, RemapIntensityOne, RelativeIntensity, intensityMultiplier,
-				Channel, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, Timing.TimescaleMode);
+				Channel, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, ComputedTimescaleMode);
             
 		}
         

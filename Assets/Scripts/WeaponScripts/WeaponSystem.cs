@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 public class WeaponSystem : MonoBehaviour {
@@ -5,6 +6,7 @@ public class WeaponSystem : MonoBehaviour {
 
 	public static WeaponSystem Instance;
 	public Weapon[] cubeWeapons;
+	public MMF_Player player;
 
 	private void Start() {
 		Instance = this;

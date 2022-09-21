@@ -77,17 +77,17 @@ namespace MoreMountains.Feedbacks
 			TargetWiggle.enabled = true;
 			if (WigglePosition)
 			{
-				TargetWiggle.PositionWiggleProperties.UseUnscaledTime = Timing.TimescaleMode == TimescaleModes.Unscaled;
+				TargetWiggle.PositionWiggleProperties.UseUnscaledTime = !InScaledTimescaleMode;
 				TargetWiggle.WigglePosition(ApplyTimeMultiplier(WigglePositionDuration));
 			}
 			if (WiggleRotation)
 			{
-				TargetWiggle.RotationWiggleProperties.UseUnscaledTime = Timing.TimescaleMode == TimescaleModes.Unscaled;
+				TargetWiggle.RotationWiggleProperties.UseUnscaledTime = !InScaledTimescaleMode;
 				TargetWiggle.WiggleRotation(ApplyTimeMultiplier(WiggleRotationDuration));
 			}
 			if (WiggleScale)
 			{
-				TargetWiggle.ScaleWiggleProperties.UseUnscaledTime = Timing.TimescaleMode == TimescaleModes.Unscaled;
+				TargetWiggle.ScaleWiggleProperties.UseUnscaledTime = !InScaledTimescaleMode;
 				TargetWiggle.WiggleScale(ApplyTimeMultiplier(WiggleScaleDuration));
 			}
 		}

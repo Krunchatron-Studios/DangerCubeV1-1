@@ -52,6 +52,7 @@ namespace MoreMountains.Feedbacks
 		public bool OnlyPlayIfTargetIsActive = false;
 		/// the duration of this feedback is the duration of the target property, or 0 if instant
 		public override float FeedbackDuration { get { return (Mode == Modes.Instant) ? 0f : ApplyTimeMultiplier(Duration); } set { if (Mode != Modes.Instant) { Duration = value; } } }
+		public override bool HasRandomness => true;
 
 		protected List<MMF_FeedbackBaseTarget> _targets;
 		protected Coroutine _coroutine = null;
@@ -78,7 +79,7 @@ namespace MoreMountains.Feedbacks
 		/// <summary>
 		/// Creates a new list, fills the targets, and initializes them
 		/// </summary>
-		protected virtual void PrepareTargets()
+		public virtual void PrepareTargets()
 		{
 			_targets = new List<MMF_FeedbackBaseTarget>();
 			FillTargets();
@@ -203,7 +204,7 @@ namespace MoreMountains.Feedbacks
 				return;
 			}
             
-			float intensityMultiplier = Timing.ConstantIntensity ? 1f : feedbacksIntensity;
+			float intensityMultiplier = ComputeIntensity(feedbacksIntensity);
             
 			foreach (MMF_FeedbackBaseTarget target in _targets)
 			{

@@ -458,8 +458,7 @@ namespace MoreMountains.Tools
 		/// </summary>
 		public virtual void StoreSpriteRenderer()
 		{
-			_spriteRenderer = TargetRenderer.GetComponent<SpriteRenderer>();
-
+			_spriteRenderer = (TargetRenderer != null) ? TargetRenderer.GetComponent<SpriteRenderer>() : null;
 			SpriteRendererIsNull = _spriteRenderer == null;
 		}
 

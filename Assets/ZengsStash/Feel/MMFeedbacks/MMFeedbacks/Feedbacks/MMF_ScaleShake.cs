@@ -22,7 +22,9 @@ namespace MoreMountains.Feedbacks
 		/// returns the duration of the feedback
 		public override float FeedbackDuration { get { return ApplyTimeMultiplier(Duration); } set { Duration = value; } }
 		public override bool HasChannel => true;
+		public override bool HasRandomness => true;
 
+		[MMFInspectorGroup("Optional Target", true, 33)]
 		/// a specific (and optional) shaker to target, regardless of its channel
 		[Tooltip("a specific (and optional) shaker to target, regardless of its channel")]
 		public MMScaleShaker TargetShaker;
@@ -102,12 +104,21 @@ namespace MoreMountains.Feedbacks
 			{
 				return;
 			}
-            
-			float intensityMultiplier = Timing.ConstantIntensity ? 1f : feedbacksIntensity;
-			MMScaleShakeEvent.Trigger(Duration, ShakeSpeed,  ShakeRange,  ShakeMainDirection,  RandomizeDirection,  ShakeAltDirection,  RandomizeDirectionOnPlay,  AddDirectionalNoise, 
-				DirectionalNoiseStrengthMin,  DirectionalNoiseStrengthMax,  RandomnessSeed,  RandomizeSeedOnShake,  UseAttenuation,  AttenuationCurve,
-				intensityMultiplier, Channel, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, Timing.TimescaleMode);
-			TargetShaker?.Play();
+			
+			float intensityMultiplier = ComputeIntensity(feedbacksIntensity);
+			
+			if (TargetShaker == null)
+			{
+				MMScaleShakeEvent.Trigger(Duration, ShakeSpeed,  ShakeRange,  ShakeMainDirection,  RandomizeDirection,  ShakeAltDirection,  RandomizeDirectionOnPlay,  AddDirectionalNoise, 
+					DirectionalNoiseStrengthMin,  DirectionalNoiseStrengthMax,  RandomnessSeed,  RandomizeSeedOnShake,  UseAttenuation,  AttenuationCurve,
+					intensityMultiplier, Channel, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, ComputedTimescaleMode);
+			}
+			else
+			{
+				TargetShaker?.OnMMScaleShakeEvent(Duration, ShakeSpeed,  ShakeRange,  ShakeMainDirection,  RandomizeDirection,  ShakeAltDirection,  RandomizeDirectionOnPlay,  AddDirectionalNoise, 
+					DirectionalNoiseStrengthMin,  DirectionalNoiseStrengthMax,  RandomnessSeed,  RandomizeSeedOnShake,  UseAttenuation,  AttenuationCurve,
+					intensityMultiplier, TargetShaker.Channel, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, ComputedTimescaleMode);
+			}
 		}
         
 		/// <summary>
@@ -122,9 +133,17 @@ namespace MoreMountains.Feedbacks
 				return;
 			}
 			base.CustomStopFeedback(scale, feedbacksIntensity);
-			MMScaleShakeEvent.Trigger(Duration, ShakeSpeed,  ShakeRange,  ShakeMainDirection,  RandomizeDirection,  ShakeAltDirection,  RandomizeDirectionOnPlay,  AddDirectionalNoise, 
-				DirectionalNoiseStrengthMin,  DirectionalNoiseStrengthMax,  RandomnessSeed,  RandomizeSeedOnShake,  UseAttenuation,  AttenuationCurve, stop:true);
-			TargetShaker?.Stop();
+			
+			if (TargetShaker == null)
+			{
+				MMScaleShakeEvent.Trigger(Duration, ShakeSpeed,  ShakeRange,  ShakeMainDirection,  RandomizeDirection,  ShakeAltDirection,  RandomizeDirectionOnPlay,  AddDirectionalNoise, 
+					DirectionalNoiseStrengthMin,  DirectionalNoiseStrengthMax,  RandomnessSeed,  RandomizeSeedOnShake,  UseAttenuation,  AttenuationCurve, stop:true);
+			}
+			else
+			{
+				TargetShaker?.OnMMScaleShakeEvent(Duration, ShakeSpeed,  ShakeRange,  ShakeMainDirection,  RandomizeDirection,  ShakeAltDirection,  RandomizeDirectionOnPlay,  AddDirectionalNoise, 
+					DirectionalNoiseStrengthMin,  DirectionalNoiseStrengthMax,  RandomnessSeed,  RandomizeSeedOnShake,  UseAttenuation,  AttenuationCurve, channel:TargetShaker.Channel, stop:true);
+			}
 		}
 	}
 }

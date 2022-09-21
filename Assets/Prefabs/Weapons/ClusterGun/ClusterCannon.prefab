@@ -1,5 +1,98 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1328377417920264508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2340017969521982098}
+  m_Layer: 30
+  m_Name: FiringPoint (3)
+  m_TagString: Projectile
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2340017969521982098
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328377417920264508}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.35199955, y: 0.40500003, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7856834035675329121}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2466222471124541727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4446463116365895466}
+  m_Layer: 30
+  m_Name: FiringPoint (1)
+  m_TagString: Projectile
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4446463116365895466
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2466222471124541727}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.35199955, y: 0.40500003, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7856834035675329121}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5027585647165906886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7193865893818712528}
+  m_Layer: 30
+  m_Name: FiringPoint (2)
+  m_TagString: Projectile
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7193865893818712528
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5027585647165906886}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.35199955, y: 0.40500003, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7856834035675329121}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5540794475001378500
 GameObject:
   m_ObjectHideFlags: 0
@@ -23,13 +116,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5540794475001378500}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.016, y: -0.013, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.35199955, y: 0.40500003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8492263470177819837}
-  m_RootOrder: 1
+  m_Father: {fileID: 7856834035675329121}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6834929877646981094
 GameObject:
@@ -60,7 +153,11 @@ Transform:
   m_LocalPosition: {x: 0.368, y: -0.418, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6347541077754232035}
+  - {fileID: 4446463116365895466}
+  - {fileID: 7193865893818712528}
+  - {fileID: 2340017969521982098}
   m_Father: {fileID: 8492263470177819837}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -79,9 +176,9 @@ MonoBehaviour:
   weapon: {fileID: 7485021606706960250}
   circleCol2D: {fileID: 1230682316949238728}
   firePoint1: {fileID: 5540794475001378500}
-  firePoint2: {fileID: 0}
-  firePoint3: {fileID: 0}
-  firePoint4: {fileID: 0}
+  firePoint2: {fileID: 2466222471124541727}
+  firePoint3: {fileID: 5027585647165906886}
+  firePoint4: {fileID: 1328377417920264508}
 --- !u!58 &1230682316949238728
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -131,7 +228,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7856834035675329121}
-  - {fileID: 6347541077754232035}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -147,24 +243,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d20a0e7fa96d3b41940dbda4c77bb23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeLevel: 0
   upgradeName: Cluster Cannon
   upgradeTier: Major
   upgradeType: Silicate
-  sprite: {fileID: 21300000, guid: 0d35da58c43902c4e88dfaf59823586a, type: 3}
+  upgradeSprite: {fileID: 0}
   description: it shoots
   audioSource: {fileID: 3527016346985065115}
   upgradeRange: 6
-  upgradeLevel: 0
   weaponDamage: 3
   attackSpeed: 2
   damageType: '"Fire"'
   knockForce: 2
   objectPooler: {fileID: 5639441978635504735}
-  firingPoint: {fileID: 5540794475001378500}
+  firingPoints:
+  - {fileID: 5540794475001378500}
+  - {fileID: 2466222471124541727}
+  - {fileID: 5027585647165906886}
+  - {fileID: 1328377417920264508}
   projectile: {fileID: 5560214801928622059, guid: eee1772510e4bd4428aa74152f1f9a6f,
     type: 3}
   enemyTarget: {x: 0, y: 0}
   targetingSys: {fileID: 5780026266065048204}
+  projectileScale: {x: 0, y: 0}
   canFire: 0
   nextFire: 0
 --- !u!212 &935498610684718217

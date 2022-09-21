@@ -25,6 +25,7 @@ namespace MoreMountains.Feedbacks
 		/// the duration of this feedback is the duration of the shake
 		public override float FeedbackDuration { get { return ApplyTimeMultiplier(CameraShakeProperties.Duration); } set { CameraShakeProperties.Duration = value; } }
 		public override bool HasChannel => true;
+		public override bool HasRandomness => true;
 
 		[MMFInspectorGroup("Camera Shake", true, 57)]
 		/// whether or not this shake should repeat forever, until stopped
@@ -45,10 +46,10 @@ namespace MoreMountains.Feedbacks
 			{
 				return;
 			}
-			float intensityMultiplier = Timing.ConstantIntensity ? 1f : feedbacksIntensity;
+			float intensityMultiplier = ComputeIntensity(feedbacksIntensity);
 			MMCameraShakeEvent.Trigger(FeedbackDuration, CameraShakeProperties.Amplitude * intensityMultiplier, CameraShakeProperties.Frequency, 
 				CameraShakeProperties.AmplitudeX * intensityMultiplier, CameraShakeProperties.AmplitudeY * intensityMultiplier, CameraShakeProperties.AmplitudeZ * intensityMultiplier,
-				RepeatUntilStopped, Channel, Timing.TimescaleMode == TimescaleModes.Unscaled);
+				RepeatUntilStopped, Channel, ComputedTimescaleMode == TimescaleModes.Unscaled);
 		}
 
 		protected override void CustomStopFeedback(Vector3 position, float feedbacksIntensity = 1)

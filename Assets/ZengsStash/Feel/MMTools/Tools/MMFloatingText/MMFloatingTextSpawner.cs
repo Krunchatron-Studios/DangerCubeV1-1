@@ -13,20 +13,13 @@ namespace MoreMountains.Tools
 	/// </summary>
 	public struct MMFloatingTextSpawnEvent
 	{
+		static private event Delegate OnEvent;
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)] private static void RuntimeInitialization() { OnEvent = null; }
+		static public void Register(Delegate callback) { OnEvent += callback; }
+		static public void Unregister(Delegate callback) { OnEvent -= callback; }
+
 		public delegate void Delegate(int channel, Vector3 spawnPosition, string value, Vector3 direction, float intensity,
 			bool forceLifetime = false, float lifetime = 1f, bool forceColor = false, Gradient animateColorGradient = null, bool useUnscaledTime = false);
-		static private event Delegate OnEvent;
-
-		static public void Register(Delegate callback)
-		{
-			OnEvent += callback;
-		}
-
-		static public void Unregister(Delegate callback)
-		{
-			OnEvent -= callback;
-		}
-
 		static public void Trigger(int channel, Vector3 spawnPosition, string value, Vector3 direction, float intensity,
 			bool forceLifetime = false, float lifetime = 1f, bool forceColor = false, Gradient animateColorGradient = null, bool useUnscaledTime = false)
 		{

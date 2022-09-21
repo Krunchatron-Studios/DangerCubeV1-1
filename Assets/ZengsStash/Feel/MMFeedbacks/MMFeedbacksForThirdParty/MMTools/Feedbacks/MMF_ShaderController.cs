@@ -24,6 +24,7 @@ namespace MoreMountains.Feedbacks
 		public override string RequiredTargetText { get { return TargetShaderController != null ? TargetShaderController.name : "";  } }
 		public override string RequiresSetupText { get { return "This feedback requires that a TargetShaderController be set to be able to work properly. You can set one below."; } }
 		#endif
+		public override bool HasRandomness => true;
 
 		[MMFInspectorGroup("Shader Controller", true, 37, true)]
 		/// the mode this controller is in
@@ -125,7 +126,7 @@ namespace MoreMountains.Feedbacks
 				return;
 			}
             
-			float intensityMultiplier = Timing.ConstantIntensity ? 1f : feedbacksIntensity;
+			float intensityMultiplier = ComputeIntensity(feedbacksIntensity);
             
 			PerformPlay(TargetShaderController, intensityMultiplier);     
 

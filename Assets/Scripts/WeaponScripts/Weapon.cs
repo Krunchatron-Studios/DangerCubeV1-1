@@ -1,4 +1,5 @@
 using Interfaces;
+using MoreMountains.Feedbacks;
 using MoreMountains.Tools;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class Weapon : Upgrade, IUpgradeThingInterface {
 	public float knockForce;
 
 	public MMSimpleObjectPooler objectPooler;
+	public MMF_Player player;
 
 	public void Knockback (Collider2D other) {
 		Rigidbody2D thisRigidBody = other.GetComponent<Rigidbody2D>();

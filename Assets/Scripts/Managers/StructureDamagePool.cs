@@ -14,6 +14,7 @@ public class StructureDamagePool : MonoBehaviour
     public MMSimpleObjectPooler rockShatterPool;
     public MMSimpleObjectPooler glassShatterPool;
     public MMSimpleObjectPooler metalPoofPool;
+    public MMSimpleObjectPooler woodExplosionPool;
 
     [Header("Fire Particle Pool")] 
     public MMSimpleObjectPooler fire1;

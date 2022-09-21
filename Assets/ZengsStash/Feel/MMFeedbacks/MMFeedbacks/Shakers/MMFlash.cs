@@ -9,18 +9,12 @@ namespace MoreMountains.Feedbacks
 {
 	public struct MMFlashEvent
 	{
-		public delegate void Delegate(Color flashColor, float duration, float alpha, int flashID, int channel, TimescaleModes timescaleMode, bool stop = false);
 		static private event Delegate OnEvent;
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)] private static void RuntimeInitialization() { OnEvent = null; }
+		static public void Register(Delegate callback) { OnEvent += callback; }
+		static public void Unregister(Delegate callback) { OnEvent -= callback; }
 
-		static public void Register(Delegate callback)
-		{
-			OnEvent += callback;
-		}
-
-		static public void Unregister(Delegate callback)
-		{
-			OnEvent -= callback;
-		}
+		public delegate void Delegate(Color flashColor, float duration, float alpha, int flashID, int channel, TimescaleModes timescaleMode, bool stop = false);
 
 		static public void Trigger(Color flashColor, float duration, float alpha, int flashID, int channel, TimescaleModes timescaleMode, bool stop = false)
 		{
@@ -58,7 +52,10 @@ namespace MoreMountains.Feedbacks
 		/// the ID of this MMFlash object. When triggering a MMFlashEvent you can specify an ID, and only MMFlash objects with this ID will answer the call and flash, allowing you to have more than one flash object in a scene
 		[Tooltip("the ID of this MMFlash object. When triggering a MMFlashEvent you can specify an ID, and only MMFlash objects with this ID will answer the call and flash, allowing you to have more than one flash object in a scene")]
 		public int FlashID = 0;
-        
+		/// if this is true, the MMFlash will stop before playing on every new event received
+		[Tooltip("if this is true, the MMFlash will stop before playing on every new event received")]
+		public bool Interruptable = false;
+
 		[Header("Debug")]
 		/// the set of test settings to use when pressing the DebugTest button
 		[Tooltip("the set of test settings to use when pressing the DebugTest button")]
@@ -152,6 +149,11 @@ namespace MoreMountains.Feedbacks
 			if ((channel != Channel) && (channel != -1) && (Channel != -1))
 			{
 				return;
+			}
+
+			if (_flashing && Interruptable)
+			{
+				_flashing = false;
 			}
 
 			if (!_flashing)
