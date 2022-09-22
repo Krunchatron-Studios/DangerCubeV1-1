@@ -1,3 +1,4 @@
+using MoreMountains.Tools;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,7 +10,7 @@ public class ResourcesPanel : MonoBehaviour {
 	public PlayerResources resRef;
 	public GameObject lvlPanel;
 	public LevelUpPanel levelUpPanel;
-	
+
 	[Header("Exp related stats")]
 	public int bioGooBaseExp = 5, metalBaseExp = 5, silicateBaseExp = 5;
 	public int bioGooCurExp, metalCurExp, silicateCurExp;
