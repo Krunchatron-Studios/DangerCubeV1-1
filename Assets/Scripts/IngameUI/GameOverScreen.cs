@@ -2,23 +2,21 @@ using Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOverScreen : MonoBehaviour
-{
-	public AudioSource audioSource;
+public class GameOverScreen : MonoBehaviour {
 
 	private void Start() {
-		audioSource.Play();
+		TitleSoundManager.tsm.titleMusic.Play();
 	}
 
 	public void RestartGame() {
-		audioSource.Stop();
-		SoundManager.sm.buttonPress.Play();
+		TitleSoundManager.tsm.titleMusic.Stop();
+		TitleSoundManager.tsm.buttonPress.Play();
 		SceneManager.LoadScene("TestLevel");
 	}
 
 	public void ExitGame() {
-		audioSource.Stop();
-		SoundManager.sm.buttonPress.Play();
+		TitleSoundManager.tsm.titleMusic.Stop();
+		TitleSoundManager.tsm.buttonPress.Play();
 		SceneManager.LoadScene("TitleScreen");
 	}
 }
