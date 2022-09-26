@@ -1,7 +1,6 @@
-using MoreMountains.Tools;
+using MoreMountains.Feedbacks;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class ResourcesPanel : MonoBehaviour {
@@ -10,6 +9,7 @@ public class ResourcesPanel : MonoBehaviour {
 	public PlayerResources resRef;
 	public GameObject lvlPanel;
 	public LevelUpPanel levelUpPanel;
+	public MMTimeManager timeManager;
 
 	[Header("Exp related stats")]
 	public int bioGooBaseExp = 5, metalBaseExp = 5, silicateBaseExp = 5;
@@ -73,7 +73,7 @@ public class ResourcesPanel : MonoBehaviour {
 		if (bioGooCurExp >= bioGooResToLvlArray[bioGooCurrentLvl + 1]) {
 			SoundManager.sm.levelUp.Play();
 			lvlPanel.SetActive(true);
-			Time.timeScale = 0f;
+			timeManager.SetTimescaleTo(0f);
 			resRef.bioGoo = 0;
 			bioGooCurrentLvl++;
 			levelUpPanel.RefreshChoices();
@@ -81,7 +81,7 @@ public class ResourcesPanel : MonoBehaviour {
 		if (metalCurExp >= metalResToLvlArray[metalCurrentLvl + 1]) {
 			SoundManager.sm.levelUp.Play();
 			lvlPanel.SetActive(true);
-			Time.timeScale = 0f;
+			timeManager.SetTimescaleTo(0f);
 			resRef.metal = 0;
 			metalCurrentLvl++;
 			levelUpPanel.RefreshChoices();
@@ -89,7 +89,7 @@ public class ResourcesPanel : MonoBehaviour {
 		if (silicateCurExp >= silicateResToLvlArray[silicateCurrentLvl + 1]) {
 			SoundManager.sm.levelUp.Play();
 			lvlPanel.SetActive(true);
-			Time.timeScale = 0f;
+			timeManager.SetTimescaleTo(0f);
 			resRef.silicate = 0;
 			silicateCurrentLvl++;
 			levelUpPanel.RefreshChoices();

@@ -30,4 +30,6 @@ public class SoundManager : MonoBehaviour
 	public AudioSource levelUp;
 	public AudioSource powerDown;
 	public AudioSource healthChunkLost;
+	public AudioSource buttonHover1;
+	public AudioSource buttonHover2;
 }

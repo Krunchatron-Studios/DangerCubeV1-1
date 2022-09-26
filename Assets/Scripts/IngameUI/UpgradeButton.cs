@@ -1,10 +1,12 @@
 using System.Collections.Generic;
+using MoreMountains.Feedbacks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UpgradeButton : MonoBehaviour {
 	public LevelUpPanel lvlPanel;
+	public MMTimeManager timeManager; 
 	public string weaponOrTechName;
 	public Image upgradeSprite;
 	public Image thisImage;
@@ -83,7 +85,7 @@ public class UpgradeButton : MonoBehaviour {
 	public void SelectUpgrade() {
 		SoundManager.sm.buttonPress.Play();
 		lvlPanel.gameObject.SetActive(false);
-		Time.timeScale = 1f;
+		timeManager.SetTimescaleTo(1f);
 		ActivateAndRemove(_upgrade.upgradeType, _upgrade.upgradeTier, _upgrade.upgradeName);
 	}
 
