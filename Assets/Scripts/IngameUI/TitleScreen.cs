@@ -4,27 +4,25 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreen : MonoBehaviour {
 
-	public AudioSource audioSource;
-
 	private void Start() {
-		audioSource.Play();
+		TitleSoundManager.tsm.titleMusic.Play();
 	}
 
 	public void StartGame() {
-		audioSource.Stop();
-		SoundManager.sm.buttonPress.Play();
+		TitleSoundManager.tsm.titleMusic.Stop();
+		TitleSoundManager.tsm.buttonPress.Play();
 		SceneManager.LoadScene("TestLevel");
 	}
 
 	public void LoadLevel(string lvlToLoad) {
-		audioSource.Stop();
-		SoundManager.sm.buttonPress.Play();
+		TitleSoundManager.tsm.titleMusic.Stop();
+		TitleSoundManager.tsm.buttonPress.Play();
 		SceneManager.LoadScene(lvlToLoad);
 	}
 
 	public void ExitToDesktop() {
-		audioSource.Stop();
-		SoundManager.sm.buttonPress.Play();
+		TitleSoundManager.tsm.titleMusic.Stop();
+		TitleSoundManager.tsm.buttonPress.Play();
 		Application.Quit();
 	}
 }
