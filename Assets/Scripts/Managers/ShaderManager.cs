@@ -1,12 +1,13 @@
 using UnityEngine;
 
-public class ShaderManager : MonoBehaviour {
-	public static ShaderManager shm;
+namespace Managers {
+	public class ShaderManager : MonoBehaviour {
+		public static ShaderManager shm;
+		private void Start() {
+			shm = this;
+		}
 
-	private void Start() {
-		shm = this;
+		public Material spriteLit;
+		public Material glow;
 	}
-
-	public Material spriteLit;
-	public Material glow;
 }

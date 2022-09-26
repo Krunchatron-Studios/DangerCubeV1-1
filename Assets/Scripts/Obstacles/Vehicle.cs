@@ -1,10 +1,12 @@
 ﻿using System.Collections;
+using Managers;
 using UnityEngine;
 using MoreMountains.Feedbacks;
 
 public class Vehicle : BasicStructure {
 
 	private bool _hasExploded = false;
+	public AudioSource[] explosionAudio;
 	public MMF_Player carExplosionShaker;
 	public override void DamageStructure(float damageAmount, string damageType, Vector3 location) {
 		shaker.Play();
@@ -47,24 +49,19 @@ public class Vehicle : BasicStructure {
 	}
 	public override void CatchFire(string damageType) {
 		if (damageType == "Fire" || damageType == "DeathRay") {
-
 			if (percentDestroyed < 0.9f) {
 				structureParent.fireAndSmokeDamageArray[0].SetActive(true);
 			}
-
 			if (percentDestroyed < 0.7f) {
 				structureParent.fireAndSmokeDamageArray[1].SetActive(true);
 			}
-
 			if (percentDestroyed < 0.5f) {
 				structureParent.fireAndSmokeDamageArray[2].SetActive(true);
 				SoundManager.sm.burning1.Play();
 			}
-
 			if (percentDestroyed < 0.3f) {
 				structureParent.fireAndSmokeDamageArray[3].SetActive(true);
 			}
-
 			if (percentDestroyed <= 0.0f && !_hasExploded) {
 				StartCoroutine(VehicleExplosion(3));
 				GameObject rubble = PoolManager.pm.sMetalPool.GetPooledGameObject();
@@ -81,7 +78,7 @@ public class Vehicle : BasicStructure {
 			yield return timer;
 			GameObject explosion = StructureDamagePool.sdp.carExplosionPool.GetPooledGameObject();
 			explosion.SetActive(true);
-			SoundManager.sm.explosion1.Play();
+			explosionAudio[i].Play();
 			explosion.transform.position = structureParent.transform.position;
 		}
 		gameObject.SetActive(false);

@@ -7,7 +7,6 @@ public class EnemyWeapon : MonoBehaviour {
     public AudioSource audioSource;
     [Header("Player Position")]
     public GameObject playerPosition;
-
     public Vector3 aimPosition;
     
     [Header("Weapon Parameters")] 

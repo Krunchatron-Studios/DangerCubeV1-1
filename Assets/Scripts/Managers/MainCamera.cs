@@ -1,7 +1,6 @@
 using UnityEngine;
 
 public class MainCamera : MonoBehaviour {
-	
 	public static MainCamera Instance;
 	public Rigidbody2D playerRb2D;
 	private void Start() {

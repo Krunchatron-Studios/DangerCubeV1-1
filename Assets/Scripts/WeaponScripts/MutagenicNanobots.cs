@@ -9,7 +9,7 @@ public class MutagenicNanobots : Weapon {
 
     void Start() {
         currentNanos = 0;
-        InvokeRepeating("SpawnNanos", 2f, attackSpeed);
+        InvokeRepeating(nameof(SpawnNanos), 2f, attackSpeed);
     }
     void FixedUpdate() {
         _playerPosition = GameObject.FindWithTag("Player");
@@ -34,7 +34,6 @@ public class MutagenicNanobots : Weapon {
     public override void IncreaseAmmoClipSize(int ammoBonus) {
         maxNanos += ammoBonus;
     }
-
     public override void IncreaseRange(int amountToIncrease) {
         distance += amountToIncrease;
     }

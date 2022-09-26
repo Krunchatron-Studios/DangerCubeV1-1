@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Managers;
 using MoreMountains.Feedbacks;
 using TMPro;
 using UnityEngine;
@@ -81,7 +82,6 @@ public class UpgradeButton : MonoBehaviour {
 			}
 		}
 	}
-
 	public void SelectUpgrade() {
 		SoundManager.sm.buttonPress.Play();
 		lvlPanel.gameObject.SetActive(false);
@@ -158,6 +158,5 @@ public class UpgradeButton : MonoBehaviour {
 				}
 			}
 		}
-		
 	}
 }

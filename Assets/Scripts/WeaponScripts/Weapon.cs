@@ -19,39 +19,31 @@ public class Weapon : Upgrade, IUpgradeThingInterface {
 		Vector3 appliedForce = difference * knockForce;
 		thisRigidBody.AddForce(transform.up * knockForce);
 	}
-
 	public virtual void IncreaseDamage(float dmgIncrease) {
 		weaponDamage += dmgIncrease;
 	}
 	public virtual void IncreaseAttackSpeed(float spdIncrease) {
 		attackSpeed -= spdIncrease;
 	}
-
 	public virtual void IncreaseKnock(float knkIncrease) {
 		knockForce += knkIncrease;
 	}
 	public virtual void ModifyDmgType(string dmgType) {
 		damageType = dmgType;
 	}
-	
 	public virtual void ImproveReloadTimer(float timeReduction) {
 		 // only to be overriden by BurstFire weapons
 	}
-	
-	
 	public virtual void IncreaseAmmoClipSize(int ammoBonus) {
 		// overwritten by BurstFireWeapon
 		// overwritten by Nanos
 	}
-
 	public virtual void IncreaseProjectileScale(float scaleIncrease) {
 		// only to be overwritten by projectile weapons
 	}
-
 	public virtual void ChangeProjectile(GameObject newProjectile) {
 
 	}
-
 	public virtual void IncreaseRange(int amountToIncrease) {
 		// overwritten by nanos
 	}
