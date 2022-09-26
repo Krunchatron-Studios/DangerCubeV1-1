@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class OnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 	public Image thisImage;
 	public AudioSource thisAudioSource;
+
 
 	public void OnPointerEnter(PointerEventData eventData) {
 		thisImage.material = ShaderManager.shm.glow;

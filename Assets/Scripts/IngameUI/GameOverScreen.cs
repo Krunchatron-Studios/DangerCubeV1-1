@@ -10,17 +10,14 @@ public class GameOverScreen : MonoBehaviour
 	}
 
 	public void RestartGame() {
-		audioSource.Play();
-		SceneManager.LoadScene("TestLevel");
-	}
-
-	public void LoadLevel(string lvlToLoad) {
 		audioSource.Stop();
-		SceneManager.LoadScene(lvlToLoad);
+		SoundManager.sm.buttonPress.Play();
+		SceneManager.LoadScene("TestLevel");
 	}
 
 	public void ExitGame() {
 		audioSource.Stop();
+		SoundManager.sm.buttonPress.Play();
 		SceneManager.LoadScene("TitleScreen");
 	}
 }
