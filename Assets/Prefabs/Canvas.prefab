@@ -977,6 +977,7 @@ MonoBehaviour:
   resRef: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
   lvlPanel: {fileID: 6328262402373920252}
   levelUpPanel: {fileID: 6328262402373920240}
+  timeManager: {fileID: 0}
   bioGooBaseExp: 20
   metalBaseExp: 20
   silicateBaseExp: 20
@@ -1121,7 +1122,6 @@ GameObject:
   - component: {fileID: 6328262401745175101}
   - component: {fileID: 6328262401745175102}
   - component: {fileID: 6328262401745175100}
-  - component: {fileID: 6328262401745175091}
   m_Layer: 5
   m_Name: HealthPanel
   m_TagString: Untagged
@@ -1213,67 +1213,9 @@ MonoBehaviour:
   healthChunk: {fileID: 3164271915635744178, guid: a6a10fd446e28224abd6cfa73b4017cc,
     type: 3}
   playerHealthData: {fileID: 11400000, guid: 404bd16f0a52744368f7ba2cc7b117ee, type: 2}
-  shakeFeedback: {fileID: 6328262401745175091}
+  shakeFeedback: {fileID: 0}
   canBeHurt: 0
   invulTimer: 1.5
---- !u!114 &6328262401745175091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6328262401745175096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6da43522623d4704e979466dc7650b65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Feedbacks: []
-  InitializationMode: 2
-  SafeMode: 3
-  Direction: 0
-  AutoChangeDirectionOnEnd: 0
-  AutoPlayOnStart: 0
-  AutoPlayOnEnable: 0
-  ForceTimescaleMode: 0
-  ForcedTimescaleMode: 1
-  DurationMultiplier: 1
-  RandomizeDuration: 0
-  RandomDurationMultiplier: {x: 0.5, y: 1.5}
-  DisplayFullDurationDetails: 0
-  PlayerTimescaleMode: 1
-  CooldownDuration: 0
-  InitialDelay: 0
-  CanPlay: 1
-  CanPlayWhileAlreadyPlaying: 1
-  ChanceToPlay: 100
-  FeedbacksIntensity: 1
-  Events:
-    TriggerMMFeedbacksEvents: 0
-    TriggerUnityEvents: 1
-    OnPlay:
-      m_PersistentCalls:
-        m_Calls: []
-    OnPause:
-      m_PersistentCalls:
-        m_Calls: []
-    OnResume:
-      m_PersistentCalls:
-        m_Calls: []
-    OnRevert:
-      m_PersistentCalls:
-        m_Calls: []
-    OnComplete:
-      m_PersistentCalls:
-        m_Calls: []
-  DebugActive: 0
-  FeedbacksList: []
-  KeepPlayModeChanges: 0
-  PerformanceMode: 0
-  ForceStopFeedbacksOnDisable: 1
-  references:
-    version: 2
-    RefIds: []
 --- !u!1 &6328262401813416024
 GameObject:
   m_ObjectHideFlags: 0

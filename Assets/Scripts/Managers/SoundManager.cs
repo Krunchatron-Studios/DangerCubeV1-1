@@ -20,6 +20,8 @@ public class SoundManager : MonoBehaviour
 	[Header("Death Sounds")]
 	public AudioSource[] humanDying;
 
+	public AudioSource[] cubeLoseHealthChunk;
+
 	[Header("Projectile Sounds")]
 	public AudioSource mineSlayerMine;
 
