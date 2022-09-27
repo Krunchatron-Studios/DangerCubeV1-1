@@ -128,7 +128,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 			}
 		}
 	}
-	private void FinalCrumble() {
+	public virtual void FinalCrumble() {
 		if (currentIntegrity <= 0.0f && !structureParent.stage2Crumble) {
 			SoundManager.sm.buildingCrumbleSounds[0].Play();
 			stage2Crumble = true;
