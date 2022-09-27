@@ -48,12 +48,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818bccb1b3e072740ba4eebcf15259d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isUnlocked: 0
   upgradeLevel: 0
   upgradeName: PlasmaBurster
   upgradeTier: Major
   upgradeType: Silicate
-  upgradeSprite: {fileID: 21300000, guid: 49ee25a366f7aef408e3846af70b285f, type: 3}
-  description: Pew pew pew
+  upgradeSprite: {fileID: -1316943994, guid: 49ee25a366f7aef408e3846af70b285f, type: 3}
+  description: Molten hot slaag slinger!
   audioSource: {fileID: 5440330668561067906}
   upgradeRange: 5
   weaponDamage: 2
@@ -61,11 +62,13 @@ MonoBehaviour:
   damageType: Energy
   knockForce: 2
   objectPooler: {fileID: 5440330668561067907}
-  firingPoint: {fileID: 8545189905758337356}
+  player: {fileID: 0}
+  firingPoints: []
   projectile: {fileID: 4837917352924149430, guid: bed2d0578a993794b95b50f500af5b62,
     type: 3}
   enemyTarget: {x: 0, y: 0}
   targetingSys: {fileID: 8019996175258049880}
+  projectileScale: {x: 0, y: 0}
   canFire: 0
   nextFire: 0
   reloadTimer: 2

@@ -11,12 +11,10 @@ public class ParticleProjectile : Projectile {
 	private void Update() {
 		projectileParticle.transform.position = projectileRb2D.transform.position;
 	}
-
 	void OnTriggerEnter2D(Collider2D other) {
 		float gatheredDmg = GameObject.FindGameObjectWithTag("PlasmaBurster").GetComponent<Weapon>().weaponDamage;
 		ResolveProjectile(other);
 	}
-
 	public override void ResolveProjectile(Collider2D other) {
 		if (other.CompareTag("Enemy")) {
 			weapon.Knockback(other);
@@ -27,10 +25,8 @@ public class ParticleProjectile : Projectile {
 				damage.ToString(), Vector3.up, .2f);
 			gameObject.SetActive(false);
 		}
-		
 		if (other.CompareTag("Obstacle")) {
 			ISmashThingsInterface hit = other.GetComponent<ISmashThingsInterface>();
-			Debug.Log($"particle proj dmg: {damage}");
 			hit.DamageStructure(damage, weapon.damageType, other.transform.position);
 			gameObject.SetActive(false);
 		}

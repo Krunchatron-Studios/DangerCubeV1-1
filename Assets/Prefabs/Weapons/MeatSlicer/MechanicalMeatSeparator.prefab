@@ -50,19 +50,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1648f054589da4b7faaa2c916c76e85c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isUnlocked: 0
+  upgradeLevel: 0
   upgradeName: MechanicalMeatSeparator
   upgradeTier: Major
   upgradeType: Metal
-  upgradeSprite: {fileID: 21300000, guid: 79b0ee0f1a769fd4b87efb0ecf4eb305, type: 3}
+  upgradeSprite: {fileID: -38283891, guid: 79b0ee0f1a769fd4b87efb0ecf4eb305, type: 3}
   description: Slice
   audioSource: {fileID: 4325532238569768180}
   upgradeRange: 3
-  upgradeLevel: 0
   weaponDamage: 1
   attackSpeed: 0
   damageType: Physical
   knockForce: 3
   objectPooler: {fileID: 5638447487245539788}
+  player: {fileID: 0}
   thisRigidBody: {fileID: 6454908755577207748}
   sawVelocity: 0
 --- !u!212 &1327207215730875267

@@ -15,7 +15,6 @@ public class DeathRayBeam : MonoBehaviour {
 		}
 
 		if (other.CompareTag("Obstacle")) {
-			Debug.Log($"other: {other.name}");
 			ISmashThingsInterface hit = other.GetComponent<ISmashThingsInterface>();
 			hit.DamageStructure(deathRay.weaponDamage, "DeathRay", other.transform.position);
 		}

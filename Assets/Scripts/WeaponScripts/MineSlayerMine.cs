@@ -1,4 +1,5 @@
 using Interfaces;
+using Managers;
 using MoreMountains.Tools;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public class MineSlayerMine : ParticleProjectile {
 			ResolveProjectile(other);
 		}
 	}
-	public void ResolveProjectile(Collider2D other) {
+	public override void ResolveProjectile(Collider2D other) {
 		GameObject blast = PoolManager.pm.acidBlastPool.GetPooledGameObject();
 		blast.SetActive(true);
 		blast.transform.position = other.transform.position;

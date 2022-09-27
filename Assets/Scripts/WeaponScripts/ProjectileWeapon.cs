@@ -60,7 +60,7 @@ public class ProjectileWeapon : Weapon {
 			projectileScale.y + scaleIncrease);
 	}
 
-	public void ChangeProjectile(GameObject newProjectile) {
+	public override void ChangeProjectile(GameObject newProjectile) {
 		projectile = newProjectile;
 	}
 }

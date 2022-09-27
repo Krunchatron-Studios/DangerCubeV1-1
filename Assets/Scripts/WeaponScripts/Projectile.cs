@@ -1,5 +1,6 @@
 using System;
 using Interfaces;
+using Managers;
 using UnityEngine;
 using MoreMountains.Tools;
 public class Projectile : MonoBehaviour {
@@ -13,11 +14,9 @@ public class Projectile : MonoBehaviour {
 
 	private void Awake() {
 		damage = weapon.weaponDamage;
-		// Debug.Log($"damage: {damage}");
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		// Debug.Log($"weapon dmg: {damage}");
 		ResolveProjectile(other);
 	}
 	public void Setup(Vector3 targetPos) {
@@ -34,11 +33,9 @@ public class Projectile : MonoBehaviour {
 			hit.TakeDamage(damage, weapon.damageType);
 			MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
 				damage.ToString(), Vector3.up, .2f);
-			
 			BloodSplash(other);
 			gameObject.SetActive(false);
 		}
-		
 		if (other.CompareTag("Obstacle")) {
 			ISmashThingsInterface hit = other.GetComponent<ISmashThingsInterface>();
 			// Debug.Log($"Damage: {damage}");

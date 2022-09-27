@@ -3,7 +3,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 	public static GameManager gm;
 	public GameObject playerCube;
-	public static MainCamera mainCam;
 	
 	[Header("Scriptable Object")]
 	public PlayerResources resources;

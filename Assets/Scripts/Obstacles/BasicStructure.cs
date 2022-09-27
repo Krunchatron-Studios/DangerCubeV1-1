@@ -1,4 +1,5 @@
 ﻿using Interfaces;
+using Managers;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 using MoreMountains.Tools;
@@ -21,9 +22,11 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	public float maxIntegrity;
 	public float currentIntegrity;
 	public float percentDestroyed;
+	private bool _looted;
 	
 
 	private void Start() {
+		_looted = false;
 		spriteRenderer.sprite = noDmgSprite;
 	}
 
@@ -146,6 +149,13 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	public virtual void DamageTiersCheck3(Vector3 location) {
 		if (percentDestroyed < stage3Threshold && stage3Dmg) {
 			spriteRenderer.sprite = stage3Dmg;
+
+			if (structureType == "Building" && !_looted) {
+				GameObject buildingLoot = PoolManager.pm.sSilicatePool.GetPooledGameObject();
+				buildingLoot.SetActive(true);
+				buildingLoot.transform.position = location;
+				_looted = true;
+			}
 		}
 	}
 }

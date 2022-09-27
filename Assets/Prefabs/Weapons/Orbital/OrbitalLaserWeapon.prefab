@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 8171799896c777540bf3edd243559a83, type: 3}
-  m_Color: {r: 0.101326115, g: 0.14025111, b: 0.9339623, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -104,24 +104,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff53ab4556e44cc3a0c78ffde82a237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isUnlocked: 0
+  upgradeLevel: 0
   upgradeName: OrbitalLaserWeapon
   upgradeTier: Major
   upgradeType: Metal
-  upgradeSprite: {fileID: 21300000, guid: 4e1511caeefa7e34496a2bd77f645871, type: 3}
+  upgradeSprite: {fileID: 1522901207, guid: 4e1511caeefa7e34496a2bd77f645871, type: 3}
   description: Laser waterfall
   audioSource: {fileID: 1605000266149368324}
   upgradeRange: 20
-  upgradeLevel: 0
   weaponDamage: 2
   attackSpeed: 3
   damageType: '"Energy"'
   knockForce: 3
   objectPooler: {fileID: 6232059995250928630}
-  firingPoint: {fileID: 4285387142156465725}
+  player: {fileID: 0}
+  firingPoints: []
   projectile: {fileID: 4003393644203996623, guid: 45f91a174b71b804eabd97bccec12ca1,
     type: 3}
   enemyTarget: {x: 0, y: 3.5404346}
   targetingSys: {fileID: 8371550627369725801}
+  projectileScale: {x: 0, y: 0}
   canFire: 0
   nextFire: 0
   explosion: {fileID: 6039074600034411127, guid: 3774de1abe1e25d4fa95f0ea0ea9769a,
