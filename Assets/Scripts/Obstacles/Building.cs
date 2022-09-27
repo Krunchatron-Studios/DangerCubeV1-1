@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Building : BasicStructure {
 
-	public virtual void DamageTiersCheck3(Vector3 location) {
+	public override void DamageTiersCheck3(Vector3 location) {
 		if (percentDestroyed < stage3Threshold && stage3Dmg) {
 			spriteRenderer.sprite = stage3Dmg;
 

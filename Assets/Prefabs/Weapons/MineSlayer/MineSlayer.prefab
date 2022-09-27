@@ -48,24 +48,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d20a0e7fa96d3b41940dbda4c77bb23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isUnlocked: 0
+  upgradeLevel: 0
   upgradeName: MineSlayer
   upgradeTier: Major
   upgradeType: Metal
-  upgradeSprite: {fileID: 21300000, guid: 88e011cc3bff5b7419b617c187c16014, type: 3}
+  upgradeSprite: {fileID: 1713385007, guid: 88e011cc3bff5b7419b617c187c16014, type: 3}
   description: Mind the mines!
   audioSource: {fileID: 7542884385270234193}
   upgradeRange: 0
-  upgradeLevel: 0
   weaponDamage: 3
   attackSpeed: 5
   damageType: Bio
   knockForce: 5
   objectPooler: {fileID: 4208378019257486495}
-  firingPoint: {fileID: 2416134994988136928}
+  player: {fileID: 0}
+  firingPoints: []
   projectile: {fileID: 8577217122432938290, guid: 449cbc7b33e7d704186cbe2186a3d7a5,
     type: 3}
   enemyTarget: {x: 0, y: 0}
   targetingSys: {fileID: 2322803377979742145}
+  projectileScale: {x: 0, y: 0}
   canFire: 0
   nextFire: 0
 --- !u!82 &7542884385270234193
@@ -232,7 +235,7 @@ SpriteRenderer:
   m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &292574207626431749
@@ -401,9 +404,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e4a2809856898a4aa1a086c177c3bf3, type: 3}
---- !u!1 &2416134994988136928 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4461223465438186822, guid: 5e4a2809856898a4aa1a086c177c3bf3,
-    type: 3}
-  m_PrefabInstance: {fileID: 2048758365676172454}
-  m_PrefabAsset: {fileID: 0}
