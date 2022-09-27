@@ -23,6 +23,7 @@ public class PoolManager : MonoBehaviour {
 	public MMSimpleObjectPooler ashesPool;
 	public MMSimpleObjectPooler bloodPool;
 	public MMSimpleObjectPooler acidBlastPool;
+	public MMSimpleObjectPooler laserSwirlPool;
 
 	[Header("Resource Pools")] 
 	public MMSimpleObjectPooler sBioGooPool;
