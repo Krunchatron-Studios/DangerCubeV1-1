@@ -22,7 +22,6 @@ public class Projectile : MonoBehaviour {
 	}
 	public void Setup(Vector3 targetPos) {
 		targetPosition = targetPos;
-		
 	}
 	public void MoveProjectile() {
 		Vector3 moveDirection = (targetPosition - transform.position).normalized;
