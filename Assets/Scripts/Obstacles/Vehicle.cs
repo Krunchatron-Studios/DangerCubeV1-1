@@ -6,7 +6,7 @@ using MoreMountains.Feedbacks;
 public class Vehicle : BasicStructure {
 
 	private bool _hasExploded = false;
-	public AudioSource[] explosionAudio;
+	private bool _closeToExploding = false;
 	public MMF_Player carExplosionShaker;
 	public override void DamageStructure(float damageAmount, string damageType, Vector3 location) {
 		shaker.Play();
@@ -61,6 +61,10 @@ public class Vehicle : BasicStructure {
 			}
 			if (percentDestroyed < 0.3f) {
 				structureParent.fireAndSmokeDamageArray[3].SetActive(true);
+				if (_closeToExploding == false) {
+					SoundManager.sm.explosionSounds[4].Play();
+					_closeToExploding = true;
+				}
 			}
 			if (percentDestroyed <= 0.0f && !_hasExploded) {
 				StartCoroutine(VehicleExplosion(3));
@@ -69,6 +73,7 @@ public class Vehicle : BasicStructure {
 				carExplosionShaker.GetComponent<MMF_Player>()?.PlayFeedbacks(transform.position, 2f);
 				rubble.transform.position = transform.position;
 				_hasExploded = true;
+				SoundManager.sm.burning1.Stop();
 			}
 		}
 	}
@@ -78,8 +83,8 @@ public class Vehicle : BasicStructure {
 			yield return timer;
 			GameObject explosion = StructureDamagePool.sdp.carExplosionPool.GetPooledGameObject();
 			explosion.SetActive(true);
-			explosionAudio[i].Play();
 			explosion.transform.position = structureParent.transform.position;
+			SoundManager.sm.explosionSounds[i+1].Play();
 		}
 		gameObject.SetActive(false);
 	}
