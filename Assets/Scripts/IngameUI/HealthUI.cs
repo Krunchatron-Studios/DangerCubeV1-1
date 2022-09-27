@@ -1,3 +1,4 @@
+using Managers;
 using UnityEngine;
 using MoreMountains.Feedbacks;
 using UnityEngine.SceneManagement;
@@ -6,7 +7,7 @@ public class HealthUI : MonoBehaviour {
 	public GameObject[] healthChunksArray;
 	public GameObject healthChunk;
 	public PlayerHealthAndShields playerHealthData;
-	public MMF_Player shakeFeedback;
+	public MMF_Player player;
 	public bool canBeHurt;
 	public float invulTimer = 1.5f;
 	private float _resetTimer;
@@ -18,10 +19,6 @@ public class HealthUI : MonoBehaviour {
 
 	private void Update() {
 		SetInvulTimer();
-		if (playerHealthData.playerHealthCurrent <= 0) {
-			SoundManager.sm.powerDown.Play();
-			SceneManager.LoadScene("GameOverScene");
-		}
 	}
 
 	public void AddHealthChunks() {
@@ -35,16 +32,19 @@ public class HealthUI : MonoBehaviour {
 	}
 
 	public void RemoveHealthChunk() {
-		SoundManager.sm.healthChunkLost.Play();
+		int soundIndex = Random.Range(0, 3);
+		SoundManager.sm.cubeLoseHealthChunk[soundIndex].Play();
 		playerHealthData.playerHealthCurrent--;
-		if (playerHealthData.playerHealthCurrent <= 0) {
-		}
 		int chunkIndex = Mathf.FloorToInt(playerHealthData.playerHealthCurrent);
 		if (chunkIndex < 0) {
 			chunkIndex = 0;
 		}
 		healthChunksArray[chunkIndex].SetActive(false);
 		canBeHurt = false;
+		if (playerHealthData.playerHealthCurrent <= 0) {
+			SoundManager.sm.powerDown.Play();
+			SceneManager.LoadScene("GameOverScene");
+		}
 	}
 
 	private void SetInvulTimer() {

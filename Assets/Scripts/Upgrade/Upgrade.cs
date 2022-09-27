@@ -2,6 +2,7 @@ using Interfaces;
 using UnityEngine;
 public class Upgrade : MonoBehaviour {
 	private IUpgradeThingInterface _interface;
+	public bool isUnlocked;
 	public int upgradeLevel = 0;
 	public string upgradeName;
 	public string upgradeTier;

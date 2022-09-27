@@ -63,7 +63,6 @@ public class DeathRay : Weapon {
 			beamHitBox.gameObject.SetActive(false);
 		}
 	}
-	
 }
 
 

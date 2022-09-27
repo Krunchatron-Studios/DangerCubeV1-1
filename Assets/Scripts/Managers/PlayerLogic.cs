@@ -18,9 +18,5 @@ namespace Managers {
                 Destroy(gameObject);
             }
         }
-
-        public void GetDamage(GameObject other) {
-            // get the enemies projectile damage
-        }
     }
 }

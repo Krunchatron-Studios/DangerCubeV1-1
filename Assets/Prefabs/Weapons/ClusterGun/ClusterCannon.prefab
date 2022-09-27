@@ -214,7 +214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8492263470177819837
 Transform:
   m_ObjectHideFlags: 0
@@ -243,11 +243,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d20a0e7fa96d3b41940dbda4c77bb23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isUnlocked: 0
   upgradeLevel: 0
   upgradeName: Cluster Cannon
   upgradeTier: Major
   upgradeType: Silicate
-  upgradeSprite: {fileID: 0}
+  upgradeSprite: {fileID: 905496151, guid: 0d35da58c43902c4e88dfaf59823586a, type: 3}
   description: it shoots
   audioSource: {fileID: 3527016346985065115}
   upgradeRange: 6
@@ -256,6 +257,7 @@ MonoBehaviour:
   damageType: '"Fire"'
   knockForce: 2
   objectPooler: {fileID: 5639441978635504735}
+  player: {fileID: 0}
   firingPoints:
   - {fileID: 5540794475001378500}
   - {fileID: 2466222471124541727}
@@ -309,7 +311,7 @@ SpriteRenderer:
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 37141a44ee7f96f44a2cce91de093d60, type: 3}
+  m_Sprite: {fileID: 905496151, guid: 0d35da58c43902c4e88dfaf59823586a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

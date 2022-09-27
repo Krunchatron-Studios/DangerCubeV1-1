@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 3979678949654934491}
   - component: {fileID: 3979678949654934494}
   - component: {fileID: 3979678949654934495}
+  - component: {fileID: 827305459}
   m_Layer: 0
   m_Name: StructureDamagePool
   m_TagString: Untagged
@@ -145,6 +146,7 @@ MonoBehaviour:
   rockShatterPool: {fileID: 3979678949654934468}
   glassShatterPool: {fileID: 3979678949654934471}
   metalPoofPool: {fileID: 3979678949654934494}
+  woodExplosionPool: {fileID: 827305459}
   fire1: {fileID: 3979678949654934470}
   fire2: {fileID: 3979678949654934465}
   fire3: {fileID: 3979678949654934464}
@@ -167,7 +169,7 @@ MonoBehaviour:
   MutualizeWaitingPools: 0
   NestWaitingPool: 1
   NestUnderThis: 0
-  GameObjectToPool: {fileID: 4067203812020850756, guid: 16947c4f833f20d429a6ace3a77e1625,
+  GameObjectToPool: {fileID: 5151808772068195015, guid: 18ed0acdd472c0f42bc475f10bb51084,
     type: 3}
   PoolSize: 20
   PoolCanExpand: 1
@@ -361,6 +363,25 @@ MonoBehaviour:
     type: 3}
   PoolSize: 20
   PoolCanExpand: 1
+--- !u!114 &827305459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3979678949654934466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7277539b95c0d45895792ecc99ce66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MutualizeWaitingPools: 0
+  NestWaitingPool: 1
+  NestUnderThis: 0
+  GameObjectToPool: {fileID: 2765927017024541362, guid: 5bdc0031b9003c546a01591469d0861c,
+    type: 3}
+  PoolSize: 20
+  PoolCanExpand: 1
 --- !u!1 &3979678949774290718
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +429,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3979678949774290718}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -890,7 +911,7 @@ MonoBehaviour:
   MutualizeWaitingPools: 0
   NestWaitingPool: 1
   NestUnderThis: 0
-  GameObjectToPool: {fileID: 4583178698915723261, guid: af659a787f968434f9bd41339d42e443,
+  GameObjectToPool: {fileID: 6059390373229456265, guid: 211fdfce210afc24c910486ecb512d44,
     type: 3}
   PoolSize: 20
   PoolCanExpand: 1

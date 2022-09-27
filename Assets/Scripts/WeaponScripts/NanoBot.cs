@@ -21,11 +21,11 @@ public class NanoBot : Projectile {
                 other.gameObject.SetActive(false);
                 gameObject.SetActive(false);
                 nanoWeapon.currentNanos--;
-                OnDestroy();
+                OnDisable();
             }
         }
     }
-    private void OnDestroy() {
+    private void OnDisable() {
         int index = 0;
         int temp = zombie.currentZombies;
         while (zombie.currentZombies != temp + 1) {

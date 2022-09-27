@@ -7,18 +7,15 @@ public class BurstFireWeapon : ProjectileWeapon  {
 	[Header("Firing Vars")]
 	public float reloadTimer = 2.0f;
 	public int ammo = 5;
-
 	private void Start() {
 		canFire = true;
 		targetingSys.circleCol2D.radius = upgradeRange;
 	}
-
 	private void FixedUpdate() {
 		if (canFire) {
 			StartCoroutine(BurstFire());
 		}
 	}
-	
 	IEnumerator BurstFire() {
 		canFire = false;
 		for (int i = 0; i < ammo; i++) {
@@ -45,7 +42,7 @@ public class BurstFireWeapon : ProjectileWeapon  {
 	}
 
 	public override void CanFireTimer() {
-		
+		// this is to remove the can fire time functionality from the vanilla projectile weapon
 	}
 
 	public override void ImproveReloadTimer(float timeReduction) {

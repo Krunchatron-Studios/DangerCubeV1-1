@@ -1,22 +1,32 @@
+using Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TitleScreen : MonoBehaviour {
 
-	public AudioSource audioSource;
+	public UnlocksUI unlocksUI;
+
 	public void StartGame() {
-		audioSource.Play();
 		SceneManager.LoadScene("TestLevel");
+		TitleSoundManager.tsm.buttonPress.Play();
+		TitleSoundManager.tsm.titleMusic.Stop();
 	}
 
 	public void LoadLevel(string lvlToLoad) {
-		SoundManager.sm.buttonPress.Play();
-		audioSource.Stop();
 		SceneManager.LoadScene(lvlToLoad);
+		TitleSoundManager.tsm.buttonPress.Play();
+		TitleSoundManager.tsm.titleMusic.Stop();
 	}
 
 	public void ExitToDesktop() {
-		SoundManager.sm.buttonPress.Play();
 		Application.Quit();
+		TitleSoundManager.tsm.buttonPress.Play();
+		TitleSoundManager.tsm.titleMusic.Stop();
+	}
+
+	public void OpenUnlockScreen() {
+		UnlocksUI.uui.UpdateUnlocksPanel();
+		unlocksUI.gameObject.SetActive(!unlocksUI.gameObject.activeInHierarchy);
+		TitleSoundManager.tsm.buttonPress.Play();
 	}
 }
