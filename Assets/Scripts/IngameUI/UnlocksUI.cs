@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using ScriptableCode;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UnlocksUI : MonoBehaviour {
 
@@ -30,10 +29,10 @@ public class UnlocksUI : MonoBehaviour {
 	public void UpdateUnlocksPanel() {
 		for(int i = 0; i < referenceList.Count; i++) {
 			referenceList[i].isUnlocked = unlockData.allUnlocks[referenceList[i].upgradeName];
-			unlockButtons[i].buttonImage.sprite = referenceList[i].upgradeSprite;
-			unlockButtons[i].buttonText.text = referenceList[i].upgradeName;
-			if (!referenceList[i].isUnlocked) {
-				unlockButtons[i].buttonImage.color = Color.clear;
+
+			if (referenceList[i].isUnlocked) {
+				unlockButtons[i].buttonImage.sprite = referenceList[i].upgradeSprite;
+				unlockButtons[i].buttonText.text = referenceList[i].upgradeName;
 			}
 		}
 	}

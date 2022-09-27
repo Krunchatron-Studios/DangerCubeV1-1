@@ -48,20 +48,15 @@ public class UpgradeButton : MonoBehaviour {
 		string[] temp = { "Bio", "Metal", "Silicate" };
 		int index = Random.Range(0, 3);
 		Upgrade upgrade = null;
-		Debug.Log($"Major Index: {index}");
 		if (index == 0) {
 			upgrade = UpgradesList.ul.bioUpgradesMajor[Random.Range(0, UpgradesList.ul.bioUpgradesMajor.Count)];
-			Debug.Log($"Major Index1: {upgrade}");
 		} else if (index == 1) {
 			upgrade = UpgradesList.ul.metalUpgradesMajor[Random.Range(0, UpgradesList.ul.metalUpgradesMajor.Count)];
-			Debug.Log($"Major Index2: {upgrade}");
 		} else if (index == 2) {
 			upgrade = UpgradesList.ul.silicateUpgradesMajor[Random.Range(0, UpgradesList.ul.silicateUpgradesMajor.Count)];
-			Debug.Log($"Major Index3: {upgrade}");
 		}
 		if (upgrade) {
 			weaponOrTechName = upgrade.upgradeName;
-			Debug.Log($"upgrade? {upgrade}");
 		}
 		_upgrade = upgrade;
 		
@@ -72,7 +67,6 @@ public class UpgradeButton : MonoBehaviour {
 		List<Upgrade> refArray = UpgradesList.ul.upgradeList;
 
 		for (int i = 0; i < refArray.Count; i++) {
-			Debug.Log(refArray[i].upgradeName + "test");
 			if (_upgrade.upgradeName == refArray[i].upgradeName) {
 				upgradeSprite.sprite = refArray[i].upgradeSprite; 
 				weaponOrTechName = refArray[i].upgradeName;
