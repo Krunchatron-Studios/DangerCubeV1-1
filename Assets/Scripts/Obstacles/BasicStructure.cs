@@ -102,7 +102,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 		}
 	}
 	public virtual void DamageTiersCheck1(Vector3 location) {
-		if (percentDestroyed < stage1Threshold && stage1Dmg) {
+		if (percentDestroyed < stage1Threshold && stage1Dmg && percentDestroyed > stage2Threshold) {
 			spriteRenderer.sprite = stage1Dmg;
 			GameObject rockShatter = StructureDamagePool.sdp.rockShatterPool.GetPooledGameObject();
 			rockShatter.SetActive(true);
@@ -111,13 +111,13 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 		}
 	}
 	public virtual void DamageTiersCheck2(Vector3 location) {
-		if (percentDestroyed < stage2Threshold && stage2Dmg) {
+		if (percentDestroyed < stage2Threshold && stage2Dmg && percentDestroyed > stage3Threshold) {
 			spriteRenderer.sprite = stage2Dmg;
 			structureParent.evacuateThreshold--;
 		}
 	}
 	public virtual void DamageTiersCheck3(Vector3 location) {
-		if (percentDestroyed < stage3Threshold && stage3Dmg) {
+		if (percentDestroyed < stage3Threshold && stage3Dmg && percentDestroyed > 0) {
 			spriteRenderer.sprite = stage3Dmg;
 
 			if (structureType == "Building" && !_looted) {
