@@ -89,9 +89,9 @@ MonoBehaviour:
   structurePiecesArray:
   - {fileID: 793723538447513642}
   fireAndSmokeDamageArray:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1922752276504940728}
+  - {fileID: 4701174478825719432}
+  - {fileID: 7552701810778792851}
   - {fileID: 6356537498814935735}
 --- !u!1 &1922752276504940728
 GameObject:
@@ -108,7 +108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6573778466839614250
 Transform:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6357001497089743872
 Transform:
   m_ObjectHideFlags: 0
@@ -170,7 +170,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8184857927603007429
 Transform:
   m_ObjectHideFlags: 0
@@ -206,7 +206,7 @@ PrefabInstance:
     - target: {fileID: 1146018076221087611, guid: 2830ff6d8f0cd464fb3727564c681345,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 1146018076221087611, guid: 2830ff6d8f0cd464fb3727564c681345,
         type: 3}
@@ -347,7 +347,7 @@ PrefabInstance:
     - target: {fileID: 3441915568057658215, guid: 319da261bbcc4d2428f3412aca7b4a7c,
         type: 3}
       propertyPath: m_Name
-      value: FireHydrant
+      value: Hydrant
       objectReference: {fileID: 0}
     - target: {fileID: 3441915568057658233, guid: 319da261bbcc4d2428f3412aca7b4a7c,
         type: 3}
