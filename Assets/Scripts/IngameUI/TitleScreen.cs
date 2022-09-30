@@ -25,7 +25,6 @@ public class TitleScreen : MonoBehaviour {
 	}
 
 	public void OpenUnlockScreen() {
-		UnlocksUI.uui.UpdateUnlocksPanel();
 		unlocksUI.gameObject.SetActive(!unlocksUI.gameObject.activeInHierarchy);
 		TitleSoundManager.tsm.buttonPress.Play();
 	}

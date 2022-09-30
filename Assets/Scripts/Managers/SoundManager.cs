@@ -16,13 +16,12 @@ namespace Managers {
 
 		[Header("Damage Sounds")] 
 		public AudioSource burning1;
-		public AudioSource explosion1;
 
 		[Header("Death Sounds")]
 		public AudioSource[] humanDying;
-
 		public AudioSource[] cubeLoseHealthChunk;
-
+		public AudioSource[] explosionSounds;
+		public AudioSource[] buildingCrumbleSounds;
 		[Header("Projectile Sounds")]
 		public AudioSource mineSlayerMine;
 

@@ -1344,8 +1344,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 314705938408313084, guid: 52e2911a1b1901e48ad3e84046801701,
+        type: 3}
+      propertyPath: cubeLoseHealthChunk.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 314705938408313084, guid: 52e2911a1b1901e48ad3e84046801701,
+        type: 3}
+      propertyPath: cubeLoseHealthChunk.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 314705938408313084, guid: 52e2911a1b1901e48ad3e84046801701,
+        type: 3}
+      propertyPath: cubeLoseHealthChunk.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7882136916968750499, guid: 52e2911a1b1901e48ad3e84046801701, type: 3}
+    - {fileID: 559236768, guid: 52e2911a1b1901e48ad3e84046801701, type: 3}
+    - {fileID: 559236769, guid: 52e2911a1b1901e48ad3e84046801701, type: 3}
+    - {fileID: 559236770, guid: 52e2911a1b1901e48ad3e84046801701, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 52e2911a1b1901e48ad3e84046801701, type: 3}
 --- !u!4 &314705939010479390 stripped
 Transform:
