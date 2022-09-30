@@ -32,7 +32,6 @@ public class ResourcesPanel : MonoBehaviour {
 		UpdateResources();
 		LevelUpCheck();
 	}
-
 	public void PopulateResExpTiers(float multiplier) {
 
 		print("resource goals populated");
@@ -50,7 +49,6 @@ public class ResourcesPanel : MonoBehaviour {
 			silicateResToLvlArray[i] = Mathf.FloorToInt(silicateResToLvlArray[i - 1] * multiplier);
 		}
 	}
-
 	public void UpdateResources() {
 		
 		bioGooCurExp = resRef.bioGoo;

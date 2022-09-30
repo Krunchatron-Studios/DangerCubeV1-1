@@ -1,22 +1,27 @@
+using System;
 using System.Collections.Generic;
 using Managers;
 using MoreMountains.Feedbacks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class UpgradeButton : MonoBehaviour {
 	public LevelUpPanel lvlPanel;
-	public MMTimeManager timeManager; 
+	public MMTimeManager timeManager;
 	public string weaponOrTechName;
 	public Image upgradeSprite;
 	public Image thisImage;
 	public string upgradeDescription = "this is a test string description";
 	public TextMeshProUGUI upgradeNameText;
 	public TextMeshProUGUI upgradeDescText;
-	private Upgrade _upgrade;
+	public Upgrade upgrade;
 
-	
+	private void Awake() {
+		PopulateTech();
+	}
+
 	private void Start() {
 		thisImage = GetComponent<Image>();
 		upgradeSprite = GetComponent<Image>();
@@ -26,24 +31,23 @@ public class UpgradeButton : MonoBehaviour {
 		int randomIndex = Random.Range(0, UpgradesList.ul.bioUpgradesMinor.Count);
 		Upgrade upgrade = UpgradesList.ul.bioUpgradesMinor[randomIndex];
 		weaponOrTechName = upgrade.upgradeName;
-		_upgrade = upgrade;
+		this.upgrade = upgrade;
 		UpdateLevelUpPanel();
 	}
 	public void GenerateMinorMetalUpgrade() {
 		int randomIndex = Random.Range(0, UpgradesList.ul.metalUpgradesMinor.Count);
 		Upgrade upgrade = UpgradesList.ul.metalUpgradesMinor[randomIndex];
 		weaponOrTechName = upgrade.upgradeName;
-		_upgrade = upgrade;
+		this.upgrade = upgrade;
 		UpdateLevelUpPanel();
 	}
 	public void GenerateMinorSilicateUpgrade() {
 		int randomIndex = Random.Range(0, UpgradesList.ul.silicateUpgradesMinor.Count);
 		Upgrade upgrade = UpgradesList.ul.silicateUpgradesMinor[randomIndex];
 		weaponOrTechName = upgrade.upgradeName;
-		_upgrade = upgrade;
+		this.upgrade = upgrade;
 		UpdateLevelUpPanel();
 	}
-
 	public void GenerateMajorUpgrade() {
 		string[] temp = { "Bio", "Metal", "Silicate" };
 		int index = Random.Range(0, 3);
@@ -58,16 +62,20 @@ public class UpgradeButton : MonoBehaviour {
 		if (upgrade) {
 			weaponOrTechName = upgrade.upgradeName;
 		}
-		_upgrade = upgrade;
+		this.upgrade = upgrade;
 		
 		UpdateLevelUpPanel();
 	}
-	
+
+	public void PopulateTech() {
+		int index = Random.Range(0, UpgradesList.ul.techList.Count);
+		
+	}
 	public void UpdateLevelUpPanel() {
 		List<Upgrade> refArray = UpgradesList.ul.upgradeList;
 
 		for (int i = 0; i < refArray.Count; i++) {
-			if (_upgrade.upgradeName == refArray[i].upgradeName) {
+			if (upgrade.upgradeName == refArray[i].upgradeName) {
 				upgradeSprite.sprite = refArray[i].upgradeSprite; 
 				weaponOrTechName = refArray[i].upgradeName;
 				upgradeNameText.text = weaponOrTechName;
