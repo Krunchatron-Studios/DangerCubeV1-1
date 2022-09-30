@@ -74,6 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8697196321720182290}
   - component: {fileID: 8697196321720182293}
+  - component: {fileID: 2932181838750365317}
   m_Layer: 7
   m_Name: Car
   m_TagString: Obstacle
@@ -112,8 +113,8 @@ MonoBehaviour:
   evacuateThreshold: 1
   buildingSize: 1
   hasEvacuated: 0
-  stage1Crumble: 0
-  stage2Crumble: 0
+  stage1Crumble: 1
+  stage2Crumble: 1
   structurePiecesArray:
   - {fileID: 4158089035570233100}
   fireAndSmokeDamageArray:
@@ -121,6 +122,78 @@ MonoBehaviour:
   - {fileID: 2628301625813866467}
   - {fileID: 5906046794079134732}
   - {fileID: 7865935357580733553}
+--- !u!114 &2932181838750365317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8697196321720182291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0a82a086afdc494db67a8b50f091d1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Channel: 0
+  ShakeDuration: 0.1
+  PlayOnAwake: 0
+  PermanentShake: 0
+  Interruptible: 1
+  AlwaysResetTargetValuesAfterShake: 0
+  CooldownBetweenShakes: 0
+  Shaking: 0
+  ForwardDirection: 1
+  TimescaleMode: 0
+  Mode: 0
+  TargetTransform: {fileID: 0}
+  TargetRectTransform: {fileID: 0}
+  ShakeSpeed: 20
+  ShakeRange: 0.1
+  OscillationOffset: 0
+  ShakeMainDirection: {x: 0, y: 1, z: 0}
+  RandomizeDirection: 0
+  ShakeAltDirection: {x: 0, y: 1, z: 0}
+  RandomizeDirectionOnPlay: 0
+  AddDirectionalNoise: 1
+  DirectionalNoiseStrengthMin: {x: 0.25, y: 0.25, z: 0.25}
+  DirectionalNoiseStrengthMax: {x: 0.25, y: 0.25, z: 0.25}
+  RandomnessSeed: {x: 0, y: 0, z: 0}
+  RandomizeSeedOnShake: 1
+  UseAttenuation: 1
+  AttenuationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  StartShakingButton: 0
 --- !u!1 &8697196323132477050
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +205,6 @@ GameObject:
   - component: {fileID: 8697196323132477052}
   - component: {fileID: 4158089035570233100}
   - component: {fileID: 8697196323132477053}
-  - component: {fileID: 8697196323132477054}
   - component: {fileID: 8697196323132477024}
   - component: {fileID: 8697196323132477025}
   - component: {fileID: 1818614208}
@@ -151,7 +223,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8697196323132477050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.33, y: -0.07, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -173,17 +245,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   structureParent: {fileID: 8697196321720182293}
   structureType: Vehicle
-  shaker: {fileID: 8697196323132477054}
+  shaker: {fileID: 2932181838750365317}
   spriteRenderer: {fileID: 8697196323132477053}
-  noDmgSprite: {fileID: -593853779, guid: efe5a2d5ecad83046ad72f230112b547, type: 3}
-  stage1Dmg: {fileID: 1127334825, guid: efe5a2d5ecad83046ad72f230112b547, type: 3}
-  stage2Dmg: {fileID: -1286611828, guid: efe5a2d5ecad83046ad72f230112b547, type: 3}
-  stage3Dmg: {fileID: -1248178822, guid: efe5a2d5ecad83046ad72f230112b547, type: 3}
-  stage1Crumble: 0
-  stage2Crumble: 0
-  stage1Threshold: 0.9
-  stage2Threshold: 0.6
-  stage3Threshold: 0.3
+  noDmgSprite: {fileID: 21300000, guid: 2b08f15d1d34516499dd68eedb848401, type: 3}
+  stage1Dmg: {fileID: 21300000, guid: f42f211969a53d9479b2d51820d231eb, type: 3}
+  stage2Dmg: {fileID: 21300000, guid: 1dab37ed047229944bfecd14ea3b6a09, type: 3}
+  stage3Dmg: {fileID: 21300000, guid: 23e95e2ff3531954bb33bc94cdb9681e, type: 3}
+  stage1Crumble: 1
+  stage2Crumble: 1
+  stage1Threshold: 0.8
+  stage2Threshold: 0.5
+  stage3Threshold: 0.2
   toughness: 1
   maxIntegrity: 20
   currentIntegrity: 20
@@ -241,78 +313,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8697196323132477054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8697196323132477050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0a82a086afdc494db67a8b50f091d1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Channel: 0
-  ShakeDuration: 0.15
-  PlayOnAwake: 0
-  PermanentShake: 0
-  Interruptible: 1
-  AlwaysResetTargetValuesAfterShake: 0
-  CooldownBetweenShakes: 0
-  Shaking: 1
-  ForwardDirection: 1
-  TimescaleMode: 0
-  Mode: 0
-  TargetTransform: {fileID: 8697196323132477052}
-  TargetRectTransform: {fileID: 0}
-  ShakeSpeed: 20
-  ShakeRange: 0.15
-  OscillationOffset: 0
-  ShakeMainDirection: {x: 0, y: 1, z: 0}
-  RandomizeDirection: 0
-  ShakeAltDirection: {x: 0, y: 1, z: 0}
-  RandomizeDirectionOnPlay: 0
-  AddDirectionalNoise: 1
-  DirectionalNoiseStrengthMin: {x: 0.25, y: 0.25, z: 0.25}
-  DirectionalNoiseStrengthMax: {x: 0.25, y: 0.25, z: 0.25}
-  RandomnessSeed: {x: -0.012401415, y: 0.6058318, z: -0.57960427}
-  RandomizeSeedOnShake: 1
-  UseAttenuation: 1
-  AttenuationCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.5
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  StartShakingButton: 0
 --- !u!60 &8697196323132477024
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -14,9 +14,10 @@ namespace AI {
 			_target = GameObject.FindWithTag("Player").transform.position;
 		}
 		private void LateUpdate() {
-			spriteRenderer.flipX = _direction.x < 0;
+			_direction = (_target - transform.position).normalized;
+			spriteRenderer.flipX = -_direction.x < 0;
 			if (hasEngaged) {
-				_direction = (_target - transform.position).normalized;
+				_target = GameObject.FindWithTag("Player").transform.position;
 				if (Vector2.Distance(transform.position, _target) > stopDistance) {
 					transform.position = Vector2.MoveTowards(transform.position, _target, _speed * Time.deltaTime);
 					enemy.animator.SetBool("IsRunning", true);

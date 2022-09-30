@@ -13,13 +13,14 @@ public class Vehicle : BasicStructure {
 		GetDustParticle(location);
 		CalculateDamage(damageAmount);
 		percentDestroyed = currentIntegrity / maxIntegrity;
-		DamageTiersCheck1(location);
-		DamageTiersCheck2(location);
 		DamageTiersCheck3(location);
+		DamageTiersCheck2(location);
+		DamageTiersCheck1(location);
+		
 		CatchFire(damageType);
 	}
 	public override void DamageTiersCheck1(Vector3 location) {
-		if (percentDestroyed < stage1Threshold && stage1Dmg) {
+		if (percentDestroyed < stage1Threshold && stage1Dmg && percentDestroyed > stage2Threshold) {
 			spriteRenderer.sprite = stage1Dmg;
 			GameObject rockShatter = StructureDamagePool.sdp.rockShatterPool.GetPooledGameObject();
 			rockShatter.SetActive(true);
@@ -28,14 +29,14 @@ public class Vehicle : BasicStructure {
 		}
 	}
 	public override void DamageTiersCheck2(Vector3 location) {
-		if (percentDestroyed < stage2Threshold && stage2Dmg) {
+		if (percentDestroyed < stage2Threshold && stage2Dmg && percentDestroyed > stage3Threshold) {
 			spriteRenderer.sprite = stage2Dmg;
 			structureParent.evacuateThreshold--;
 		}
 	}
 	public override void DamageTiersCheck3(Vector3 location) {
-		if (percentDestroyed < stage1Threshold && stage1Dmg) {
-			spriteRenderer.sprite = stage1Dmg;
+		if (percentDestroyed < stage1Threshold && stage1Dmg && percentDestroyed > 0) {
+			spriteRenderer.sprite = stage3Dmg;
 			GameObject glassShatter = StructureDamagePool.sdp.glassShatterPool.GetPooledGameObject();
 			glassShatter.SetActive(true);
 			glassShatter.transform.position = location;
