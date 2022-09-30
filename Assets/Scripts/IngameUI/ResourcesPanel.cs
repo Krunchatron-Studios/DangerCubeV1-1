@@ -1,5 +1,6 @@
 using Managers;
 using MoreMountains.Feedbacks;
+using MoreMountains.Tools;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -76,21 +77,19 @@ public class ResourcesPanel : MonoBehaviour {
 				lvlPanel.SetActive(true);
 				timeManager.SetTimescaleTo(0f);
 			} else {
+				MMFloatingTextSpawnEvent.Trigger(3, WeaponSystem.Instance.transform.position, 
+					"Range +1", Vector3.up, .2f);
+				MMFloatingTextSpawnEvent.Trigger(3, WeaponSystem.Instance.transform.position, 
+					"Knockback +1"  , Vector3.up, .2f);
 				for (int i = 0; i < WeaponSystem.Instance.cubeWeapons.Length; i++) {
 
 					Weapon currentWeapon = WeaponSystem.Instance.cubeWeapons[i];
-					Debug.Log($"name: {currentWeapon.name}");
-					Debug.Log($"rng1: {currentWeapon.upgradeRange}");
-					Debug.Log($"knock2: {currentWeapon.knockForce}");
 					currentWeapon.IncreaseKnock(1f);
 					currentWeapon.IncreaseRange(1);
-					Debug.Log($"rng1: {currentWeapon.upgradeRange}");
-					Debug.Log($"knock2: {currentWeapon.knockForce}");
-
-
 				}
+
 			}
-			// levelUpPanel.RefreshChoices();
+
 		}
 		if (metalCurExp >= metalResToLvlArray[metalCurrentLvl + 1]) {
 			SoundManager.sm.levelUp.Play();
@@ -103,20 +102,17 @@ public class ResourcesPanel : MonoBehaviour {
 			} else {
 				for (int i = 0; i < WeaponSystem.Instance.cubeWeapons.Length; i++) {
 					Weapon currentWeapon = WeaponSystem.Instance.cubeWeapons[i];
-					Debug.Log($"name: {currentWeapon.name}");
-					Debug.Log($"dmg1: {currentWeapon.weaponDamage}");
-					Debug.Log($"atks2: {currentWeapon.attackSpeed}");
-
 					currentWeapon.IncreaseDamage(.5f);
 					currentWeapon.IncreaseAttackSpeed(.05f);
 					currentWeapon.IncreaseAmmoClipSize(3);
-					Debug.Log($"dmg1: {currentWeapon.weaponDamage}");
-					Debug.Log($"atks2: {currentWeapon.attackSpeed}");
-
-
 				}
+				MMFloatingTextSpawnEvent.Trigger(3, transform.position, 
+					"Damage +.25", Vector3.up, .2f);
+				MMFloatingTextSpawnEvent.Trigger(3, transform.position, 
+					"RoF -.05sec"  , Vector3.up, .2f);
+				MMFloatingTextSpawnEvent.Trigger(3, transform.position, 
+					"Clip Size +3", Vector3.up, .2f);
 			}
-			// levelUpPanel.RefreshChoices();
 		}
 		if (silicateCurExp >= silicateResToLvlArray[silicateCurrentLvl + 1]) {
 			SoundManager.sm.levelUp.Play();
@@ -131,9 +127,12 @@ public class ResourcesPanel : MonoBehaviour {
 					currentWeapon.ImproveReloadTimer(.4f);
 					currentWeapon.IncreaseProjectileScale(.25f);
 				}
+				MMFloatingTextSpawnEvent.Trigger(3, transform.position, 
+					"Reload Speed -.25sec", Vector3.up, .2f);
+				MMFloatingTextSpawnEvent.Trigger(3, transform.position, 
+					"Bullet Size +25%"  , Vector3.up, .2f);
 			}
-			// levelUpPanel.RefreshChoices();
-		}
 
+		}
 	}
 }

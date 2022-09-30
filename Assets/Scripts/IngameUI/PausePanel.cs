@@ -36,7 +36,6 @@ public class PausePanel : MonoBehaviour {
             _isPaused = false;
         }
     }
-
     public void ExitGame() {
         Application.Quit();
     }

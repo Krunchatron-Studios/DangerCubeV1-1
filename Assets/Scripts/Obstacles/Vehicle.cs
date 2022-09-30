@@ -69,7 +69,7 @@ public class Vehicle : BasicStructure {
 			}
 			if (percentDestroyed <= 0.0f && !_hasExploded) {
 				StartCoroutine(VehicleExplosion(3));
-				GameObject rubble = PoolManager.pm.sMetalPool.GetPooledGameObject();
+				GameObject rubble = PoolManager.pm.lMetalPool.GetPooledGameObject();
 				rubble.SetActive(true);
 				carExplosionShaker.GetComponent<MMF_Player>()?.PlayFeedbacks(transform.position, 2f);
 				rubble.transform.position = transform.position;

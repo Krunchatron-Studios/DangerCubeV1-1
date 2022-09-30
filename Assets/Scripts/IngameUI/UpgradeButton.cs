@@ -45,5 +45,10 @@ public class UpgradeButton : MonoBehaviour {
 		SoundManager.sm.buttonPress.Play();
 		lvlPanel.gameObject.SetActive(false);
 		timeManager.SetTimescaleTo(1f);
+		for (int i = 0; i < WeaponSystem.Instance.cubeWeapons.Length; i++) {
+			if (upgrade.upgradeName == WeaponSystem.Instance.cubeWeapons[i].upgradeName) {
+				WeaponSystem.Instance.cubeWeapons[i].gameObject.SetActive(true);
+			}
+		}
 	}
 }
