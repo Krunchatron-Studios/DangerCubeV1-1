@@ -67,7 +67,6 @@ public class ResourcesPanel : MonoBehaviour {
 		metLvl.text = metalCurrentLvl.ToString();
 		silLvl.text = silicateCurrentLvl.ToString();
 	}
-
 	private void LevelUpCheck() {
 		if (bioGooCurExp >= bioGooResToLvlArray[bioGooCurrentLvl + 1]) {
 			SoundManager.sm.levelUp.Play();
