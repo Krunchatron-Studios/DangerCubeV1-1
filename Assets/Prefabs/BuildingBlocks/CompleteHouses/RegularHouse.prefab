@@ -55,6 +55,8 @@ MonoBehaviour:
   evacuateThreshold: 10
   buildingSize: 1
   hasEvacuated: 0
+  stage1Crumble: 0
+  stage2Crumble: 0
   structurePiecesArray:
   - {fileID: 392500891}
   - {fileID: 392500890}
@@ -188,6 +190,11 @@ PrefabInstance:
       objectReference: {fileID: 1673163706}
     - target: {fileID: 1545251734432736587, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
         type: 3}
+      propertyPath: structureType
+      value: Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 1545251734432736587, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
       propertyPath: structureParent
       value: 
       objectReference: {fileID: 1673163704}
@@ -283,6 +290,11 @@ PrefabInstance:
       propertyPath: shaker
       value: 
       objectReference: {fileID: 1673163706}
+    - target: {fileID: 1712142221815726888, guid: f94f5d5239dc185468f7cad7cb4e194c,
+        type: 3}
+      propertyPath: structureType
+      value: Building
+      objectReference: {fileID: 0}
     - target: {fileID: 1712142221815726888, guid: f94f5d5239dc185468f7cad7cb4e194c,
         type: 3}
       propertyPath: structureParent
@@ -854,9 +866,19 @@ PrefabInstance:
       objectReference: {fileID: 1673163706}
     - target: {fileID: 6260769656414545493, guid: f69d8a456898ab24784e0e03170bf94a,
         type: 3}
+      propertyPath: structureType
+      value: Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260769656414545493, guid: f69d8a456898ab24784e0e03170bf94a,
+        type: 3}
       propertyPath: structureParent
       value: 
       objectReference: {fileID: 1673163704}
+    - target: {fileID: 8473203100517694150, guid: f69d8a456898ab24784e0e03170bf94a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8473203100517694151, guid: f69d8a456898ab24784e0e03170bf94a,
         type: 3}
       propertyPath: m_Name
