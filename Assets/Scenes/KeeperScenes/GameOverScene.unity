@@ -385,6 +385,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7539156649322423361, guid: 8dc26ddae8441094690b6b897510a213,
+        type: 3}
+      propertyPath: thisAudioSource
+      value: 
+      objectReference: {fileID: 567800800}
     - target: {fileID: 8678013418034992502, guid: 8dc26ddae8441094690b6b897510a213,
         type: 3}
       propertyPath: m_text
@@ -432,38 +437,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 162842643}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &162842645 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5671920125656499475, guid: 8dc26ddae8441094690b6b897510a213,
-    type: 3}
-  m_PrefabInstance: {fileID: 162842643}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &162842646 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1693031600526920122, guid: 8dc26ddae8441094690b6b897510a213,
-    type: 3}
-  m_PrefabInstance: {fileID: 162842643}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 162842645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &162842647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 162842645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd41c6d8be02c1b4f854fbe75d07bc88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisImage: {fileID: 162842646}
-  thisAudioSource: {fileID: 567800800}
 --- !u!1 &341551006
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,6 +580,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnderTheHoodGO
       objectReference: {fileID: 0}
+    - target: {fileID: 3065264723953823324, guid: 6186f96d082fcc648a461df2ef7f4733,
+        type: 3}
+      propertyPath: m_TagString
+      value: EditorOnly
+      objectReference: {fileID: 0}
     - target: {fileID: 3590346706876598600, guid: 6186f96d082fcc648a461df2ef7f4733,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -651,7 +629,7 @@ PrefabInstance:
     - target: {fileID: 6604363358035246033, guid: 6186f96d082fcc648a461df2ef7f4733,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6604363358035246033, guid: 6186f96d082fcc648a461df2ef7f4733,
         type: 3}
@@ -1148,6 +1126,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShaderManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6631927472453256153, guid: 85adaae6a492e6d4e9b24e629e90d001,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85adaae6a492e6d4e9b24e629e90d001, type: 3}
 --- !u!1001 &7539156649322423357
@@ -1167,6 +1150,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 998249647}
+    - target: {fileID: 6899558997242174657, guid: 8dc26ddae8441094690b6b897510a213,
+        type: 3}
+      propertyPath: m_TagString
+      value: EditorOnly
+      objectReference: {fileID: 0}
     - target: {fileID: 6961750005826725012, guid: 8dc26ddae8441094690b6b897510a213,
         type: 3}
       propertyPath: m_Pivot.x

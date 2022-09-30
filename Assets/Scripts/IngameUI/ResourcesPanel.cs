@@ -73,27 +73,69 @@ public class ResourcesPanel : MonoBehaviour {
 	private void LevelUpCheck() {
 		if (bioGooCurExp >= bioGooResToLvlArray[bioGooCurrentLvl + 1]) {
 			SoundManager.sm.levelUp.Play();
-			lvlPanel.SetActive(true);
-			timeManager.SetTimescaleTo(0f);
 			resRef.bioGoo = 0;
 			bioGooCurrentLvl++;
-			levelUpPanel.RefreshChoices();
+			if (bioGooCurrentLvl % 5 == 0) {
+				lvlPanel.SetActive(true);
+				timeManager.SetTimescaleTo(0f);
+			} else {
+				for (int i = 0; i < WeaponSystem.Instance.cubeWeapons.Length; i++) {
+
+					Weapon currentWeapon = WeaponSystem.Instance.cubeWeapons[i];
+					Debug.Log($"name: {currentWeapon.name}");
+					Debug.Log($"rng1: {currentWeapon.upgradeRange}");
+					Debug.Log($"knock2: {currentWeapon.knockForce}");
+					currentWeapon.IncreaseKnock(1f);
+					currentWeapon.IncreaseRange(1);
+					Debug.Log($"rng1: {currentWeapon.upgradeRange}");
+					Debug.Log($"knock2: {currentWeapon.knockForce}");
+
+
+				}
+			}
+			// levelUpPanel.RefreshChoices();
 		}
 		if (metalCurExp >= metalResToLvlArray[metalCurrentLvl + 1]) {
 			SoundManager.sm.levelUp.Play();
-			lvlPanel.SetActive(true);
-			timeManager.SetTimescaleTo(0f);
 			resRef.metal = 0;
 			metalCurrentLvl++;
-			levelUpPanel.RefreshChoices();
+			if (metalCurrentLvl % 5 == 0) {
+				lvlPanel.SetActive(true);
+				timeManager.SetTimescaleTo(0f);
+
+			} else {
+				for (int i = 0; i < WeaponSystem.Instance.cubeWeapons.Length; i++) {
+					Weapon currentWeapon = WeaponSystem.Instance.cubeWeapons[i];
+					Debug.Log($"name: {currentWeapon.name}");
+					Debug.Log($"dmg1: {currentWeapon.weaponDamage}");
+					Debug.Log($"atks2: {currentWeapon.attackSpeed}");
+
+					currentWeapon.IncreaseDamage(.5f);
+					currentWeapon.IncreaseAttackSpeed(.05f);
+					currentWeapon.IncreaseAmmoClipSize(3);
+					Debug.Log($"dmg1: {currentWeapon.weaponDamage}");
+					Debug.Log($"atks2: {currentWeapon.attackSpeed}");
+
+
+				}
+			}
+			// levelUpPanel.RefreshChoices();
 		}
 		if (silicateCurExp >= silicateResToLvlArray[silicateCurrentLvl + 1]) {
 			SoundManager.sm.levelUp.Play();
-			lvlPanel.SetActive(true);
-			timeManager.SetTimescaleTo(0f);
 			resRef.silicate = 0;
 			silicateCurrentLvl++;
-			levelUpPanel.RefreshChoices();
+			if (silicateCurrentLvl % 5 == 0) {
+				lvlPanel.SetActive(true);
+				timeManager.SetTimescaleTo(0f);
+			} else {
+				for (int i = 0; i < WeaponSystem.Instance.cubeWeapons.Length; i++) {
+					Weapon currentWeapon = WeaponSystem.Instance.cubeWeapons[i];
+					currentWeapon.ImproveReloadTimer(.4f);
+					currentWeapon.IncreaseProjectileScale(.25f);
+				}
+			}
+			// levelUpPanel.RefreshChoices();
 		}
 
 	}

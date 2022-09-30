@@ -48,13 +48,13 @@ public class UpgradeButton : MonoBehaviour {
 		string[] temp = { "Bio", "Metal", "Silicate" };
 		int index = Random.Range(0, 3);
 		Upgrade upgrade = null;
-		if (index == 0) {
+		if (index == 0 && UpgradesList.ul.bioUpgradesMajor.Count > 0) {
 			upgrade = UpgradesList.ul.bioUpgradesMajor[Random.Range(0, UpgradesList.ul.bioUpgradesMajor.Count)];
-		} else if (index == 1) {
+		} else if (index == 1 && UpgradesList.ul.metalUpgradesMajor.Count > 0) {
 			upgrade = UpgradesList.ul.metalUpgradesMajor[Random.Range(0, UpgradesList.ul.metalUpgradesMajor.Count)];
-		} else if (index == 2) {
+		} else if (index == 2 && UpgradesList.ul.silicateUpgradesMajor.Count > 0) {
 			upgrade = UpgradesList.ul.silicateUpgradesMajor[Random.Range(0, UpgradesList.ul.silicateUpgradesMajor.Count)];
-		}
+		} 
 		if (upgrade) {
 			weaponOrTechName = upgrade.upgradeName;
 		}
@@ -80,7 +80,7 @@ public class UpgradeButton : MonoBehaviour {
 		SoundManager.sm.buttonPress.Play();
 		lvlPanel.gameObject.SetActive(false);
 		timeManager.SetTimescaleTo(1f);
-		ActivateAndRemove(_upgrade.upgradeType, _upgrade.upgradeTier, _upgrade.upgradeName);
+		// ActivateAndRemove(_upgrade.upgradeType, _upgrade.upgradeTier, _upgrade.upgradeName);
 	}
 
 	public void ActivateAndRemove(string type, string tier, string abilityName) {
