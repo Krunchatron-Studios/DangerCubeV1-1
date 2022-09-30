@@ -14,6 +14,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	public Sprite stage1Dmg;
 	public Sprite stage2Dmg;
 	public Sprite stage3Dmg;
+	public bool stage1Crumble, stage2Crumble;
 	public float stage1Threshold = .9f;
 	public float stage2Threshold = .6f;
 	public float stage3Threshold = .3f;
@@ -41,6 +42,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 		percentDestroyed = currentIntegrity / maxIntegrity;
 		CatchFire(damageType);
 		EvacuateCheck();
+		FinalCrumble();
 	}
 	private void WindowShatterCheck(Vector3 location) {
 		if (structureType == "Window") {
@@ -51,37 +53,6 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 			GameObject rockShatter = StructureDamagePool.sdp.rockShatterPool.GetPooledGameObject();
 			rockShatter.SetActive(true);
 			rockShatter.transform.position = location;
-		}
-	}
-	public virtual void DamageTiersCheck(Vector3 location) {
-		if (percentDestroyed > 0 && percentDestroyed < stage3Threshold && stage3Dmg) {
-			spriteRenderer.sprite = stage3Dmg;
-						
-			GameObject woodExplode = StructureDamagePool.sdp.woodExplosionPool.GetPooledGameObject();
-			woodExplode.SetActive(true);
-			woodExplode.transform.position = location;
-			
-			GameObject rockShatter = StructureDamagePool.sdp.rockShatterPool.GetPooledGameObject();
-			rockShatter.SetActive(true);
-			rockShatter.transform.position = location;
-		}
-		if (percentDestroyed > stage3Threshold && percentDestroyed < stage2Threshold && stage2Dmg) {
-			spriteRenderer.sprite = stage2Dmg;
-			
-			GameObject woodExplode = StructureDamagePool.sdp.woodExplosionPool.GetPooledGameObject();
-			woodExplode.SetActive(true);
-			woodExplode.transform.position = location;
-			
-			GameObject rockShatter = StructureDamagePool.sdp.rockShatterPool.GetPooledGameObject();
-			rockShatter.SetActive(true);
-			rockShatter.transform.position = location;
-		}
-		if (percentDestroyed > stage2Threshold && percentDestroyed < stage1Threshold && stage1Dmg) {
-			spriteRenderer.sprite = stage1Dmg;
-			GameObject rockShatter = StructureDamagePool.sdp.rockShatterPool.GetPooledGameObject();
-			rockShatter.SetActive(true);
-			rockShatter.transform.position = location;
-			structureParent.evacuateThreshold -= 2;
 		}
 	}
 	public virtual void GetDustParticle(Vector3 location) {
@@ -128,26 +99,25 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 			if (currentIntegrity <= 0.0f) {
 				SoundManager.sm.burning1.Stop();
 			}
-			
 		}
 	}
 	public virtual void DamageTiersCheck1(Vector3 location) {
-		if (percentDestroyed < stage1Threshold && stage1Dmg) {
+		if (percentDestroyed < stage1Threshold && stage1Dmg && percentDestroyed > stage2Threshold) {
 			spriteRenderer.sprite = stage1Dmg;
 			GameObject rockShatter = StructureDamagePool.sdp.rockShatterPool.GetPooledGameObject();
 			rockShatter.SetActive(true);
 			rockShatter.transform.position = location;
-			structureParent.evacuateThreshold -= 2;
+			structureParent.evacuateThreshold--;
 		}
 	}
 	public virtual void DamageTiersCheck2(Vector3 location) {
-		if (percentDestroyed < stage2Threshold && stage2Dmg) {
+		if (percentDestroyed < stage2Threshold && stage2Dmg && percentDestroyed > stage3Threshold) {
 			spriteRenderer.sprite = stage2Dmg;
 			structureParent.evacuateThreshold--;
 		}
 	}
 	public virtual void DamageTiersCheck3(Vector3 location) {
-		if (percentDestroyed < stage3Threshold && stage3Dmg) {
+		if (percentDestroyed < stage3Threshold && stage3Dmg && percentDestroyed > 0) {
 			spriteRenderer.sprite = stage3Dmg;
 
 			if (structureType == "Building" && !_looted) {
@@ -156,6 +126,12 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 				buildingLoot.transform.position = location;
 				_looted = true;
 			}
+		}
+	}
+	public virtual void FinalCrumble() {
+		if (currentIntegrity <= 0.0f && !structureParent.stage2Crumble) {
+			SoundManager.sm.buildingCrumbleSounds[0].Play();
+			stage2Crumble = true;
 		}
 	}
 }

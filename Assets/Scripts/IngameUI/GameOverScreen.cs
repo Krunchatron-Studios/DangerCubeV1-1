@@ -4,14 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class GameOverScreen : MonoBehaviour {
 	public void RestartGame() {
+		SceneManager.LoadScene("TestLevel");
 		TitleSoundManager.tsm.titleMusic.Stop();
 		TitleSoundManager.tsm.buttonPress.Play();
-		SceneManager.LoadScene("TestLevel");
 	}
 
 	public void ExitGame() {
+		SceneManager.LoadScene("TitleScreen");
 		TitleSoundManager.tsm.titleMusic.Stop();
 		TitleSoundManager.tsm.buttonPress.Play();
-		SceneManager.LoadScene("TitleScreen");
 	}
 }

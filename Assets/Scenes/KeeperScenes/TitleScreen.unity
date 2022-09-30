@@ -2003,7 +2003,7 @@ RectTransform:
   m_Children:
   - {fileID: 561436983}
   m_Father: {fileID: 720708513}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2117,7 +2117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisImage: {fileID: 367788160}
-  thisAudioSource: {fileID: 7929253688691010466}
+  thisAudioSource: {fileID: 7929253688691010467}
 --- !u!1 &376360973
 GameObject:
   m_ObjectHideFlags: 0
@@ -2220,7 +2220,7 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: -1
+  m_RendererIndex: 0
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
@@ -2681,7 +2681,7 @@ RectTransform:
   m_Children:
   - {fileID: 884715333}
   m_Father: {fileID: 720708513}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3382,8 +3382,8 @@ RectTransform:
   m_Children:
   - {fileID: 366878476}
   - {fileID: 773198612}
-  - {fileID: 367788158}
   - {fileID: 464482218}
+  - {fileID: 367788158}
   m_Father: {fileID: 214410072}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3728,7 +3728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisImage: {fileID: 773198614}
-  thisAudioSource: {fileID: 7929253688691010466}
+  thisAudioSource: {fileID: 7929253688691010467}
 --- !u!1001 &782312817
 PrefabInstance:
   m_ObjectHideFlags: 0
