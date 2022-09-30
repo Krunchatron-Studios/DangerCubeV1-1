@@ -30,14 +30,14 @@ public class UpgradeButton : MonoBehaviour {
 		UpdateLevelUpPanel();
 	}
 	public void GenerateMinorMetalUpgrade() {
-		int randomIndex = Random.Range(0, UpgradesList.ul.bioUpgradesMinor.Count);
+		int randomIndex = Random.Range(0, UpgradesList.ul.metalUpgradesMinor.Count);
 		Upgrade upgrade = UpgradesList.ul.metalUpgradesMinor[randomIndex];
 		weaponOrTechName = upgrade.upgradeName;
 		_upgrade = upgrade;
 		UpdateLevelUpPanel();
 	}
 	public void GenerateMinorSilicateUpgrade() {
-		int randomIndex = Random.Range(0, UpgradesList.ul.bioUpgradesMinor.Count);
+		int randomIndex = Random.Range(0, UpgradesList.ul.silicateUpgradesMinor.Count);
 		Upgrade upgrade = UpgradesList.ul.silicateUpgradesMinor[randomIndex];
 		weaponOrTechName = upgrade.upgradeName;
 		_upgrade = upgrade;

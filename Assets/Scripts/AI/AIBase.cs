@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public abstract class AIBase : MonoBehaviour {
@@ -7,4 +8,7 @@ public abstract class AIBase : MonoBehaviour {
 	public float distance;
 	public bool hasEngaged;
 
+	private void Start() {
+		hasEngaged = false;
+	}
 }

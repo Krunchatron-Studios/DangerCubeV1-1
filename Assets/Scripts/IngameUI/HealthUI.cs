@@ -32,7 +32,7 @@ public class HealthUI : MonoBehaviour {
 	}
 
 	public void RemoveHealthChunk() {
-		int soundIndex = Random.Range(0, 3);
+		int soundIndex = Random.Range(0, SoundManager.sm.cubeLoseHealthChunk.Length);
 		SoundManager.sm.cubeLoseHealthChunk[soundIndex].Play();
 		playerHealthData.playerHealthCurrent--;
 		int chunkIndex = Mathf.FloorToInt(playerHealthData.playerHealthCurrent);
