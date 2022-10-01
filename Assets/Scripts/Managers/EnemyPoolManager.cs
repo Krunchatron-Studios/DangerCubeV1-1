@@ -9,6 +9,14 @@ namespace Managers {
 		private void Start() {
 			epm = this;
 		}
+		[Header("Enemy Pools")] 
+		public MMSimpleObjectPooler[] allPedestrians;
+		public MMSimpleObjectPooler FemPed1Pool;
+		public MMSimpleObjectPooler MalePed1Pool;
+		public MMSimpleObjectPooler pedGroupPool;
+		public MMSimpleObjectPooler pedGroupPool2;
+		public MMSimpleObjectPooler helicopterPool;
+		public MMSimpleObjectPooler soldierPool;
 
 		[Header("Particles")] 
 		public MMSimpleObjectPooler shieldHit;

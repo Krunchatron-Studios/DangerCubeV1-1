@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EFleeingPedestrian : BaseEnemy {
     [SerializeField] private Transform playerPosition;
-    [SerializeField] private float _safetyTime;
+    [SerializeField] private float _safetyTime = 10f;
     private GameObject _enemy;
     void Start() {
         playerPosition = GameObject.FindWithTag("Player").transform;
