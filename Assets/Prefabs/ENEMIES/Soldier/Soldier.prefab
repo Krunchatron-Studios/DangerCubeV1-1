@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1195847990}
   - component: {fileID: 1674497752}
   - component: {fileID: 1674497760}
-  m_Layer: 6
+  m_Layer: 26
   m_Name: Soldier
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0f7a929ab7c288547b94186787fc400f, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 843722456, guid: c277e19ed9cd4884bb0b12fe0ea48733, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -249,6 +249,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MachineGun
       objectReference: {fileID: 0}
+    - target: {fileID: 2098654175487483651, guid: d9b9ecd1ee42ea446a810223ed64be4a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
+      objectReference: {fileID: 0}
     - target: {fileID: 2098654175487483661, guid: d9b9ecd1ee42ea446a810223ed64be4a,
         type: 3}
       propertyPath: m_RootOrder
@@ -303,6 +308,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712796077839845782, guid: d9b9ecd1ee42ea446a810223ed64be4a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9b9ecd1ee42ea446a810223ed64be4a, type: 3}

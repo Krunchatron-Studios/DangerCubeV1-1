@@ -31,6 +31,7 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 		if (currentHealth <= 0) {
 
 			if (dmgType == "DeathRay") {
+				spriteRenderer.material = ShaderManager.shm.dissolve;
 				GameObject ashes = PoolManager.pm.ashesPool.GetPooledGameObject();
 				dissolve.isDissolving = true;
 				ashes.transform.position = transform.position;

@@ -16,12 +16,12 @@ namespace Effects {
 
 		private void Start() {
 			renderer = GetComponent<SpriteRenderer>();
-			_dissolveTimer = renderer.material.GetFloat(Fade1);
 			_reducedToAshes = true;
 		}
 
 		private void FixedUpdate() {
 			if (isDissolving) {
+				_dissolveTimer = renderer.material.GetFloat(Fade1);
 				DissolveTrigger();
 				if (_reducedToAshes) {
 					_reducedToAshes = false;
