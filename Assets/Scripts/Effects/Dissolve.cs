@@ -12,7 +12,7 @@ namespace Effects {
 		private bool _reducedToAshes;
 
 		public bool isDissolving;
-		private static readonly int Fade1 = Shader.PropertyToID("_Fade");
+		private static readonly int fade = Shader.PropertyToID("_Dissolve_Amount");
 
 		private void Start() {
 			renderer = GetComponent<SpriteRenderer>();
@@ -21,7 +21,7 @@ namespace Effects {
 
 		private void FixedUpdate() {
 			if (isDissolving) {
-				_dissolveTimer = renderer.material.GetFloat(Fade1);
+				_dissolveTimer = renderer.material.GetFloat(fade);
 				DissolveTrigger();
 				if (_reducedToAshes) {
 					_reducedToAshes = false;
@@ -32,7 +32,7 @@ namespace Effects {
 
 		private void DissolveTrigger() {
 			_dissolveTimer -= disAmountPerFrame;
-			renderer.material.SetFloat(Fade1, _dissolveTimer);
+			renderer.material.SetFloat(fade, _dissolveTimer);
 		}
 	}
 }
