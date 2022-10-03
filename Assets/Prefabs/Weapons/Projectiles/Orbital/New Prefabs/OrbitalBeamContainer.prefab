@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1497890194506849501}
   - component: {fileID: 62597376338906832}
   - component: {fileID: 5174434177772066147}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: OrbitalBeamContainer
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,10 +165,40 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4001715079583332845, guid: 45f91a174b71b804eabd97bccec12ca1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4001716646028042719, guid: 45f91a174b71b804eabd97bccec12ca1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4001963231462040993, guid: 45f91a174b71b804eabd97bccec12ca1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002396155743815063, guid: 45f91a174b71b804eabd97bccec12ca1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002456745078621791, guid: 45f91a174b71b804eabd97bccec12ca1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
+      objectReference: {fileID: 0}
     - target: {fileID: 4003393644203996623, guid: 45f91a174b71b804eabd97bccec12ca1,
         type: 3}
       propertyPath: m_Name
       value: OrbitalBeam
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003393644203996623, guid: 45f91a174b71b804eabd97bccec12ca1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 4007251157524421789, guid: 45f91a174b71b804eabd97bccec12ca1,
         type: 3}
