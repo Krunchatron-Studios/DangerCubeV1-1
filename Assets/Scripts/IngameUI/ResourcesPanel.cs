@@ -1,5 +1,6 @@
 using Managers;
 using MoreMountains.Feedbacks;
+using MoreMountains.Tools;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -32,7 +33,6 @@ public class ResourcesPanel : MonoBehaviour {
 		UpdateResources();
 		LevelUpCheck();
 	}
-
 	public void PopulateResExpTiers(float multiplier) {
 
 		print("resource goals populated");
@@ -50,7 +50,6 @@ public class ResourcesPanel : MonoBehaviour {
 			silicateResToLvlArray[i] = Mathf.FloorToInt(silicateResToLvlArray[i - 1] * multiplier);
 		}
 	}
-
 	public void UpdateResources() {
 		
 		bioGooCurExp = resRef.bioGoo;
@@ -69,32 +68,71 @@ public class ResourcesPanel : MonoBehaviour {
 		metLvl.text = metalCurrentLvl.ToString();
 		silLvl.text = silicateCurrentLvl.ToString();
 	}
-
 	private void LevelUpCheck() {
 		if (bioGooCurExp >= bioGooResToLvlArray[bioGooCurrentLvl + 1]) {
 			SoundManager.sm.levelUp.Play();
-			lvlPanel.SetActive(true);
-			timeManager.SetTimescaleTo(0f);
 			resRef.bioGoo = 0;
 			bioGooCurrentLvl++;
-			levelUpPanel.RefreshChoices();
+			if (bioGooCurrentLvl % 5 == 0) {
+				lvlPanel.SetActive(true);
+				timeManager.SetTimescaleTo(0f);
+			} else {
+				MMFloatingTextSpawnEvent.Trigger(3, WeaponSystem.Instance.transform.position, 
+					"Range +1", Vector3.up, .2f);
+				MMFloatingTextSpawnEvent.Trigger(3, WeaponSystem.Instance.transform.position, 
+					"Knockback +1"  , Vector3.up, .2f);
+				for (int i = 0; i < WeaponSystem.Instance.cubeWeapons.Length; i++) {
+
+					Weapon currentWeapon = WeaponSystem.Instance.cubeWeapons[i];
+					currentWeapon.IncreaseKnock(1f);
+					currentWeapon.IncreaseRange(1);
+				}
+
+			}
+
 		}
 		if (metalCurExp >= metalResToLvlArray[metalCurrentLvl + 1]) {
 			SoundManager.sm.levelUp.Play();
-			lvlPanel.SetActive(true);
-			timeManager.SetTimescaleTo(0f);
 			resRef.metal = 0;
 			metalCurrentLvl++;
-			levelUpPanel.RefreshChoices();
+			if (metalCurrentLvl % 5 == 0) {
+				lvlPanel.SetActive(true);
+				timeManager.SetTimescaleTo(0f);
+
+			} else {
+				for (int i = 0; i < WeaponSystem.Instance.cubeWeapons.Length; i++) {
+					Weapon currentWeapon = WeaponSystem.Instance.cubeWeapons[i];
+					currentWeapon.IncreaseDamage(.5f);
+					currentWeapon.IncreaseAttackSpeed(.05f);
+					currentWeapon.IncreaseAmmoClipSize(3);
+				}
+				MMFloatingTextSpawnEvent.Trigger(3, transform.position, 
+					"Damage +.25", Vector3.up, .2f);
+				MMFloatingTextSpawnEvent.Trigger(3, transform.position, 
+					"RoF -.05sec"  , Vector3.up, .2f);
+				MMFloatingTextSpawnEvent.Trigger(3, transform.position, 
+					"Clip Size +3", Vector3.up, .2f);
+			}
 		}
 		if (silicateCurExp >= silicateResToLvlArray[silicateCurrentLvl + 1]) {
 			SoundManager.sm.levelUp.Play();
-			lvlPanel.SetActive(true);
-			timeManager.SetTimescaleTo(0f);
 			resRef.silicate = 0;
 			silicateCurrentLvl++;
-			levelUpPanel.RefreshChoices();
-		}
+			if (silicateCurrentLvl % 5 == 0) {
+				lvlPanel.SetActive(true);
+				timeManager.SetTimescaleTo(0f);
+			} else {
+				for (int i = 0; i < WeaponSystem.Instance.cubeWeapons.Length; i++) {
+					Weapon currentWeapon = WeaponSystem.Instance.cubeWeapons[i];
+					currentWeapon.ImproveReloadTimer(.4f);
+					currentWeapon.IncreaseProjectileScale(.25f);
+				}
+				MMFloatingTextSpawnEvent.Trigger(3, transform.position, 
+					"Reload Speed -.25sec", Vector3.up, .2f);
+				MMFloatingTextSpawnEvent.Trigger(3, transform.position, 
+					"Bullet Size +25%"  , Vector3.up, .2f);
+			}
 
+		}
 	}
 }

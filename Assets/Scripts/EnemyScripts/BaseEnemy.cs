@@ -25,21 +25,31 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 	[Header("Enemy Drop Related")] 
 	public GameObject drop;
 	public PlayerResources playerResources;
+	private Vector2 _direction;
 
 	public void TakeDamage(float dmgAmount, string dmgType) {
 		currentHealth -= dmgAmount;
+		
+		if (dmgType == "Physical") {
+			_direction = GameObject.FindGameObjectWithTag("Player").transform.localScale.normalized;
+			GameObject blood = PoolManager.pm.bloodPool.GetPooledGameObject();
+			blood.transform.position = new Vector2(transform.position.x, transform.position.y + .5f);
+			blood.transform.localScale = new Vector3(-_direction.x, _direction.y, 0);
+			blood.SetActive(true);
+			Debug.Log($"lossy: {_direction}");
+		}
+		
 		if (currentHealth <= 0) {
-
 			if (dmgType == "DeathRay") {
+				spriteRenderer.material = ShaderManager.shm.dissolve;
 				GameObject ashes = PoolManager.pm.ashesPool.GetPooledGameObject();
-				dissolve.isDissolving = true;
-				ashes.transform.position = transform.position;
 				ashes.SetActive(true);
+				ashes.transform.position = transform.position;
+				dissolve.isDissolving = true;
 			}
 
 			if (dmgType != "Physical") {
 				GameObject blood = PoolManager.pm.bloodPool.GetPooledGameObject();
-				dissolve.isDissolving = true;
 				blood.transform.position = transform.position;
 				blood.SetActive(true);
 			}

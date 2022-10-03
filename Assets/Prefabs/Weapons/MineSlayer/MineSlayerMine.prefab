@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5375959216915049324}
   - component: {fileID: 6320125943790328451}
   - component: {fileID: 2252171432832002728}
-  m_Layer: 8
+  m_Layer: 26
   m_Name: MineSlayerMine
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -101,6 +101,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8511251487929357729}
     m_Modifications:
+    - target: {fileID: 4950811112371341299, guid: 79a05d93262f5b441b9cee5e0001bb6f,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5071544529686165701, guid: 79a05d93262f5b441b9cee5e0001bb6f,
         type: 3}
       propertyPath: m_RootOrder
@@ -159,17 +164,17 @@ PrefabInstance:
     - target: {fileID: 5077167357654527399, guid: 79a05d93262f5b441b9cee5e0001bb6f,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 5077467800035675575, guid: 79a05d93262f5b441b9cee5e0001bb6f,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 5077630350351841245, guid: 79a05d93262f5b441b9cee5e0001bb6f,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 5077742763063270107, guid: 79a05d93262f5b441b9cee5e0001bb6f,
         type: 3}
@@ -179,10 +184,33 @@ PrefabInstance:
     - target: {fileID: 5077742763063270107, guid: 79a05d93262f5b441b9cee5e0001bb6f,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79a05d93262f5b441b9cee5e0001bb6f, type: 3}
+--- !u!1 &1101509102578503045 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5077742763063270107, guid: 79a05d93262f5b441b9cee5e0001bb6f,
+    type: 3}
+  m_PrefabInstance: {fileID: 5277827966573696862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6516091364594674766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101509102578503045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7597bebd0f65d6a43836ab12b021f24c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightLayer: 0
+  color: {r: 0, g: 1, b: 0.027451038, a: 0.147}
+  useParticleColor: 1
+  scale: 0.6
+  customParticle: {fileID: 0}
 --- !u!4 &1107641913487110043 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5071544529686165701, guid: 79a05d93262f5b441b9cee5e0001bb6f,
@@ -204,7 +232,7 @@ PrefabInstance:
     - target: {fileID: 2696239749736172868, guid: 7fa35ad1c61f2584eb860880f25e050a,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 2696239749736172868, guid: 7fa35ad1c61f2584eb860880f25e050a,
         type: 3}
@@ -219,7 +247,7 @@ PrefabInstance:
     - target: {fileID: 2696239749736177056, guid: 7fa35ad1c61f2584eb860880f25e050a,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 2696239749736651518, guid: 7fa35ad1c61f2584eb860880f25e050a,
         type: 3}
@@ -350,6 +378,36 @@ PrefabInstance:
         type: 3}
       propertyPath: lengthInSec
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2696239749756053788, guid: 7fa35ad1c61f2584eb860880f25e050a,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2696239749756077762, guid: 7fa35ad1c61f2584eb860880f25e050a,
+        type: 3}
+      propertyPath: simulationSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2696239749756077762, guid: 7fa35ad1c61f2584eb860880f25e050a,
+        type: 3}
+      propertyPath: ShapeModule.type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2696239749756077762, guid: 7fa35ad1c61f2584eb860880f25e050a,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2696239749756077762, guid: 7fa35ad1c61f2584eb860880f25e050a,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2696239749756077762, guid: 7fa35ad1c61f2584eb860880f25e050a,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fa35ad1c61f2584eb860880f25e050a, type: 3}

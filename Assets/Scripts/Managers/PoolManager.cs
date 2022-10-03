@@ -9,17 +9,6 @@ namespace Managers {
 			pm = this;
 		}
 
-		[Header("Enemy Pools")] 
-		public MMSimpleObjectPooler[] allPedestrians;
-		public MMSimpleObjectPooler pedestrianPool;
-		public MMSimpleObjectPooler pedestrianPool2;
-		public MMSimpleObjectPooler pedestrianPool3;
-		public MMSimpleObjectPooler childPool;
-		public MMSimpleObjectPooler pedGroupPool;
-		public MMSimpleObjectPooler pedGroupPool2;
-		public MMSimpleObjectPooler helicopterPool;
-		public MMSimpleObjectPooler soldierPool;
-	
 		[Header("Particle Pools")] 
 		public MMSimpleObjectPooler ashesPool;
 		public MMSimpleObjectPooler bloodPool;
