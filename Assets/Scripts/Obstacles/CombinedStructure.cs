@@ -13,8 +13,8 @@ public class CombinedStructure : MonoBehaviour {
 	public void EvacuateBuilding(int groupsToEvacuate) {
 		hasEvacuated = true;
 		for (int i = 0; i < groupsToEvacuate; i++) {
-			int pedestrianIndex = Random.Range(0, PoolManager.pm.allPedestrians.Length);
-			GameObject evacGroup = PoolManager.pm.allPedestrians[pedestrianIndex].GetPooledGameObject();
+			int pedestrianIndex = Random.Range(0, EnemyPoolManager.epm.allPedestrians.Length -1);
+			GameObject evacGroup = EnemyPoolManager.epm.allPedestrians[pedestrianIndex].GetPooledGameObject();
 			evacGroup.SetActive(true);
 			evacGroup.transform.position = transform.position;
 		}

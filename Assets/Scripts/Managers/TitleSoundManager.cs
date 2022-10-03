@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Managers {
@@ -7,5 +8,9 @@ namespace Managers {
 		public AudioSource titleMusic;
 		public AudioSource buttonPress;
 		public AudioSource buttonHover1;
+
+		private void Start() {
+			tsm = this;
+		}
 	}
 }

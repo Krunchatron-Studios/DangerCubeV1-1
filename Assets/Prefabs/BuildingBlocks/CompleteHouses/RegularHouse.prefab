@@ -55,6 +55,8 @@ MonoBehaviour:
   evacuateThreshold: 10
   buildingSize: 1
   hasEvacuated: 0
+  stage1Crumble: 0
+  stage2Crumble: 0
   structurePiecesArray:
   - {fileID: 392500891}
   - {fileID: 392500890}
@@ -188,6 +190,11 @@ PrefabInstance:
       objectReference: {fileID: 1673163706}
     - target: {fileID: 1545251734432736587, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
         type: 3}
+      propertyPath: structureType
+      value: Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 1545251734432736587, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
       propertyPath: structureParent
       value: 
       objectReference: {fileID: 1673163704}
@@ -251,6 +258,111 @@ PrefabInstance:
       propertyPath: m_Name
       value: SingleFloorBlank
       objectReference: {fileID: 0}
+    - target: {fileID: 7288560829738214537, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
+      propertyPath: shadowType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288560829738214537, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
+      propertyPath: mainShape.shadowType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503624841701220669, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503624841701220669, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
+      value: 1.6702757
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503624841701220669, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
+      value: 0.85634124
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503624841701220669, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
+      value: -0.99293613
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503624841701220669, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
+      value: 0.85634124
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503624841701220669, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
+      value: -1.663846
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503624841701220669, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
+      value: 0.240336
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503624841701220669, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
+      value: -1.6539421
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503624841701220669, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
+      value: 0.22056988
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503624841701220669, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].x
+      value: -1.6621671
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503624841701220669, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].y
+      value: -0.18568304
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503624841701220669, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].x
+      value: -1.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503624841701220669, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503624841701220669, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].x
+      value: 0.9899147
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503624841701220669, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].y
+      value: -0.9777575
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503624841701220669, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[7].x
+      value: 1.5599027
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503624841701220669, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[7].y
+      value: -0.40332118
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503624841701220669, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[8].x
+      value: 1.6488726
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503624841701220669, guid: 6df031aa4d299394c861d0e8b4fcf1fd,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[8].y
+      value: -0.29896367
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6df031aa4d299394c861d0e8b4fcf1fd, type: 3}
 --- !u!114 &392500891 stripped
@@ -283,6 +395,11 @@ PrefabInstance:
       propertyPath: shaker
       value: 
       objectReference: {fileID: 1673163706}
+    - target: {fileID: 1712142221815726888, guid: f94f5d5239dc185468f7cad7cb4e194c,
+        type: 3}
+      propertyPath: structureType
+      value: Building
+      objectReference: {fileID: 0}
     - target: {fileID: 1712142221815726888, guid: f94f5d5239dc185468f7cad7cb4e194c,
         type: 3}
       propertyPath: structureParent
@@ -854,9 +971,19 @@ PrefabInstance:
       objectReference: {fileID: 1673163706}
     - target: {fileID: 6260769656414545493, guid: f69d8a456898ab24784e0e03170bf94a,
         type: 3}
+      propertyPath: structureType
+      value: Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260769656414545493, guid: f69d8a456898ab24784e0e03170bf94a,
+        type: 3}
       propertyPath: structureParent
       value: 
       objectReference: {fileID: 1673163704}
+    - target: {fileID: 8473203100517694150, guid: f69d8a456898ab24784e0e03170bf94a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8473203100517694151, guid: f69d8a456898ab24784e0e03170bf94a,
         type: 3}
       propertyPath: m_Name

@@ -4925,7 +4925,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8970782936923921532}
   serializedVersion: 8
-  lengthInSec: 1
+  lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
@@ -5133,7 +5133,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.53
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5472,7 +5472,7 @@ ParticleSystem:
         m_RotationOrder: 4
   ShapeModule:
     serializedVersion: 6
-    enabled: 1
+    enabled: 0
     type: 4
     angle: 0
     length: 5
@@ -5674,7 +5674,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
@@ -9658,7 +9658,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: e653836c30661fe419b8992e230ca189, type: 2}
@@ -9679,8 +9679,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 47421343
-  m_SortingLayer: 4
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -9774,10 +9774,55 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 813075353219978217, guid: 8c15e8d43f7ff6b40bff28cac832e4db,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 813075353219979271, guid: 8c15e8d43f7ff6b40bff28cac832e4db,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 813075353219998957, guid: 8c15e8d43f7ff6b40bff28cac832e4db,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 813075353220030869, guid: 8c15e8d43f7ff6b40bff28cac832e4db,
         type: 3}
       propertyPath: m_Name
       value: SpinPortalRed
+      objectReference: {fileID: 0}
+    - target: {fileID: 813075353238003331, guid: 8c15e8d43f7ff6b40bff28cac832e4db,
+        type: 3}
+      propertyPath: m_SortingFudge
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 813075353238003331, guid: 8c15e8d43f7ff6b40bff28cac832e4db,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 813075353238003331, guid: 8c15e8d43f7ff6b40bff28cac832e4db,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1603220759
+      objectReference: {fileID: 0}
+    - target: {fileID: 813075353238003331, guid: 8c15e8d43f7ff6b40bff28cac832e4db,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 813075353238040415, guid: 8c15e8d43f7ff6b40bff28cac832e4db,
+        type: 3}
+      propertyPath: ShapeModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 813075353238040415, guid: 8c15e8d43f7ff6b40bff28cac832e4db,
+        type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 813075353238040415, guid: 8c15e8d43f7ff6b40bff28cac832e4db,
         type: 3}
@@ -9799,7 +9844,8 @@ PrefabInstance:
       propertyPath: InitialModule.startSpeed.scalar
       value: 10.83
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 813075353220126181, guid: 8c15e8d43f7ff6b40bff28cac832e4db, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8c15e8d43f7ff6b40bff28cac832e4db, type: 3}
 --- !u!4 &813075353750145599 stripped
 Transform:

@@ -20,6 +20,8 @@ public class EnemyWeapon : MonoBehaviour {
     [Header("Projectile Parameters")]
     public GameObject enemyProjectile;
     private Rigidbody2D _projectileBody;
+    
+    
     void FixedUpdate() {
         playerPosition = GameObject.FindWithTag("Player");
         aimPosition = playerPosition.transform.position;
@@ -36,6 +38,7 @@ public class EnemyWeapon : MonoBehaviour {
 
     IEnumerator UseWeapon() {
         audioSource.Play();
+        
         int currentAmmo = ammo;
         for (int i = 0; i < currentAmmo; i++) {
             GameObject bullet = EnemyPoolManager.epm.enemyBulletPool.GetPooledGameObject();

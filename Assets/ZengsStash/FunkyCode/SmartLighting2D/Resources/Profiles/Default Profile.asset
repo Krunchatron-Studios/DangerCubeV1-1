@@ -29,12 +29,12 @@ MonoBehaviour:
           sorting: 0
   lightPresets:
     list:
-    - name: CubeLight
+    - name: Default
       layerSetting:
         list:
         - layerID: 0
           type: 0
-          sorting: 1
+          sorting: 0
           sortingIgnore: 0
           shadowEffect: 2
           shadowEffectLayer: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
     projection: 0
   dayLightingSettings:
     direction: 322
-    ShadowColor: {r: 0, g: 0, b: 0, a: 0.6}
+    ShadowColor: {r: 0, g: 0, b: 0, a: 1}
     height: 2.84
     bumpMap:
       height: 0.89
@@ -68,13 +68,11 @@ MonoBehaviour:
   layers:
     colliderLayers:
       names:
-      - Collision
-      - Player
-      - Obstacles
-      - Enemies
+      - Default
     lightLayers:
       names:
-      - Lighting
+      - Default
+      - O
     dayLayers:
       names:
-      - GlobalLight
+      - Default

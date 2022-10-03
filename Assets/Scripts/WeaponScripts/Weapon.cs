@@ -30,6 +30,7 @@ public class Weapon : Upgrade, IUpgradeThingInterface {
 	}
 	public virtual void ModifyDmgType(string dmgType) {
 		damageType = dmgType;
+
 	}
 	public virtual void ImproveReloadTimer(float timeReduction) {
 		 // only to be overriden by BurstFire weapons
@@ -42,7 +43,7 @@ public class Weapon : Upgrade, IUpgradeThingInterface {
 		// only to be overwritten by projectile weapons
 	}
 	public virtual void ChangeProjectile(GameObject newProjectile) {
-
+		// only to be overwritten by projectile weapons
 	}
 	public virtual void IncreaseRange(int amountToIncrease) {
 		// overwritten by nanos
