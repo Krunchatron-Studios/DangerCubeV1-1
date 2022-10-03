@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 4261613984306637898}
   - component: {fileID: 4261613984320763804}
   - component: {fileID: 4261613984321944142}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: ExplosionFireballFire 1
   m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4261613984306637898
 Transform:
   m_ObjectHideFlags: 0
@@ -4778,7 +4778,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: e7912d15146fcf145afaaedec646b781, type: 2}
@@ -4801,7 +4801,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -4843,7 +4843,8 @@ GameObject:
   - component: {fileID: 4261613984306586962}
   - component: {fileID: 4261613984320751212}
   - component: {fileID: 4261613984321945798}
-  m_Layer: 7
+  - component: {fileID: 5592491975308145796}
+  m_Layer: 26
   m_Name: Sparks
   m_TagString: FX
   m_Icon: {fileID: 0}
@@ -5386,7 +5387,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -9633,7 +9634,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 150aee38b5d848b42b75593618992bb7, type: 2}
@@ -9656,7 +9657,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_RenderMode: 1
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -9687,6 +9688,23 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &5592491975308145796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4261613984306304304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7597bebd0f65d6a43836ab12b021f24c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightLayer: 0
+  color: {r: 1, g: 0.65579164, b: 0, a: 0.49}
+  useParticleColor: 0
+  scale: 1
+  customParticle: {fileID: 0}
 --- !u!1 &4261613984306307896
 GameObject:
   m_ObjectHideFlags: 0
@@ -9698,7 +9716,8 @@ GameObject:
   - component: {fileID: 4261613984306570418}
   - component: {fileID: 4261613984320844474}
   - component: {fileID: 4261613984321898204}
-  m_Layer: 7
+  - component: {fileID: 7888752127714680027}
+  m_Layer: 26
   m_Name: Glow
   m_TagString: FX
   m_Icon: {fileID: 0}
@@ -14443,7 +14462,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: e653836c30661fe419b8992e230ca189, type: 2}
@@ -14466,7 +14485,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -14497,6 +14516,23 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &7888752127714680027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4261613984306307896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7597bebd0f65d6a43836ab12b021f24c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightLayer: 0
+  color: {r: 0.990566, g: 0.43627805, b: 0, a: 1}
+  useParticleColor: 1
+  scale: 3
+  customParticle: {fileID: 0}
 --- !u!1 &4261613984306314644
 GameObject:
   m_ObjectHideFlags: 0
@@ -14508,7 +14544,7 @@ GameObject:
   - component: {fileID: 4261613984306620362}
   - component: {fileID: 4261613984320789432}
   - component: {fileID: 4261613984320818696}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: Smoke
   m_TagString: FX
   m_Icon: {fileID: 0}
@@ -19258,7 +19294,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -19300,7 +19336,8 @@ GameObject:
   - component: {fileID: 4261613984306597722}
   - component: {fileID: 4261613984320785158}
   - component: {fileID: 4261613984320828944}
-  m_Layer: 7
+  - component: {fileID: 3509474476547805267}
+  m_Layer: 26
   m_Name: FireCurve
   m_TagString: FX
   m_Icon: {fileID: 0}
@@ -24075,9 +24112,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2036714849
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
+  m_SortingOrder: 4
   m_RenderMode: 1
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -24108,3 +24145,20 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &3509474476547805267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4261613984306322564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7597bebd0f65d6a43836ab12b021f24c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightLayer: 0
+  color: {r: 1, g: 0.2805821, b: 0, a: 0.1}
+  useParticleColor: 0
+  scale: 1
+  customParticle: {fileID: 0}

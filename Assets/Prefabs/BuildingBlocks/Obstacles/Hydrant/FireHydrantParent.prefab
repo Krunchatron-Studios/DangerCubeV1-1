@@ -256,7 +256,7 @@ PrefabInstance:
     - target: {fileID: 2207465354718053603, guid: 2830ff6d8f0cd464fb3727564c681345,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2207465354718053603, guid: 2830ff6d8f0cd464fb3727564c681345,
         type: 3}
@@ -267,6 +267,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_MaxParticleSize
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207465354718053603, guid: 2830ff6d8f0cd464fb3727564c681345,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3011045529338236811, guid: 2830ff6d8f0cd464fb3727564c681345,
         type: 3}
@@ -316,7 +321,7 @@ PrefabInstance:
     - target: {fileID: 5995745170277378700, guid: 2830ff6d8f0cd464fb3727564c681345,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 5995745170277378700, guid: 2830ff6d8f0cd464fb3727564c681345,
         type: 3}
