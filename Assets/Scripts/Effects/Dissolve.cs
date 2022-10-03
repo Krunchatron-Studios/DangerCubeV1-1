@@ -6,7 +6,7 @@ namespace Effects {
 	public class Dissolve : MonoBehaviour {
 
 		[SerializeField, Range(0, 1)] private float disAmountPerFrame = .04f;
-		[SerializeField] private Renderer renderer;
+		[SerializeField] private Renderer thisRenderer;
 		[SerializeField] private GameObject ashes;
 		private float _dissolveTimer;
 		private bool _reducedToAshes;
@@ -15,13 +15,13 @@ namespace Effects {
 		private static readonly int fade = Shader.PropertyToID("_Dissolve_Amount");
 
 		private void Start() {
-			renderer = GetComponent<SpriteRenderer>();
+			thisRenderer = GetComponent<SpriteRenderer>();
 			_reducedToAshes = true;
 		}
 
 		private void FixedUpdate() {
 			if (isDissolving) {
-				_dissolveTimer = renderer.material.GetFloat(fade);
+				_dissolveTimer = thisRenderer.material.GetFloat(fade);
 				DissolveTrigger();
 				if (_reducedToAshes) {
 					_reducedToAshes = false;
@@ -32,7 +32,7 @@ namespace Effects {
 
 		private void DissolveTrigger() {
 			_dissolveTimer -= disAmountPerFrame;
-			renderer.material.SetFloat(fade, _dissolveTimer);
+			thisRenderer.material.SetFloat(fade, _dissolveTimer);
 		}
 	}
 }
