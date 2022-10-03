@@ -47,7 +47,7 @@ public class Projectile : MonoBehaviour {
 		}
 	}
 
-	private void BloodSplash(Collider2D other) {
+	public void BloodSplash(Collider2D other) {
 		GameObject bloodSplash = PoolManager.pm.bloodPool.GetPooledGameObject();
 		bloodSplash.SetActive(true);
 		bloodSplash.transform.position = other.transform.position;
