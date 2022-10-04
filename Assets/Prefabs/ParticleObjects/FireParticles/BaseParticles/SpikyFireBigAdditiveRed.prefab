@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 930001168814840321}
   - component: {fileID: 1019568423821405631}
   - component: {fileID: 1018936906970755451}
-  m_Layer: 0
+  - component: {fileID: 6912093756515836194}
+  m_Layer: 26
   m_Name: SpikyFireBigAdditiveRed
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -736,7 +737,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 360
+      value: 358.26
       mode: 0
       spread: 0
       speed:
@@ -4771,9 +4772,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1998343457
+  m_SortingLayer: 2
+  m_SortingOrder: 5
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 3
@@ -4804,6 +4805,23 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &6912093756515836194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928045169412493309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7597bebd0f65d6a43836ab12b021f24c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightLayer: 0
+  color: {r: 1, g: 0.24806693, b: 0, a: 1}
+  useParticleColor: 0
+  scale: 1
+  customParticle: {fileID: 0}
 --- !u!1 &928427957883563863
 GameObject:
   m_ObjectHideFlags: 0
@@ -4815,9 +4833,10 @@ GameObject:
   - component: {fileID: 930453808574887855}
   - component: {fileID: 1019541651145259917}
   - component: {fileID: 1018501948457985405}
-  m_Layer: 0
+  - component: {fileID: 8356087887572428041}
+  m_Layer: 26
   m_Name: Glow
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4830,7 +4849,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 928427957883563863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0.17, y: 0.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9550,8 +9569,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -9583,6 +9602,23 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &8356087887572428041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928427957883563863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7597bebd0f65d6a43836ab12b021f24c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightLayer: 0
+  color: {r: 1, g: 0.45229992, b: 0, a: 0.5}
+  useParticleColor: 0
+  scale: 2.5
+  customParticle: {fileID: 0}
 --- !u!1 &928693267934491153
 GameObject:
   m_ObjectHideFlags: 0
@@ -9594,9 +9630,9 @@ GameObject:
   - component: {fileID: 930113511750569895}
   - component: {fileID: 1019749250609342839}
   - component: {fileID: 1018162936893760143}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Sparkles
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14293,8 +14329,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_RenderMode: 1
   m_MeshDistribution: 0
@@ -14337,9 +14373,9 @@ GameObject:
   - component: {fileID: 930465871055621789}
   - component: {fileID: 1033728456987836849}
   - component: {fileID: 1018728236837962095}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Smoke
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19027,8 +19063,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
