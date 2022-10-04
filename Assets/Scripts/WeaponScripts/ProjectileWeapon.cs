@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Feedbacks;
@@ -11,6 +12,8 @@ public class ProjectileWeapon : Weapon {
 	public Vector2 enemyTarget;
 	public TargetingSystem targetingSys;
 	public Vector2 projectileScale;
+	public bool doBulletsDecay;
+	public float decayTimer;
 	
 	[Header("Firing Vars")]
 	public bool canFire;
@@ -37,6 +40,9 @@ public class ProjectileWeapon : Weapon {
 		bullet.damage = weaponDamage;
 		bullet.transform.localScale = new Vector2(1.5f, 1.5f);
 		bullet.MoveProjectile();
+		if (doBulletsDecay) {
+			StartCoroutine(BulletDecay(spawnedBullet));
+		}
 	}
 	
 	public virtual void CanFireTimer() {
@@ -62,6 +68,11 @@ public class ProjectileWeapon : Weapon {
 
 	public override void ChangeProjectile(GameObject newProjectile) {
 		projectile = newProjectile;
+	}
+
+	IEnumerator BulletDecay(GameObject bullet) {
+		yield return new WaitForSeconds(decayTimer);
+		bullet.SetActive(false);
 	}
 }
 
