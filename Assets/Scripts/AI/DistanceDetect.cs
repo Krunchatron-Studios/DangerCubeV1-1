@@ -5,9 +5,9 @@ public class DistanceDetect : MonoBehaviour {
 
     public float aggroRadius = 10.0f;
     public BaseEnemy[] enemyArray;
-    void Update() {
-        ScanForAggro();
-    }
+    // void Update() {
+    //     ScanForAggro();
+    // }
     
     private void ScanForAggro() {
         Vector3 position = transform.position;
