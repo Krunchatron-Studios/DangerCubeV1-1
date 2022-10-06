@@ -20,6 +20,7 @@ namespace Managers {
 
 		[Header("Particles")] 
 		public MMSimpleObjectPooler shieldHit;
+		public MMSimpleObjectPooler machineGunMuzzle;
 
 		[Header("Enemy Projectiles")]
 		public MMSimpleObjectPooler enemyBulletPool;

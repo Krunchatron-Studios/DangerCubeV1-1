@@ -19,6 +19,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	public float stage2Threshold = .6f;
 	public float stage3Threshold = .3f;
 
+	private Collider2D thisCollider;
 	public float toughness;
 	public float maxIntegrity;
 	public float currentIntegrity;
@@ -27,6 +28,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	
 
 	private void Start() {
+		thisCollider = GetComponent<Collider2D>();
 		_looted = false;
 		spriteRenderer.sprite = noDmgSprite;
 	}
@@ -43,6 +45,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 		CatchFire(damageType);
 		EvacuateCheck();
 		FinalCrumble();
+		RemoveCollider();
 	}
 	private void WindowShatterCheck(Vector3 location) {
 		if (structureType == "Window") {
@@ -132,6 +135,13 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 		if (currentIntegrity <= 0.0f && !structureParent.stage2Crumble) {
 			SoundManager.sm.buildingCrumbleSounds[0].Play();
 			stage2Crumble = true;
+		}
+	}
+
+	public void RemoveCollider() {
+		if (currentIntegrity <= 0) {
+			thisCollider.enabled = !thisCollider.enabled;
+			spriteRenderer.sortingLayerName = "Ground";
 		}
 	}
 }
