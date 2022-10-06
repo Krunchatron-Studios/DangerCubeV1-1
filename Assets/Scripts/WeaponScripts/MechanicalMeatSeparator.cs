@@ -1,23 +1,32 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class MechanicalMeatSeparator : Weapon {
-    private GameObject _enemyPosition;
-    public Rigidbody2D thisRigidBody;
-    public float sawVelocity;
-    void Start() {
-        _enemyPosition = GameObject.FindWithTag("Enemy");
+    
+    public GameObject sawProjectile;
+    public GameObject playerObject;
+    public int numberOfSpins;
+
+    private void Start() {
+        StartCoroutine(SpinSaw());
     }
-    void Update() {
-        // Does the enemies position even matter for this?
-        _enemyPosition = GameObject.FindWithTag("Enemy");
-        MoveSaw();
+    
+    IEnumerator SpinSaw() {
+        sawProjectile.SetActive(true);
+
+        float time = 0f;
+        while (time < numberOfSpins) {
+            time += Time.deltaTime;
+            transform.RotateAround(playerObject.transform.position, Vector3.forward, 360 * Time.deltaTime);
+            yield return null;
+        }       
+        sawProjectile.SetActive(false);
+        StartCoroutine(FireTimer());
     }
 
-    void MoveSaw() {
-        Vector2 direction = (_enemyPosition.transform.position - transform.position).normalized;
-        bool weaponRenderer = GetComponentInParent<SpriteRenderer>().flipX;
-        weaponRenderer = direction.x < 0;
-        Vector3 moveDirection = (_enemyPosition.transform.position - transform.position).normalized;
-        thisRigidBody.AddForce(moveDirection * sawVelocity * Time.deltaTime, ForceMode2D.Impulse);
+    IEnumerator FireTimer() {
+        yield return new WaitForSeconds(attackSpeed);
+        StartCoroutine(SpinSaw());
     }
 }

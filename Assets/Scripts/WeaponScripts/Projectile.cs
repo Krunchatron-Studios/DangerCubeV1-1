@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Interfaces;
 using Managers;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class Projectile : MonoBehaviour {
 	public Rigidbody2D projectileRb2D;
 	public Vector3 targetPosition;
 	public Vector3 direction;
+	
 
 	private void Awake() {
 		damage = weapon.weaponDamage;
