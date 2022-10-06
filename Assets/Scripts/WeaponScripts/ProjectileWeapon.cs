@@ -19,6 +19,10 @@ public class ProjectileWeapon : Weapon {
 	public bool canFire;
 	public float nextFire;
 
+	[Header("Muzzle and Impact Particles")]
+	public MMSimpleObjectPooler muzzleFlashPool;
+	public MMSimpleObjectPooler impactPool;
+
 	private void Start() {
 		canFire = true;
 		targetingSys.circleCol2D.radius = upgradeRange;
@@ -29,6 +33,11 @@ public class ProjectileWeapon : Weapon {
 		CanFireTimer();
 	}
 	public virtual void FireWeapon(Vector3 firePoint, Vector3 targetPosition) {
+		GameObject flash = muzzleFlashPool.GetPooledGameObject();
+		flash.SetActive(true);
+		flash.transform.position = transform.position;
+		
+		
 		audioSource.Play();
 		GameObject spawnedBullet = objectPooler.GetPooledGameObject();
 		Projectile bullet = spawnedBullet.GetComponent<Projectile>();
