@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1851512941574564643}
   - component: {fileID: 1981150566307734907}
   - component: {fileID: 1981008074939103621}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Cone
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4756,7 +4756,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 9d5f3d715091cd34e97ba2941c6fb73f, type: 2}
@@ -4777,9 +4777,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_RenderMode: 4
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -4821,9 +4821,9 @@ GameObject:
   - component: {fileID: 1855075546965567543}
   - component: {fileID: 1855075546980770035}
   - component: {fileID: 1855075546980731461}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Glow
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9566,7 +9566,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: e653836c30661fe419b8992e230ca189, type: 2}
@@ -9587,9 +9587,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -9632,9 +9632,9 @@ GameObject:
   - component: {fileID: 1855075546980772273}
   - component: {fileID: 1855075546981073627}
   - component: {fileID: -3043313191025037971}
-  m_Layer: 15
+  m_Layer: 26
   m_Name: LaserMuzzleFire
-  m_TagString: Projectile
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14415,7 +14415,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: c69a36694c3d44847ae1097a253e3d56, type: 2}
@@ -14436,8 +14436,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -598322915
-  m_SortingLayer: 4
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_RenderMode: 1
   m_MeshDistribution: 0

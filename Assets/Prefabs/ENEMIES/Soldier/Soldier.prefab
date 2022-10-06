@@ -59,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0f7a929ab7c288547b94186787fc400f, type: 2}
+  - {fileID: 2100000, guid: 97fa5273e6041044dad58a8a0cdf5502, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -308,6 +308,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712796077839845782, guid: d9b9ecd1ee42ea446a810223ed64be4a,
+        type: 3}
+      propertyPath: m_Name
+      value: FirePoint
       objectReference: {fileID: 0}
     - target: {fileID: 7712796077839845782, guid: d9b9ecd1ee42ea446a810223ed64be4a,
         type: 3}
