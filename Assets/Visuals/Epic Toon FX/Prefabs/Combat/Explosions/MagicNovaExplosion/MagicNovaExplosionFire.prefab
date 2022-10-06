@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4388157875766580}
   - component: {fileID: 198687821452053542}
   - component: {fileID: 199989172311536148}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4812,7 +4812,7 @@ GameObject:
   - component: {fileID: 4943952296805152}
   - component: {fileID: 198469569040130100}
   - component: {fileID: 199995141194732740}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: NoiseDust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9659,7 +9659,7 @@ GameObject:
   - component: {fileID: 4034071659344836}
   - component: {fileID: 198043819671921564}
   - component: {fileID: 199934224326571912}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Nova
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14433,7 +14433,7 @@ GameObject:
   - component: {fileID: 4484670528001872}
   - component: {fileID: 198728119674828582}
   - component: {fileID: 199076706104524820}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: SharpSparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19243,7 +19243,7 @@ GameObject:
   - component: {fileID: 4861472502575264}
   - component: {fileID: 198747137730469860}
   - component: {fileID: 199190696410506994}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24057,9 +24057,9 @@ GameObject:
   - component: {fileID: 108805714456343806}
   - component: {fileID: 114702975351280054}
   - component: {fileID: 5116136251632706774}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: MagicNovaExplosionFire
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28807,7 +28807,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: d63774db53e2fee4b84a72da1c9f1096, type: 2}
@@ -28828,9 +28828,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_RenderMode: 1
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -29064,7 +29064,7 @@ GameObject:
   - component: {fileID: 4503961525498686}
   - component: {fileID: 198239906560532320}
   - component: {fileID: 199459846782296450}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Subemitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
