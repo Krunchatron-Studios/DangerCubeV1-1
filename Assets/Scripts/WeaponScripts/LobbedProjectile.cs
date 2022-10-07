@@ -1,24 +1,36 @@
+using System;
+using System.Collections;
 using UnityEngine;
 public class LobbedProjectile : Projectile {
-    public AnimationCurve arc;
-    private Vector3 _startPos;
-    public float timer;
+    
+    public AnimationCurve xCurve, yCurve;
+    private Vector3 _startPosition;
+    private Rigidbody2D _thisRigidBody;
+    private float _timeElapsed;
+    private bool _awake;
 
-    void Start() {
-        _startPos = transform.position;
+    private void Awake() {
+        _thisRigidBody = GetComponent<Rigidbody2D>();
     }
 
-    void Awake() {
-        timer = 0;
-    }
-    void Update() {
-        timer += Time.deltaTime;
-        Vector3 pos = Vector3.Lerp(_startPos, targetPosition, timer);
-        pos.y += arc.Evaluate(timer);
-        transform.position = pos;
+    private void Update() {
+        MoveProjectile();
     }
 
     public override void MoveProjectile() {
-        Debug.Log("poop");
+
+        if (!_awake) {
+            _awake = true;
+            _timeElapsed = 0;
+            _startPosition = transform.position;
+        }
+        else {
+            _timeElapsed += Time.deltaTime;
+
+            _thisRigidBody.MovePosition(new Vector3(
+                _startPosition.x + xCurve.Evaluate(_timeElapsed / 2),
+                targetPosition.y + yCurve.Evaluate(_timeElapsed / 2), 
+                0));
+        }
     }
 }
