@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8196976304055001296}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: NanoBotsImpact
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8196976304055001296
 Transform:
   m_ObjectHideFlags: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3187476036181379334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3499144, y: 0.5693657, z: -0.015472779}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -39,6 +39,76 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8196976304055001296}
     m_Modifications:
+    - target: {fileID: 7849839523078094102, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849839523078094102, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849839523078094102, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1603220759
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849839523078094102, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849839523078147862, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849839523078147862, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849839523078147862, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1603220759
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849839523078147862, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849839523078190718, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849839523078190718, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849839523078190718, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1603220759
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849839523078190718, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849839523079534948, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849839523079534948, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7849839523093798870, guid: f7ced6c1d985fb644b225d8032487705,
         type: 3}
       propertyPath: m_RootOrder
@@ -47,12 +117,12 @@ PrefabInstance:
     - target: {fileID: 7849839523093798870, guid: f7ced6c1d985fb644b225d8032487705,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.893033
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7849839523093798870, guid: f7ced6c1d985fb644b225d8032487705,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.6145008
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7849839523093798870, guid: f7ced6c1d985fb644b225d8032487705,
         type: 3}
@@ -98,6 +168,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnergyNovaMuzzleSmallPink
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849839523093856864, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849839523093856864, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: m_TagString
+      value: FX
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849839523094018550, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849839523094018550, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: m_TagString
+      value: FX
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849839523094031332, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849839523094031332, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: m_TagString
+      value: FX
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849839523094054410, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849839523094054410, guid: f7ced6c1d985fb644b225d8032487705,
+        type: 3}
+      propertyPath: m_TagString
+      value: FX
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7ced6c1d985fb644b225d8032487705, type: 3}

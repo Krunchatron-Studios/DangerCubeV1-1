@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using Interfaces;
 using Managers;
 using UnityEngine;
@@ -12,7 +10,7 @@ public class Projectile : MonoBehaviour {
 	public Rigidbody2D projectileRb2D;
 	public Vector3 targetPosition;
 	public Vector3 direction;
-	
+	public GameObject impact;
 
 	private void Awake() {
 		damage = weapon.weaponDamage;
@@ -30,23 +28,22 @@ public class Projectile : MonoBehaviour {
 		projectileRb2D.velocity = direction * projectileVelocity;
 	}
 	public virtual void ResolveProjectile(Collider2D other) {
-		GameObject impact = weapon.impactPool.GetPooledGameObject();
-		impact.SetActive(true);
-		impact.transform.position = transform.position;
-		
 		if (other.CompareTag("Enemy")) {
+			
 			IHurtThingsInterface hit = other.GetComponent<IHurtThingsInterface>();
 			hit.TakeDamage(damage, weapon.damageType);
 			MMFloatingTextSpawnEvent.Trigger(0, other.attachedRigidbody.transform.position, 
 				damage.ToString(), Vector3.up, .2f);
 			BloodSplash(other);
 			gameObject.SetActive(false);
+			
 		}
 		if (other.CompareTag("Obstacle")) {
 			ISmashThingsInterface hit = other.GetComponent<ISmashThingsInterface>();
 			// Debug.Log($"Damage: {damage}");
 			hit.DamageStructure(damage, weapon.damageType, other.transform.position);
 			gameObject.SetActive(false);
+			TriggerImpact(impact);
 		}
 		if (other.CompareTag("Wall")) {
 			gameObject.SetActive(false);
@@ -58,4 +55,10 @@ public class Projectile : MonoBehaviour {
 		bloodSplash.SetActive(true);
 		bloodSplash.transform.position = other.transform.position;
 	}
+
+	public void TriggerImpact(GameObject impact) {
+		impact.SetActive(true);
+		impact.transform.position = transform.position;
+	}
+
 }
