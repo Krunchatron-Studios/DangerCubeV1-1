@@ -28,7 +28,10 @@ public class BurstFireWeapon : ProjectileWeapon  {
 	}
 
 	public override void FireWeapon(Vector3 firePoint, Vector3 targetPosition) {
-
+		GameObject muzzleFlash = muzzleFlashPool.GetPooledGameObject();
+		Debug.Log($"flash: {muzzleFlash.name}");
+		muzzleFlash.SetActive(true);
+		muzzleFlash.transform.position = transform.position;
 		audioSource.Play();
 		GameObject spawnedBullet = objectPooler.GetPooledGameObject();
 		Projectile bullet = spawnedBullet.GetComponent<Projectile>();

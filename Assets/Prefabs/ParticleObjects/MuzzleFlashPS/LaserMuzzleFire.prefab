@@ -9631,7 +9631,6 @@ GameObject:
   - component: {fileID: 1855075546965500707}
   - component: {fileID: 1855075546980772273}
   - component: {fileID: 1855075546981073627}
-  - component: {fileID: -3043313191025037971}
   m_Layer: 26
   m_Name: LaserMuzzleFire
   m_TagString: FX
@@ -14469,17 +14468,3 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &-3043313191025037971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855075546965395947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f13474093d5e96142b32136ddb5a8a14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DestroyParent: 0
-  DestroyDelay: 0
