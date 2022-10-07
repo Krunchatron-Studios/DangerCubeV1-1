@@ -248,7 +248,7 @@ MonoBehaviour:
   upgradeName: Cluster Cannon
   upgradeTier: Major
   upgradeType: Silicate
-  upgradeSprite: {fileID: 905496151, guid: 0d35da58c43902c4e88dfaf59823586a, type: 3}
+  upgradeSprite: {fileID: -1304725439, guid: d694fd4c39f85ef41b48f0e43c7bfbe0, type: 3}
   description: it shoots
   audioSource: {fileID: 3527016346985065115}
   upgradeRange: 6
@@ -268,8 +268,11 @@ MonoBehaviour:
   enemyTarget: {x: 0, y: 0}
   targetingSys: {fileID: 5780026266065048204}
   projectileScale: {x: 0, y: 0}
+  doBulletsDecay: 0
+  decayTimer: 0
   canFire: 0
   nextFire: 0
+  muzzleFlashPool: {fileID: 0}
 --- !u!212 &935498610684718217
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -311,7 +314,7 @@ SpriteRenderer:
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
   m_SortingOrder: 3
-  m_Sprite: {fileID: 905496151, guid: 0d35da58c43902c4e88dfaf59823586a, type: 3}
+  m_Sprite: {fileID: -1304725439, guid: d694fd4c39f85ef41b48f0e43c7bfbe0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
