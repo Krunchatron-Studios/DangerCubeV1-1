@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7542884385270234193}
   - component: {fileID: 4208378019257486495}
   - component: {fileID: 1230525254814301503}
+  - component: {fileID: 3080916413927687503}
   m_Layer: 8
   m_Name: MineSlayer
   m_TagString: Weapon
@@ -53,7 +54,7 @@ MonoBehaviour:
   upgradeName: MineSlayer
   upgradeTier: Major
   upgradeType: Metal
-  upgradeSprite: {fileID: 1713385007, guid: 88e011cc3bff5b7419b617c187c16014, type: 3}
+  upgradeSprite: {fileID: -841274553, guid: 513b7f6f682355b41b9cdb213b8e94da, type: 3}
   description: Mind the mines!
   audioSource: {fileID: 7542884385270234193}
   upgradeRange: 0
@@ -69,8 +70,11 @@ MonoBehaviour:
   enemyTarget: {x: 0, y: 0}
   targetingSys: {fileID: 2322803377979742145}
   projectileScale: {x: 0, y: 0}
+  doBulletsDecay: 0
+  decayTimer: 0
   canFire: 0
   nextFire: 0
+  muzzleFlashPool: {fileID: 0}
 --- !u!82 &7542884385270234193
 AudioSource:
   m_ObjectHideFlags: 0
@@ -227,17 +231,35 @@ SpriteRenderer:
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 88e011cc3bff5b7419b617c187c16014, type: 3}
+  m_Sprite: {fileID: -841274553, guid: 513b7f6f682355b41b9cdb213b8e94da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.5625, y: 0.5625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3080916413927687503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591021788885236222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7277539b95c0d45895792ecc99ce66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MutualizeWaitingPools: 0
+  NestWaitingPool: 1
+  NestUnderThis: 0
+  GameObjectToPool: {fileID: 0}
+  PoolSize: 20
+  PoolCanExpand: 1
 --- !u!1001 &292574207626431749
 PrefabInstance:
   m_ObjectHideFlags: 0
