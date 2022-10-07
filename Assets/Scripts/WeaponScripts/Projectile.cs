@@ -28,6 +28,10 @@ public class Projectile : MonoBehaviour {
 		projectileRb2D.velocity = direction * projectileVelocity;
 	}
 	public virtual void ResolveProjectile(Collider2D other) {
+		GameObject impact = weapon.impactPool.GetPooledGameObject();
+		impact.SetActive(true);
+		impact.transform.position = transform.position;
+		
 		if (other.CompareTag("Enemy")) {
 			
 			IHurtThingsInterface hit = other.GetComponent<IHurtThingsInterface>();
