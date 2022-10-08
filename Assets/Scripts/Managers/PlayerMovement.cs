@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 namespace Managers {
     public class PlayerMovement : MonoBehaviour {
     
@@ -17,10 +18,14 @@ namespace Managers {
             playerRb2D.velocity = moveInput * moveSpeed;
             FlipSprite();
         }
-        void OnMove(InputValue value) {
+
+        private void OnMove(InputValue value) {
             moveInput = value.Get<Vector2>();
+            Debug.Log($"move input: {moveInput}");
+            playerRb2D.velocity = moveInput * moveSpeed;
         }
         void FlipSprite() {
+            Debug.Log($"move input: {moveInput}");
             bool playerHasHorizontalSpeed = Mathf.Abs(playerRb2D.velocity.x) > Mathf.Epsilon;
 
             if(playerHasHorizontalSpeed) {

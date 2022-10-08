@@ -37,14 +37,12 @@ public class Projectile : MonoBehaviour {
 				damage.ToString(), Vector3.up, .2f);
 			BloodSplash(other);
 			gameObject.SetActive(false);
-			
 		}
 		if (other.CompareTag("Obstacle")) {
 			ISmashThingsInterface hit = other.GetComponent<ISmashThingsInterface>();
 			// Debug.Log($"Damage: {damage}");
 			hit.DamageStructure(damage, weapon.damageType, other.transform.position);
 			gameObject.SetActive(false);
-			TriggerImpact(impact);
 		}
 		if (other.CompareTag("Wall")) {
 			gameObject.SetActive(false);
@@ -56,10 +54,4 @@ public class Projectile : MonoBehaviour {
 		bloodSplash.SetActive(true);
 		bloodSplash.transform.position = other.transform.position;
 	}
-
-	public void TriggerImpact(GameObject impact) {
-		impact.SetActive(true);
-		impact.transform.position = transform.position;
-	}
-
 }

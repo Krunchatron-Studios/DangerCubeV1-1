@@ -25,6 +25,10 @@ public class DeathRay : Weapon {
 		if (Keyboard.current.eKey.wasPressedThisFrame) {
 			FireLaser();
 		}
+
+		if (Gamepad.current.rightTrigger.wasPressedThisFrame) {
+			FireLaser();
+		}
 		ResolveDeathRay();
 	}
 	public void FireLaser() {

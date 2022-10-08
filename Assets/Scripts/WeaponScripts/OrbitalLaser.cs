@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class OrbitalLaser : ProjectileWeapon {
     private Transform _playerPosition;
-    // public GameObject explosion;
-    
+   
     private void Update() {
         CanFireTimer();
     }
@@ -22,6 +21,10 @@ public class OrbitalLaser : ProjectileWeapon {
         }
     }
     public override void FireWeapon(Vector3 firePoint, Vector3 targetPosition) {
+        audioSource.Play();
+        GameObject signalToSpaceMuzzle = muzzleFlashPool.GetPooledGameObject();
+        signalToSpaceMuzzle.transform.position = firePoint;
+        signalToSpaceMuzzle.SetActive(true);
         GameObject spawnedBullet = objectPooler.GetPooledGameObject();
         Projectile bullet = spawnedBullet.GetComponent<Projectile>();
         bullet.gameObject.SetActive(true);
@@ -42,9 +45,7 @@ public class OrbitalLaser : ProjectileWeapon {
         
         explosion.transform.position = enemyTarget;
         StartCoroutine(ExplodeCo(explosion));
-        
-        audioSource.Play();
-        
+
         float time = 0;
         while (time < 1) {
             bullet.transform.localScale = new Vector3(Mathf.Lerp(2, 0, time / 1), distance + 5, 0);
@@ -65,10 +66,10 @@ public class OrbitalLaser : ProjectileWeapon {
         } 
         explosion.gameObject.SetActive(false);
     }
-
     public void testFunc() {
         FireWeapon(new Vector3(0, 0, 0), new Vector3(0, 0 , 0));
     }
+
 }
 
 

@@ -60,7 +60,6 @@ public class ProjectileWeapon : Weapon {
 			canFire = true;
 			for (int i = 0; i < firingPoints.Count; i++) {
 				if (firingPoints[i].activeInHierarchy) {
-
 					FireWeapon(firingPoints[i].transform.position, enemyTarget);
 				}
 			}
