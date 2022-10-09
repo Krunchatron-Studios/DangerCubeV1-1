@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1926705737414607480}
   - component: {fileID: 1926705737399478646}
   - component: {fileID: 1926705737399515858}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4812,7 +4812,7 @@ GameObject:
   - component: {fileID: 1926705737414652740}
   - component: {fileID: 1926705737399438032}
   - component: {fileID: 1926705737400678264}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9631,9 +9631,9 @@ GameObject:
   - component: {fileID: 1926705737414613444}
   - component: {fileID: 1926705737399484858}
   - component: {fileID: 1926705737400645536}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: BombFuse
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14330,7 +14330,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: f49f152fbc313b14b8d4b82329b10a1c, type: 2}
@@ -14351,8 +14351,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -598322915
-  m_SortingLayer: -2
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_RenderMode: 1
   m_MeshDistribution: 0
@@ -14395,7 +14395,7 @@ GameObject:
   - component: {fileID: 1926705737414668214}
   - component: {fileID: 1926705737399418544}
   - component: {fileID: 1926705737400637000}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,13 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8056708940587382971}
+  - component: {fileID: 5760746848431094081}
   m_Layer: 26
   m_Name: MineSlayerMuzzle 1
   m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8056708940587382971
 Transform:
   m_ObjectHideFlags: 0
@@ -32,6 +33,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5760746848431094081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8056708940587382968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14011ec279e679e4d9cb7ab84e7400d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTilDeactivation: 5
+  thisParent: {fileID: 8056708940587382968}
 --- !u!1001 &2021418779953978286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118,6 +133,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MineSlayerMuzzle 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401197669550043596, guid: 11104bdf391a979499a58e2ba2042663,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7403503586967972704, guid: 11104bdf391a979499a58e2ba2042663,
         type: 3}

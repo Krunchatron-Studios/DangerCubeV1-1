@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8814959584174878806}
   - component: {fileID: 8684920603352080606}
   - component: {fileID: 8683328911829860266}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: DustCloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4821,9 +4821,10 @@ GameObject:
   - component: {fileID: 8814777705386673214}
   - component: {fileID: 8684254214299964466}
   - component: {fileID: 8683234044877406892}
-  m_Layer: 0
+  - component: {fileID: -2785562162432509769}
+  m_Layer: 26
   m_Name: GlassShatter
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9639,3 +9640,17 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-2785562162432509769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8809366814323677982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14011ec279e679e4d9cb7ab84e7400d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTilDeactivation: 1
+  thisParent: {fileID: 8809366814323677982}

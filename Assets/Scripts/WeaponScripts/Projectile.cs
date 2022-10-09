@@ -41,10 +41,8 @@ public class Projectile : MonoBehaviour {
 		}
 		if (other.CompareTag("Obstacle")) {
 			ISmashThingsInterface hit = other.GetComponent<ISmashThingsInterface>();
-			// Debug.Log($"Damage: {damage}");
 			hit.DamageStructure(damage, weapon.damageType, other.transform.position);
 			gameObject.SetActive(false);
-			TriggerImpact(impact);
 		}
 		if (other.CompareTag("Wall")) {
 			gameObject.SetActive(false);

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3925115222009318109}
   - component: {fileID: 3803837096791873569}
   - component: {fileID: 3798187985954697341}
-  m_Layer: 22
+  m_Layer: 26
   m_Name: flash-white
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4684,7 +4684,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -598322915
-  m_SortingLayer: -2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -4727,7 +4727,7 @@ GameObject:
   - component: {fileID: 3920282050126830893}
   - component: {fileID: 3798707498079390845}
   - component: {fileID: 3797365033456352693}
-  m_Layer: 22
+  m_Layer: 26
   m_Name: particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9337,7 +9337,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -598322915
-  m_SortingLayer: -2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_RenderMode: 1
   m_MeshDistribution: 0
@@ -9381,9 +9381,9 @@ GameObject:
   - component: {fileID: 3798388802561805915}
   - component: {fileID: 3796591956067695617}
   - component: {fileID: 199847697038769343}
-  m_Layer: 22
+  m_Layer: 26
   m_Name: hit-3-LOOP
-  m_TagString: Lighting
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14080,7 +14080,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: e7d7171d7afaa0e40bd862f322df4117, type: 2}
@@ -14101,8 +14101,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -598322915
-  m_SortingLayer: -2
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -14206,7 +14206,7 @@ GameObject:
   - component: {fileID: 3925206216832799113}
   - component: {fileID: 3798383378622939043}
   - component: {fileID: 3797954775110578221}
-  m_Layer: 22
+  m_Layer: 26
   m_Name: flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18879,7 +18879,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -598322915
-  m_SortingLayer: -2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0

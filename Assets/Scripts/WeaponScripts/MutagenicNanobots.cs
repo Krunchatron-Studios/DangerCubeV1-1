@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MutagenicNanobots : Weapon {
+public class MutagenicNanobots : ProjectileWeapon {
     public int maxNanos;
     public int currentNanos;
     private GameObject _playerPosition;
@@ -9,7 +9,7 @@ public class MutagenicNanobots : Weapon {
 
     void Start() {
         currentNanos = 0;
-        InvokeRepeating(nameof(SpawnNanos), 2f, attackSpeed);
+        InvokeRepeating(nameof(SpawnNanos), upgradeRange, attackSpeed);
     }
     void FixedUpdate() {
         _playerPosition = GameObject.FindWithTag("Player");
@@ -17,16 +17,14 @@ public class MutagenicNanobots : Weapon {
 
     private void SpawnNanos() {
         if (currentNanos < maxNanos) {
+            bool nanoFound = false;
             int temp = currentNanos;
-            int index = 0;
-            while (currentNanos != temp + 1) {
-                if (nanoBots[index].gameObject.activeInHierarchy == false) {
+            for(int i = 0; i < nanoBots.Length; i++) {
+                if (!nanoBots[i].gameObject.activeInHierarchy && !nanoFound) {
                     transform.position = new Vector3(0, distance, 0) + _playerPosition.transform.position;
-                    nanoBots[index].gameObject.SetActive(true);
+                    nanoBots[i].gameObject.SetActive(true);
+                    nanoFound = true;
                     currentNanos++;
-                }
-                else {
-                    index++;
                 }
             }
         }

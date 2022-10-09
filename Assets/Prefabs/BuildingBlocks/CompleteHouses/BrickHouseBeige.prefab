@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4573161182768575967}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: BuildingDamage
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 3646279914952568753}
   - component: {fileID: 3646279914952568754}
   - component: {fileID: 3646279914952568755}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: Small Window Front _0
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -87,10 +87,10 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 3646279915086521697}
   - component: {fileID: 3646279915086521696}
   - component: {fileID: 926322013}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: Base_0
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -251,10 +251,10 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -274,7 +274,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -487104812, guid: 7e53a6637979d0c49bf645a184bf0435, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -398,10 +398,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2.3948622, y: 1.0169318}
-      - {x: -1.5397801, y: 1.0259113}
-      - {x: -1.9598684, y: 0.6309777}
-      - {x: -2.3644447, y: 0.23873001}
+    - - {x: 1.3767962, y: -0.6280484}
+      - {x: -1.6201539, y: -0.640502}
+      - {x: -1.8312702, y: -0.8264641}
+      - {x: -2.0322332, y: -1.0204568}
       - {x: -2.375023, y: -1.34375}
       - {x: 1.7483788, y: -1.3556714}
       - {x: 2.3108788, y: -0.73952514}
@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 3646279916441717763}
   - component: {fileID: 3646279916441717764}
   - component: {fileID: 3646279916441717765}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: Door_0
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -458,10 +458,10 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 8536748995530529157}
   - component: {fileID: 8536748995530529156}
   - component: {fileID: 3646279916850022644}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: BrickHouseBeige
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -723,7 +723,7 @@ GameObject:
   - component: {fileID: 3646279916092221138}
   - component: {fileID: 3646279916092221139}
   - component: {fileID: 2479378180930970836}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: Roof_0
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -762,10 +762,10 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -785,7 +785,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 356149937, guid: 7e53a6637979d0c49bf645a184bf0435, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -892,7 +892,7 @@ GameObject:
   - component: {fileID: 3646279915960801636}
   - component: {fileID: 3646279915960801637}
   - component: {fileID: 3646279915960801638}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: Big Window Front_0
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -931,10 +931,10 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1055,7 +1055,7 @@ GameObject:
   - component: {fileID: 3646279916125084191}
   - component: {fileID: 3646279916125084176}
   - component: {fileID: 3646279916125084177}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: Side Window_0
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -1094,10 +1094,10 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1117,7 +1117,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1387632862, guid: 7e53a6637979d0c49bf645a184bf0435, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1221,6 +1221,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SmokeDark (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117972287948672215, guid: bceb2c3556447c54db23c75ed1547703,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 9117972287949110115, guid: bceb2c3556447c54db23c75ed1547703,
         type: 3}
@@ -1349,12 +1354,32 @@ PrefabInstance:
     - target: {fileID: 2613880365699835324, guid: 5fba2bc601f498342851a31416413c6c,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 2613880365699835324, guid: 5fba2bc601f498342851a31416413c6c,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121953456464821185, guid: 5fba2bc601f498342851a31416413c6c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122176040610827779, guid: 5fba2bc601f498342851a31416413c6c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122547637449397095, guid: 5fba2bc601f498342851a31416413c6c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122676241256964739, guid: 5fba2bc601f498342851a31416413c6c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 4124657592382051871, guid: 5fba2bc601f498342851a31416413c6c,
         type: 3}
@@ -1396,6 +1421,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SmokeCurlyObj
+      objectReference: {fileID: 0}
+    - target: {fileID: 623607600825634866, guid: badee77a2593b464aba8d0896acbd2e2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 623607600825634866, guid: badee77a2593b464aba8d0896acbd2e2,
         type: 3}
@@ -1456,6 +1486,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7813765958758698947, guid: badee77a2593b464aba8d0896acbd2e2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 7813765958758934577, guid: badee77a2593b464aba8d0896acbd2e2,
         type: 3}
@@ -1551,7 +1586,7 @@ PrefabInstance:
     - target: {fileID: 1245104144019035945, guid: b66120c7bed3b6a42b65ba2748a16559,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 1245104144019035945, guid: b66120c7bed3b6a42b65ba2748a16559,
         type: 3}
@@ -1571,7 +1606,7 @@ PrefabInstance:
     - target: {fileID: 8173561177800299348, guid: b66120c7bed3b6a42b65ba2748a16559,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 8173561177813820440, guid: b66120c7bed3b6a42b65ba2748a16559,
         type: 3}
@@ -1607,7 +1642,7 @@ PrefabInstance:
     - target: {fileID: 906546425867221936, guid: 8dea665d5d7a7e048972bcd0dc81c01d,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 906546425867221936, guid: 8dea665d5d7a7e048972bcd0dc81c01d,
         type: 3}
@@ -1632,22 +1667,22 @@ PrefabInstance:
     - target: {fileID: 3427355489989173123, guid: 8dea665d5d7a7e048972bcd0dc81c01d,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 3427434729744322549, guid: 8dea665d5d7a7e048972bcd0dc81c01d,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 3427653267833930437, guid: 8dea665d5d7a7e048972bcd0dc81c01d,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 3427833163120599663, guid: 8dea665d5d7a7e048972bcd0dc81c01d,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 3430352107610978195, guid: 8dea665d5d7a7e048972bcd0dc81c01d,
         type: 3}

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9136337499459341165}
   - component: {fileID: 9136337499459341167}
   - component: {fileID: 2556608108736421051}
+  - component: {fileID: 929529310930059247}
   m_Layer: 18
   m_Name: PlasmaSlug
   m_TagString: Projectile
@@ -195,6 +196,20 @@ MonoBehaviour:
           AmplitudeX: 0
           AmplitudeY: 0
           AmplitudeZ: 0
+--- !u!114 &929529310930059247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4837917352924149430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14011ec279e679e4d9cb7ab84e7400d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTilDeactivation: 1
+  thisParent: {fileID: 0}
 --- !u!1001 &2131728482
 PrefabInstance:
   m_ObjectHideFlags: 0

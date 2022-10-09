@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6629972797313713113}
   - component: {fileID: 7328967699236806432}
   - component: {fileID: 6431596845621197430}
+  - component: {fileID: -504362028065162896}
   m_Layer: 26
   m_Name: LaserSwirlContainer
   m_TagString: FX
@@ -105,6 +106,20 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
   impact: {fileID: 0}
+--- !u!114 &-504362028065162896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3479334326339621571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14011ec279e679e4d9cb7ab84e7400d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTilDeactivation: 1
+  thisParent: {fileID: 3479334326339621571}
 --- !u!1001 &4997633716411395643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112,75 +127,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3190780071921715348}
     m_Modifications:
-    - target: {fileID: 6039074600016281703, guid: 3774de1abe1e25d4fa95f0ea0ea9769a,
-        type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039074600016281703, guid: 3774de1abe1e25d4fa95f0ea0ea9769a,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039074600016367185, guid: 3774de1abe1e25d4fa95f0ea0ea9769a,
-        type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039074600016367185, guid: 3774de1abe1e25d4fa95f0ea0ea9769a,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039074600016368393, guid: 3774de1abe1e25d4fa95f0ea0ea9769a,
-        type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039074600016368393, guid: 3774de1abe1e25d4fa95f0ea0ea9769a,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039074600016368393, guid: 3774de1abe1e25d4fa95f0ea0ea9769a,
-        type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039074600016396917, guid: 3774de1abe1e25d4fa95f0ea0ea9769a,
-        type: 3}
-      propertyPath: m_RenderingLayerMask
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039074600016447373, guid: 3774de1abe1e25d4fa95f0ea0ea9769a,
-        type: 3}
-      propertyPath: m_RenderingLayerMask
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039074600016450475, guid: 3774de1abe1e25d4fa95f0ea0ea9769a,
-        type: 3}
-      propertyPath: m_RenderingLayerMask
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039074600034375873, guid: 3774de1abe1e25d4fa95f0ea0ea9769a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 26
-      objectReference: {fileID: 0}
     - target: {fileID: 6039074600034411127, guid: 3774de1abe1e25d4fa95f0ea0ea9769a,
         type: 3}
       propertyPath: m_Name
       value: LaserSwirl
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039074600034411127, guid: 3774de1abe1e25d4fa95f0ea0ea9769a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 26
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039074600034424327, guid: 3774de1abe1e25d4fa95f0ea0ea9769a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 6039074600034663173, guid: 3774de1abe1e25d4fa95f0ea0ea9769a,
         type: 3}

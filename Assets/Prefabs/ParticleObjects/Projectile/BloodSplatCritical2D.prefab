@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2512025392851868109}
   - component: {fileID: 2512025392833606053}
   - component: {fileID: 2512025392832070359}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: BigGore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4822,9 +4822,9 @@ GameObject:
   - component: {fileID: 2512025392851909717}
   - component: {fileID: 2512025392833586683}
   - component: {fileID: 2512025392833624801}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: BloodSplatCritical2D
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9568,7 +9568,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 150aee38b5d848b42b75593618992bb7, type: 2}
@@ -9589,8 +9589,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -598322915
-  m_SortingLayer: 0
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_RenderMode: 1
   m_MeshDistribution: 0
@@ -9633,7 +9633,7 @@ GameObject:
   - component: {fileID: 2512025392851905883}
   - component: {fileID: 2512025392833590883}
   - component: {fileID: 2512025392832094139}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}

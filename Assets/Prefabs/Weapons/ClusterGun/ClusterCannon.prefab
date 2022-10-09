@@ -268,8 +268,8 @@ MonoBehaviour:
   enemyTarget: {x: 0, y: 0}
   targetingSys: {fileID: 5780026266065048204}
   projectileScale: {x: 0, y: 0}
-  doBulletsDecay: 0
-  decayTimer: 0
+  doBulletsDecay: 1
+  decayTimer: 3
   canFire: 0
   nextFire: 0
   muzzleFlashPool: {fileID: 0}

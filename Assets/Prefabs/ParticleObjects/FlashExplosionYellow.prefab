@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2882046507504652539}
   - component: {fileID: 2688606198140198197}
   - component: {fileID: 2680500195689042057}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4803,7 +4803,7 @@ GameObject:
   - component: {fileID: 2873389337870505137}
   - component: {fileID: 2688417081201948607}
   - component: {fileID: 2681420056966233189}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9613,7 +9613,7 @@ GameObject:
   - component: {fileID: 2873619853428230069}
   - component: {fileID: 2679980084559924331}
   - component: {fileID: 2681166320233959179}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Rays
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14423,7 +14423,7 @@ GameObject:
   - component: {fileID: 2873824586800382139}
   - component: {fileID: 2680005437548292819}
   - component: {fileID: 2681434008506629479}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19296,7 +19296,7 @@ GameObject:
   - component: {fileID: 2873495305271668477}
   - component: {fileID: 2680119970416840589}
   - component: {fileID: 2681206911804259453}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24106,9 +24106,10 @@ GameObject:
   - component: {fileID: 2873392835778771701}
   - component: {fileID: 2680276449568676127}
   - component: {fileID: 2680773626197653667}
-  m_Layer: 0
+  - component: {fileID: 2922799272326113223}
+  m_Layer: 26
   m_Name: FlashExplosionYellow
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28874,7 +28875,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a976a44ca501e564bb2adee42f573b4d, type: 2}
@@ -28928,3 +28929,17 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &2922799272326113223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2879519766675635537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14011ec279e679e4d9cb7ab84e7400d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTilDeactivation: 1
+  thisParent: {fileID: 2879519766675635537}

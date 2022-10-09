@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6125336076469506497}
   - component: {fileID: 2064736477681437484}
   - component: {fileID: 7927406590222654580}
+  - component: {fileID: 8749600239647788771}
   m_Layer: 26
   m_Name: ClusterShell 1
   m_TagString: Projectile
@@ -53,7 +54,7 @@ MonoBehaviour:
   projectileRb2D: {fileID: 2064736477681437484}
   targetPosition: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
-  impactPool: {fileID: 0}
+  impact: {fileID: 0}
 --- !u!50 &2064736477681437484
 Rigidbody2D:
   serializedVersion: 4
@@ -91,6 +92,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.15
+--- !u!114 &8749600239647788771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304540900230118644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14011ec279e679e4d9cb7ab84e7400d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTilDeactivation: 1
 --- !u!1001 &5635989713507637167
 PrefabInstance:
   m_ObjectHideFlags: 0

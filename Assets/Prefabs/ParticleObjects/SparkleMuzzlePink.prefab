@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8964669063248743966}
   - component: {fileID: 9131270069872743852}
   - component: {fileID: 9132098952911135638}
-  m_Layer: 8
+  m_Layer: 26
   m_Name: Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4893,7 +4893,8 @@ GameObject:
   - component: {fileID: 8964672059446979684}
   - component: {fileID: 9131724069532078964}
   - component: {fileID: 9131981406668060914}
-  m_Layer: 8
+  - component: {fileID: -5079918722529547532}
+  m_Layer: 26
   m_Name: SparkleMuzzlePink
   m_TagString: FX
   m_Icon: {fileID: 0}
@@ -9712,6 +9713,20 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-5079918722529547532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8970782936923921532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14011ec279e679e4d9cb7ab84e7400d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTilDeactivation: 1
+  thisParent: {fileID: 8970782936923921532}
 --- !u!1001 &665816832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9794,6 +9809,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpinPortalRed
       objectReference: {fileID: 0}
+    - target: {fileID: 813075353220030869, guid: 8c15e8d43f7ff6b40bff28cac832e4db,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 813075353238003331, guid: 8c15e8d43f7ff6b40bff28cac832e4db,
         type: 3}
       propertyPath: m_SortingFudge
@@ -9843,6 +9863,21 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 10.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 813075353240068695, guid: 8c15e8d43f7ff6b40bff28cac832e4db,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 813075353240068695, guid: 8c15e8d43f7ff6b40bff28cac832e4db,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 47421343
+      objectReference: {fileID: 0}
+    - target: {fileID: 813075353240068695, guid: 8c15e8d43f7ff6b40bff28cac832e4db,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 813075353220126181, guid: 8c15e8d43f7ff6b40bff28cac832e4db, type: 3}

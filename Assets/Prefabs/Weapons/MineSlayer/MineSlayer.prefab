@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6996422098028261378}
   - component: {fileID: 4255465756535646841}
+  - component: {fileID: 1230525254814301503}
   - component: {fileID: 7542884385270234193}
   - component: {fileID: 4208378019257486495}
-  - component: {fileID: 1230525254814301503}
   - component: {fileID: 3080916413927687503}
   m_Layer: 8
   m_Name: MineSlayer
@@ -70,11 +70,63 @@ MonoBehaviour:
   enemyTarget: {x: 0, y: 0}
   targetingSys: {fileID: 2322803377979742145}
   projectileScale: {x: 0, y: 0}
-  doBulletsDecay: 0
-  decayTimer: 0
+  doBulletsDecay: 1
+  decayTimer: 3
   canFire: 0
   nextFire: 0
   muzzleFlashPool: {fileID: 0}
+--- !u!212 &1230525254814301503
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591021788885236222}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
+  m_SortingOrder: 3
+  m_Sprite: {fileID: -841274553, guid: 513b7f6f682355b41b9cdb213b8e94da, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.5625, y: 0.5625}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!82 &7542884385270234193
 AudioSource:
   m_ObjectHideFlags: 0
@@ -190,58 +242,6 @@ MonoBehaviour:
     type: 3}
   PoolSize: 20
   PoolCanExpand: 1
---- !u!212 &1230525254814301503
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 591021788885236222}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1603220759
-  m_SortingLayer: 3
-  m_SortingOrder: 3
-  m_Sprite: {fileID: -841274553, guid: 513b7f6f682355b41b9cdb213b8e94da, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.5625, y: 0.5625}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!114 &3080916413927687503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,6 +272,11 @@ PrefabInstance:
       propertyPath: weapon
       value: 
       objectReference: {fileID: 4255465756535646841}
+    - target: {fileID: 2608481302110575300, guid: 12602ce919ca01443b18db03fe04235a,
+        type: 3}
+      propertyPath: firePoint1
+      value: 
+      objectReference: {fileID: 2416134994988136928}
     - target: {fileID: 2608481302110575306, guid: 12602ce919ca01443b18db03fe04235a,
         type: 3}
       propertyPath: m_Name
@@ -426,3 +431,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e4a2809856898a4aa1a086c177c3bf3, type: 3}
+--- !u!1 &2416134994988136928 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4461223465438186822, guid: 5e4a2809856898a4aa1a086c177c3bf3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2048758365676172454}
+  m_PrefabAsset: {fileID: 0}

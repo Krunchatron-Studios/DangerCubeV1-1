@@ -14477,6 +14477,7 @@ GameObject:
   - component: {fileID: 3577137738295294014}
   - component: {fileID: 6924554324615839567}
   - component: {fileID: 4433984516510919854}
+  - component: {fileID: -476086675330978962}
   m_Layer: 26
   m_Name: StandardMuzzlePurple
   m_TagString: FX
@@ -19225,7 +19226,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: b99f15fb797486e49bf7d6db6f03609d, type: 2}
@@ -19279,3 +19280,17 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-476086675330978962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8073616915397261640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14011ec279e679e4d9cb7ab84e7400d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTilDeactivation: 1
+  thisParent: {fileID: 8073616915397261640}

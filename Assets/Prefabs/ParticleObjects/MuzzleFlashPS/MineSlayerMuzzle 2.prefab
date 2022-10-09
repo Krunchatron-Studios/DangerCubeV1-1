@@ -4803,13 +4803,14 @@ GameObject:
   - component: {fileID: 7403503586967972704}
   - component: {fileID: 7237665166956978960}
   - component: {fileID: 7239010487577416654}
+  - component: {fileID: -4449644189607691636}
   m_Layer: 26
   m_Name: MineSlayerMuzzle 2
   m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7403503586967972704
 Transform:
   m_ObjectHideFlags: 0
@@ -9612,3 +9613,17 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-4449644189607691636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7401197669550043596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14011ec279e679e4d9cb7ab84e7400d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTilDeactivation: 5
+  thisParent: {fileID: 7401197669550043596}

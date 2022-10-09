@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4219276634862138}
   - component: {fileID: 198744765369484028}
   - component: {fileID: 199193394606422630}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: SubTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4939,9 +4939,9 @@ GameObject:
   - component: {fileID: 4290322687740600}
   - component: {fileID: 198335520421428854}
   - component: {fileID: 199391431023727296}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Plexus
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9799,7 +9799,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a976a44ca501e564bb2adee42f573b4d, type: 2}
@@ -9820,8 +9820,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -9864,7 +9864,7 @@ GameObject:
   - component: {fileID: 4725794887622038}
   - component: {fileID: 198666591923496562}
   - component: {fileID: 199399433729606030}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: SubPlexus
   m_TagString: Untagged
   m_Icon: {fileID: 0}

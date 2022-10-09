@@ -142,6 +142,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 		if (currentIntegrity <= 0) {
 			thisCollider.enabled = !thisCollider.enabled;
 			spriteRenderer.sortingLayerName = "Ground";
+			spriteRenderer.sortingOrder = 1;
 		}
 	}
 }

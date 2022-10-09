@@ -9676,13 +9676,14 @@ GameObject:
   - component: {fileID: 7153713722589632972}
   - component: {fileID: 7031377681143077362}
   - component: {fileID: 7031027948223737868}
+  - component: {fileID: 2170200153058022180}
   m_Layer: 26
   m_Name: GrenadeMuzzleFire (2)
   m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7153713722589632972
 Transform:
   m_ObjectHideFlags: 0
@@ -14460,6 +14461,20 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &2170200153058022180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7157290591287497208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14011ec279e679e4d9cb7ab84e7400d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTilDeactivation: 1
+  thisParent: {fileID: 7157290591287497208}
 --- !u!1 &7157678382283323022
 GameObject:
   m_ObjectHideFlags: 0

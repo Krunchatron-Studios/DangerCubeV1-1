@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 813075353219750447}
   - component: {fileID: 813075353238040415}
   - component: {fileID: 813075353238003331}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: PortalGlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4781,7 +4781,7 @@ GameObject:
   - component: {fileID: 813075353219758481}
   - component: {fileID: 813075353238070711}
   - component: {fileID: 813075353240034879}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: PortalDust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9569,9 +9569,10 @@ GameObject:
   - component: {fileID: 813075353219663167}
   - component: {fileID: 813075353238087009}
   - component: {fileID: 813075353240068695}
-  m_Layer: 0
+  - component: {fileID: 5112078717503455323}
+  m_Layer: 26
   m_Name: SpinPortalRed
-  m_TagString: Untagged
+  m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14258,7 +14259,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 39486fb106e196144a2ccac41cb23718, type: 2}
@@ -14279,8 +14280,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 47421343
-  m_SortingLayer: 4
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -14312,3 +14313,17 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &5112078717503455323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813075353220030869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14011ec279e679e4d9cb7ab84e7400d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTilDeactivation: 1
+  thisParent: {fileID: 813075353220030869}

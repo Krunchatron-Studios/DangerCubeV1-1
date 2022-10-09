@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1497890194506849501}
   - component: {fileID: 62597376338906832}
   - component: {fileID: 5174434177772066147}
+  - component: {fileID: 2281588293688398645}
   m_Layer: 26
   m_Name: OrbitalBeamContainer
   m_TagString: FX
@@ -74,6 +75,20 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
   impact: {fileID: 0}
+--- !u!114 &2281588293688398645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495591728925842234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14011ec279e679e4d9cb7ab84e7400d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTilDeactivation: 1
+  thisParent: {fileID: 1495591728925842234}
 --- !u!1001 &4798199977749216037
 PrefabInstance:
   m_ObjectHideFlags: 0
