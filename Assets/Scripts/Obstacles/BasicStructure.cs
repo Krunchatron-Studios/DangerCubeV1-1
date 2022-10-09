@@ -14,7 +14,6 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	public Sprite stage1Dmg;
 	public Sprite stage2Dmg;
 	public Sprite stage3Dmg;
-	public bool stage1Crumble, stage2Crumble;
 	public float stage1Threshold = .9f;
 	public float stage2Threshold = .6f;
 	public float stage3Threshold = .3f;
@@ -25,6 +24,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	public float currentIntegrity;
 	public float percentDestroyed;
 	private bool _looted;
+	public bool renderUnderPlayer = false;
 	
 
 	private void Start() {
@@ -134,12 +134,12 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	public virtual void FinalCrumble() {
 		if (currentIntegrity <= 0.0f && !structureParent.stage2Crumble) {
 			SoundManager.sm.buildingCrumbleSounds[0].Play();
-			stage2Crumble = true;
+			structureParent.stage2Crumble = true;
 		}
 	}
 
 	public void RemoveCollider() {
-		if (currentIntegrity <= 0) {
+		if (currentIntegrity <= 0 && renderUnderPlayer) {
 			thisCollider.enabled = !thisCollider.enabled;
 			spriteRenderer.sortingLayerName = "Ground";
 			spriteRenderer.sortingOrder = 1;

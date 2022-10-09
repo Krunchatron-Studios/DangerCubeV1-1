@@ -23,6 +23,8 @@ namespace Managers {
             moveInput = value.Get<Vector2>();
             Debug.Log($"move input: {moveInput}");
             playerRb2D.velocity = moveInput * moveSpeed;
+            Debug.Log($"error?: {playerRb2D}");
+
         }
         void FlipSprite() {
             Debug.Log($"move input: {moveInput}");

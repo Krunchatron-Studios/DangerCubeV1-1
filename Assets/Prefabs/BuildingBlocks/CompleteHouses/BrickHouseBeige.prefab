@@ -1,5 +1,164 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &213687810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 213687811}
+  m_Layer: 26
+  m_Name: point1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &213687811
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213687810}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.016, y: -1.203, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1192501622}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1192501621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1192501622}
+  m_Layer: 26
+  m_Name: EscapePoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1192501622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192501621}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.1410446, y: 0.17364216, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1226188830}
+  - {fileID: 213687811}
+  - {fileID: 1958051879}
+  - {fileID: 2070850647}
+  m_Father: {fileID: 8536748995530529157}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1226188829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1226188830}
+  m_Layer: 26
+  m_Name: point1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1226188830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226188829}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.744, y: -1.888, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1192501622}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1958051878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1958051879}
+  m_Layer: 26
+  m_Name: point1 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1958051879
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958051878}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.712, y: 1.311, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1192501622}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2070850646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2070850647}
+  m_Layer: 26
+  m_Name: point1 (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2070850647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070850646}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.366, y: 1.381, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1192501622}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2043961117994024754
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,8 +301,6 @@ MonoBehaviour:
   stage1Dmg: {fileID: 835040325, guid: 7e53a6637979d0c49bf645a184bf0435, type: 3}
   stage2Dmg: {fileID: -397593183, guid: 7e53a6637979d0c49bf645a184bf0435, type: 3}
   stage3Dmg: {fileID: -397593183, guid: 7e53a6637979d0c49bf645a184bf0435, type: 3}
-  stage1Crumble: 0
-  stage2Crumble: 0
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3
@@ -151,6 +308,7 @@ MonoBehaviour:
   maxIntegrity: 20
   currentIntegrity: 20
   percentDestroyed: 0
+  renderUnderPlayer: 0
 --- !u!50 &3646279914952568754
 Rigidbody2D:
   serializedVersion: 4
@@ -306,8 +464,6 @@ MonoBehaviour:
   stage1Dmg: {fileID: 889936078, guid: 7e53a6637979d0c49bf645a184bf0435, type: 3}
   stage2Dmg: {fileID: -1077468826, guid: 7e53a6637979d0c49bf645a184bf0435, type: 3}
   stage3Dmg: {fileID: -1077468826, guid: 7e53a6637979d0c49bf645a184bf0435, type: 3}
-  stage1Crumble: 0
-  stage2Crumble: 0
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3
@@ -315,6 +471,7 @@ MonoBehaviour:
   maxIntegrity: 20
   currentIntegrity: 20
   percentDestroyed: 0
+  renderUnderPlayer: 0
 --- !u!50 &3646279915086521697
 Rigidbody2D:
   serializedVersion: 4
@@ -513,8 +670,6 @@ MonoBehaviour:
   stage1Dmg: {fileID: 1436879762, guid: 7e53a6637979d0c49bf645a184bf0435, type: 3}
   stage2Dmg: {fileID: -461054505, guid: 7e53a6637979d0c49bf645a184bf0435, type: 3}
   stage3Dmg: {fileID: -461054505, guid: 7e53a6637979d0c49bf645a184bf0435, type: 3}
-  stage1Crumble: 0
-  stage2Crumble: 0
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3
@@ -522,6 +677,7 @@ MonoBehaviour:
   maxIntegrity: 20
   currentIntegrity: 20
   percentDestroyed: 0
+  renderUnderPlayer: 0
 --- !u!50 &3646279916441717764
 Rigidbody2D:
   serializedVersion: 4
@@ -606,6 +762,7 @@ Transform:
   - {fileID: 8536748996155100011}
   - {fileID: 8536748994709831369}
   - {fileID: 4573161182768575967}
+  - {fileID: 1192501622}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -638,6 +795,11 @@ MonoBehaviour:
   - {fileID: 4715238228640739951}
   - {fileID: 986254223754159235}
   - {fileID: 6558671254547488763}
+  escapePoints:
+  - {fileID: 1226188829}
+  - {fileID: 213687810}
+  - {fileID: 1958051878}
+  - {fileID: 2070850646}
 --- !u!114 &3646279916850022644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -817,8 +979,6 @@ MonoBehaviour:
   stage1Dmg: {fileID: 1789760176, guid: 7e53a6637979d0c49bf645a184bf0435, type: 3}
   stage2Dmg: {fileID: -1728140059, guid: 7e53a6637979d0c49bf645a184bf0435, type: 3}
   stage3Dmg: {fileID: -1728140059, guid: 7e53a6637979d0c49bf645a184bf0435, type: 3}
-  stage1Crumble: 0
-  stage2Crumble: 0
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3
@@ -826,6 +986,7 @@ MonoBehaviour:
   maxIntegrity: 20
   currentIntegrity: 20
   percentDestroyed: 0
+  renderUnderPlayer: 0
 --- !u!50 &3646279916092221139
 Rigidbody2D:
   serializedVersion: 4
@@ -986,8 +1147,6 @@ MonoBehaviour:
   stage1Dmg: {fileID: -2135090359, guid: 7e53a6637979d0c49bf645a184bf0435, type: 3}
   stage2Dmg: {fileID: 1806465906, guid: 7e53a6637979d0c49bf645a184bf0435, type: 3}
   stage3Dmg: {fileID: 1806465906, guid: 7e53a6637979d0c49bf645a184bf0435, type: 3}
-  stage1Crumble: 0
-  stage2Crumble: 0
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3
@@ -995,6 +1154,7 @@ MonoBehaviour:
   maxIntegrity: 20
   currentIntegrity: 20
   percentDestroyed: 0
+  renderUnderPlayer: 0
 --- !u!50 &3646279915960801637
 Rigidbody2D:
   serializedVersion: 4
@@ -1149,8 +1309,6 @@ MonoBehaviour:
   stage1Dmg: {fileID: -1364342667, guid: 7e53a6637979d0c49bf645a184bf0435, type: 3}
   stage2Dmg: {fileID: 847891524, guid: 7e53a6637979d0c49bf645a184bf0435, type: 3}
   stage3Dmg: {fileID: 847891524, guid: 7e53a6637979d0c49bf645a184bf0435, type: 3}
-  stage1Crumble: 0
-  stage2Crumble: 0
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3
@@ -1158,6 +1316,7 @@ MonoBehaviour:
   maxIntegrity: 20
   currentIntegrity: 20
   percentDestroyed: 0
+  renderUnderPlayer: 0
 --- !u!50 &3646279916125084176
 Rigidbody2D:
   serializedVersion: 4

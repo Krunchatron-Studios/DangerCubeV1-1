@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 100401868}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: t2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 156521952}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: t3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 288105660}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: t1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1099263118}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: t4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2066207512}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: StructureDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 8656008919341142996}
   - component: {fileID: 8656008919341142995}
   - component: {fileID: 8656008919341142994}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: BottomSection
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -212,10 +212,10 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -235,7 +235,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -482531474, guid: 387e319f8031cf84082a127442eadd5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -267,8 +267,6 @@ MonoBehaviour:
   stage1Dmg: {fileID: -482531474, guid: 387e319f8031cf84082a127442eadd5b, type: 3}
   stage2Dmg: {fileID: -893186521, guid: 387e319f8031cf84082a127442eadd5b, type: 3}
   stage3Dmg: {fileID: 1631022899, guid: 387e319f8031cf84082a127442eadd5b, type: 3}
-  stage1Crumble: 1
-  stage2Crumble: 1
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3
@@ -276,6 +274,7 @@ MonoBehaviour:
   maxIntegrity: 20
   currentIntegrity: 20
   percentDestroyed: 0
+  renderUnderPlayer: 1
 --- !u!60 &8656008919341142996
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -351,7 +350,7 @@ MonoBehaviour:
   shadowDistance: 0
   shadowDistanceMin: 0.5
   shadowDistanceMax: 1
-  shadowTranslucency: 0
+  shadowTranslucency: 0.6
   maskType: 0
   maskLit: 0
   maskPivot: 0
@@ -385,7 +384,7 @@ GameObject:
   - component: {fileID: 8656008919420360020}
   - component: {fileID: 8656008919420360019}
   - component: {fileID: 8656008919420360018}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: MiddleSection
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -424,10 +423,10 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -447,7 +446,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -421539053, guid: 387e319f8031cf84082a127442eadd5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -479,8 +478,6 @@ MonoBehaviour:
   stage1Dmg: {fileID: -421539053, guid: 387e319f8031cf84082a127442eadd5b, type: 3}
   stage2Dmg: {fileID: -1624297635, guid: 387e319f8031cf84082a127442eadd5b, type: 3}
   stage3Dmg: {fileID: -2038540636, guid: 387e319f8031cf84082a127442eadd5b, type: 3}
-  stage1Crumble: 1
-  stage2Crumble: 1
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3
@@ -488,6 +485,7 @@ MonoBehaviour:
   maxIntegrity: 20
   currentIntegrity: 20
   percentDestroyed: 0
+  renderUnderPlayer: 1
 --- !u!60 &8656008919420360020
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -559,7 +557,7 @@ MonoBehaviour:
   shadowDistance: 0
   shadowDistanceMin: 0.5
   shadowDistanceMax: 1
-  shadowTranslucency: 0
+  shadowTranslucency: 0.6
   maskType: 0
   maskLit: 0
   maskPivot: 0
@@ -590,7 +588,7 @@ GameObject:
   - component: {fileID: 8656008919939271507}
   - component: {fileID: 8656008919939271508}
   - component: {fileID: 8656008919939271509}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: Sandbags
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -728,7 +726,7 @@ GameObject:
   - component: {fileID: 8656008920703236287}
   - component: {fileID: 8656008920703236286}
   - component: {fileID: 8656008920703236285}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: TopSection
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -767,10 +765,10 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -790,7 +788,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -1270941507, guid: 387e319f8031cf84082a127442eadd5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -822,8 +820,6 @@ MonoBehaviour:
   stage1Dmg: {fileID: -1270941507, guid: 387e319f8031cf84082a127442eadd5b, type: 3}
   stage2Dmg: {fileID: 1964060229, guid: 387e319f8031cf84082a127442eadd5b, type: 3}
   stage3Dmg: {fileID: 1707794536, guid: 387e319f8031cf84082a127442eadd5b, type: 3}
-  stage1Crumble: 1
-  stage2Crumble: 1
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3
@@ -831,6 +827,7 @@ MonoBehaviour:
   maxIntegrity: 20
   currentIntegrity: 20
   percentDestroyed: 0
+  renderUnderPlayer: 1
 --- !u!60 &8656008920703236287
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -906,7 +903,7 @@ MonoBehaviour:
   shadowDistance: 0
   shadowDistanceMin: 0.5
   shadowDistanceMax: 1
-  shadowTranslucency: 0
+  shadowTranslucency: 0.6
   maskType: 0
   maskLit: 0
   maskPivot: 0
