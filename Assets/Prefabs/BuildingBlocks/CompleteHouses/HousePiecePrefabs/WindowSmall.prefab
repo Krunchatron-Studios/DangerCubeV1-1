@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7578716656495126970}
   - component: {fileID: 8596139603616482190}
   - component: {fileID: 7392495022268810052}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: WindowSmall
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: -83037136, guid: 0f0a852e333ef9245b868bbc8db0ddc6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -2067884169, guid: b3ed52b52dd4c694e91b3f3c722a5ff1, type: 3}
+  m_Color: {r: 0.8254717, g: 1, b: 0.99835724, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -104,7 +104,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.625}
+    oldSize: {x: 0.5416667, y: 0.625}
     newSize: {x: 2.5, y: 1.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -150,10 +150,10 @@ MonoBehaviour:
   structureType: Window
   shaker: {fileID: 0}
   spriteRenderer: {fileID: 5035884791331615347}
-  noDmgSprite: {fileID: 1617780689, guid: af0186f41736d0b4f81c14b59b0be135, type: 3}
-  stage1Dmg: {fileID: -485670743, guid: c1264e3d722e02e43be3444484af715b, type: 3}
-  stage2Dmg: {fileID: -485670743, guid: c1264e3d722e02e43be3444484af715b, type: 3}
-  stage3Dmg: {fileID: -485670743, guid: c1264e3d722e02e43be3444484af715b, type: 3}
+  noDmgSprite: {fileID: -2067884169, guid: b3ed52b52dd4c694e91b3f3c722a5ff1, type: 3}
+  stage1Dmg: {fileID: 123164575, guid: b3ed52b52dd4c694e91b3f3c722a5ff1, type: 3}
+  stage2Dmg: {fileID: -1467388393, guid: b3ed52b52dd4c694e91b3f3c722a5ff1, type: 3}
+  stage3Dmg: {fileID: -825355722, guid: b3ed52b52dd4c694e91b3f3c722a5ff1, type: 3}
   stage1Threshold: 0.9
   stage2Threshold: 0.6
   stage3Threshold: 0.3
@@ -161,3 +161,4 @@ MonoBehaviour:
   maxIntegrity: 10
   currentIntegrity: 10
   percentDestroyed: 0
+  renderUnderPlayer: 0
