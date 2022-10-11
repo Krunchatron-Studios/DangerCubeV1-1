@@ -5,7 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ShieldUI : PlayerLogic { 
-	public ParticleSystem shieldParticle;
+	public GameObject shieldSprite;
+	public ParticleSystem shieldParticle; 
 	public PlayerHealthAndShields healthAndShieldsData;
 	public Slider slider;
 	
@@ -45,7 +46,7 @@ public class ShieldUI : PlayerLogic {
 		if (col.CompareTag("EnemyProjectile")) {
 			IHurtThingsInterface hit = col.GetComponent<IHurtThingsInterface>();
 			GameObject shield = EnemyPoolManager.epm.shieldHit.GetPooledGameObject();
-			shield .SetActive(true);
+			shield.SetActive(true);
 			shield.transform.position = col.transform.position;
 			MMCameraShakeEvent.Trigger(.1f, .2f, 40f, 0, 0, 0, false);
 		}
