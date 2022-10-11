@@ -4821,6 +4821,7 @@ GameObject:
   - component: {fileID: 7580345013512800266}
   - component: {fileID: 7580345013498594592}
   - component: {fileID: 7580345013496892792}
+  - component: {fileID: 8704731917158375980}
   m_Layer: 26
   m_Name: GunFireYellow
   m_TagString: FX
@@ -9623,6 +9624,20 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &8704731917158375980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7580345013512465290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14011ec279e679e4d9cb7ab84e7400d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTilDeactivation: 0.5
+  thisParent: {fileID: 7580345013512465290}
 --- !u!1 &7580345013512485382
 GameObject:
   m_ObjectHideFlags: 0

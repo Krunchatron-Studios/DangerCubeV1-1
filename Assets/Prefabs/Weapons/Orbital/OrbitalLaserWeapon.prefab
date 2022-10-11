@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 8171799896c777540bf3edd243559a83, type: 3}
+  m_Sprite: {fileID: -2028675322, guid: c461d7e7911974442aca7cd1a139962e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   upgradeName: OrbitalLaserWeapon
   upgradeTier: Major
   upgradeType: Metal
-  upgradeSprite: {fileID: 1522901207, guid: 4e1511caeefa7e34496a2bd77f645871, type: 3}
+  upgradeSprite: {fileID: -2028675322, guid: c461d7e7911974442aca7cd1a139962e, type: 3}
   description: Laser waterfall
   audioSource: {fileID: 1605000266149368324}
   upgradeRange: 20
@@ -121,8 +121,11 @@ MonoBehaviour:
   enemyTarget: {x: 0, y: 3.5404346}
   targetingSys: {fileID: 8371550627369725801}
   projectileScale: {x: 0, y: 0}
+  doBulletsDecay: 0
+  decayTimer: 0
   canFire: 0
   nextFire: 0
+  muzzleFlashPool: {fileID: 0}
 --- !u!82 &1605000266149368324
 AudioSource:
   m_ObjectHideFlags: 0
@@ -250,11 +253,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FiringPoint
       objectReference: {fileID: 0}
-    - target: {fileID: 4461223465438186822, guid: 5e4a2809856898a4aa1a086c177c3bf3,
-        type: 3}
-      propertyPath: m_Layer
-      value: 26
-      objectReference: {fileID: 0}
     - target: {fileID: 4461223465438186823, guid: 5e4a2809856898a4aa1a086c177c3bf3,
         type: 3}
       propertyPath: m_RootOrder
@@ -262,18 +260,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4461223465438186823, guid: 5e4a2809856898a4aa1a086c177c3bf3,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.0386373
-      objectReference: {fileID: 0}
-    - target: {fileID: 4461223465438186823, guid: 5e4a2809856898a4aa1a086c177c3bf3,
-        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.09866987
+      value: 0.003
       objectReference: {fileID: 0}
     - target: {fileID: 4461223465438186823, guid: 5e4a2809856898a4aa1a086c177c3bf3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.093000054
+      value: -0.047
       objectReference: {fileID: 0}
     - target: {fileID: 4461223465438186823, guid: 5e4a2809856898a4aa1a086c177c3bf3,
         type: 3}

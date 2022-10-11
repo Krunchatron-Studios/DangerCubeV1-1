@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2769769840765273158}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: SmokeCurlyObj
   m_TagString: FX
   m_Icon: {fileID: 0}
@@ -98,6 +98,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CurvySmoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266396864203573233, guid: d27ae87996c31294a919e6c339ef49be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d27ae87996c31294a919e6c339ef49be, type: 3}

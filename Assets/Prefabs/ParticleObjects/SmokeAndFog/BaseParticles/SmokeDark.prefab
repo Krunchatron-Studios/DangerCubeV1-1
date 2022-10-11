@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9117972287949110115}
   - component: {fileID: 9117972287933779979}
   - component: {fileID: 9117972287935003547}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: SmokeDark
   m_TagString: FX
   m_Icon: {fileID: 0}
@@ -4689,7 +4689,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: d386c5d9fb941e845b73fe6da5491ef2, type: 2}

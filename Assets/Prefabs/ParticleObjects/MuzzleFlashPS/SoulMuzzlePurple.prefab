@@ -4839,13 +4839,14 @@ GameObject:
   - component: {fileID: 5235355868478866200}
   - component: {fileID: 5235355868460563668}
   - component: {fileID: 5235355868459350730}
+  - component: {fileID: 8382880232238209179}
   m_Layer: 26
   m_Name: SoulMuzzlePurple
   m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5235355868478866200
 Transform:
   m_ObjectHideFlags: 0
@@ -9694,6 +9695,20 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &8382880232238209179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5235355868479108926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14011ec279e679e4d9cb7ab84e7400d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTilDeactivation: 1
+  thisParent: {fileID: 5235355868479108926}
 --- !u!1 &5235355868479137534
 GameObject:
   m_ObjectHideFlags: 0

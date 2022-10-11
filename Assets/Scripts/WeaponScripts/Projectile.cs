@@ -28,10 +28,7 @@ public class Projectile : MonoBehaviour {
 		projectileRb2D.velocity = direction * projectileVelocity;
 	}
 	public virtual void ResolveProjectile(Collider2D other) {
-		GameObject impact = weapon.impactPool.GetPooledGameObject();
-		impact.SetActive(true);
-		impact.transform.position = transform.position;
-		
+
 		if (other.CompareTag("Enemy")) {
 			
 			IHurtThingsInterface hit = other.GetComponent<IHurtThingsInterface>();
@@ -44,10 +41,8 @@ public class Projectile : MonoBehaviour {
 		}
 		if (other.CompareTag("Obstacle")) {
 			ISmashThingsInterface hit = other.GetComponent<ISmashThingsInterface>();
-			// Debug.Log($"Damage: {damage}");
 			hit.DamageStructure(damage, weapon.damageType, other.transform.position);
 			gameObject.SetActive(false);
-			TriggerImpact(impact);
 		}
 		if (other.CompareTag("Wall")) {
 			gameObject.SetActive(false);

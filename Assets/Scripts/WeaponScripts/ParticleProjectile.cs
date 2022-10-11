@@ -12,12 +12,13 @@ public class ParticleProjectile : Projectile {
 		projectileParticle.transform.position = projectileRb2D.transform.position;
 	}
 	void OnTriggerEnter2D(Collider2D other) {
-		float gatheredDmg = GameObject.FindGameObjectWithTag("PlasmaBurster").GetComponent<Weapon>().weaponDamage;
 		ResolveProjectile(other);
 	}
 	public override void ResolveProjectile(Collider2D other) {
 		if (other.CompareTag("Enemy")) {
 			weapon.Knockback(other);
+			impact.transform.position = transform.position;
+			impact.SetActive(true);
 
 			IHurtThingsInterface hit = other.GetComponent<IHurtThingsInterface>();
 			hit.TakeDamage(damage, weapon.damageType);

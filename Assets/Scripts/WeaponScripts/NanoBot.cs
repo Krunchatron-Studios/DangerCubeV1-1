@@ -26,17 +26,18 @@ public class NanoBot : Projectile {
         }
     }
     private void OnDisable() {
-        int index = 0;
-        int temp = zombie.currentZombies;
-        while (zombie.currentZombies != temp + 1) {
-            if (zombies[index].gameObject.activeInHierarchy == false) {
-                zombies[index].gameObject.SetActive(true);
-                zombies[index].gameObject.transform.position = _nanoTransform;
-                zombie.currentZombies++;
-            }
-            else {
-                index++;
-            }
-        }
+        GameObject nano = weapon.objectPooler.GetPooledGameObject();
+        nano.transform.position = transform.position;
+        nano.SetActive(true);
+
+        // int temp = zombie.currentZombies;
+        // for(int i = 0; i < zombies.Length; i++) {
+        //     if (!zombies[i].gameObject.activeInHierarchy) {
+        //         zombies[i].gameObject.transform.position = transform.position;
+        //         zombies[i].gameObject.SetActive(true);
+        //         
+        //         zombie.currentZombies++;
+        //     }
+        // }
     }
 }

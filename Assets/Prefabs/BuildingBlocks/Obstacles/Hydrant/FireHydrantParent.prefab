@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 793723537386134919}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: StructureDamage
   m_TagString: FX
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   m_Component:
   - component: {fileID: 793723537592800428}
   - component: {fileID: 793723537592800431}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: FireHydrantParent
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6573778466839614250}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: t1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6357001497089743872}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: t2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8184857927603007429}
-  m_Layer: 7
+  m_Layer: 26
   m_Name: t3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,10 +349,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 793723537592800428}
     m_Modifications:
+    - target: {fileID: 3441915568057658214, guid: 319da261bbcc4d2428f3412aca7b4a7c,
+        type: 3}
+      propertyPath: shadowTranslucency
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3441915568057658215, guid: 319da261bbcc4d2428f3412aca7b4a7c,
         type: 3}
       propertyPath: m_Name
       value: Hydrant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3441915568057658215, guid: 319da261bbcc4d2428f3412aca7b4a7c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 3441915568057658233, guid: 319da261bbcc4d2428f3412aca7b4a7c,
         type: 3}
@@ -415,6 +425,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 111316040, guid: e60828debe38da14393f1a69dd80784a,
         type: 3}
+    - target: {fileID: 3441915568057658234, guid: 319da261bbcc4d2428f3412aca7b4a7c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3441915568057658234, guid: 319da261bbcc4d2428f3412aca7b4a7c,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3441915568057658234, guid: 319da261bbcc4d2428f3412aca7b4a7c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 3441915568057658235, guid: 319da261bbcc4d2428f3412aca7b4a7c,
         type: 3}
       propertyPath: shaker
@@ -488,6 +513,11 @@ PrefabInstance:
         type: 3}
       propertyPath: currentIntegrity
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3441915568057658235, guid: 319da261bbcc4d2428f3412aca7b4a7c,
+        type: 3}
+      propertyPath: renderUnderPlayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 319da261bbcc4d2428f3412aca7b4a7c, type: 3}

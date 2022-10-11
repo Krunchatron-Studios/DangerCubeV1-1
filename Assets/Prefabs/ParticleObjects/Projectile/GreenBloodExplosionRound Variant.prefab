@@ -7,9 +7,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 106632, guid: f563a43ef6da8ce43b59040b834b597d, type: 3}
+      propertyPath: m_Layer
+      value: 26
+      objectReference: {fileID: 0}
     - target: {fileID: 135106, guid: f563a43ef6da8ce43b59040b834b597d, type: 3}
       propertyPath: m_Name
-      value: GreenBloodExplosionRound
+      value: GreenBloodExplosionRound Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 135106, guid: f563a43ef6da8ce43b59040b834b597d, type: 3}
+      propertyPath: m_Layer
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 135106, guid: f563a43ef6da8ce43b59040b834b597d, type: 3}
+      propertyPath: m_TagString
+      value: FX
       objectReference: {fileID: 0}
     - target: {fileID: 448208, guid: f563a43ef6da8ce43b59040b834b597d, type: 3}
       propertyPath: m_RootOrder
@@ -58,6 +70,18 @@ PrefabInstance:
     - target: {fileID: 19927622, guid: f563a43ef6da8ce43b59040b834b597d, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19931658, guid: f563a43ef6da8ce43b59040b834b597d, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19931658, guid: f563a43ef6da8ce43b59040b834b597d, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1603220759
+      objectReference: {fileID: 0}
+    - target: {fileID: 19931658, guid: f563a43ef6da8ce43b59040b834b597d, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 19931658, guid: f563a43ef6da8ce43b59040b834b597d, type: 3}
       propertyPath: m_Materials.Array.size

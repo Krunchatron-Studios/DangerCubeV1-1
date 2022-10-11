@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9136337499459341165}
   - component: {fileID: 9136337499459341167}
   - component: {fileID: 2556608108736421051}
+  - component: {fileID: 929529310930059247}
   m_Layer: 18
   m_Name: PlasmaSlug
   m_TagString: Projectile
@@ -55,7 +56,7 @@ MonoBehaviour:
   projectileRb2D: {fileID: 9136337499459341165}
   targetPosition: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
-  impact: {fileID: 8640665962708688336, guid: 3158b46c4ca595f48b5680d681199b55, type: 3}
+  impact: {fileID: 8640665963160716722}
 --- !u!50 &9136337499459341165
 Rigidbody2D:
   serializedVersion: 4
@@ -195,6 +196,20 @@ MonoBehaviour:
           AmplitudeX: 0
           AmplitudeY: 0
           AmplitudeZ: 0
+--- !u!114 &929529310930059247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4837917352924149430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14011ec279e679e4d9cb7ab84e7400d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTilDeactivation: 1
+  thisParent: {fileID: 0}
 --- !u!1001 &2131728482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -262,16 +277,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlasmaSlugImpact
       objectReference: {fileID: 0}
-    - target: {fileID: 8640665962708688336, guid: 3158b46c4ca595f48b5680d681199b55,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3158b46c4ca595f48b5680d681199b55, type: 3}
 --- !u!4 &930793780554706985 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 930793782382995531, guid: 3158b46c4ca595f48b5680d681199b55,
+    type: 3}
+  m_PrefabInstance: {fileID: 2131728482}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8640665963160716722 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8640665962708688336, guid: 3158b46c4ca595f48b5680d681199b55,
     type: 3}
   m_PrefabInstance: {fileID: 2131728482}
   m_PrefabAsset: {fileID: 0}

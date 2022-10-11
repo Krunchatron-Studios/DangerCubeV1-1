@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7849839523093798870}
   - component: {fileID: 7849839523079540920}
   - component: {fileID: 7849839523078165464}
+  - component: {fileID: 8834710157162456209}
   m_Layer: 26
   m_Name: EnergyNovaMuzzleSmallPink
   m_TagString: FX
@@ -4795,7 +4796,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 4bf10d94145fd6c4187c18de0af92e43, type: 2}
@@ -4849,6 +4850,20 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &8834710157162456209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7849839523093856864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14011ec279e679e4d9cb7ab84e7400d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTilDeactivation: 1
+  thisParent: {fileID: 7849839523093856864}
 --- !u!1 &7849839523094018550
 GameObject:
   m_ObjectHideFlags: 0

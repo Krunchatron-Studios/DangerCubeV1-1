@@ -47,7 +47,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6333359257195322784
 Transform:
   m_ObjectHideFlags: 0
@@ -251,8 +251,6 @@ MonoBehaviour:
   stage1Dmg: {fileID: 21300000, guid: f42f211969a53d9479b2d51820d231eb, type: 3}
   stage2Dmg: {fileID: 21300000, guid: 1dab37ed047229944bfecd14ea3b6a09, type: 3}
   stage3Dmg: {fileID: 21300000, guid: 23e95e2ff3531954bb33bc94cdb9681e, type: 3}
-  stage1Crumble: 1
-  stage2Crumble: 1
   stage1Threshold: 0.8
   stage2Threshold: 0.5
   stage3Threshold: 0.2
@@ -260,6 +258,7 @@ MonoBehaviour:
   maxIntegrity: 20
   currentIntegrity: 20
   percentDestroyed: 0
+  renderUnderPlayer: 0
   carExplosionShaker: {fileID: 0}
 --- !u!212 &8697196323132477053
 SpriteRenderer:
@@ -382,8 +381,8 @@ MonoBehaviour:
   shadowDistanceMin: 0.5
   shadowDistanceMax: 1
   shadowTranslucency: 0.6
-  maskType: 0
-  maskLit: 0
+  maskType: 5
+  maskLit: 1
   maskPivot: 0
   maskLayer: 0
   maskLitCustom: 1
@@ -398,7 +397,7 @@ MonoBehaviour:
     spriteRenderer: {fileID: 8697196323132477053}
   mainShape:
     shadowType: 3
-    maskType: 0
+    maskType: 5
     maskPivot: 0
     transform: {fileID: 8697196323132477052}
 --- !u!1 &8697196323501729643

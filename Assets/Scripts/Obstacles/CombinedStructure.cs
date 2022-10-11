@@ -9,6 +9,7 @@ public class CombinedStructure : MonoBehaviour {
 	public bool stage1Crumble, stage2Crumble;
 	public BasicStructure[] structurePiecesArray;
 	public GameObject[] fireAndSmokeDamageArray;
+	public GameObject[] escapePoints;
 	
 	public void EvacuateBuilding(int groupsToEvacuate) {
 		hasEvacuated = true;
@@ -16,7 +17,8 @@ public class CombinedStructure : MonoBehaviour {
 			int pedestrianIndex = Random.Range(0, EnemyPoolManager.epm.allPedestrians.Length -1);
 			GameObject evacGroup = EnemyPoolManager.epm.allPedestrians[pedestrianIndex].GetPooledGameObject();
 			evacGroup.SetActive(true);
-			evacGroup.transform.position = transform.position;
+			int index = Random.Range(0, escapePoints.Length);
+			evacGroup.transform.position = escapePoints[index].transform.position;
 		}
 						
 		if (!stage1Crumble) {

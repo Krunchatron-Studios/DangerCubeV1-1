@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8070797919305800817}
   - component: {fileID: 8070797919319958799}
   - component: {fileID: 8070797919321105423}
+  - component: {fileID: 2775660592743048702}
   m_Layer: 0
   m_Name: BloodSplatDirectional2
   m_TagString: Untagged
@@ -4820,6 +4821,20 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &2775660592743048702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8070797919305473029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14011ec279e679e4d9cb7ab84e7400d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTilDeactivation: 1
+  thisParent: {fileID: 8070797919305473029}
 --- !u!1 &8070797919305529441
 GameObject:
   m_ObjectHideFlags: 0
