@@ -10,7 +10,7 @@ public class Projectile : MonoBehaviour {
 	public Rigidbody2D projectileRb2D;
 	public Vector3 targetPosition;
 	public Vector3 direction;
-	public GameObject impact;
+	// public GameObject impact;
 
 	private void Awake() {
 		damage = weapon.weaponDamage;
@@ -28,9 +28,9 @@ public class Projectile : MonoBehaviour {
 		projectileRb2D.velocity = direction * projectileVelocity;
 	}
 	public virtual void ResolveProjectile(Collider2D other) {
-		GameObject impact = weapon.impactPool.GetPooledGameObject();
-		impact.SetActive(true);
-		impact.transform.position = transform.position;
+		// GameObject impact = weapon.impactPool.GetPooledGameObject();
+		// impact.SetActive(true);
+		// impact.transform.position = transform.position;
 		
 		if (other.CompareTag("Enemy")) {
 			
@@ -47,7 +47,7 @@ public class Projectile : MonoBehaviour {
 			// Debug.Log($"Damage: {damage}");
 			hit.DamageStructure(damage, weapon.damageType, other.transform.position);
 			gameObject.SetActive(false);
-			TriggerImpact(impact);
+			// TriggerImpact(impact);
 		}
 		if (other.CompareTag("Wall")) {
 			gameObject.SetActive(false);
@@ -60,9 +60,9 @@ public class Projectile : MonoBehaviour {
 		bloodSplash.transform.position = other.transform.position;
 	}
 
-	public void TriggerImpact(GameObject impact) {
-		impact.SetActive(true);
-		impact.transform.position = transform.position;
-	}
+	// public void TriggerImpact(GameObject impact) {
+	// 	impact.SetActive(true);
+	// 	impact.transform.position = transform.position;
+	// }
 
 }
