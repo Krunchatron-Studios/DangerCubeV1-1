@@ -8,17 +8,15 @@ using MoreMountains.Feedbacks;
 public class ShieldSystem : PlayerLogic {
 
 	public CircleCollider2D shieldCollider;
+	public HealthUI healthUI;
 	public Material shieldMaterial;
 	public GameObject thisShield;
-	public PlayerHealthAndShields healthAndShieldsData;
 	public Slider slider;
 
 	private void Start() {
 		int id = Shader.PropertyToID("_GlitchFade");
 		shieldMaterial.SetFloat(954, 0);
-
-		slider.maxValue = healthAndShieldsData.playerShieldsMax;
-
+		slider.maxValue = healthAndShields.playerShieldsMax;
 	}
 
 	private void FixedUpdate() {
@@ -45,6 +43,10 @@ public class ShieldSystem : PlayerLogic {
 	
 	
 	private void UpdateShieldBar() {
-		slider.value = healthAndShieldsData.playerShieldsCurrent;
+		slider.value = healthAndShields.playerShieldsCurrent;
+		if (healthAndShields.playerShieldsCurrent <= 0) {
+			healthUI.RemoveHealthChunk();
+			healthAndShields.playerShieldsCurrent = healthAndShields.playerShieldsMax;
+		}
 	}
 }

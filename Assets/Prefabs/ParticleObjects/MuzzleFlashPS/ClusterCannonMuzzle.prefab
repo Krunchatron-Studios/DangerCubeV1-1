@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8856352580767170883
 Transform:
   m_ObjectHideFlags: 0
@@ -113,6 +113,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GrenadeMuzzleFire (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157290591287497208, guid: 06b929a2ad2c67c4cb5e1d3a65a1c0f7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06b929a2ad2c67c4cb5e1d3a65a1c0f7, type: 3}
