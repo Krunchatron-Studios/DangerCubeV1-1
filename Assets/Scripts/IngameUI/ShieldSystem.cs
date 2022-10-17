@@ -35,10 +35,13 @@ public class ShieldSystem : PlayerLogic {
 	}
 
 	IEnumerator ShieldHitEffect() {
-		int id = Shader.PropertyToID("_GlitchFade");
-		shieldMaterial.SetFloat(954, 1);
+		int idGlitchFade = Shader.PropertyToID("_GlitchFade");
+		int idSineGlow = Shader.PropertyToID("_SineGlowFade");
+		shieldMaterial.SetFloat(idGlitchFade, 1);
+		shieldMaterial.SetFloat(idSineGlow, 1);
 		yield return new WaitForSeconds(.25f);
-		shieldMaterial.SetFloat(954, 0);
+		shieldMaterial.SetFloat(idGlitchFade, 0);
+		shieldMaterial.SetFloat(idSineGlow, 0);
 	}
 	
 	
