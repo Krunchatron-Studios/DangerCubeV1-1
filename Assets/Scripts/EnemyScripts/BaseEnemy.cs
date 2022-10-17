@@ -21,8 +21,6 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 	
 	[Header("Death Effects")] 
 	public Dissolve dissolve;
-
-	public HitEffects hitEffects;
 	
 	[Header("Enemy Drop Related")] 
 	public GameObject drop;
@@ -32,15 +30,28 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 	public void TakeDamage(float dmgAmount, string dmgType) {
 		currentHealth -= dmgAmount;
 		
+		// hit effects from weapons
 		if (dmgType == "Physical") {
 			_direction = GameObject.FindGameObjectWithTag("Player").transform.localScale.normalized;
 			GameObject blood = PoolManager.pm.bloodPool.GetPooledGameObject();
 			blood.transform.position = new Vector2(transform.position.x, transform.position.y + .5f);
 			blood.transform.localScale = new Vector3(-_direction.x, _direction.y, 0);
 			blood.SetActive(true);
-			Debug.Log($"lossy: {_direction}");
+		}
+
+		if (dmgType == "Fire") {
+			GameObject fire = PoolManager.pm.firePool.GetPooledGameObject();
+			fire.SetActive(true);
+			fire.transform.position = transform.position;
 		}
 		
+		if (dmgType == "Plasma") {
+			GameObject plasma = PoolManager.pm.plasmaPool.GetPooledGameObject();
+			plasma.SetActive(true);
+			plasma.transform.position = transform.position;
+		}
+		
+		// Death effects from weapons
 		if (currentHealth <= 0) {
 			if (dmgType == "DeathRay") {
 				spriteRenderer.material = ShaderManager.shm.dissolve;
@@ -50,10 +61,16 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 				dissolve.isDissolving = true;
 			}
 
-			if (dmgType != "Physical") {
+			if (dmgType == "Physical") {
 				GameObject blood = PoolManager.pm.bloodPool.GetPooledGameObject();
 				blood.transform.position = transform.position;
 				blood.SetActive(true);
+			}
+
+			if (dmgType == "Fire") {
+				GameObject fire = PoolManager.pm.firePool.GetPooledGameObject();
+				fire.SetActive(true);
+				fire.transform.position = transform.position;
 			}
 			
 			moveSpeed = 0f;

@@ -12,6 +12,9 @@ namespace Managers {
 		[Header("Particle Pools")] 
 		public MMSimpleObjectPooler ashesPool;
 		public MMSimpleObjectPooler bloodPool;
+		public MMSimpleObjectPooler firePool;
+		public MMSimpleObjectPooler plasmaPool;
+		public MMSimpleObjectPooler acidBurnPool;
 		public MMSimpleObjectPooler acidBlastPool;
 		public MMSimpleObjectPooler laserSwirlPool;
 		
