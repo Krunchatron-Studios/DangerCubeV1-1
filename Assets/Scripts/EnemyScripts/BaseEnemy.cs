@@ -21,6 +21,8 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 	
 	[Header("Death Effects")] 
 	public Dissolve dissolve;
+
+	public HitEffects hitEffects;
 	
 	[Header("Enemy Drop Related")] 
 	public GameObject drop;
