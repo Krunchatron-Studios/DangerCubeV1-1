@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Effects;
 using Interfaces;
@@ -26,6 +27,15 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 	public GameObject drop;
 	public PlayerResources playerResources;
 	private Vector2 _direction;
+
+	[Header("Player Target")] 
+	public GameObject _playerObject;
+
+	private void LateUpdate() {
+		_playerObject = GameObject.FindWithTag("Player");
+		_direction = (_playerObject.transform.position - transform.position).normalized;
+		FlipEnemySprite();
+	}
 
 	public void TakeDamage(float dmgAmount, string dmgType) {
 		currentHealth -= dmgAmount;
@@ -78,6 +88,16 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 			StartCoroutine(PostponeDeath(1f));
 			int deathSoundIndex = Random.Range(0, 3);
 			SoundManager.sm.humanDying[deathSoundIndex].Play();
+		}
+	}
+
+	private void FlipEnemySprite() {
+		bool enemyMovingRight = _direction.x > 0.01f;
+
+		if(!enemyMovingRight) {
+			transform.localScale = new Vector2(1, 1);
+		} else if (enemyMovingRight) {
+			transform.localScale = new Vector2(-1, 1);
 		}
 	}
 	public void HealDamage(int healAmount) {

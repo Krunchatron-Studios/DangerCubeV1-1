@@ -14,8 +14,8 @@ namespace AI {
 			_target = GameObject.FindWithTag("Player").transform.position;
 		}
 		private void LateUpdate() {
-			_direction = (_target - transform.position).normalized;
-			spriteRenderer.flipX = -_direction.x < 0;
+
+			// spriteRenderer.flipX = -_direction.x < 0;
 			if (hasEngaged) {
 				_target = GameObject.FindWithTag("Player").transform.position;
 				if (Vector2.Distance(transform.position, _target) > stopDistance) {

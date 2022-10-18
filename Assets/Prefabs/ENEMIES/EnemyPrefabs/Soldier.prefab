@@ -153,6 +153,7 @@ MonoBehaviour:
   dissolve: {fileID: 7436422707435570743}
   drop: {fileID: 1527084982249308848, guid: aa8fef295bf4542edb7f38a866479ce6, type: 3}
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
+  _playerObject: {fileID: 0}
 --- !u!114 &7436422707435570743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,7 +234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3685136906055281361}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.443, y: 0.346, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -255,17 +256,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponOwner: {fileID: 3685136905027771538}
   audioSource: {fileID: 7436422706070950278}
-  playerPosition: {fileID: 0}
-  aimPosition: {x: 0, y: 0, z: 0}
   fireRange: 6
   reloadTimer: 4
   rateOfFire: 0.05
   canFire: 1
   bulletSpeed: 4
   ammo: 5
-  barrel: {fileID: 6667166387141091891}
+  firePoint: {fileID: 4986203372486048836}
   enemyProjectile: {fileID: 1642854273536398982, guid: 6fb710d771688ae4d9839f610b6d1766,
     type: 3}
+  moveDirection: {x: 0, y: 0}
 --- !u!82 &7436422706070950278
 AudioSource:
   m_ObjectHideFlags: 0
@@ -386,7 +386,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4986203372486048836}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.434, y: 0.363, z: 0}
+  m_LocalPosition: {x: 0.004, y: -0.006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
