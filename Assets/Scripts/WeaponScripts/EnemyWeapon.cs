@@ -22,14 +22,14 @@ public class EnemyWeapon : MonoBehaviour {
     public Vector2 moveDirection;
     
     void FixedUpdate() {
-        if (weaponOwner._playerObject) {
-            moveDirection = (weaponOwner._playerObject.transform.position - transform.position).normalized;
+        if (weaponOwner.playerObject) {
+            moveDirection = (weaponOwner.playerObject.transform.position - transform.position).normalized;
             ShootPlayer();
         }
     }
 
     public void ShootPlayer() {
-        float distance = Vector3.Distance(weaponOwner._playerObject.transform.position, transform.position);
+        float distance = Vector3.Distance(weaponOwner.playerObject.transform.position, transform.position);
         if (distance <= fireRange && canFire) {
             canFire = false;
             StartCoroutine(UseWeapon());
@@ -70,9 +70,9 @@ public class EnemyWeapon : MonoBehaviour {
 
     private void EnemyAim() {
         Vector3 enemyAimAdjust = new Vector3(
-            weaponOwner._playerObject.transform.position.x, 
-            weaponOwner._playerObject.transform.position.y, 
-            weaponOwner._playerObject.transform.position.z);
+            weaponOwner.playerObject.transform.position.x, 
+            weaponOwner.playerObject.transform.position.y, 
+            weaponOwner.playerObject.transform.position.z);
         enemyAimAdjust.y -= .5f;
     }
 }

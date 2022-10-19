@@ -128,10 +128,12 @@ MonoBehaviour:
   animator: {fileID: 0}
   weapon: {fileID: 0}
   spriteRenderer: {fileID: 0}
-  dissolve: {fileID: 8853119362373875803}
+  omniShaderMaterial: {fileID: 0}
+  newFadeValue: 1.2
+  fadeId: 0
   drop: {fileID: 7611086095773957346, guid: 1c96af257f4a44dbeb63708b4fb57c11, type: 3}
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
-  _playerObject: {fileID: 0}
+  playerObject: {fileID: 0}
   playerPosition: {fileID: 0}
   kiteDistance: 4
   enemyPosition: {fileID: 0}

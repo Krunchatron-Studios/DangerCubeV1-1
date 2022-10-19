@@ -1,4 +1,3 @@
-using AI;
 using UnityEngine;
 
 public class DistanceDetect : MonoBehaviour {

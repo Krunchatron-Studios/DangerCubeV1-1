@@ -21,7 +21,10 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 	public SpriteRenderer spriteRenderer;
 	
 	[Header("Death Effects")] 
-	public Dissolve dissolve;
+	public Material omniShaderMaterial;
+	public float newFadeValue = 1.2f;
+
+	public int fadeId;
 	
 	[Header("Enemy Drop Related")] 
 	public GameObject drop;
@@ -29,11 +32,16 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 	private Vector2 _direction;
 
 	[Header("Player Target")] 
-	public GameObject _playerObject;
+	public GameObject playerObject;
+
+	private void Start() {
+		omniShaderMaterial = spriteRenderer.material;
+		fadeId = Shader.PropertyToID("_SourceGlowDissolveFade");
+	}
 
 	private void LateUpdate() {
-		_playerObject = GameObject.FindWithTag("Player");
-		_direction = (_playerObject.transform.position - transform.position).normalized;
+		playerObject = GameObject.FindWithTag("Player");
+		_direction = (playerObject.transform.position - transform.position).normalized;
 		FlipEnemySprite();
 	}
 
@@ -48,27 +56,32 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 			blood.transform.localScale = new Vector3(-_direction.x, _direction.y, 0);
 			blood.SetActive(true);
 		}
+		Debug.Log($"damage types: fire? {dmgType}");
 
 		if (dmgType == "Fire") {
+			Debug.Log("Fire2");
 			GameObject fire = PoolManager.pm.firePool.GetPooledGameObject();
-			fire.SetActive(true);
 			fire.transform.position = transform.position;
+			fire.SetActive(true);
+
 		}
 		
 		if (dmgType == "Plasma") {
+			Debug.Log("Plasma");
 			GameObject plasma = PoolManager.pm.plasmaPool.GetPooledGameObject();
-			plasma.SetActive(true);
 			plasma.transform.position = transform.position;
+			plasma.SetActive(true);
+
 		}
 		
 		// Death effects from weapons
 		if (currentHealth <= 0) {
 			if (dmgType == "DeathRay") {
-				spriteRenderer.material = ShaderManager.shm.dissolve;
+
 				GameObject ashes = PoolManager.pm.ashesPool.GetPooledGameObject();
 				ashes.SetActive(true);
 				ashes.transform.position = transform.position;
-				dissolve.isDissolving = true;
+				//StartCoroutine(DeathRayDeath());
 			}
 
 			if (dmgType == "Physical") {
@@ -96,7 +109,9 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 
 		if(!enemyMovingRight) {
 			transform.localScale = new Vector2(1, 1);
-		} else if (enemyMovingRight) {
+		}
+		
+		if (enemyMovingRight) {
 			transform.localScale = new Vector2(-1, 1);
 		}
 	}
@@ -109,6 +124,15 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 	IEnumerator PostponeDeath(float waitTime) {
 		yield return new WaitForSeconds(waitTime);
 		gameObject.SetActive(false);
+	}
+
+	IEnumerator DeathRayDeath() {
+		while (newFadeValue > 0) {
+			newFadeValue -= .01f;
+			omniShaderMaterial.SetFloat(fadeId, newFadeValue);
+			yield return null;
+		}
+		yield return null;
 	}
 }
 

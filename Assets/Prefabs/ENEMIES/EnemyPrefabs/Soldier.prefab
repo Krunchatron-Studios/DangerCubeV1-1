@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3685136905027771542}
   - component: {fileID: 3685136905027771539}
   - component: {fileID: 3685136905027771538}
-  - component: {fileID: 7436422707435570743}
   - component: {fileID: 7436422706839517657}
   - component: {fileID: 7436422706839517665}
   m_Layer: 26
@@ -59,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0ffb3a445be65254390f90a04c20bccd, type: 2}
+  - {fileID: 2100000, guid: 4dcd8d5f2c85ef94c8646a9625c9447c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -150,26 +149,12 @@ MonoBehaviour:
   animator: {fileID: 7436422706839517665}
   weapon: {fileID: 3685136906055281360}
   spriteRenderer: {fileID: 3685136905027771541}
-  dissolve: {fileID: 7436422707435570743}
+  omniShaderMaterial: {fileID: 0}
+  newFadeValue: 1.2
+  fadeId: 0
   drop: {fileID: 1527084982249308848, guid: aa8fef295bf4542edb7f38a866479ce6, type: 3}
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
-  _playerObject: {fileID: 0}
---- !u!114 &7436422707435570743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3685136905027771528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4594deaa8329dc40ad66ddcc5fd1f7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  disAmountPerFrame: 0.02
-  thisRenderer: {fileID: 3685136905027771541}
-  ashes: {fileID: 3424906339587408355, guid: b256623201b9eba4cb6aaaa1cc86041f, type: 3}
-  isDissolving: 0
+  playerObject: {fileID: 0}
 --- !u!114 &7436422706839517657
 MonoBehaviour:
   m_ObjectHideFlags: 0
