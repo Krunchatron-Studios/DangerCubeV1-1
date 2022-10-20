@@ -36,6 +36,7 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 	public virtual void DamageStructure(float damageAmount, string damageType, Vector3 location) {
 		shaker.Play();
 		GetDustParticle(location);
+		HitImpactEffect(damageType, location);
 		WindowShatterCheck(location);
 		CalculateDamage(damageAmount);
 		DamageTiersCheck1(location);
@@ -143,6 +144,23 @@ public class BasicStructure : MonoBehaviour, ISmashThingsInterface {
 			thisCollider.enabled = !thisCollider.enabled;
 			spriteRenderer.sortingLayerName = "Ground";
 			spriteRenderer.sortingOrder = 1;
+		}
+	}
+
+	public void HitImpactEffect(string damageType, Vector3 location) {
+
+		switch (damageType) {
+			
+			case "Fire":
+				GameObject fire = PoolManager.pm.firePool.GetPooledGameObject();
+				fire.transform.position = location;
+				fire.SetActive(true);
+				break;
+			case "Plasma":
+				GameObject plasma = PoolManager.pm.plasmaPool.GetPooledGameObject();
+				plasma.transform.position = location;
+				plasma.SetActive(true);
+				break;
 		}
 	}
 }

@@ -49,51 +49,49 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 		currentHealth -= dmgAmount;
 		
 		// hit effects from weapons
-		if (dmgType == "Physical") {
-			_direction = GameObject.FindGameObjectWithTag("Player").transform.localScale.normalized;
-			GameObject blood = PoolManager.pm.bloodPool.GetPooledGameObject();
-			blood.transform.position = new Vector2(transform.position.x, transform.position.y + .5f);
-			blood.transform.localScale = new Vector3(-_direction.x, _direction.y, 0);
-			blood.SetActive(true);
+		switch (dmgType) {
+			
+			case "Physical":
+				_direction = GameObject.FindGameObjectWithTag("Player").transform.localScale.normalized;
+				GameObject blood = PoolManager.pm.bloodPool.GetPooledGameObject();
+				blood.transform.position = new Vector2(transform.position.x, transform.position.y + .5f);
+				blood.transform.localScale = new Vector3(-_direction.x, _direction.y, 0);
+				blood.SetActive(true);
+				break;
+			case "Fire":
+				GameObject fire = PoolManager.pm.firePool.GetPooledGameObject();
+				fire.transform.position = transform.position;
+				fire.SetActive(true);
+				break;
+			case "Plasma":
+				GameObject plasma = PoolManager.pm.plasmaPool.GetPooledGameObject();
+				plasma.transform.position = transform.position;
+				plasma.SetActive(true);
+				break;
 		}
-		Debug.Log($"damage types: fire? {dmgType}");
 
-		if (dmgType == "Fire") {
-			Debug.Log("Fire2");
-			GameObject fire = PoolManager.pm.firePool.GetPooledGameObject();
-			fire.transform.position = transform.position;
-			fire.SetActive(true);
-
-		}
-		
-		if (dmgType == "Plasma") {
-			Debug.Log("Plasma");
-			GameObject plasma = PoolManager.pm.plasmaPool.GetPooledGameObject();
-			plasma.transform.position = transform.position;
-			plasma.SetActive(true);
-
-		}
 		
 		// Death effects from weapons
 		if (currentHealth <= 0) {
-			if (dmgType == "DeathRay") {
 
-				GameObject ashes = PoolManager.pm.ashesPool.GetPooledGameObject();
-				ashes.SetActive(true);
-				ashes.transform.position = transform.position;
-				//StartCoroutine(DeathRayDeath());
-			}
-
-			if (dmgType == "Physical") {
-				GameObject blood = PoolManager.pm.bloodPool.GetPooledGameObject();
-				blood.transform.position = transform.position;
-				blood.SetActive(true);
-			}
-
-			if (dmgType == "Fire") {
-				GameObject fire = PoolManager.pm.firePool.GetPooledGameObject();
-				fire.SetActive(true);
-				fire.transform.position = transform.position;
+			switch (dmgType) {
+				
+				case "DeathRay":
+					GameObject ashes = PoolManager.pm.ashesPool.GetPooledGameObject();
+					ashes.SetActive(true);
+					ashes.transform.position = transform.position;
+					//StartCoroutine(DeathRayDeath());
+					break;
+				case "Fire":
+					GameObject fire = PoolManager.pm.firePool.GetPooledGameObject();
+					fire.SetActive(true);
+					fire.transform.position = transform.position;
+					break;
+				case "Physical":
+					GameObject blood = PoolManager.pm.bloodPool.GetPooledGameObject();
+					blood.transform.position = transform.position;
+					blood.SetActive(true);
+					break;
 			}
 			
 			moveSpeed = 0f;
