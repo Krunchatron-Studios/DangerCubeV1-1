@@ -2,17 +2,20 @@ using Managers;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 public class PausePanel : MonoBehaviour {
     private bool _isPaused;
     public GameObject pausePanel;
     public MMTimeManager timeManager;
+
+    public GameObject defaultSelection;
 
     void Start() {
         _isPaused = false;
         pausePanel.SetActive(false);
     }
     void Update() {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame) {
+        if (Keyboard.current.escapeKey.wasPressedThisFrame || Gamepad.current.startButton.wasPressedThisFrame) {
             PauseGame();
         }
     }
