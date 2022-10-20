@@ -17,9 +17,8 @@ public class UnlocksUI : MonoBehaviour {
 		UpdateUnlocksPanel();
 	}
 
-	public void PopulateUnlocks() {
-		for (int i = 0; i < referenceList.Count; i++) {
-			Upgrade currentUpgrade = referenceList[i];
+	private void PopulateUnlocks() {
+		foreach (var currentUpgrade in referenceList) {
 			if (currentUpgrade is Weapon) {
 				unlockData.allUnlocks.Add(currentUpgrade.upgradeName, false);
 			}
@@ -27,7 +26,7 @@ public class UnlocksUI : MonoBehaviour {
 	}
 
 	public void UpdateUnlocksPanel() {
-		for(int i = 0; i < referenceList.Count; i++) {
+		for(var i = 0; i < referenceList.Count; i++) {
 			referenceList[i].isUnlocked = unlockData.allUnlocks[referenceList[i].upgradeName];
 
 			if (referenceList[i].isUnlocked) {
