@@ -21,10 +21,12 @@ public class PausePanel : MonoBehaviour {
     }
     private void PauseGame() {
         SoundManager.sm.pauseMenu.Play();
+        EventSystem.current.SetSelectedGameObject(null);
         if (!_isPaused) {
             pausePanel.SetActive(true);
             timeManager.SetTimescaleTo(0f);
             _isPaused = true;
+            EventSystem.current.SetSelectedGameObject(defaultSelection);
         } else {
             pausePanel.SetActive(false);
             timeManager.SetTimescaleTo(1f);

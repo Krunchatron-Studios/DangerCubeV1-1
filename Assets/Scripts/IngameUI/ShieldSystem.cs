@@ -15,7 +15,7 @@ public class ShieldSystem : PlayerLogic {
 
 	private void Start() {
 		int id = Shader.PropertyToID("_GlitchFade");
-		shieldMaterial.SetFloat(954, 0);
+		shieldMaterial.SetFloat(id, 0);
 		slider.maxValue = healthAndShields.playerShieldsMax;
 	}
 
