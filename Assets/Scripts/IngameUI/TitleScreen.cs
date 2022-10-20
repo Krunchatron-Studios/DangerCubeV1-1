@@ -1,10 +1,12 @@
 using Managers;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class TitleScreen : MonoBehaviour {
 
 	public UnlocksUI unlocksUI;
+	public GameObject selectionAfterClosing;
 
 	public void StartGame() {
 		SceneManager.LoadScene("TestLevel");
@@ -25,8 +27,13 @@ public class TitleScreen : MonoBehaviour {
 	}
 
 	public void OpenUnlockScreen() {
+
 		unlocksUI.gameObject.SetActive(!unlocksUI.gameObject.activeInHierarchy);
 		TitleSoundManager.tsm.buttonPress.Play();
 		UnlocksUI.uui.UpdateUnlocksPanel();
+		if (!unlocksUI.gameObject.activeInHierarchy) {
+			EventSystem.current.SetSelectedGameObject(null);
+			EventSystem.current.SetSelectedGameObject(selectionAfterClosing);
+		}
 	}
 }
