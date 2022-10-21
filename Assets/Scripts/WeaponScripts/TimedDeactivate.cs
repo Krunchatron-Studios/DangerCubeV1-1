@@ -12,12 +12,10 @@ public class TimedDeactivate : MonoBehaviour {
 	IEnumerator DelayedDeactivate() {
 		yield return new WaitForSeconds(timeTilDeactivation);
 		gameObject.SetActive(false);
-		Debug.Log($"did it work?: {gameObject.activeInHierarchy}");
 	}
 
 	private void ShutOffTimer() {
 		if (gameObject.activeInHierarchy) {
-			Debug.Log($"start time: {gameObject.activeInHierarchy}");
 			StartCoroutine(DelayedDeactivate());
 		}
 	}

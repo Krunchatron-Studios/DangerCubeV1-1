@@ -76,9 +76,12 @@ MonoBehaviour:
   animator: {fileID: 3879068503732064953}
   weapon: {fileID: 0}
   spriteRenderer: {fileID: 1869544635669599748}
-  dissolve: {fileID: 2784020968082079261}
+  omniShaderMaterial: {fileID: 0}
+  newFadeValue: 1.2
+  fadeId: 0
   drop: {fileID: 1527084982249308848, guid: aa8fef295bf4542edb7f38a866479ce6, type: 3}
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
+  playerObject: {fileID: 0}
   playerPosition: {fileID: 0}
   _safetyTime: 10
 --- !u!212 &1869544635669599748

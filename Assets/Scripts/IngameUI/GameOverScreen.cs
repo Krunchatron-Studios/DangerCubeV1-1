@@ -1,11 +1,17 @@
-using System;
 using Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+
 
 public class GameOverScreen : MonoBehaviour {
+
+	public GameObject defaultSelection;
+	
 	private void Start() {
 		TitleSoundManager.tsm.titleMusic.Play();
+		EventSystem.current.SetSelectedGameObject(null);
+		EventSystem.current.SetSelectedGameObject(defaultSelection);
 	}
 
 	public void RestartGame() {

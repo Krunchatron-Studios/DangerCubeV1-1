@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using ScriptableCode;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UnlocksUI : MonoBehaviour {
 
@@ -8,6 +9,8 @@ public class UnlocksUI : MonoBehaviour {
 	public UnlockData unlockData;
 	public List<Upgrade> referenceList;
 	public List<UnlockButton> unlockButtons;
+
+	public GameObject defaultSelection;
 
 	private void Start() {
 		uui = this;
@@ -17,9 +20,8 @@ public class UnlocksUI : MonoBehaviour {
 		UpdateUnlocksPanel();
 	}
 
-	public void PopulateUnlocks() {
-		for (int i = 0; i < referenceList.Count; i++) {
-			Upgrade currentUpgrade = referenceList[i];
+	private void PopulateUnlocks() {
+		foreach (var currentUpgrade in referenceList) {
 			if (currentUpgrade is Weapon) {
 				unlockData.allUnlocks.Add(currentUpgrade.upgradeName, false);
 			}
@@ -27,7 +29,9 @@ public class UnlocksUI : MonoBehaviour {
 	}
 
 	public void UpdateUnlocksPanel() {
-		for(int i = 0; i < referenceList.Count; i++) {
+		EventSystem.current.SetSelectedGameObject(null);
+		EventSystem.current.SetSelectedGameObject(defaultSelection);
+		for(var i = 0; i < referenceList.Count; i++) {
 			referenceList[i].isUnlocked = unlockData.allUnlocks[referenceList[i].upgradeName];
 
 			if (referenceList[i].isUnlocked) {

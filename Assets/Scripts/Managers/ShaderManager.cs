@@ -7,7 +7,6 @@ namespace Managers {
 			shm = this;
 		}
 
-		public Material dissolve;
 		public Material spriteLit;
 		public Material glow;
 	}

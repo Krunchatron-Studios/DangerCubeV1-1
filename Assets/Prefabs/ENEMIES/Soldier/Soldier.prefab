@@ -150,9 +150,12 @@ MonoBehaviour:
   animator: {fileID: 1674497760}
   weapon: {fileID: 6059390374190046673}
   spriteRenderer: {fileID: 6059390373229456276}
-  dissolve: {fileID: 1195847990}
+  omniShaderMaterial: {fileID: 0}
+  newFadeValue: 1.2
+  fadeId: 0
   drop: {fileID: 1527084982249308848, guid: aa8fef295bf4542edb7f38a866479ce6, type: 3}
   playerResources: {fileID: 11400000, guid: 9bee9b993dc7348a4bbe43fbf651b20e, type: 2}
+  playerObject: {fileID: 0}
 --- !u!114 &1195847990
 MonoBehaviour:
   m_ObjectHideFlags: 0

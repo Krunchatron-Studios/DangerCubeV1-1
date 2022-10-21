@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class EnemyWeapon : MonoBehaviour {
 
+    public BaseEnemy weaponOwner;
     public AudioSource audioSource;
-    [Header("Player Position")]
-    public GameObject playerPosition;
-    public Vector3 aimPosition;
-    
+
     [Header("Weapon Parameters")] 
     public float fireRange = 4.0f;
     public float reloadTimer = 3.0f;
@@ -16,20 +14,22 @@ public class EnemyWeapon : MonoBehaviour {
     public bool canFire = true;
     public float bulletSpeed = 10f;
     public int ammo = 3;
-    public Transform barrel;
-    [Header("Projectile Parameters")]
+    
+    [Header("Projectile Parameters")] 
+    public GameObject firePoint;
     public GameObject enemyProjectile;
     private Rigidbody2D _projectileBody;
-    
+    public Vector2 moveDirection;
     
     void FixedUpdate() {
-        playerPosition = GameObject.FindWithTag("Player");
-        aimPosition = playerPosition.transform.position;
-        ShootPlayer();
+        if (weaponOwner.playerObject) {
+            moveDirection = (weaponOwner.playerObject.transform.position - transform.position).normalized;
+            ShootPlayer();
+        }
     }
 
     public void ShootPlayer() {
-        float distance = Vector3.Distance(playerPosition.transform.position, transform.position);
+        float distance = Vector3.Distance(weaponOwner.playerObject.transform.position, transform.position);
         if (distance <= fireRange && canFire) {
             canFire = false;
             StartCoroutine(UseWeapon());
@@ -42,11 +42,21 @@ public class EnemyWeapon : MonoBehaviour {
         int currentAmmo = ammo;
         for (int i = 0; i < currentAmmo; i++) {
             GameObject bullet = EnemyPoolManager.epm.enemyBulletPool.GetPooledGameObject();
+            GameObject muzzle = EnemyPoolManager.epm.machineGunMuzzle.GetPooledGameObject();
+
+            transform.localScale = new Vector2(
+                weaponOwner.transform.localScale.x, 
+                weaponOwner.transform.localScale.y);
+            
             bullet.SetActive(true);
-            bullet.transform.position = barrel.position;
+            bullet.transform.position = firePoint.transform.position;
+            muzzle.SetActive(true);
+            muzzle.transform.position = firePoint.transform.position;
+
             _projectileBody = bullet.GetComponent<Rigidbody2D>();
-            aimPosition.y -= .5f;
-            Vector3 moveDirection = (aimPosition - transform.position).normalized;
+            
+            
+            EnemyAim();
             MoveProjectile(moveDirection);
             yield return new WaitForSeconds(rateOfFire);
         }
@@ -58,9 +68,11 @@ public class EnemyWeapon : MonoBehaviour {
         _projectileBody.velocity = direction * bulletSpeed;
     }
 
-    private void MuzzleFlash() {
-        // GameObject flash = EnemyPoolManager.epm.mgFlashPool.GetPooledGameObject();
-        // flash.SetActive(true);
-        // flash.transform.position = barrel.position;
+    private void EnemyAim() {
+        Vector3 enemyAimAdjust = new Vector3(
+            weaponOwner.playerObject.transform.position.x, 
+            weaponOwner.playerObject.transform.position.y, 
+            weaponOwner.playerObject.transform.position.z);
+        enemyAimAdjust.y -= .5f;
     }
 }

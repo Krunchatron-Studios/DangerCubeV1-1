@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Effects;
 using Interfaces;
@@ -20,38 +21,77 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 	public SpriteRenderer spriteRenderer;
 	
 	[Header("Death Effects")] 
-	public Dissolve dissolve;
+	public Material omniShaderMaterial;
+	public float newFadeValue = 1.2f;
+
+	public int fadeId;
 	
 	[Header("Enemy Drop Related")] 
 	public GameObject drop;
 	public PlayerResources playerResources;
 	private Vector2 _direction;
 
+	[Header("Player Target")] 
+	public GameObject playerObject;
+
+	private void Start() {
+		omniShaderMaterial = spriteRenderer.material;
+		fadeId = Shader.PropertyToID("_SourceGlowDissolveFade");
+	}
+
+	private void LateUpdate() {
+		playerObject = GameObject.FindWithTag("Player");
+		_direction = (playerObject.transform.position - transform.position).normalized;
+		FlipEnemySprite();
+	}
+
 	public void TakeDamage(float dmgAmount, string dmgType) {
 		currentHealth -= dmgAmount;
 		
-		if (dmgType == "Physical") {
-			_direction = GameObject.FindGameObjectWithTag("Player").transform.localScale.normalized;
-			GameObject blood = PoolManager.pm.bloodPool.GetPooledGameObject();
-			blood.transform.position = new Vector2(transform.position.x, transform.position.y + .5f);
-			blood.transform.localScale = new Vector3(-_direction.x, _direction.y, 0);
-			blood.SetActive(true);
-			Debug.Log($"lossy: {_direction}");
-		}
-		
-		if (currentHealth <= 0) {
-			if (dmgType == "DeathRay") {
-				spriteRenderer.material = ShaderManager.shm.dissolve;
-				GameObject ashes = PoolManager.pm.ashesPool.GetPooledGameObject();
-				ashes.SetActive(true);
-				ashes.transform.position = transform.position;
-				dissolve.isDissolving = true;
-			}
-
-			if (dmgType != "Physical") {
+		// hit effects from weapons
+		switch (dmgType) {
+			
+			case "Physical":
+				_direction = GameObject.FindGameObjectWithTag("Player").transform.localScale.normalized;
 				GameObject blood = PoolManager.pm.bloodPool.GetPooledGameObject();
-				blood.transform.position = transform.position;
+				blood.transform.position = new Vector2(transform.position.x, transform.position.y + .5f);
+				blood.transform.localScale = new Vector3(-_direction.x, _direction.y, 0);
 				blood.SetActive(true);
+				break;
+			case "Fire":
+				GameObject fire = PoolManager.pm.firePool.GetPooledGameObject();
+				fire.transform.position = transform.position;
+				fire.SetActive(true);
+				break;
+			case "Plasma":
+				GameObject plasma = PoolManager.pm.plasmaPool.GetPooledGameObject();
+				plasma.transform.position = transform.position;
+				plasma.SetActive(true);
+				break;
+		}
+
+		
+		// Death effects from weapons
+		if (currentHealth <= 0) {
+
+			switch (dmgType) {
+				
+				case "DeathRay":
+					GameObject ashes = PoolManager.pm.ashesPool.GetPooledGameObject();
+					ashes.SetActive(true);
+					ashes.transform.position = transform.position;
+					//StartCoroutine(DeathRayDeath());
+					break;
+				case "Fire":
+					GameObject fire = PoolManager.pm.firePool.GetPooledGameObject();
+					fire.SetActive(true);
+					fire.transform.position = transform.position;
+					break;
+				case "Physical":
+					GameObject blood = PoolManager.pm.bloodPool.GetPooledGameObject();
+					blood.transform.position = transform.position;
+					blood.SetActive(true);
+					break;
 			}
 			
 			moveSpeed = 0f;
@@ -59,6 +99,18 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 			StartCoroutine(PostponeDeath(1f));
 			int deathSoundIndex = Random.Range(0, 3);
 			SoundManager.sm.humanDying[deathSoundIndex].Play();
+		}
+	}
+
+	private void FlipEnemySprite() {
+		bool enemyMovingRight = _direction.x > 0.01f;
+
+		if(!enemyMovingRight) {
+			transform.localScale = new Vector2(1, 1);
+		}
+		
+		if (enemyMovingRight) {
+			transform.localScale = new Vector2(-1, 1);
 		}
 	}
 	public void HealDamage(int healAmount) {
@@ -70,6 +122,15 @@ public class BaseEnemy : MonoBehaviour, IHurtThingsInterface {
 	IEnumerator PostponeDeath(float waitTime) {
 		yield return new WaitForSeconds(waitTime);
 		gameObject.SetActive(false);
+	}
+
+	IEnumerator DeathRayDeath() {
+		while (newFadeValue > 0) {
+			newFadeValue -= .01f;
+			omniShaderMaterial.SetFloat(fadeId, newFadeValue);
+			yield return null;
+		}
+		yield return null;
 	}
 }
 
