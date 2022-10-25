@@ -1,10 +1,14 @@
 ﻿using System.Collections;
+using Interfaces;
 using Managers;
 using UnityEngine;
 using MoreMountains.Feedbacks;
+using MoreMountains.Tools;
 
 public class Vehicle : BasicStructure {
 
+	public float blastRadius = 3f;
+	public float blastDamage = 2f;
 	private bool _hasExploded = false;
 	private bool _closeToExploding = false;
 	public MMF_Player carExplosionShaker;
@@ -75,6 +79,8 @@ public class Vehicle : BasicStructure {
 				rubble.transform.position = transform.position;
 				_hasExploded = true;
 				SoundManager.sm.burning1.Stop();
+				ResolveExplosion(blastDamage);
+
 			}
 		}
 	}
@@ -88,5 +94,20 @@ public class Vehicle : BasicStructure {
 			SoundManager.sm.explosionSounds[i+1].Play();
 		}
 		gameObject.SetActive(false);
+	}
+
+	private void ResolveExplosion(float dmg) {
+		Debug.Log($"in the func");
+		Collider2D[] colliderArray = Physics2D.OverlapCircleAll(transform.position, blastRadius);
+		foreach(Collider2D col in colliderArray) {
+			if (col.CompareTag("Enemy") || col.CompareTag("Player")) {
+				Debug.Log($"col: {col.transform}");
+				IHurtThingsInterface hit = col.GetComponent<IHurtThingsInterface>();
+				hit.TakeDamage(dmg, "Fire");
+				MMFloatingTextSpawnEvent.Trigger(0, col.attachedRigidbody.transform.position, 
+					dmg.ToString(), Vector3.up, .5f);
+			}
+			
+		}
 	}
 }

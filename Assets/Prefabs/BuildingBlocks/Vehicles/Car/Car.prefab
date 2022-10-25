@@ -122,6 +122,7 @@ MonoBehaviour:
   - {fileID: 2628301625813866467}
   - {fileID: 5906046794079134732}
   - {fileID: 7865935357580733553}
+  escapePoints: []
 --- !u!114 &2932181838750365317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,6 +260,8 @@ MonoBehaviour:
   currentIntegrity: 20
   percentDestroyed: 0
   renderUnderPlayer: 0
+  blastRadius: 10
+  blastDamage: 5
   carExplosionShaker: {fileID: 0}
 --- !u!212 &8697196323132477053
 SpriteRenderer:
